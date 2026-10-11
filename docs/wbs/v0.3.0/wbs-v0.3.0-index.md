@@ -1,0 +1,95 @@
+# WBS — agentwatch v0.3.0 (Index)
+
+**BLUF:** **v0.3.0 is the identity & structure release.** It (1) renames the GitHub org
+`agentsec-ecosystem` → `agentic-ecosystems`, (2) stands up the new ecosystem skeleton (parent profile, template,
+governance, SSOT index), and (3) completes the deferred **ADR-0026** rename (distribution + import + CLI + npm
+scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acceptance seed, and a tracking issue.
+
+> **Scope: renames and structure only — NO new features, NO bug fixes.** v0.3.0 changes names, scopes, and the org
+> skeleton; it adds and fixes nothing else. Every ticket below is a rename, a structural move, or release process.
+
+**Parent:** agentsec-ecosystem #209 · **Branch:** `feat-v0.3.0` · **GitHub milestones:** #37–#40 · **Issues:** #500–#538.
+
+## Standard milestone exit criteria (applies to EVERY milestone)
+
+- [ ] All tests pass (`make test`)
+- [ ] Coverage ≥ 95% (CI-enforced, no waivers)
+- [ ] Lint strict clean — `ruff` zero violations; `mypy --strict` clean
+- [ ] WBS updated — every ticket checked off; deferred items re-pointed to a named milestone
+- [ ] Issues updated — every ticket has a tracking issue; closed or re-pointed
+- [ ] All affected docs updated at close-out (PRD, design, reference, `CHANGELOG.md`, `README.md`,
+      compatibility matrix, `known-limitations.md`)
+- [ ] Committed + pushed to `feat-v0.3.0`; CI green on the pushed HEAD
+
+## Milestones
+
+| M | Name | Tickets | GitHub # | Theme |
+|---|---|---|---|---|
+| **M33** | Org Rename & New Structure | ORG-1 … ORG-9 | #37 | `agentsec-ecosystem` → `agentic-ecosystems`; skeleton; SSOT index |
+| **M34** | Identity & Distribution (ADR-0026) | NAME-1 … NAME-7 | #38 | Distribution + import + CLI + npm scope rename; shim; migration guide |
+| **M35** | Field Tests | FT-1 … FT-5 | #39 | Rename + distribution + fresh-install verification + **full functional regression** + **release-readiness test** |
+| **M36** | Release Readiness | REL-1 … REL-6 | #40 | Scan, **all-docs sweep**, **dev.to article links**, tag, publish from the new org |
+
+> **M35 (Field Tests) and M36 (Release Readiness) are always last.** Do not tag `v0.3.0` before M36.
+> Every milestone also carries its `N.T` / `N.D` / `N.R` support tickets (listed per milestone below).
+
+---
+
+## M33 — Org Rename & New Structure · milestone [#37]
+
+**Goal:** the org and its structure are renamed and rebuilt before anything ships.
+
+| ID | Title | Deliverable | Acceptance | Issue |
+|---|---|---|---|---|
+| ORG-1 | Rename the GitHub org | `agentsec-ecosystem` → `agentic-ecosystems` | Repo URLs redirect; branch rulesets, 2FA, secret scanning/push protection survive | #500 |
+| ORG-2 | Repo naming — **ecosystem prefixes (decided 2026-10-11)** | Rename every repo to its ecosystem prefix (`agentsec-agentwatch`, `agentops-loopguard`, …) | Repos disambiguated by ecosystem; remotes/badges/CI updated | #501 |
+| ORG-3 | npm scope migration | `@agentsec-ecosystem/*` → `@agentic-ecosystems/*` | New scope published; old deprecated with redirect note | #502 |
+| ORG-4 | Reference sweep | Badges, CI/CD URLs, GHCR image names, Codecov | No `agentsec-ecosystem` reference left in build/CI/badges | #503 |
+| ORG-5 | Org profile + governance docs | `.github` profile, GOVERNANCE, TRADEMARK, install-UX | Docs reference the new org | #504 |
+| ORG-6 | New skeleton | Parent profile + `template` + governance floor + **AgentLens project skeleton** — scaffold the repo (from `template` + governance) for the TypeScript local-first trace debugger (the `agent-inspect` equivalent; vault #235) under `agentsec`/`agentwatch`; **scaffold only — implementation is a later effort** | A new ecosystem can be stood up from the skeleton; the AgentLens repo is scaffolded (not built) | #505 |
+| ORG-7 | SSOT index | Contracts → owning repo/file | Every shared contract has one owner + link | #506 |
+| ORG-8 | Live-doc sweep | Vault metrics/schedule/MOCs + notes 209/210–221 | Live docs updated; historical journal/articles untouched | #507 |
+| ORG-9 | Verification | Redirects + clean-machine install | `npx @agentic-ecosystems/cli init` works on a clean machine in ≤15 min | #508 |
+
+**Support tickets:** 33.T [#523] · 33.D [#524] · 33.R [#525]
+
+## M34 — Identity & Distribution (ADR-0026) · milestone [#38]
+
+**Goal:** the deferred rename lands — distribution, import, CLI, and npm.
+
+| ID | Title | Deliverable | Acceptance | Issue |
+|---|---|---|---|---|
+| NAME-1 | Choose the target name | ADR-0026 updated with the decision | Name recorded; availability checked (PyPI/npm) | #509 |
+| NAME-2 | Rename distribution + import + CLI | New package/import/console names | Install + import + CLI under the new name | #510 |
+| NAME-3 | Compatibility shim | Alias for `import agentwatch` + `agentwatch` CLI | Old names work across the v0.3.x window | #511 |
+| NAME-4 | Migration guide | `agent-exec-trace` → `agentwatch` → new name | Guide published in `docs/release/v0.3.0/` | #512 |
+| NAME-5 | Doc/example sweep | Every doc, example, compatibility row | No stale name outside the migration guide | #513 |
+| NAME-6 | npx launcher + npm publish | `@agentic-ecosystems/cli` launcher | `npx @agentic-ecosystems/cli init` works; publish wired in CI | #514 |
+| NAME-7 | Namesake guard | Distribution-check warning in `--version`/`init`/`doctor`; FAQ | Wrong-package install detected + warned | #515 |
+
+**Support tickets:** 34.T [#526] · 34.D [#527] · 34.R [#528]
+
+## M35 — Field Tests · milestone [#39]
+
+| ID | Title | Deliverable | Acceptance | Issue |
+|---|---|---|---|---|
+| FT-1 | v0.3.0 field-test plan | Plan covering rename + distribution + org | Plan reviewed; cases enumerated | #516 |
+| FT-2 | Execute field tests | Report in `docs/field-test/v0.3.0/` | All cases run; pass/fail declared honestly | #517 |
+| FT-3 | Fresh-install verification | Clean-machine run across harnesses | New install + shim both verified | #518 |
+| FT-4 | **Full functional regression run** | Run the whole suite + all pre-existing field cases on the renamed build | **100% of pre-existing functional tests pass unchanged; zero regressions vs the v0.2.1 baseline** | #535 |
+| FT-5 | **Release-readiness test** | End-to-end functional test on the RC (install → record → export → replay → detectors → console) | RC functionally identical to v0.2.1; all readiness checks pass | #536 |
+
+**Support tickets:** 35.T [#529] · 35.D [#530] · 35.R [#531]
+
+## M36 — Release Readiness · milestone [#40]
+
+| ID | Title | Deliverable | Acceptance | Issue |
+|---|---|---|---|---|
+| REL-1 | Security scan + audit | trufflehog / pip-audit / Scorecard | Clean; findings triaged | #519 |
+| REL-2 | Docs update | `CHANGELOG.md`, `README.md`, compatibility matrix, `known-limitations.md` | All reflect the renamed org + package | #520 |
+| REL-3 | Release | Tag + GitHub release + PyPI publish from the new org | Artifacts published from `agentic-ecosystems` | #521 |
+| REL-4 | Launch content | Article ("The Security-Event Schema Agents Need") | Published after the release | #522 |
+| REL-5 | **Update all documents** | Full doc sweep — PRDs, design, reference, guides, README, ROADMAP, CHANGELOG, compatibility matrix, known-limitations, THIRD_PARTY_NOTICES | No stale name/org reference except the migration guide | #537 |
+| REL-6 | **Update published article links (dev.to)** | Update article links pointing at the old repo/org | All dev.to article links resolve to the new org | #538 |
+
+**Support tickets:** 36.T [#532] · 36.D [#533] · 36.R [#534]

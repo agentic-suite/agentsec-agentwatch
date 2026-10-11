@@ -13,8 +13,10 @@ detector effectiveness, agent identity, and compliance reporting. Later versions
 | **v0.1.0** | **Full superset** — port all of `agent-exec-trace` → Claude Code recording + OTel GenAI + security-event schema + local store + replay + analytics + 40 detectors + read API + operator UI + stack + demo/E2E; **`agent-exec-trace` retained (private)** |
 | **v0.2.0** | **Best-in-class record layer** (PRD 40–59) — **released** — IETF AAT emit/ingest; OTel GenAI agent spans + OTLP/gRPC (two backends); cross-agent trace correlation; Cursor/Gemini/Codex real fidelity; MCP 2026-07-28 surface; streaming; detector recall program + public eval corpus; agent identity; compliance reports + retention + signing; SIEM/OCSF; A2A/gateway/system-effects/Compliance-API capture; SDK lifecycle; cross-harness test kit; **console + investigation skill + versioned CLI JSON, capability/memory supply chain, provenance, approval v2, sandbox boundary, legal hold, OWASP ASI-2026** |
 | v0.2.x | Postgres analytics (if phased), A2A/system-effects depth, TypeScript SDK decision → ship, more adapters |
+| **v0.3.0** | **Identity & structure** — org rename (`agentsec-ecosystem` → `agentic-ecosystems`) + package/import/CLI rename (ADR-0026) + npm scope; **renames only — no new features, no bug fixes** |
 | later | CrewAI/PydanticAI full-fidelity; Copilot via OTel; enterprise integrations |
 
 Full detail: [PRD 09 — Roadmap](docs/prd/09-roadmap.md) · [PRD 40 — v0.2.0 Program](docs/prd/40-v0.2.0-program.md) ·
 Parity: [PRD 10](docs/prd/10-feature-parity.md) · Porting: [WBS index](docs/wbs/v0.1.0/wbs-v0.1.0-index.md) ·
-v0.2.0 WBS: [WBS](docs/wbs/v0.2.0/wbs-v0.2.0-index.md).
+v0.2.0 WBS: [WBS](docs/wbs/v0.2.0/wbs-v0.2.0-index.md) ·
+v0.3.0 WBS: [WBS](docs/wbs/v0.3.0/wbs-v0.3.0-index.md).
