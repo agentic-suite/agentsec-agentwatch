@@ -145,6 +145,10 @@ Full index: [docs/README.md](docs/README.md).
 - [Errors](docs/reference/errors.md) · [Known limitations](docs/reference/known-limitations.md) ·
   [Performance](docs/reference/performance.md) · [Reference index](docs/reference/README.md)
 
+**Release v0.3.0 (in progress)**
+
+- [WBS v0.3.0](docs/wbs/v0.3.0/wbs-v0.3.0-index.md) — identity & structure (org rename + package rename; **renames only**, no new features)
+
 **Release v0.2.0**
 
 - [Release notes](docs/release/v0.2.0/release-notes.md) · [Release checklist & go/no-go](docs/release/v0.2.0/release-checklist.md) ·
