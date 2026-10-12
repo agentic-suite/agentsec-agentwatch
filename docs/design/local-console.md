@@ -1,6 +1,6 @@
 # Design — Local Console
 
-**BLUF:** How `agentwatch ui` gives a **zero-Docker, loopback-only, read-only** browser view of the local chain store in
+**BLUF:** How `agentsec-agentwatch ui` gives a **zero-Docker, loopback-only, read-only** browser view of the local chain store in
 one command, and how the **embedded, rebuildable query index** makes long-window search interactive while the chain
 store stays the sole source of truth. Postgres (PRD 41 PG) becomes the optional fleet/multi-tenant tier, not the only tier.
 

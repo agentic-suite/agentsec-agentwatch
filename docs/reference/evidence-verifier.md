@@ -4,7 +4,7 @@
 standalone `agentwatch-verify` verifier checks an
 [evidence bundle](../prd/31-evidence-and-provenance.md) or a
 [store/chain file](store-format.md) with **no Python environment, no daemon, and no network** — it
-imports nothing from `agentwatch`.
+imports nothing from `agentsec-agentwatch`.
 
 ## Build and run
 

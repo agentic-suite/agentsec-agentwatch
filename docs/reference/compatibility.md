@@ -12,17 +12,17 @@
 | LangGraph (Tier-2) | — | — | ✅ | ✅ |
 | raw Python (Tier-2) | — | — | ✅ | ✅ |
 | CrewAI / PydanticAI | — | — | — | ✅ |
-| MCP-speaking harness (via `agentwatch mcp-proxy`) | ✅ stdio + HTTP/SSE (`tools/call`) | ✅ | ✅ | ✅ |
+| MCP-speaking harness (via `agentsec-agentwatch mcp-proxy`) | ✅ stdio + HTTP/SSE (`tools/call`) | ✅ | ✅ | ✅ |
 
 > **MCP proxy (M10 N1):** any harness that speaks MCP can be recorded without a native adapter. v0.1.0
-> records `tools/call` over **stdio and HTTP/SSE** with `tool.server` attribution, and `agentwatch init
+> records `tools/call` over **stdio and HTTP/SSE** with `tool.server` attribution, and `agentsec-agentwatch init
 > --mcp-proxy` re-points the harness config at the proxy (`uninstall` restores it byte-identically).
 > **v0.2.0 MCP-1..6** moves the HTTP proxy to the **Streamable HTTP** transport (2026-07-28, stateless —
 > sessions removed) and records the full surface (`resources/read` + links, `prompts/get`, elicitation,
 > `tasks/*`); the legacy HTTP/SSE relay is kept (`--transport http-sse`) and marked deprecated-in-spec.
 > The generated row carries a **Protocol** column; the proxy's tested range tracks the newest revision.
 >
-> **A2A proxy (M29 A2A-1/2):** `agentwatch a2a-proxy` records agent↔agent traffic (A2A v1.0): `message/send`,
+> **A2A proxy (M29 A2A-1/2):** `agentsec-agentwatch a2a-proxy` records agent↔agent traffic (A2A v1.0): `message/send`,
 > `message/stream`, `tasks/get`, `tasks/cancel` (intent → outcome), task artifacts, and agent-card exchanges over
 > stdio and HTTP. Signed agent cards are verified deterministically (`verified`/`unverified`, never assumed, never an
 > authorization) and a cross-org hand-off is recorded as an `agent-delegation` observation extending `tree`/`trace`.
@@ -30,7 +30,7 @@
 > push-notification-config family are declared gaps.
 >
 > **Windows (M27 WIN-1):** agentwatch supervises the daemon at logon via a **Task Scheduler** task
-> (`agentwatch init --service` → `%APPDATA%\agentwatch\agentwatch-task.xml`); a `windows-latest` CI leg
+> (`agentsec-agentwatch init --service` → `%APPDATA%\agentwatch\agentwatch-task.xml`); a `windows-latest` CI leg
 > (`.github/workflows/windows.yml`) exercises the platform-independent SDK subset. Named-pipe transport and an
 > end-to-end CUJ-1 timing run on Windows are tracked on WIN-1.
 >
@@ -53,18 +53,18 @@
 <!-- BEGIN GENERATED HARNESS MATRIX -->
 | Harness | Tier | Tested range | Protocol | Fidelity | Managed policy | Invocation | Notes |
 |---|---|---|---|---|---|---|---|
-| `a2a-proxy` | proxy | 1.0 | 1.0 | fixture-verified | n/a | `agentwatch a2a-proxy` / `a2aAgents` install | A2A tasks/messages/artifacts + signed agent cards; deterministic card provenance; agent-delegation observation; declared gaps relayed |
-| `adk` | Tier-2 | 1.5.0–1.x | — | modeled | n/a | OTel GenAI over OTLP (`agentwatch ingest --format otel`) | Google ADK native spans; fixture-driven, live run BLOCKED (not installable here) |
+| `a2a-proxy` | proxy | 1.0 | 1.0 | fixture-verified | n/a | `agentsec-agentwatch a2a-proxy` / `a2aAgents` install | A2A tasks/messages/artifacts + signed agent cards; deterministic card provenance; agent-delegation observation; declared gaps relayed |
+| `adk` | Tier-2 | 1.5.0–1.x | — | modeled | n/a | OTel GenAI over OTLP (`agentsec-agentwatch ingest --format otel`) | Google ADK native spans; fixture-driven, live run BLOCKED (not installable here) |
 | `claude-agent-sdk` | Tier-2 | 0.1.0–0.x | — | modeled | n/a | shared Claude Code OTel (`ingest --format claude-otel`, `sdk-native`) | Routes through 29.CCO-1 (WS-A); tool_use_id join owned by CCO-1, live run BLOCKED |
-| `claude-code` | Tier-1 | 2.0–2.x | — | live-verified | blocked | native hooks (`agentwatch init`) | PreToolUse/PostToolUse + local daemon; under `allowManagedHooksOnly` a user/project install is blocked — managed hook/plugin path (DEP-1) |
+| `claude-code` | Tier-1 | 2.0–2.x | — | live-verified | blocked | native hooks (`agentsec-agentwatch init`) | PreToolUse/PostToolUse + local daemon; under `allowManagedHooksOnly` a user/project install is blocked — managed hook/plugin path (DEP-1) |
 | `codex-cli` | Tier-1 | 0.65–0.x | — | fixture-verified | n/a | log-reader (`ingest --agent codex`) | rollout JSONL / .jsonl.zst; format-derived + cross-parser validated (COD-1/XHT-3); live capture pending |
 | `crewai` | Tier-2 | modeled | — | modeled | n/a | native adapter (modeled) |  |
 | `cursor` | Tier-1 | 1.7–1.x | — | fixture-verified | unknown | native hooks (`hooks.json`) | full loop; vendor+MIT fixture corpus (25.CUR-1); live capture pending |
 | `gemini-cli` | Tier-1 (declared) | modeled | — | modeled | n/a | native OTel telemetry (`ingest --format otel`) | declared: provisional/modeled shapes (harness-adapters-plan M10 #82); native approval/principal mapping (GEM-2); real capture pending (v0.3.0 target) |
-| `mcp-proxy` | proxy | 2026-07-28 | 2026-07-28 | live-verified | n/a | `agentwatch mcp-proxy` / `init --mcp-proxy` | MCP JSON-RPC full surface (tools/resources/prompts/elicitation/tasks), Streamable HTTP |
-| `openai-agents` | Tier-2 | 0.1.0–0.x | — | modeled | n/a | OpenInference → OTLP (`agentwatch ingest --format otel`) | OpenAI Agents SDK via OpenInference; fixture-driven, live run BLOCKED (not installable here) |
+| `mcp-proxy` | proxy | 2026-07-28 | 2026-07-28 | live-verified | n/a | `agentsec-agentwatch mcp-proxy` / `init --mcp-proxy` | MCP JSON-RPC full surface (tools/resources/prompts/elicitation/tasks), Streamable HTTP |
+| `openai-agents` | Tier-2 | 0.1.0–0.x | — | modeled | n/a | OpenInference → OTLP (`agentsec-agentwatch ingest --format otel`) | OpenAI Agents SDK via OpenInference; fixture-driven, live run BLOCKED (not installable here) |
 | `pydantic-ai` | Tier-2 | modeled | — | modeled | n/a | native adapter (modeled) |  |
-| `strands` | Tier-2 | 1.0.0–1.x | — | modeled | n/a | OTel GenAI over OTLP (`agentwatch ingest --format otel`) | Strands native spans; fixture-driven, live run BLOCKED (not installable here) |
+| `strands` | Tier-2 | 1.0.0–1.x | — | modeled | n/a | OTel GenAI over OTLP (`agentsec-agentwatch ingest --format otel`) | Strands native spans; fixture-driven, live run BLOCKED (not installable here) |
 <!-- END GENERATED HARNESS MATRIX -->
 
 ### Sandbox-boundary exposure (M30 SBX-1)

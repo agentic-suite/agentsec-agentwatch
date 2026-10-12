@@ -8,7 +8,7 @@ services (v0.2.0+). Decisions recorded in [design-decisions](../design/design-de
 | Layer | Choice | Notes |
 |---|---|---|
 | Language | Python 3.10+ | matches shipped project |
-| CLI | `typer` (or `click`) | `agentwatch` entrypoint |
+| CLI | `typer` (or `click`) | `agentsec-agentwatch` entrypoint |
 | Schema models | `pydantic` v2 | record + security-event validation |
 | Local socket | Unix domain socket (POSIX) | hook → daemon |
 | Store | append-only JSONL + hash chain (DD-08) | `hashlib.sha256` |
@@ -17,13 +17,13 @@ services (v0.2.0+). Decisions recorded in [design-decisions](../design/design-de
 | Config | `tomllib` (stdlib, 3.11+) / `tomli` backport | strict validation |
 | Tests | `pytest`, `pytest-cov` | coverage ≥95% |
 | Lint/types | `ruff`, `mypy --strict` | zero violations |
-| Packaging | `hatch` / `build` + `uv` | PyPI `agentwatch` |
+| Packaging | `hatch` / `build` + `uv` | PyPI `agentsec-agentwatch` |
 
 ## Launcher
 
 | Layer | Choice |
 |---|---|
-| Node | thin `@agentic-suite/cli` package |
+| Node | thin `agentsec-agentwatch` package (CLI launcher) |
 | Purpose | install hooks, invoke the Python CLI |
 
 ## v0.2.0+ services (parity)
@@ -50,5 +50,5 @@ services (v0.2.0+). Decisions recorded in [design-decisions](../design/design-de
 | `cosmic-ray` (optional `[mutation]` extra) | deep, interactive mutation runs | Not installed by `make setup`; its `cr-filter-*` layer is unstable on the supported Python. The **enforced** mutation gate (`scripts/mutation_gate.py`) is a deterministic, curated, self-testing harness (PRD 38 Q2). |
 | `atheris` | coverage-guided parser fuzzing | Not added: it is a native extension and unavailable on the supported interpreters. `hypothesis` harnesses (`tests/test_fuzz_parsers.py`) are the committed, nightly-run fuzzer (PRD 38 Q3). |
 
-None of these is imported by `agentwatch` at runtime; they live in
+None of these is imported by `agentsec-agentwatch` at runtime; they live in
 `packages/python-sdk[dev]` only.

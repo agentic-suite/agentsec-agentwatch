@@ -20,7 +20,7 @@ product requirement is [PRD 41](../prd/41-standards-and-interop-ii.md) (AAT-1..5
 > (`schema/vectors/verify_aat.py`), and the dual-verifier CI check
 > (`packages/python-sdk/tests/test_aat_vectors.py`). **AAT-5** pins the revision
 > (`AAT_DRAFT`) and its mapped fields (`AAT_DRAFT_FIELDS`), carries the pin in
-> `agentwatch --version`, and ships `scripts/aat_drift_check.py` + the
+> `agentsec-agentwatch --version`, and ships `scripts/aat_drift_check.py` + the
 > `AAT draft drift` workflow against `schema/aat/upstream-revision.json`
 > (simulated-bump test: `tests/test_aat_drift.py`). AAT-1..5 are implemented.
 
@@ -97,7 +97,7 @@ silently changing output.
 
 - **Single source of truth:** `AAT_DRAFT` (and the mapped field set `AAT_DRAFT_FIELDS`) in
   [`agentwatch.aat`](../../packages/python-sdk/src/agentsec_agentwatch/aat.py). `aat_version_line()` carries
-  `IETF AAT <revision>` in `agentwatch --version`; every bundle carries `aat_version`.
+  `IETF AAT <revision>` in `agentsec-agentwatch --version`; every bundle carries `aat_version`.
 - **Drift check:** [`scripts/aat_drift_check.py`](../../scripts/aat_drift_check.py) compares the pin against
   [`schema/aat/upstream-revision.json`](../../schema/aat/upstream-revision.json). A revision bump, or a mapped
   field the upstream draft drops, fails the check; a new upstream field is informational. A unit test simulates a

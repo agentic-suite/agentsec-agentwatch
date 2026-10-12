@@ -1,6 +1,6 @@
 # Reference — Public Redaction Corpus (RED-1)
 
-**BLUF:** `agentwatch redact eval --corpus vN` reproduces agentwatch's per-class redaction recall and
+**BLUF:** `agentsec-agentwatch redact eval --corpus vN` reproduces agentwatch's per-class redaction recall and
 false-positive rate from a **versioned, public, synthetic** corpus, fully offline. The committed numbers cannot
 drift: a test regenerates them from the corpus and compares. Known misses are honest and listed in
 [known-limitations](known-limitations.md).

@@ -11,7 +11,7 @@ PRD 29 (LLM explanation layer).
 
 ## Harness
 
-- One command: `agentwatch detectors eval --corpus <version>` — offline, deterministic seeds, reproducible.
+- One command: `agentsec-agentwatch detectors eval --corpus <version>` — offline, deterministic seeds, reproducible.
 - Reports per-detector precision/recall (+ confidence intervals) and an aggregate, generated into
   `docs/reference/detector-catalog.md` (CI-guarded — docs-drift impossible).
 - The eval harness **judges detectors**; detectors judge nothing, and the LLM stays out of the trust path
@@ -78,7 +78,7 @@ coverage, governance (no secrets/PII), verdicts, and drift. Every published numb
 - Content-flow edges (S22) link source→sink without re-embedding content.
 - **DET-7 implemented:** memory reads/writes/deletes are recorded as observable records (`agentwatch.memory`,
   tool name `memory`); the operation and key are always metadata, the memory content is captured only when the
-  privacy mode and the per-field `capture_memory` flag allow it, and `agentwatch search --memory` filters them
+  privacy mode and the per-field `capture_memory` flag allow it, and `agentsec-agentwatch search --memory` filters them
   (closes the inherited G9 "no memory-audit" gap).
 
 ## Incident-registry interop (COR-2..4)

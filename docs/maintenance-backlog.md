@@ -6,7 +6,7 @@ Status: living.
 
 - [ ] Publish the OpenAPI document for the read API. → **owned by v0.2.0 [PRD 46](prd/46-platform-sdk-and-growth.md) API-1**
 - [ ] Split the JSON-schema contract into a versioned `schema/v1/` with a deprecation policy.
-- [ ] Add Codemod for `agent_exec_trace` → `agentwatch` import migration. → **owned by v0.2.0
+- [ ] Add Codemod for `agent_exec_trace` → `agentsec-agentwatch` import migration. → **owned by v0.2.0
       [PRD 46](prd/46-platform-sdk-and-growth.md) GOV-1**
 - [ ] Extend detector catalog documentation with thresholds + false-positive risks (from the shipped project). →
       **owned by v0.2.0 [PRD 43](prd/43-detector-credibility-and-evaluation.md) DET-3** (published effectiveness

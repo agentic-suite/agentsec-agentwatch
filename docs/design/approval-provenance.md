@@ -55,7 +55,7 @@ versioned with the adapter.
 
 ## Surfacing
 
-`agentwatch search --approval user`, the `replay`/`view` timeline (an `approval=` suffix when set),
+`agentsec-agentwatch search --approval user`, the `replay`/`view` timeline (an `approval=` suffix when set),
 the evidence bundle (via the record's JSON), and impact analysis all read the same field.
 
 ## Privacy

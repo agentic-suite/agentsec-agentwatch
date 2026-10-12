@@ -8,7 +8,7 @@ agentsec-agentwatch migrate        # applies any store-format migration
 agentsec-agentwatch status         # confirm recording
 ```
 
-If a store-format change is breaking, `agentwatch migrate` emits a backup and a documented migration
+If a store-format change is breaking, `agentsec-agentwatch migrate` emits a backup and a documented migration
 (record-format spec §Versioning).
 
 ## Rollback

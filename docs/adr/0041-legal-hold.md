@@ -7,7 +7,7 @@
 - **Decision:**
   1. A hold is a metadata-only append to the hash chain naming a **scope**
      (`session` / `project` / `time` / `principal`), a reason, and an optional
-     external ref. `agentwatch hold add|list|release` manages them; the hold ID is
+     external ref. `agentsec-agentwatch hold add|list|release` manages them; the hold ID is
      derived from its chain position (`H<seq>`).
   2. While a hold is active, `retention apply` **skips** held records (listed with
      their hold IDs under `--dry-run`) and `purge` **fails closed**: nothing is

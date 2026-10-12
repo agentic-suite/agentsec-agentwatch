@@ -25,7 +25,7 @@ The user-facing name is `content-flow` — never "injection". Docs, CLI help, an
 3. When a later tool **argument** matches a stored shard fingerprint, a `content-flow` edge is recorded:
    source index, sink index, source class (`web | file | mcp | tool-output`), matched length, and the
    fingerprint — never the content.
-4. `agentwatch flow <id>` renders the graph; `--record` appends metadata-only observations.
+4. `agentsec-agentwatch flow <id>` renders the graph; `--record` appends metadata-only observations.
 
 Edge cases: large responses are capped and sampled; a shard matching many sinks is capped with a match
 count; empty/whitespace shards are ignored; a redacted source is matched over what remains stored.
@@ -37,7 +37,7 @@ gives each detected secret a stable **keyed fingerprint** (never the value) atta
 `secret-detected` evidence, so repeat sightings link. The exposure path is first sighting → each later
 record with the same fingerprint → whether any sink was a network/write/VCS action (the M17 classifier).
 
-`agentwatch secrets` prints one plain line per distinct credential:
+`agentsec-agentwatch secrets` prints one plain line per distinct credential:
 
 ```
 api-key 1f2e3d4c5b6a  sightings=2 rotate: recommended

@@ -1,6 +1,6 @@
 # agentwatch-analytics
 
-Behavior analytics service for `agentwatch` — reads raw traces from Jaeger/Tempo via the collector, normalizes spans, runs 35+ deterministic and 5 LLM-augmented anomaly detectors, and writes run summaries and anomalies to a Postgres read model.
+Behavior analytics service for `agentsec-agentwatch` — reads raw traces from Jaeger/Tempo via the collector, normalizes spans, runs 35+ deterministic and 5 LLM-augmented anomaly detectors, and writes run summaries and anomalies to a Postgres read model.
 
 ## Installation
 

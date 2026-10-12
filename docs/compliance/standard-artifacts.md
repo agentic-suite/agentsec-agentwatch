@@ -9,7 +9,7 @@ of truth.
 |---|---|---|---|
 | Security events | OCSF | `1.5.0` (`ocsf.OCSF_VERSION`) | `export-session --format ocsf` |
 | Event envelope | CloudEvents | `1.0` (`ocsf.CLOUDEVENTS_VERSION`) | `export-session --format cloudevents` |
-| Bill of materials | CycloneDX | `1.5` (`bom.CYCLONEDX_SPEC_VERSION`) | `agentwatch bom` |
+| Bill of materials | CycloneDX | `1.5` (`bom.CYCLONEDX_SPEC_VERSION`) | `agentsec-agentwatch bom` |
 
 ## Lossless-or-explicit
 
@@ -24,4 +24,4 @@ and the conformance tests in `tests/test_artifact_standards.py`.
 ## Evidence
 
 Each output is validated against its pinned version by `tests/test_artifact_standards.py`;
-unmapped fields are asserted present (`agentwatch export-session <id> --format ocsf`).
+unmapped fields are asserted present (`agentsec-agentwatch export-session <id> --format ocsf`).

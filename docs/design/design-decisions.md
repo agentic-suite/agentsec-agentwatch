@@ -14,7 +14,7 @@ Centralized decision log. Referenced as `DD-NN`. **All decisions below were acce
 | DD-08 | **v0.1.0 store:** append-only JSONL + hash chain; Postgres used for analytics in v0.2.0 | accepted | Simple, local-first, tamper-evident; matches the shipped analytics stack when it lands |
 | DD-09 | **Gate OTLP export** on a passing redaction self-test | accepted | Never export unredacted data (R7) |
 | DD-10 | **"Kept it on" measured locally**; the user shares it voluntarily — no silent telemetry | accepted | Privacy baseline (PRD 06) |
-| DD-11 | **Package names:** `agentwatch` (PyPI + npm); `@agentic-suite/cli` as the npx launcher | accepted | `agentwatch` is free on both registries |
+| DD-11 | **Package names:** `agentsec-agentwatch` (PyPI + npm); `@agentic-suite/cli` as the npx launcher | accepted | `agentsec-agentwatch` is free on both registries |
 | DD-12 | **Preserve shipped instrumentation** (`@trace_agent` / `TracedGraph`) and read-API shapes; ship a compat shim + migration note | accepted | Do not break existing agent-exec-trace users (PRD 10 §D) |
 | DD-13 | **License:** Apache-2.0, with `THIRD_PARTY_NOTICES` crediting the MIT-licensed `agent-exec-trace` | accepted | MIT → Apache-2.0 redistribution is permitted; attribution required |
 

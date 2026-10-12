@@ -22,7 +22,7 @@ Reported as ratios with numerators/denominators and the derivation version. `cos
 Unknown stays unknown. Deterministic: runs with network disabled and no model configured.
 
 Implementation (`agentwatch.outcomes`, `OUTCOME_DERIVATION_VERSION = "out1"`): `build_outcomes` (CLI
-`agentwatch outcomes --since 30d --by project|model|harness`) groups by session/project/model/harness and reports
+`agentsec-agentwatch outcomes --since 30d --by project|model|harness`) groups by session/project/model/harness and reports
 test/build/lint pass **ratios** (`Ratio(numerator, denominator)`; `value` is `None` at 0/0 — unknown stays unknown),
 retained / reverted / interrupted / rejected counts, and retries-to-success. Commands are classed by a published,
 deterministic table (`OUTCOME_RULES_VERSION = "cls2-out1"`, the cls1 extension); the outcome class is the record

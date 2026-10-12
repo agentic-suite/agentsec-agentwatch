@@ -2,7 +2,7 @@
 
 **BLUF:** agentwatch is a **transcoder, not an OTel backend** (D-Q). Instead of a
 hand-written adapter per framework, each certified recipe routes a framework's own
-OpenTelemetry into the **shared** `agentwatch ingest --format otel` path, where the
+OpenTelemetry into the **shared** `agentsec-agentwatch ingest --format otel` path, where the
 [OTel GenAI](../design/otel-mapping.md) and [OpenInference](https://github.com/Arize-ai/openinference)
 attribute vocabularies are mapped onto records with an **explicit `unmapped`
 bucket**. Each recipe is pinned, held to an O1 conformance pack, and carries an

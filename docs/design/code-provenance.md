@@ -23,7 +23,7 @@ Facts: session records (repo root, VCS revision at start, per-file-modification 
 A commit with no recorded session → "no recorded agent activity" (never "human"). Human edits after the agent →
 `mixed`. Coverage gaps in the window are flagged; no completeness claim beyond the chain.
 
-Implementation (`agentwatch.provenance.build_provenance`, CLI `agentwatch provenance`): a `GitFacts` source reads a
+Implementation (`agentwatch.provenance.build_provenance`, CLI `agentsec-agentwatch provenance`): a `GitFacts` source reads a
 commit's changed paths and hunks read-only (`git show --unified=0`, never writing to the repo) and degrades to an
 honest `unavailable`/unknown instead of guessing; PR targets resolve offline by matching a merge/squash subject
 `(#N)`. Records are joined by normalized path + a session window (default 7 d) and a direct session-start `vcs.commit`
@@ -70,7 +70,7 @@ explicit `unmapped` bucket. A read-only reader (`read_agent_trace`) accepts exis
 ## Concurrency (CNC-1)
 
 Parallel / worktree / background agents edit the same paths; `blame`/`at` show no overlap, so attribution can silently
-pick the wrong session. `agentwatch.concurrency.build_concurrency` (CLI `agentwatch concurrency --project . --since 7d`)
+pick the wrong session. `agentwatch.concurrency.build_concurrency` (CLI `agentsec-agentwatch concurrency --project . --since 7d`)
 is a deterministic, evidence-only report: the per-session activity span (min `started_at` .. max `ended_at`), every
 **overlap** where two sessions' spans intersect on at least one shared path, and the set of **shared-file edits** (a
 path touched by more than one session). `provenance` consumes the same fact: a range covered by two or more sessions is

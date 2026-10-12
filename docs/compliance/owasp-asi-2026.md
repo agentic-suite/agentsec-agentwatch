@@ -1,6 +1,6 @@
 # OWASP Agentic coverage map (ASI 2026 + AST10) — executable evidence
 
-**BLUF:** `agentwatch compliance report --framework owasp-asi-2026` renders one row per OWASP Top 10 for
+**BLUF:** `agentsec-agentwatch compliance report --framework owasp-asi-2026` renders one row per OWASP Top 10 for
 Agentic Applications 2026 risk (ASI01–ASI10) and a section for the Agentic Skills Top 10 (AST01–AST10). Each row
 states **what the record evidences**, the **command that regenerates it** (or `not evidenced`), **what it cannot
 evidence**, and a **fidelity tier**. It cites regenerable evidence or says plainly that the record cannot

@@ -26,7 +26,7 @@ DOCS = [
 ]
 
 _LINK = re.compile(r"\]\(([^)]+)\)")
-_COMMAND = re.compile(r"`agentwatch [^`]+`")
+_COMMAND = re.compile(r"`agentsec-agentwatch [^`]+`")
 
 
 @pytest.mark.parametrize("doc", DOCS, ids=lambda p: p.name)

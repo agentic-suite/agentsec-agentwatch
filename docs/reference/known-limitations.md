@@ -9,7 +9,7 @@ Status: living.
 - ~~Batch polling only (~30 s ingestion delay), not streaming.~~ **Left in M26 (G1):** the STR-1 transport + STR-2
   store-truth back-fill (`agentwatch.live`) and the STR-3 streaming soak replace batch-only polling (proving tests:
   `tests/test_live_tail.py`, `tests/test_streaming_soak.py`). The operator live views (UI-1) are re-pointed to M30.
-- ~~No distributed trace correlation across services.~~ **Left in M26 (G2):** `agentwatch trace <tid>` / `replay
+- ~~No distributed trace correlation across services.~~ **Left in M26 (G2):** `agentsec-agentwatch trace <tid>` / `replay
   --trace` reconstruct one causal chain across hosts/sessions via `traceparent`, with clock-skew handling (proving
   test: `tests/test_trace.py`).
 - No multi-tenant isolation.
@@ -18,27 +18,27 @@ Status: living.
   non-silent on the field-test matrix, with generated, drift-guarded precision/recall in the catalog (proving test:
   `services/analytics/tests/test_detector_non_silent.py`).
 - ~~No memory-audit.~~ **Closed in M28 (DET-7):** memory read/write/delete are recorded (metadata always;
-  content gated by privacy mode) and filterable with `agentwatch search --memory` (proving test:
+  content gated by privacy mode) and filterable with `agentsec-agentwatch search --memory` (proving test:
   `packages/python-sdk/tests/test_memory_surface.py`). A dedicated memory-audit **UI** is still absent.
 - No PydanticAI adapter; no policy-overlay view.
 - **Phased to v0.2.x (M28 cut-line, declared not dropped):** the derived Postgres query tier (`PG-1..3` →
   M30, re-sequenced behind the embedded index `LUI-2`), a system-effects ingest (`SYS-1`), and an ACS
   Guardian ingest (`ACS-1`) → M29 (need external specs/captures). **A2A interposition + signed-card
-  provenance (`A2A-1/2`) shipped in M29** (`agentwatch a2a-proxy`; see below).
+  provenance (`A2A-1/2`) shipped in M29** (`agentsec-agentwatch a2a-proxy`; see below).
   M30, re-sequenced behind the embedded index `LUI-2`), and A2A interposition/provenance (`A2A-1/2`) → M29
   (need external specs/captures). *(Landed in M29: a system-effects ingest (`SYS-1`) and an ACS Guardian
   ingest (`ACS-1`); see below.)*
-- **System-effects ingest (`SYS-1`, M29) is Linux-only.** `agentwatch ingest --format system-ingest`
+- **System-effects ingest (`SYS-1`, M29) is Linux-only.** `agentsec-agentwatch ingest --format system-ingest`
   reads an AgentSight/Tracee-shaped foreign stream and is **opt-in** (`--consent`); every record is labeled
   `source: system-ingest`, a lineage not owned by exactly one session is `unjoined` (never guessed), and the
   synthetic-corpus false-join precision is published (1.00/1.00). agentwatch **does not build probes**
   (Linux-root eBPF); macOS/Windows are the declared gap. `platform_covered("darwin") is False`.
-- **ACS Guardian ingest (`ACS-1`, M29) is monitor-only and revision-pinned.** `agentwatch ingest --format acs`
+- **ACS Guardian ingest (`ACS-1`, M29) is monitor-only and revision-pinned.** `agentsec-agentwatch ingest --format acs`
   reads a Guardian audit trail (ACS v0.1.0 JSON-RPC) and records `deny`/`modify`/`ask`/`defer` as
   `denied`/`policy-fired` with `record_phase: pre_execution`; enforcement stays in the Guardian and agentwatch
   never executes a decision. The spec is young (watch item): signature and SessionContext-chain verification
   (the ACS Crypto/Audit profiles) are **not** done, and the emit-side spike (PRD 45 §ACS-1b) is not built.
-- **Capability inventory (`CAP-1`, M30) covers Claude Code today.** `agentwatch inventory --capabilities` reads
+- **Capability inventory (`CAP-1`, M30) covers Claude Code today.** `agentsec-agentwatch inventory --capabilities` reads
   skills, plugins, hooks, subagents, commands, rules files and MCP servers under `~/.claude` / `<project>/.claude`
   (plus best-effort managed paths) by **content digest**; Cursor, Codex CLI and Gemini CLI are declared `none` in the
   per-harness coverage matrix, and memory is `none` for every harness pending `MEM-1`. `bom --format cyclonedx`
@@ -88,11 +88,11 @@ Status: living.
   assumed, not captured. Real fixtures for those land in later milestones (M14 field tests / N4 version matrix).
 - Cursor cloud agents (cursor.com/agents) do not run the `sessionStart`/`sessionEnd`/MCP/Tab/`workspaceOpen`
   hooks; this is a declared gap (`cloud-agent-hook-events`), not a silent one.
-- MCP interposition (`agentwatch mcp-proxy`, M10 N1) records `tools/call` over **stdio and Streamable HTTP**
+- MCP interposition (`agentsec-agentwatch mcp-proxy`, M10 N1) records `tools/call` over **stdio and Streamable HTTP**
   (2026-07-28; the legacy HTTP/SSE relay is kept via `--transport http-sse` and is deprecated-in-spec — see
   `tests/test_mcp_streamable_http.py`). The streamable transport is stateless: sessions were removed, so
   `Mcp-Session-Id` is neither required, forwarded, nor emitted.
-  `agentwatch init --mcp-proxy` re-points `.mcp.json`/`~/.claude.json` and `uninstall` restores it
+  `agentsec-agentwatch init --mcp-proxy` re-points `.mcp.json`/`~/.claude.json` and `uninstall` restores it
   byte-identically. MCP `resources/read` and resource links in tool results (MCP-2), `prompts/get` (MCP-3),
   elicitation (MCP-4, linked to approval provenance), and `tasks/*` (MCP-5) are recorded; the resource URI /
   prompt name / task id ride as metadata (`search --mcp-resource`). **Roots/Sampling/Logging are closed-by-spec
@@ -100,7 +100,7 @@ Status: living.
   roadmap. This retires the former `sampling` gap: it left by the standard, not by us.
   HTTP mode holds each forwarded request/response in memory (bounded by the upstream body); a truly
   unbounded SSE stream is relayed while open but only its `data:` frames are parsed.
-- **A2A interposition** (`agentwatch a2a-proxy`, M29 A2A-1) records A2A `message/send`, `message/stream`,
+- **A2A interposition** (`agentsec-agentwatch a2a-proxy`, M29 A2A-1) records A2A `message/send`, `message/stream`,
   `tasks/get`, and `tasks/cancel` (intent → outcome), task artifacts, and agent-card exchanges over stdio
   and HTTP; `tasks/resubscribe` and the push-notification-config family are declared gaps (relayed, never
   silently dropped). Consent-first install re-points an A2A client's `a2aAgents` entries and `uninstall`
@@ -112,7 +112,7 @@ Status: living.
   no whitespace); full JCS number-normalization is a declared gap. A cross-agent hand-off is recorded as an
   `agent-delegation` observation that extends `tree`/`trace` across org boundaries; it is evidence of an
   on-behalf-of hop, never a verdict.
-- OTel/NDJSON ingestion (`agentwatch ingest`, M10 N2) is a **transcoder, not a general OTel backend**
+- OTel/NDJSON ingestion (`agentsec-agentwatch ingest`, M10 N2) is a **transcoder, not a general OTel backend**
   (D-Q): it maps GenAI spans/attributes onto records + security events and quarantines what does not
   normalize. OTLP JSON and newline-delimited JSON only — not OTLP/gRPC or protobuf — and a huge OTLP JSON
   document is loaded whole (NDJSON streams line-by-line).
@@ -155,12 +155,12 @@ Status: living.
   fleet/multi-tenant tier (PRD 41 PG-2, re-sequenced behind the embedded index in ADR-0035/EXT-8) and is not
   built here (proving tests: `test_query_index.py::test_import_does_not_pull_pyarrow`,
   `test_query_index.py::test_rebuild_is_bit_for_bit`).
-- `agentwatch ui` (M30 LUI-1) is a **single-operator, loopback-only** console over the local chain store; it has
+- `agentsec-agentwatch ui` (M30 LUI-1) is a **single-operator, loopback-only** console over the local chain store; it has
   no accounts, roles, or remote access (that is the fleet/Postgres tier, P7/GOV role model, PRD 56). It is
   read-only and refuses non-loopback Host headers, but it is not a hardened multi-user service (proving tests:
   `test_console.py::test_console_binds_loopback_even_when_asked_otherwise`,
   `test_console.py::test_console_rejects_a_non_loopback_host_header`).
-- The agent-facing MCP server (`agentwatch mcp-serve`, **30.AGI-1**) is **read-only and off by default**
+- The agent-facing MCP server (`agentsec-agentwatch mcp-serve`, **30.AGI-1**) is **read-only and off by default**
   (`--enable`); it exposes no mutating tool and cannot enforce or block. Its responses are labeled
   `untrusted-data` with record citations and every query is recorded as a metadata-only `store-access`
   record; a client that ignores the label still receives no instruction channel. Injection-shaped record
@@ -195,7 +195,7 @@ Status: living.
   git-ai notes, and writing its own notes requires the explicit `export-session --format agent-trace --write-notes`
   command (proving test:
   `packages/python-sdk/tests/test_provenance.py::test_agent_trace_default_export_writes_nothing_to_the_repo`).
-- **Concurrency (M30 CNC-1) — declared gap.** `agentwatch concurrency` is a **report only**: overlaps are derived
+- **Concurrency (M30 CNC-1) — declared gap.** `agentsec-agentwatch concurrency` is a **report only**: overlaps are derived
   from recorded `started_at`/`ended_at` intervals (a session that never sets `ended_at` collapses to a point) and
   shared-file edits from classified file-modification targets; it enforces nothing and the PRD asks to validate demand
   in the field before building beyond the report (proving test:
@@ -206,7 +206,7 @@ Status: living.
   without one the denominator is preserved as **unknown**, never guessed — and a session that never sets `ended_at`
   yields a point span (proving test:
   `packages/python-sdk/tests/test_outcomes.py::test_cost_per_unknown_denominator_is_none`).
-- Incident cases (`agentwatch case`, M30 IR-1) reconstruct a merged timeline from **one local store**: a case
+- Incident cases (`agentsec-agentwatch case`, M30 IR-1) reconstruct a merged timeline from **one local store**: a case
   crossing machines requires those stores to be pooled first (there is no cross-host case transport). A
   store-level tombstone cannot be attributed to a member session after the fact (its payload is dropped), so
   it is reported as a store-level `tombstone` gap and never guessed into a session. Case export is manual and
@@ -231,7 +231,7 @@ Status: living.
   1.0. Encoded/structured secrets remain a gap (proving test:
   `packages/python-sdk/tests/test_redact_eval.py::test_known_misses_are_listed_as_known_limitations`).
 
-- **The `agentwatch` name collides with namesakes; the ADR-0026 full rename is deferred to v0.3.0.** v0.2.0 ships
+- **The `agentsec-agentwatch` name collides with namesakes; the ADR-0026 full rename is deferred to v0.3.0.** v0.2.0 ships
   under the `agentsec-agentwatch` distribution with the NAM-1 install-confusion warning (`agentwatch.naming`;
   `doctor` distribution check) and the [namesake FAQ](namesake-faq.md). Proven by
   `packages/python-sdk/tests/test_naming.py`; recorded in [ADR-0026](../adr/0026-naming-decision.md).

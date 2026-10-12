@@ -3,7 +3,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyPI](https://img.shields.io/badge/pypi-agentsec--agentwatch-blue.svg)](https://pypi.org/project/agentsec-agentwatch/)
-[![Status: v0.2.0](https://img.shields.io/badge/status-v0.2.0-green.svg)](docs/release/v0.2.0/release-notes.md)
+[![Status: v0.3.0](https://img.shields.io/badge/status-v0.3.0-green.svg)](CHANGELOG.md)
 [![Ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Type checked: mypy strict](https://img.shields.io/badge/mypy-strict-blue.svg)](https://github.com/python/mypy)
 [![Coverage](https://img.shields.io/badge/coverage-95%25%20gate-green.svg)](https://github.com/agentic-suite/agentsec-agentwatch/actions)
@@ -15,21 +15,21 @@
 > *why* an agent looped, overused a tool, or burned budget — plus the open security-event schema the
 > [agentic-suite](https://github.com/agentic-suite) is built on.
 
-**Status: v0.2.0 released** — feature-complete, documented, and validated at the release gate (the v0.2.0
-field test ran all 94 cases: **92 PASS · 0 FAIL**). See the
-[v0.2.0 release notes](docs/release/v0.2.0/release-notes.md) and the
-[release checklist](docs/release/v0.2.0/release-checklist.md).
+**Status: v0.3.0** — identity & structure release: the org, repos, package import, and CLI are renamed
+(renames only, no code change). The v0.2.0 field test remains the latest field validation — **92 PASS · 0 FAIL**
+across 94 cases; **no v0.3.0 field-test report was produced**. See the [CHANGELOG](CHANGELOG.md) and the
+[v0.3.0 migration guide](docs/release/v0.3.0/migration-guide.md).
 
 ---
 
 ## Install & Quick Start
 
 ```sh
-pip install agentsec-agentwatch        # Python CLI + SDK (import + CLI: agentwatch)
-agentsec-agentwatch --help                      # list commands
+pip install agentsec-agentwatch        # Python SDK + CLI (import: agentsec_agentwatch; CLI: agentsec-agentwatch)
+agentsec-agentwatch --help             # list commands
 
 # install hooks + local daemon (monitor-only, zero agent-side code changes)
-npx @agentic-suite/cli init       # or: pipx run agentwatch init
+agentsec-agentwatch init               # or: pipx run agentsec-agentwatch init
 
 # use Claude Code normally, then reconstruct a session
 agentsec-agentwatch sessions                    # list recorded sessions
@@ -37,15 +37,15 @@ agentsec-agentwatch replay <session-id>         # replay the action timeline
 agentsec-agentwatch verify-store                # verify the hash chain
 ```
 
-The recording path: `agentsec-agentsec-agentwatch-hook` (called by Claude Code's `PreToolUse`/`PostToolUse` hooks) forwards
-events to `agentsec-agentsec-agentwatch-daemon`, which normalizes them to validated, redacted records. See the
+The recording path: `agentsec-agentwatch-hook` (called by Claude Code's `PreToolUse`/`PostToolUse` hooks) forwards
+events to `agentsec-agentwatch-daemon`, which normalizes them to validated, redacted records. See the
 [hook contract](docs/design/claude-code-hook-contract.md). Configuration is layered and fail-closed — see
 the [CLI reference](docs/reference/cli-reference.md) and [PRD 16](docs/prd/16-configuration.md).
 
 New here? Follow the [Tutorials](docs/tutorials/README.md), read the
 [Architecture tour](docs/design/architecture-tour.md), and keep the
-[Runbooks](docs/runbooks/README.md) handy. Upgrading from `agent-exec-trace`? See the
-[Migration Guide](docs/release/v0.1.0/migration-guide.md).
+[Runbooks](docs/runbooks/README.md) handy. Upgrading from v0.2.x (or `agent-exec-trace`)? See the
+[Migration Guide](docs/release/v0.3.0/migration-guide.md).
 
 ### See it before installing
 

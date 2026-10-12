@@ -46,7 +46,7 @@ or pass `--capture` explicitly. No content is ever written unredacted.
 
 `gen_ai.usage.*` tokens and a gateway-reported cost
 (`gen_ai.usage.cost` / `portkey.cost` / `litellm.cost`) are captured onto the
-record. `agentwatch cost` **prefers the exact gateway number** over the local
+record. `agentsec-agentwatch cost` **prefers the exact gateway number** over the local
 pricing table and stamps each row `exact`, `estimated`, `mixed`, or `unknown`
 (also shown in `--json`), so a gateway deployment reports what the provider
 actually charged rather than a table estimate.

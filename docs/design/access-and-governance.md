@@ -10,7 +10,7 @@ employee-monitoring rollouts; **not legal advice** — counsel review before any
 
 ## Role × data-class matrix (ACC-1)
 
-Implemented in `agentwatch.access`; published by `agentwatch access matrix`.
+Implemented in `agentwatch.access`; published by `agentsec-agentwatch access matrix`.
 
 | Role | metadata | identity (hashed) | identity (resolved) | content | evidence bundle |
 |---|---|---|---|---|---|
@@ -28,20 +28,20 @@ arguments. ADR-0040.
 ## Access log
 
 A user can list, from their own machine, who (by role) accessed their records and when — because every cross-user read is a
-`store-access` record and the chain is queryable: `agentwatch access log --owner <id>`.
+`store-access` record and the chain is queryable: `agentsec-agentwatch access log --owner <id>`.
 
 Role *assignment* (which human holds which role, under a managed policy) is owned by 29.DEP-1 (PRD 50, WS-B); this
 module defines and enforces the model and the recording boundary that path must adopt.
 
 ## Notice & DPIA starter (ACC-2)
 
-Implemented in `agentwatch.governance`; `agentwatch governance notice` renders, from the live effective config
+Implemented in `agentwatch.governance`; `agentsec-agentwatch governance notice` renders, from the live effective config
 (`config explain`): what is recorded, what is not, who can see it, retention, how to request erasure. **Every statement
 maps to a config key or documented guarantee** (a statement naming an unknown key fails loudly at construction);
 unbackable statements are omitted and listed ("refused to claim") so the notice cannot over-promise (e.g., "never leaves
 the machine" while an export or event sink is enabled, or any legal-determination claim). A DPIA starter in
 [`docs/compliance/dpia-starter.md`](../compliance/dpia-starter.md) carries a "not legal advice" banner and embeds the
-`agentwatch governance notice` command.
+`agentsec-agentwatch governance notice` command.
 
 ## Identity hashing
 

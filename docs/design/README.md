@@ -36,7 +36,7 @@ Subsystem designs and architecture for agentwatch. Design decisions are centrali
 | [native-telemetry-join.md](native-telemetry-join.md) | Harness-native OTel ingest + `tool_use_id` join (v0.2.0-expanded) | proposed |
 | [capability-supply-chain.md](capability-supply-chain.md) | Skills/plugins/hooks/rules/memory inventory, drift, load attribution (v0.2.0-expanded) | proposed |
 | [code-provenance.md](code-provenance.md) | `provenance`, Agent Trace export/ingest, range+hash capture (v0.2.0-expanded) | proposed |
-| [local-console.md](local-console.md) | `agentwatch ui` + embedded rebuildable query index (v0.2.0-expanded) | proposed |
+| [local-console.md](local-console.md) | `agentsec-agentwatch ui` + embedded rebuildable query index (v0.2.0-expanded) | proposed |
 | [agent-interfaces.md](agent-interfaces.md) | Read-only MCP server, skill, versioned CLI JSON contract (v0.2.0-expanded) | proposed |
 | [policy-from-history.md](policy-from-history.md) | `suggest-policy` + `what-if` (advisory) (v0.2.0-expanded) | proposed |
 | [access-and-governance.md](access-and-governance.md) | Fleet access model, access log, notice/DPIA (v0.2.0-expanded) | proposed |

@@ -25,6 +25,6 @@ Status: **implemented** (v0.1.0 M12) — verified by `tests/test_sizing.py` and 
 
 ## Fleet (v0.1.0, opt-in R13/M11)
 
-- Multi-host aggregation is opt-in and self-hosted (`agentwatch fleet`): a host's local store is
+- Multi-host aggregation is opt-in and self-hosted (`agentsec-agentwatch fleet`): a host's local store is
   ingested into a self-hosted aggregate, each record tagged with `host`. Sizing is additive — the
   aggregate store holds one copy per host plus the local store. No egress.

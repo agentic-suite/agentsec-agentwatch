@@ -25,7 +25,7 @@ agentsec-agentwatch search --session <session-id> --json   # approval + hashed p
 ## Verify
 
 - [ ] Telemetry reaches the collector/outfile (check before ingest).
-- [ ] `agentwatch ingest` validates records; unmappable spans are quarantined with a reason.
+- [ ] `agentsec-agentwatch ingest` validates records; unmappable spans are quarantined with a reason.
 - [ ] `active_approval_mode` maps to `approval`; `user.email` is a **hashed** principal; ids map to identity.
 
 ## Notes / limitations

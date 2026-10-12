@@ -21,7 +21,7 @@ system-event stream, never by probing.
 - **We do not build probes.** Linux-root eBPF violates our portability/trust
   posture (PRD 45 §SYS-1). This is a reader for a stream a host already produced.
 - **Linux, opt-in.** :data:`agentwatch.system_ingest.SUPPORTED_PLATFORMS` is
-  `{"linux"}`. `agentwatch ingest --format system-ingest` refuses without
+  `{"linux"}`. `agentsec-agentwatch ingest --format system-ingest` refuses without
   `--consent`; the library refuses without `opted_in=True`.
 - **Declared gap elsewhere.** macOS/Windows are **not covered**
   (`platform_covered("darwin") is False`); the gap is published, not hidden.

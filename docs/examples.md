@@ -1,6 +1,6 @@
 # Examples
 
-Ready-to-run examples showing how to instrument agents with the `agentwatch` SDK.
+Ready-to-run examples showing how to instrument agents with the `agentsec-agentwatch` SDK.
 
 ---
 

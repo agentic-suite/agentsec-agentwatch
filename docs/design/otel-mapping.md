@@ -57,7 +57,7 @@ spans**. v0.2.0 ([PRD 41](../prd/41-standards-and-interop-ii.md) OTEL-1..4):
 
 ### OTLP protobuf / gRPC ingest (OTEL-3)
 
-`agentwatch ingest --format otel <source>` auto-detects input: valid JSON takes the
+`agentsec-agentwatch ingest --format otel <source>` auto-detects input: valid JSON takes the
 unchanged JSON path, and a bare OTLP protobuf `ExportTraceServiceRequest` is decoded via
 `opentelemetry-proto` and normalized into the same `transcode_otel` mapping (trace/span
 ids base64→hex, so records carry the OTLP hex ids). `--format otlp-grpc` decodes a

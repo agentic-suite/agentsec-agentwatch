@@ -7,9 +7,13 @@ versioning: [Semantic Versioning](https://semver.org/).
 
 ### Changed
 - **Org rename (v0.3.0 M33):** the GitHub org `agentsec-ecosystem` → `agentic-suite`; every active repo moved
-  with it and took the `agentsec-*` ecosystem prefix (`agentwatch` → `agentsec-agentwatch`); the npm scope
-  `@agentsec-ecosystem/*` → `@agentic-suite/*`. Old repo URLs redirect. WBS:
-  `docs/wbs/v0.3.0/wbs-v0.3.0-index.md` (§ORG-1…§ORG-9).
+  with it and took the `agentsec-*` ecosystem prefix (`agentwatch` → `agentsec-agentwatch`). Old repo URLs
+  redirect. WBS: `docs/wbs/v0.3.0/wbs-v0.3.0-index.md` (§ORG-1…§ORG-9).
+- **Package/import/CLI rename (v0.3.0 M34, ADR-0026):** the import module `agentwatch` → `agentsec_agentwatch`
+  and the console scripts `agentwatch`/`-hook`/`-daemon`/`-mcp-proxy`/`-a2a-proxy` → `agentsec-agentwatch[-…]`.
+  The PyPI distribution stays `agentsec-agentwatch`. `import agentwatch`, the old CLI names, and the
+  `agent_exec_trace` path keep working across the v0.3.x window via shims. Migration guide:
+  `docs/release/v0.3.0/migration-guide.md`. (npm is not used.)
 
 ## [0.2.1] - 2026-10-09
 

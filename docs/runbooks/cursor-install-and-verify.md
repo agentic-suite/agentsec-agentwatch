@@ -22,9 +22,9 @@ agentsec-agentwatch coverage --harness cursor
 
 ## Verify
 
-- [ ] `agentwatch sessions` shows a Cursor session after a tool call.
-- [ ] `agentwatch replay <id>` reconstructs reads/edits/reasoning steps.
-- [ ] `agentwatch coverage --harness cursor` reports no unexplained gaps.
+- [ ] `agentsec-agentwatch sessions` shows a Cursor session after a tool call.
+- [ ] `agentsec-agentwatch replay <id>` reconstructs reads/edits/reasoning steps.
+- [ ] `agentsec-agentwatch coverage --harness cursor` reports no unexplained gaps.
 
 ## Notes / limitations
 

@@ -1,6 +1,6 @@
 # Design — Impact Classification Table
 
-**BLUF:** `agentwatch impact`/`blame`/`denials` classify already-redacted records into **facts** — files
+**BLUF:** `agentsec-agentwatch impact`/`blame`/`denials` classify already-redacted records into **facts** — files
 touched, side-effecting commands, network destinations, VCS actions, credential-adjacent touches — with a
 deterministic, **published** pattern table. Every entry carries `confidence: exact | heuristic`, and
 anything unmatched lands in a surfaced `unclassified` bucket. It is descriptive, never a verdict.

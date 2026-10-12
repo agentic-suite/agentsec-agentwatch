@@ -28,7 +28,7 @@ Two independent implementations must agree with the table:
 
 1. **`agentwatch.store.RecordStore.verify()`** — the product verifier.
 2. **[`verify_store.py`](verify_store.py)** — a standalone, dependency-free
-   reference verifier (stdlib only; imports nothing from `agentwatch`). This is
+   reference verifier (stdlib only; imports nothing from `agentsec-agentwatch`). This is
    the reference the M15 **S12** standalone verifier will formalize.
 
 CI runs both against the table (`packages/python-sdk/tests/test_store_vectors.py`);
@@ -82,7 +82,7 @@ Two independent implementations must agree with the table:
 1. **`agentwatch.aat.verify_aat_report()`** — the product verifier (with
    `verify_aat()` as the boolean convenience form).
 2. **[`verify_aat.py`](verify_aat.py)** — a standalone, dependency-free
-   reference verifier (stdlib only; imports nothing from `agentwatch`).
+   reference verifier (stdlib only; imports nothing from `agentsec-agentwatch`).
 
 CI runs both against the table (`packages/python-sdk/tests/test_aat_vectors.py`);
 a verdict that differs between implementations is a contract bug, surfaced.

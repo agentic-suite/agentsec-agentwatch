@@ -8,7 +8,7 @@
   JSONL store. NFR-5 requires a recorded decision before any new runtime dependency.
 - **Decision:**
   1. **The general-case query tier is an embedded, rebuildable index over the chain store.** It is built from
-     the store, used by the CLI (`agentwatch index`, and by `search`/`sessions` when fresh) and the console,
+     the store, used by the CLI (`agentsec-agentwatch index`, and by `search`/`sessions` when fresh) and the console,
      and is deletable at any time: deleting it loses nothing, every command still works (slower) by reading the
      chain, and it rebuilds **bit-for-bit** from the chain. The chain stays the sole source of truth (ADR-0019).
   2. **No heavyweight runtime dependency.** The index is a stdlib `sqlite3` artifact — the only new dependency

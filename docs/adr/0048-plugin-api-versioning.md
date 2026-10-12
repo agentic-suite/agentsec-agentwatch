@@ -11,7 +11,7 @@
   `conformance.AdapterSpec`, `conformance.register`, and the conformance runner are stable, versioned with
   `agentwatch.protocol.PROTOCOL_VERSION` — **additive within a minor, breaking only in a major with a
   deprecation cycle**. A registered adapter must ship a populated conformance pack (O1) or CI fails. The
-  `agent_exec_trace` → `agentwatch` codemod is the supported migration for the legacy import name.
+  `agent_exec_trace` → `agentsec-agentwatch` codemod is the supported migration for the legacy import name.
 - **Consequences:** The versioning statement lives in the
   [backwards-compatibility policy](../reference/backwards-compatibility-policy.md); the
   [contribution guide](../../CONTRIBUTING.md) documents the "works with X" paths. Community adapters cannot

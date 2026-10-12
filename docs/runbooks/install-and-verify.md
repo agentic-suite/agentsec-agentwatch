@@ -4,7 +4,7 @@ Goal: record the first Claude Code tool call in ≤15 minutes and confirm it.
 
 ```sh
 # install hooks + local daemon (monitor-only)
-npx @agentic-suite/cli init      # or: pipx run agentwatch init
+agentsec-agentwatch init      # or: pipx run agentsec-agentwatch init
 # default scope is the project file .claude/settings.local.json;
 # use `init --scope user` to install for all projects (~/.claude/settings.json)
 
@@ -18,8 +18,8 @@ agentsec-agentwatch replay <id>   # reconstruct the timeline
 
 ## Verify
 
-- [ ] `agentwatch status` shows recording active.
-- [ ] A tool call appears in `agentwatch sessions` within the ingestion window.
+- [ ] `agentsec-agentwatch status` shows recording active.
+- [ ] A tool call appears in `agentsec-agentwatch sessions` within the ingestion window.
 - [ ] Redaction self-test passes before any export.
 
 ## Troubleshoot

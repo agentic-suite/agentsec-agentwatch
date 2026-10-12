@@ -30,7 +30,7 @@
 | **Oversight** | The report of authorization mix, sessions by mode, human prompts, and a destructive×authorization cross-tab. |
 | **Store-access** | A metadata-only record that a read/query (incl. MCP serve, pull) touched the store. |
 | **Outcome fact** | A deterministic, non-scoring ratio/count (test/build/lint pass, retained/reverted, retries) with a derivation version. |
-| **Incident case** | A named grouping of sessions with a merged, gap-annotated timeline and an offline-verifiable bundle (`agentwatch case`). |
+| **Incident case** | A named grouping of sessions with a merged, gap-annotated timeline and an offline-verifiable bundle (`agentsec-agentwatch case`). |
 | **Runner segment** | A sealed, self-verifying segment from an ephemeral/CI runner, imported with a `source: runner` chain-of-custody record. |
 | **Evidence bundle** | A self-contained, offline-verifiable bundle (chain + coverage + privacy verdicts); re-verified with no store. |
 | **ASI** | OWASP Top 10 for Agentic Applications (2026) + Agentic Skills Top 10; `compliance report --framework owasp-asi-2026`. |

@@ -63,7 +63,7 @@ agentsec-agentwatch never persists secrets, and contributions must not either.
 
 ## Legacy import name
 
-New code imports `agentwatch`. If you are migrating an older codebase that imports `agent_exec_trace`, run the
+New code imports `agentsec-agentwatch`. If you are migrating an older codebase that imports `agent_exec_trace`, run the
 codemod:
 
 ```sh

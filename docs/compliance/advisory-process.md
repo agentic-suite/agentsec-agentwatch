@@ -34,4 +34,4 @@ release gate.
 
 `docs/compliance/openssf-badge.md` lists the vulnerability-reporting criterion as
 met; the dry-run advisory and its OSV linkage are validated by the release gate
-(`agentwatch verify-release`).
+(`agentsec-agentwatch verify-release`).

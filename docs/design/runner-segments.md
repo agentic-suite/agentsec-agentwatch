@@ -19,7 +19,7 @@ Exported as a CI artifact (the user uploads it; agentwatch performs no egress).
 
 ## Import & custody
 
-`agentwatch import-segment seg.zip` verifies the segment chain + attestation and **anchors** it into the local store as a
+`agentsec-agentwatch import-segment seg.zip` verifies the segment chain + attestation and **anchors** it into the local store as a
 `source: runner` chain-of-custody record. `verify-store` and `evidence` handle it. The integrity distinction is preserved
 and visible in `union`/`sessions`/`provenance`. Tampering fails verification.
 
@@ -40,9 +40,9 @@ Redacted records only; attack pack passes on segments; zero egress by default.
 
 ## Implementation
 
-`agentwatch.runner_segments`. `agentwatch segment export --session S --runner R --run-id ID [--traceparent TP]`
-seals the session's records; `agentwatch segment verify <seg.zip>` re-verifies offline; `agentwatch import-segment
-<seg.zip>` verifies and anchors; `agentwatch segment custody` labels every record local-witnessed vs imported
+`agentwatch.runner_segments`. `agentsec-agentwatch segment export --session S --runner R --run-id ID [--traceparent TP]`
+seals the session's records; `agentsec-agentwatch segment verify <seg.zip>` re-verifies offline; `agentsec-agentwatch import-segment
+<seg.zip>` verifies and anchors; `agentsec-agentwatch segment custody` labels every record local-witnessed vs imported
 runner. Members: `records.ndjson` (own chain rows), `segment.json`, `attestation.json`, `manifest.json`. Imported
 records get `producer.kind=import`, `producer.name=runner-segment` and are marked `source: runner`,
 `locally_witnessed=false`. Sealing/import refuse `privacy_mode=full` records. A `traceparent` joins the runner

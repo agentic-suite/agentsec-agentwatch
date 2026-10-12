@@ -1,6 +1,6 @@
 # Reference — Error Contract (v0.1.0)
 
-**BLUF:** Every `agentwatch` CLI failure emits exactly **one** machine-readable JSON envelope on
+**BLUF:** Every `agentsec-agentwatch` CLI failure emits exactly **one** machine-readable JSON envelope on
 stderr, with a stable `code`, a human `message`, a `hint`, and a `doc_url`. The exit-code table below
 is generated from `agentwatch.errors` ([PRD 38 §Q8](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/prd/38-engineering-rigor.md)).
 
@@ -34,13 +34,13 @@ distinct values below (`1`, `2`, `3`).
 <!-- BEGIN GENERATED: exit-codes -->
 | Code | Exit | Meaning | Hint |
 |---|---|---|---|
-| `E_USAGE` | `2` | Bad arguments or an unknown subcommand/flag (argparse usage error). | Run `agentwatch <command> --help` and re-run. |
+| `E_USAGE` | `2` | Bad arguments or an unknown subcommand/flag (argparse usage error). | Run `agentsec-agentwatch <command> --help` and re-run. |
 | `E_CONFIG` | `2` | Configuration is invalid, unknown, or missing an explicit `--config` file (fail-closed). | Fix or remove the reported key/value; configuration is strict. |
-| `E_INSTALL` | `1` | install/hook/daemon lifecycle failed, or a check ran and failed. | Run `agentwatch doctor` for the failing check. |
+| `E_INSTALL` | `1` | install/hook/daemon lifecycle failed, or a check ran and failed. | Run `agentsec-agentwatch doctor` for the failing check. |
 | `E_NOT_IMPLEMENTED` | `3` | The subcommand is wired but not implemented in this milestone. | See the WBS for the milestone that lands it. |
-| `E_CHAIN_BROKEN` | `1` | The store hash chain did not verify. | Run `agentwatch sessions --check` or `agentwatch verify-store` for the break. |
-| `E_SESSION_NOT_FOUND` | `1` | No records exist for the requested session. | Run `agentwatch sessions` to list recorded sessions. |
-| `E_DAEMON_UNREACHABLE` | `1` | The daemon could not be reached. | Run `agentwatch init` or `agentwatch status` to check the daemon. |
+| `E_CHAIN_BROKEN` | `1` | The store hash chain did not verify. | Run `agentsec-agentwatch sessions --check` or `agentsec-agentwatch verify-store` for the break. |
+| `E_SESSION_NOT_FOUND` | `1` | No records exist for the requested session. | Run `agentsec-agentwatch sessions` to list recorded sessions. |
+| `E_DAEMON_UNREACHABLE` | `1` | The daemon could not be reached. | Run `agentsec-agentwatch init` or `agentsec-agentwatch status` to check the daemon. |
 | `E_CONFIRMATION_REQUIRED` | `1` | A destructive action was refused without confirmation. | Re-run with `--yes` if the action is intended. |
 | `E_NO_TRANSCRIPTS` | `1` | No transcripts were found to import. | Pass an explicit path or check the source directory. |
 | `E_NO_SOURCES` | `1` | No sources were found to ingest. | Pass an explicit path or check the source directory. |

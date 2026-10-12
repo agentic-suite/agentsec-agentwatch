@@ -14,7 +14,7 @@ Formal records of the accepted decisions. Mirrors [`../design/design-decisions.m
 | [0008](0008-jsonl-store.md) | JSONL store for v0.1.0 | accepted |
 | [0009](0009-export-gating.md) | Gate export on redaction self-test | accepted |
 | [0010](0010-local-measurement.md) | Local-only "kept it on" measurement | accepted |
-| [0011](0011-package-names.md) | `agentwatch` package names | accepted |
+| [0011](0011-package-names.md) | `agentsec-agentwatch` package names | accepted |
 | [0012](0012-api-compat.md) | Preserve shipped API/instrumentation | accepted |
 | [0013](0013-license.md) | Apache-2.0 + third-party notices | accepted |
 | [0014](0014-event-naming.md) | Event naming via upstream | deferred |
@@ -29,7 +29,7 @@ Formal records of the accepted decisions. Mirrors [`../design/design-decisions.m
 | [0023](0023-mcp-2026-07-28-posture.md) | MCP 2026-07-28 posture | proposed |
 | [0024](0024-foreign-data-threat-posture.md) | Foreign-data threat posture | accepted |
 | [0025](0025-a2a-interposition.md) | A2A interposition | proposed |
-| [0026](0026-naming-decision.md) | Naming decision (`agentwatch`) | **decision required pre-launch** |
+| [0026](0026-naming-decision.md) | Naming decision (`agentsec-agentwatch`) | **decision required pre-launch** |
 | [0028](0028-managed-policy-install.md) | Managed-policy install posture + honest `doctor` | accepted |
 | [0029](0029-recorder-attestation.md) | Recorder attestation contents and non-claims | accepted |
 | [0030](0030-hook-wallclock-budget.md) | Hook transport & end-to-end wall-clock budget | accepted |

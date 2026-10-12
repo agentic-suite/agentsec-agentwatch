@@ -49,7 +49,7 @@ The Guardian returns a decision envelope:
 }
 ```
 
-`agentwatch ingest <trail> --format acs` accepts a `{"messages": [...]}` bundle, a
+`agentsec-agentwatch ingest <trail> --format acs` accepts a `{"messages": [...]}` bundle, a
 list of frames, a single frame, or a JSON string; each decision response is paired
 to its request by `id` / `request_id`.
 

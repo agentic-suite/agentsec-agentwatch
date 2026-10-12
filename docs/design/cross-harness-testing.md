@@ -29,11 +29,11 @@ pattern is simply piping a payload into the hook:
 ```sh
 # Claude Code shape
 echo '{"session_id":"s1","hook_event_name":"PreToolUse","tool_name":"Bash",
-       "tool_input":{"command":"ls"},"cwd":"/tmp"}' | agentsec-agentsec-agentwatch-hook
+       "tool_input":{"command":"ls"},"cwd":"/tmp"}' | agentsec-agentwatch-hook
 
 # Cursor shape (hooks.json; same stdin contract)
 echo '{"hook_event_name":"beforeShellExecution","command":"npm test",
-       "session_id":"f3b9...","ide":"cursor-cli"}' | agentsec-agentsec-agentwatch-hook
+       "session_id":"f3b9...","ide":"cursor-cli"}' | agentsec-agentwatch-hook
 ```
 
 Fixture sources to mine for real shapes (all OSS/published):
@@ -93,7 +93,7 @@ captures. **I2 scrub-and-commit:** every fixture passes the secret scan; license
 
 ## Replay runner
 
-- `agentwatch replay-fixtures --adapter <x> --dir <corpus>` (or an O1 pytest entry) pipes each payload/fixture
+- `agentsec-agentwatch replay-fixtures --adapter <x> --dir <corpus>` (or an O1 pytest entry) pipes each payload/fixture
   through the adapter/daemon and asserts the canonical record output.
 - Includes ordering, duplicate, and malformed variants (the fake_harness emitter behaviors, N3).
 - `--self-test` runs a deliberately broken adapter and asserts the runner fails (proves the gate works).

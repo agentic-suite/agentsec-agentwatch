@@ -30,11 +30,11 @@ compare versions, and handle anomalies.
 ### Install & record
 
 ```sh
-npx @agentic-suite/cli init     # or: pipx run agentwatch init
+agentsec-agentwatch init     # or: pipx run agentsec-agentwatch init
 agentsec-agentwatch status                    # confirm recording (monitor-only default)
 ```
 
-Recording must not be silent: if `agentwatch status` shows no active daemon, fix that before
+Recording must not be silent: if `agentsec-agentwatch status` shows no active daemon, fix that before
 trusting any downstream view.
 
 ### Investigate
@@ -75,20 +75,20 @@ Export is blocked until the redaction self-test passes. See
 v0.2.0 adds the expanded trust, capability, console, and investigation surfaces on top of the v0.1.0 recorder.
 All of it stays local-first and monitor-only.
 
-- **Read-only console** — `agentwatch ui` serves the chain store over a loopback-only, token-gated HTTP console
+- **Read-only console** — `agentsec-agentwatch ui` serves the chain store over a loopback-only, token-gated HTTP console
   with **no Docker**; UI numbers equal the CLI `--json` (ADR-0036).
 - **Investigation skill + versioned CLI JSON** — `sessions`/`search`/`replay`/`impact`/`blame` are a versioned
   contract (`schema/cli/v0.1.0/`) with a shipped skill (`docs/skills/investigation/SKILL.md`).
-- **Capability & memory supply chain** — `agentwatch capabilities` inventories plugins and memory stores with
+- **Capability & memory supply chain** — `agentsec-agentwatch capabilities` inventories plugins and memory stores with
   content digests; Plugin4Shell-shape drift ("content changed, version unchanged") and out-of-band memory edits
   are surfaced and attributed (or flagged unattributable).
-- **Provenance** — `agentwatch provenance <commit|file|pr>` resolves a commit to the session that produced it;
+- **Provenance** — `agentsec-agentwatch provenance <commit|file|pr>` resolves a commit to the session that produced it;
   Cursor Agent Trace export validates.
 - **Approval provenance v2** — no auto/bypass call is reported as `user`; `oversight` reports the authorization
   mix and the bypass interval.
 - **Sandbox boundary** — `oversight` reports the % of calls unsandboxed and denials by class.
 - **Legal hold** — held records survive retention, purge, and index rebuild.
-- **Compliance** — `agentwatch compliance report --framework owasp-asi-2026` (ASI01–ASI10 + AST10) and the
+- **Compliance** — `agentsec-agentwatch compliance report --framework owasp-asi-2026` (ASI01–ASI10 + AST10) and the
   ISO/EU/NIST/SOC 2 templates, all offline with per-row evidence commands.
 - **Native telemetry & ingest** — Claude Code native OTel joins hook records by `tool_use_id`; gateway records
   carry exact vs estimated cost; Cursor native hooks; system-effects ingest (opt-in, `source: system-ingest`).

@@ -30,7 +30,7 @@ requirement is [PRD 42](../prd/42-harness-fidelity-and-realtime.md) (STR-1..3).
 
 ## Commands & surfaces
 
-- `agentwatch tail -f` (streaming), live timeline and live anomaly inbox in the operator UI.
+- `agentsec-agentwatch tail -f` (streaming), live timeline and live anomaly inbox in the operator UI.
 - Latency target: p99 hook → operator view ≤ 1 s (perf gate extension).
 
 **STR-2 (M26):** the live consumer is store-truth + notification. The STR-1 transport notifies by sequence number;
@@ -45,7 +45,7 @@ view never diverges from the chain. The operator live views themselves are `26.U
 ([PRD 41](../prd/41-standards-and-interop-ii.md) TRACE); the live tree view consumes the same field. Cross-host
 correlation stays within the opt-in self-hosted fleet.
 
-**TRACE-2 (M26):** `agentwatch trace <trace_id>` (and `replay <session> --trace`) reconstruct one causal chain
+**TRACE-2 (M26):** `agentsec-agentwatch trace <trace_id>` (and `replay <session> --trace`) reconstruct one causal chain
 across every host/session the fleet store holds. Parentage (`parent_span_id`) defines the tree; a child whose
 timestamps disagree with its parent across hosts is surfaced as `skew_ms` plus a `clock-skew` gap (never silently
 reordered), and a record whose parent span is absent is attached as an orphan with a `missing-parent` gap (never

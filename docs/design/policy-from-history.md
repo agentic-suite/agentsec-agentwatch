@@ -35,7 +35,7 @@ Replays a candidate policy over history: allowed/asked/denied counts and the del
 would-be denials with sessions; calls whose actual authorization differs). Parse errors explicit; unsupported syntax
 reported; output stamped with the policy-format version and labeled a simulation.
 
-> **Implemented (M30 POL-2).** `agentwatch what-if <policy-file> --since 30d` (JSON: `--json`). A policy is a JSON
+> **Implemented (M30 POL-2).** `agentsec-agentwatch what-if <policy-file> --since 30d` (JSON: `--json`). A policy is a JSON
 > document (`format_version` + `rules` of `matcher`/`effect`) — a `suggest-policy` artifact is accepted directly, so
 > the two compose. Matcher grammar is `Tool` or `Tool(program:*)`; anything else is reported as **unsupported** and
 > ignored, never guessed. Unmatched calls default to **ask** (never silently allowed). The report is stamped with

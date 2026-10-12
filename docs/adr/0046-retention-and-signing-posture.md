@@ -5,7 +5,7 @@
   number on `store.retention_days` and signed checkpoints were an unreleased experiment (G8). Both are
   procurement asks ("one-click retention", "signed trails").
 - **Decision:**
-  1. **Named retention profiles** drive `agentwatch retention apply`: `high-risk-12mo` (365 days, AAT §9),
+  1. **Named retention profiles** drive `agentsec-agentwatch retention apply`: `high-risk-12mo` (365 days, AAT §9),
      `general-6mo` (180 days), and `custom` (the operator-configured `store.retention_days`). The resulting
      policy change is a recorded chain event (S5, `retention-changed`). A window whose retention has not been
      applied degrades visibly (`doctor` WARN) and the compliance report cites the active profile.
