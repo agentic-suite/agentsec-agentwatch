@@ -43,6 +43,8 @@ jobs:
           sudo install -m 0755 trufflehog /usr/local/bin/trufflehog
           gitleaks version
           trufflehog --version
+      - name: Install the agentwatch SDK (needed by the egress audit)
+        run: python -m pip install -e packages/python-sdk
       - name: Run security scan
         env:
           SECURITY_SCAN_OUT: ${{ runner.temp }}/security-scan
