@@ -17,7 +17,9 @@ OLD_ORG_TOKENS = ("agentsec-ecosystem", "agentic-ecosystems")
 # Tracks that legitimately record the rename itself (the "old -> new" arrows).
 ALLOWLIST = {
     "ROADMAP.md",
+    "CHANGELOG.md",
     "docs/wbs/v0.3.0/wbs-v0.3.0-index.md",
+    "tests/test_org_reference_lint.py",
 }
 
 
