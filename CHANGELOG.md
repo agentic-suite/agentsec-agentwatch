@@ -5,6 +5,12 @@ versioning: [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- **Org rename (v0.3.0 M33):** the GitHub org `agentsec-ecosystem` → `agentic-suite`; every active repo moved
+  with it and took the `agentsec-*` ecosystem prefix (`agentwatch` → `agentsec-agentwatch`); the npm scope
+  `@agentsec-ecosystem/*` → `@agentic-suite/*`. Old repo URLs redirect. WBS:
+  `docs/wbs/v0.3.0/wbs-v0.3.0-index.md` (§ORG-1…§ORG-9).
+
 ## [0.2.1] - 2026-10-09
 
 ### Fixed

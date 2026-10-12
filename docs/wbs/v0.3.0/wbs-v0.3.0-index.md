@@ -63,7 +63,7 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 | ORG-4 | Reference sweep | Badges, CI/CD URLs, GHCR image names, Codecov | No `agentic-suite` reference left in build/CI/badges | #503 |
 | ORG-5 | Org profile + governance docs | `.github` profile, GOVERNANCE, TRADEMARK, install-UX | Docs reference the new org | #504 |
 | ORG-6 | New skeleton | Parent profile + `template` + governance floor + **AgentLens project skeleton** — scaffold the repo (from `template` + governance) for the TypeScript local-first trace debugger (the `agent-inspect` equivalent; vault #235) under `agentsec`/`agentwatch`; **scaffold only — implementation is a later effort** | A new ecosystem can be stood up from the skeleton; the AgentLens repo is scaffolded (not built) | #505 |
-| ORG-7 | SSOT index | Contracts → owning repo/file | Every shared contract has one owner + link | #506 |
+| ORG-7 | SSOT index | Contracts → owning repo/file — [`docs/ssot-index.md`](../../ssot-index.md) | Every shared contract has one owner + link | #506 |
 | ORG-8 | Live-doc sweep | Vault metrics/schedule/MOCs + notes 209/210–221 | Live docs updated; historical journal/articles untouched | #507 |
 | ORG-9 | Verification | Redirects + clean-machine install | `npx @agentic-suite/cli init` works on a clean machine in ≤15 min | #508 |
 
