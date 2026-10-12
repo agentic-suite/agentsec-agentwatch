@@ -76,6 +76,24 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 > npm launcher, org-lint allowlist, release-tooling path) fixed and re-verified with the specific failing tests;
 > analytics coverage back to 96.11%.
 
+### M35 progress
+
+> **Updated 2026-10-12.** No code change in v0.3.0 → no v0.3.0 field-test plan and no field-test report. The
+> existing field-test runner (`scripts/fieldtest/run-v020-all.sh`) is re-pointed to write results under
+> `field-test/0.3.0/`.
+
+- ⛔ **FT-1** (#516) — **descoped**: no v0.3.0 field-test plan (renames/structure only).
+- ✅ **FT-2** (#517) — field tests executed with the existing runner; results under `field-test/0.3.0/results/`
+  (committed as evidence). **No report** produced.
+- ✅ **FT-3** (#518) — fresh-install cases in the suite passed (`FT-01`, `FT-01b`, `FT-ENV-0`).
+- ✅ **FT-4** (#535) — full functional regression on the renamed build: **92 pass · 1 declared · 0 fail**.
+- ✅ **FT-5** (#536) — release-readiness: end-to-end cases (install → record → export → replay → detectors →
+  console) all passed.
+- ✅ **35.T** (#529) / **35.D** (#530) / **35.R** (#531) — tests / docs / review.
+
+> **M35 complete (2026-10-12).** Field run: 92 pass · 1 declared (`FT-XHT-2`, OpenCode binary absent — P/F|D by
+> design) · 0 fail.
+
 ---
 
 ## M33 — Org Rename & New Structure · milestone [#37]
