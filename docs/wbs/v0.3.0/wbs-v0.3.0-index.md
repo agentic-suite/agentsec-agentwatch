@@ -8,7 +8,7 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 > **Scope: renames and structure only — NO new features, NO bug fixes.** v0.3.0 changes names, scopes, and the org
 > skeleton; it adds and fixes nothing else. Every ticket below is a rename, a structural move, or release process.
 
-**Parent:** agentsec-ecosystem #209 · **Branch:** `feat-v0.3.0` · **GitHub milestones:** #37–#40 · **Issues:** #500–#538.
+**Parent:** agentsec-ecosystem #209 · **Branch:** `release/v0.3.0` · **GitHub milestones:** #37–#40 · **Issues:** #500–#538.
 
 ## Standard milestone exit criteria (applies to EVERY milestone)
 
@@ -19,7 +19,7 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 - [ ] Issues updated — every ticket has a tracking issue; closed or re-pointed
 - [ ] All affected docs updated at close-out (PRD, design, reference, `CHANGELOG.md`, `README.md`,
       compatibility matrix, `known-limitations.md`)
-- [ ] Committed + pushed to `feat-v0.3.0`; CI green on the pushed HEAD
+- [ ] Committed + pushed to `release/v0.3.0`; CI green on the pushed HEAD
 
 ## Milestones
 
