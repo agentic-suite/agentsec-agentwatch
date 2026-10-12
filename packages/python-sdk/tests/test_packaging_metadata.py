@@ -32,17 +32,17 @@ def test_distribution_is_named_agentsec_agentwatch() -> None:
 
 def test_console_script_points_at_cli_main() -> None:
     scripts = _metadata()["project"].get("scripts", {})
-    assert scripts.get("agentwatch") == "agentwatch.cli:main"
+    assert scripts.get("agentwatch") == "agentsec_agentwatch.cli:main"
 
 
 def test_hook_console_script_is_declared() -> None:
     scripts = _metadata()["project"].get("scripts", {})
-    assert scripts.get("agentwatch-hook") == "agentwatch.hook:main"
+    assert scripts.get("agentwatch-hook") == "agentsec_agentwatch.hook:main"
 
 
 def test_daemon_console_script_is_declared() -> None:
     scripts = _metadata()["project"].get("scripts", {})
-    assert scripts.get("agentwatch-daemon") == "agentwatch.daemon:main"
+    assert scripts.get("agentwatch-daemon") == "agentsec_agentwatch.daemon:main"
 
 
 def test_tomli_backport_is_declared_for_python_310() -> None:
@@ -70,4 +70,4 @@ def test_tomli_is_unconditional_in_dev() -> None:
 
 def test_mcp_proxy_console_script_is_declared() -> None:
     scripts = _metadata()["project"].get("scripts", {})
-    assert scripts.get("agentwatch-mcp-proxy") == "agentwatch.mcp_proxy:main"
+    assert scripts.get("agentwatch-mcp-proxy") == "agentsec_agentwatch.mcp_proxy:main"

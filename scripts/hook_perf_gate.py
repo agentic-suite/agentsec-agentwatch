@@ -25,8 +25,8 @@ from typing import Any
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "packages" / "python-sdk" / "src"))
 
-from agentwatch import hook_perf  # noqa: E402
-from agentwatch.perf import PerfStats  # noqa: E402
+from agentsec_agentwatch import hook_perf  # noqa: E402
+from agentsec_agentwatch.perf import PerfStats  # noqa: E402
 
 BASELINE_PATH = REPO / "perf" / "hook-e2e-baseline.json"
 DOC_PATH = REPO / "docs" / "reference" / "performance.md"

@@ -16,7 +16,7 @@ from typing import Any
 
 import pytest
 
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 VECTORS = Path(__file__).resolve().parents[3] / "schema" / "vectors" / "store"
 TABLE = json.loads((VECTORS / "expected-verdicts.json").read_text(encoding="utf-8"))

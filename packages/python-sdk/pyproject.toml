@@ -66,11 +66,11 @@ mutation = [
 ]
 
 [project.scripts]
-agentwatch = "agentwatch.cli:main"
-agentwatch-hook = "agentwatch.hook:main"
-agentwatch-daemon = "agentwatch.daemon:main"
-agentwatch-mcp-proxy = "agentwatch.mcp_proxy:main"
-agentwatch-a2a-proxy = "agentwatch.a2a_proxy:main"
+agentwatch = "agentsec_agentwatch.cli:main"
+agentwatch-hook = "agentsec_agentwatch.hook:main"
+agentwatch-daemon = "agentsec_agentwatch.daemon:main"
+agentwatch-mcp-proxy = "agentsec_agentwatch.mcp_proxy:main"
+agentwatch-a2a-proxy = "agentsec_agentwatch.a2a_proxy:main"
 
 [project.urls]
 Homepage = "https://github.com/agentic-suite/agentsec-agentwatch"
@@ -90,7 +90,7 @@ line-length = 100
 select = ["E", "F", "I", "UP", "B", "SIM", "N"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["agentwatch"]
+known-first-party = ["agentsec_agentwatch"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

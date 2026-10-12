@@ -8,16 +8,16 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.notarize import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.notarize import (
     TimestampResult,
     build_timestamp_request,
     export_checkpoint,
     request_timestamp,
     verify_checkpoint,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.signing import (
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.signing import (
     KEY_FILENAME,
     SigningError,
     generate_key,
@@ -26,7 +26,7 @@ from agentwatch.signing import (
     sign_digest,
     verify_digest,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

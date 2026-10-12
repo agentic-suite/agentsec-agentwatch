@@ -21,9 +21,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.evidence import build_bundle, verify_bundle
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.evidence import build_bundle, verify_bundle
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 REPO = Path(__file__).resolve().parents[3]
 ARTIFACT_DIR = REPO / "docs" / "release" / "verifier"

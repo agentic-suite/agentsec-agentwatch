@@ -19,8 +19,8 @@ sys.path.insert(0, str(SDK / "src"))
 
 def _check_a1_sdk() -> list[str]:
     problems: list[str] = []
-    from agentwatch import langgraph, raw, spans
-    from agentwatch.redact import PrivacyMode
+    from agentsec_agentwatch import langgraph, raw, spans
+    from agentsec_agentwatch.redact import PrivacyMode
 
     for name in ("plan_span", "tool_span", "execute_tool_span", "retrieval_span", "memory_span", "approval_span"):
         if not hasattr(spans, name):
@@ -30,7 +30,7 @@ def _check_a1_sdk() -> list[str]:
     if not hasattr(langgraph, "trace_graph"):
         problems.append("A1: missing LangGraph adapter")
     try:
-        import agentwatch.pydantic as pydantic_adapter
+        import agentsec_agentwatch.pydantic as pydantic_adapter
 
         if not hasattr(pydantic_adapter, "trace_pydantic_agent"):
             problems.append("A1: missing PydanticAI adapter")

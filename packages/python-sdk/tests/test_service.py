@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.service import (
+from agentsec_agentwatch.service import (
     SYSTEMD_UNIT_NAME,
     install_service,
     render_unit,
@@ -21,7 +21,7 @@ def test_launchd_unit_has_label_and_arguments() -> None:
     assert unit.path.name.endswith(".plist")
     assert "com.agentsec.agentwatch" in unit.content
     assert "/usr/bin/python3" in unit.content
-    assert "agentwatch.daemon" in unit.content
+    assert "agentsec_agentwatch.daemon" in unit.content
 
 
 def test_systemd_unit_has_service_and_install_sections() -> None:
@@ -30,7 +30,7 @@ def test_systemd_unit_has_service_and_install_sections() -> None:
     assert unit.platform == "linux"
     assert unit.path.name == SYSTEMD_UNIT_NAME
     assert "[Service]" in unit.content
-    assert "ExecStart=/usr/bin/python3 -m agentwatch.daemon" in unit.content
+    assert "ExecStart=/usr/bin/python3 -m agentsec_agentwatch.daemon" in unit.content
     assert "[Install]" in unit.content
 
 

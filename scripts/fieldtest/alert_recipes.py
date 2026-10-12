@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from agentwatch import sinks  # real API
+from agentsec_agentwatch import sinks  # real API
 from _ftutil import ok
 
 RECIPES = Path("/ft/recipes")

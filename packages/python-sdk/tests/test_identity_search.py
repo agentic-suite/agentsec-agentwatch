@@ -13,10 +13,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.identity import apply_identity_privacy
-from agentwatch.query import search
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, RecordPrivacyMode, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.identity import apply_identity_privacy
+from agentsec_agentwatch.query import search
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, RecordPrivacyMode, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -97,7 +97,7 @@ def test_cli_search_identity(
     store_dir.mkdir()
     _store(store_dir)
 
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     rc = main(
         [

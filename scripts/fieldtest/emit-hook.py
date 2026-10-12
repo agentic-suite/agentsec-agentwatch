@@ -25,8 +25,8 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 sys.path.insert(0, "/work/packages/python-sdk/src")
-from agentwatch.hook import build_message, default_socket_path, send  # noqa: E402
-from agentwatch.spool import Spool  # noqa: E402
+from agentsec_agentwatch.hook import build_message, default_socket_path, send  # noqa: E402
+from agentsec_agentwatch.spool import Spool  # noqa: E402
 
 
 def _frame(phase: str, session: str, tool: str, *, call: str, extra: dict) -> dict:

@@ -24,7 +24,7 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from agentwatch.ocsf import OCSF_VERSION
+    from agentsec_agentwatch.ocsf import OCSF_VERSION
 except ImportError:  # pragma: no cover - guidance when run without the SDK
     print(
         "ocsf_consumer: install the agentwatch SDK first (pip install -e packages/python-sdk)",

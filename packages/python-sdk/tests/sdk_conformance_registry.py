@@ -14,15 +14,15 @@ from typing import Any
 from opentelemetry.sdk.trace.export import SimpleSpanProcessor
 from opentelemetry.sdk.trace.export.in_memory_span_exporter import InMemorySpanExporter
 
-from agentwatch import conformance
-from agentwatch.acs import transcode_acs
-from agentwatch.claude_otel import transcode_claude_otel
-from agentwatch.config import SDKConfig
-from agentwatch.ingest import transcode_otel
-from agentwatch.langgraph import _NodeCallbackHandler
-from agentwatch.records import AgentRecord
-from agentwatch.system_ingest import SessionIndex, transcode_system_ingest
-from agentwatch.tracer import configure_tracing, reset_tracing
+from agentsec_agentwatch import conformance
+from agentsec_agentwatch.acs import transcode_acs
+from agentsec_agentwatch.claude_otel import transcode_claude_otel
+from agentsec_agentwatch.config import SDKConfig
+from agentsec_agentwatch.ingest import transcode_otel
+from agentsec_agentwatch.langgraph import _NodeCallbackHandler
+from agentsec_agentwatch.records import AgentRecord
+from agentsec_agentwatch.system_ingest import SessionIndex, transcode_system_ingest
+from agentsec_agentwatch.tracer import configure_tracing, reset_tracing
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "langgraph-sdk"
 CLAUDE_OTEL_FIXTURES = Path(__file__).resolve().parent / "fixtures" / "claude-otel"

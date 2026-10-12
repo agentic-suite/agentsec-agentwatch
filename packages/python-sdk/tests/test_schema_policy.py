@@ -5,7 +5,7 @@ from __future__ import annotations
 import shutil
 from pathlib import Path
 
-from agentwatch.schema_policy import check_schema_policy
+from agentsec_agentwatch.schema_policy import check_schema_policy
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 SCHEMA = REPO_ROOT / "schema"

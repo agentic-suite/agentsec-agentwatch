@@ -8,10 +8,10 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agentwatch.cli.main import main
-from agentwatch.inventory import build_inventory, inventory_to_json, render_inventory
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.inventory import build_inventory, inventory_to_json, render_inventory
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

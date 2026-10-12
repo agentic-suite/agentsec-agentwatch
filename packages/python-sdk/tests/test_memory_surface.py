@@ -14,18 +14,18 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.memory import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.memory import (
     MEMORY_TOOL,
     MemoryError,
     is_memory_record,
     memory_events,
     record_memory,
 )
-from agentwatch.query import search
-from agentwatch.records import RecordPrivacyMode
-from agentwatch.redact import PrivacyMode, RedactionConfig
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.query import search
+from agentsec_agentwatch.records import RecordPrivacyMode
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 10, 6, 12, 0, 0, tzinfo=timezone.utc)
 
@@ -97,7 +97,7 @@ def test_content_stays_out_when_capture_memory_is_off(tmp_path: Path) -> None:
 
 
 def test_is_memory_record() -> None:
-    from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+    from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
 
     memory = AgentRecord(
         session_id="s1",
@@ -120,7 +120,7 @@ def test_is_memory_record() -> None:
 
 def test_search_memory_only_returns_memory_records(tmp_path: Path) -> None:
     store = _store(tmp_path)
-    from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+    from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
 
     store.append(
         AgentRecord(
@@ -143,7 +143,7 @@ def test_cli_search_memory(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -
     store_dir.mkdir()
     store = _store(store_dir)
     record_memory(store, "s1", "write", key="prefs", now=AT)
-    from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+    from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
 
     store.append(
         AgentRecord(

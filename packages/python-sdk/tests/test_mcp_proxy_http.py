@@ -11,8 +11,8 @@ from typing import Any, ClassVar
 
 import pytest
 
-import agentwatch.hook as hook_module
-from agentwatch import mcp_proxy
+import agentsec_agentwatch.hook as hook_module
+from agentsec_agentwatch import mcp_proxy
 
 
 class _UpstreamHandler(BaseHTTPRequestHandler):

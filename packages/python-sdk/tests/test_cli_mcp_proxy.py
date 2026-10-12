@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import mcp_proxy
-from agentwatch.cli import main
+from agentsec_agentwatch import mcp_proxy
+from agentsec_agentwatch.cli import main
 
 ECHO = Path(__file__).resolve().parent / "fixtures" / "mcp" / "echo_server.py"
 

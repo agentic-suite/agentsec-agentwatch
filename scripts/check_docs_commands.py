@@ -103,9 +103,13 @@ def iter_documents(repo: Path = REPO) -> Iterable[Path]:
 
 
 def _rewrite(script: str) -> str:
-    """Run `agentwatch`/`python` through the current interpreter (no console script needed)."""
+    """Run the CLI/module through the current interpreter (no console script needed)."""
     python = shlex.quote(sys.executable)
-    script = re.sub(r"(?m)^(\s*)agentwatch\b", rf"\1{python} -m agentwatch", script)
+    script = re.sub(
+        r"(?m)^(\s*)(agentsec-agentwatch|agentwatch)\b",
+        rf"\1{python} -m agentsec_agentwatch",
+        script,
+    )
     script = re.sub(r"(?m)^(\s*)python3?\b", rf"\1{python}", script)
     return script
 

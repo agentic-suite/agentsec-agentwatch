@@ -8,10 +8,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.adapters import claude_code
-from agentwatch.cli.main import main
-from agentwatch.flow import fingerprint
-from agentwatch.records import (
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.flow import fingerprint
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -20,8 +20,8 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.secret_trace import render_secrets, trace_secrets
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.secret_trace import render_secrets, trace_secrets
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 KEY = b"unit-test-key"

@@ -9,8 +9,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import (
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import (
     GENESIS_HASH,
     RecordStore,
     RetentionReport,

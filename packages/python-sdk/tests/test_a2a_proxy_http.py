@@ -11,8 +11,8 @@ from typing import Any, ClassVar
 
 import pytest
 
-import agentwatch.hook as hook_module
-from agentwatch import a2a_proxy
+import agentsec_agentwatch.hook as hook_module
+from agentsec_agentwatch import a2a_proxy
 
 CARD = {
     "name": "Remote Scheduler",

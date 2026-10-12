@@ -12,7 +12,7 @@ sys.path.insert(0, _HERE)
 sys.path.insert(0, "/work/packages/python-sdk/src")
 from _ftutil import fail, ok, run  # noqa: E402
 
-from agentwatch.governance import known_config_keys  # noqa: E402
+from agentsec_agentwatch.governance import known_config_keys  # noqa: E402
 
 
 def main(argv: list[str]) -> int:

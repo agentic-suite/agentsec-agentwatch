@@ -16,7 +16,7 @@ import jsonschema  # type: ignore[import-untyped]
 import pytest
 from referencing import Registry, Resource
 
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     CredentialClass,
     RecordPhase,
     RecordValidationError,

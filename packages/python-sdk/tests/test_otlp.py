@@ -13,8 +13,8 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from agentwatch.config import SDKConfig
-from agentwatch.tracer import (
+from agentsec_agentwatch.config import SDKConfig
+from agentsec_agentwatch.tracer import (
     configure_otlp_tracing,
     get_tracer,
     reset_tracing,

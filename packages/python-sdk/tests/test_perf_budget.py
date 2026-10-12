@@ -5,10 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from agentwatch.adapters import claude_code
-from agentwatch.daemon import Daemon
-from agentwatch.perf import PerfStats, time_call
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.perf import PerfStats, time_call
+from agentsec_agentwatch.store import RecordStore
 
 BUDGET_MS = 5.0
 

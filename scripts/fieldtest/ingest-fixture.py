@@ -56,7 +56,7 @@ def _sig(d: dict) -> tuple:
 
 def _adapter_ingest(module_name: str, path: Path) -> int:
     mod = importlib.import_module(module_name)
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.store import RecordStore
 
     store = RecordStore(STORE)
     n = 0
@@ -99,9 +99,9 @@ def _mcp_malformed_ingest(path: Path) -> tuple[int, int]:
     Closed-by-spec methods and malformed frames land in ``quarantine.jsonl``
     with the offending field named, exercising the real ``QuarantineLog``.
     """
-    from agentwatch.adapters import mcp_proxy
-    from agentwatch.quarantine import QuarantineLog
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.adapters import mcp_proxy
+    from agentsec_agentwatch.quarantine import QuarantineLog
+    from agentsec_agentwatch.store import RecordStore
 
     store = RecordStore(STORE)
     quarantine = QuarantineLog(QUARANTINE)
@@ -146,9 +146,9 @@ def _is_rollout(path: Path) -> bool:
 
 def _logreaders_ingest(path: Path) -> int:
     """Ingest the long-tail reader corpus: one file → its real reader."""
-    from agentwatch.codex_rollout import ingest_rollouts
-    from agentwatch.importer import import_transcripts
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.codex_rollout import ingest_rollouts
+    from agentsec_agentwatch.importer import import_transcripts
+    from agentsec_agentwatch.store import RecordStore
 
     store = RecordStore(STORE)
     n = 0

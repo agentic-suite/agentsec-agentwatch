@@ -8,12 +8,12 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.denials import FOLLOW_UP_N, denial_sequences, render_sequences
-from agentwatch.evidence import build_bundle
-from agentwatch.impact import build_impact, render_impact
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.denials import FOLLOW_UP_N, denial_sequences, render_sequences
+from agentsec_agentwatch.evidence import build_bundle
+from agentsec_agentwatch.impact import build_impact, render_impact
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -28,7 +28,7 @@ def _rec(
 ) -> AgentRecord:
     event = None
     if reason is not None:
-        from agentwatch.records import SecurityEvent, SecurityEventType
+        from agentsec_agentwatch.records import SecurityEvent, SecurityEventType
 
         event = SecurityEvent(
             type=SecurityEventType.DENIED,

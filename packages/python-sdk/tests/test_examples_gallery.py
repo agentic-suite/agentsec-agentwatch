@@ -13,8 +13,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from types import ModuleType
 
-from agentwatch.ocsf import session_ocsf
-from agentwatch.records import SecurityEvent, SecurityEventType
+from agentsec_agentwatch.ocsf import session_ocsf
+from agentsec_agentwatch.records import SecurityEvent, SecurityEventType
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 EXAMPLES = REPO_ROOT / "examples"

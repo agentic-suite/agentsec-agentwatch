@@ -17,17 +17,17 @@ from opentelemetry.sdk.trace.export.in_memory_span_exporter import (
 )
 from opentelemetry.trace.status import StatusCode
 
-from agentwatch.attrs import (
+from agentsec_agentwatch.attrs import (
     GEN_AI_AGENT_NAME,
     GEN_AI_AGENT_RUN_ID,
     GEN_AI_AGENT_VERSION_LABEL,
     GEN_AI_OPERATION_NAME,
     SPAN_KIND_INVOKE_AGENT,
 )
-from agentwatch.config import SDKConfig
-from agentwatch.raw import trace_agent
-from agentwatch.spans import execute_tool_span, plan_span
-from agentwatch.tracer import configure_tracing, reset_tracing
+from agentsec_agentwatch.config import SDKConfig
+from agentsec_agentwatch.raw import trace_agent
+from agentsec_agentwatch.spans import execute_tool_span, plan_span
+from agentsec_agentwatch.tracer import configure_tracing, reset_tracing
 
 
 @pytest.fixture(autouse=True)

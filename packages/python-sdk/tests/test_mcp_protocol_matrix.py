@@ -10,8 +10,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from agentwatch import compatibility, mcp_protocol
-from agentwatch.adapters import mcp_proxy as adapter
+from agentsec_agentwatch import compatibility, mcp_protocol
+from agentsec_agentwatch.adapters import mcp_proxy as adapter
 
 REVISIONS_DIR = Path(__file__).resolve().parent / "fixtures" / "mcp-proxy" / "revisions"
 

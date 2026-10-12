@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import a2a_config
+from agentsec_agentwatch import a2a_config
 
 
 def _target(tmp_path: Path) -> a2a_config.A2aConfigTarget:
@@ -101,7 +101,7 @@ def test_resolve_a2a_proxy_command_falls_back_to_module() -> None:
     command = a2a_config.resolve_a2a_proxy_command("/nonexistent/python")
 
     assert command.command == "/nonexistent/python"
-    assert command.args_prefix == ("-m", "agentwatch.a2a_proxy")
+    assert command.args_prefix == ("-m", "agentsec_agentwatch.a2a_proxy")
 
 
 def test_resolve_a2a_proxy_command_prefers_a_sibling(tmp_path: Path) -> None:

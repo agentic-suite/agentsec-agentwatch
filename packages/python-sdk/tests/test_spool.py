@@ -6,7 +6,7 @@ import json
 import os
 from pathlib import Path
 
-from agentwatch.spool import Spool
+from agentsec_agentwatch.spool import Spool
 
 
 def test_append_and_drain_round_trip(tmp_path: Path) -> None:

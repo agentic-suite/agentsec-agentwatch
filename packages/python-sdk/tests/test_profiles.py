@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.configuration import load_config
-from agentwatch.profiles import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.configuration import load_config
+from agentsec_agentwatch.profiles import (
     PROFILE_NAMES,
     ProfileError,
     apply_profile,

@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from agentwatch.classify import (
+from agentsec_agentwatch.classify import (
     CLASSIFIER_VERSION,
     FAIL,
     OUTCOME_BUILD,
@@ -25,7 +25,7 @@ from agentwatch.classify import (
     outcome_table,
     pattern_table,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
 
 AT = datetime(2026, 1, 8, 12, 0, 0, tzinfo=timezone.utc)
 

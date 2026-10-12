@@ -12,8 +12,8 @@ from types import ModuleType
 
 import pytest
 
-from agentwatch.cli import main
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli import main
+from agentsec_agentwatch.store import RecordStore
 
 _ROOT = Path(__file__).resolve().parents[3]
 _SEED = _ROOT / "scripts" / "seed-investigations.py"

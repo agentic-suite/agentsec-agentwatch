@@ -14,7 +14,7 @@ from pathlib import Path
 
 from _secret_oracle import EXPECTED_GAPS, ORACLE_RULES
 
-from agentwatch.secrets import detect
+from agentsec_agentwatch.secrets import detect
 
 REPO = Path(__file__).resolve().parents[3]
 BUNDLE = REPO / "examples" / "demo-bundle"

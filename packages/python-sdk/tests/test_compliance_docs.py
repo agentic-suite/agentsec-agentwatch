@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.forensic import statement
+from agentsec_agentwatch.forensic import statement
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 COMPLIANCE = REPO_ROOT / "docs" / "compliance"

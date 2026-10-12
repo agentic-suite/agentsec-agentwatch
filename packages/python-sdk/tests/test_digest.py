@@ -7,10 +7,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.digest import build_digest, render_digest
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.digest import build_digest, render_digest
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 NOW = datetime(2026, 1, 8, 12, 0, 0, tzinfo=timezone.utc)
 
@@ -77,7 +77,7 @@ def test_digest_is_read_only(tmp_path: Path) -> None:
 
 def test_digest_states_stopped_recording(tmp_path: Path) -> None:
     store = _seeded(tmp_path)
-    from agentwatch.recorder_state import close_coverage_window, open_coverage_window
+    from agentsec_agentwatch.recorder_state import close_coverage_window, open_coverage_window
 
     open_coverage_window(store, now=NOW - timedelta(days=3))
     close_coverage_window(store, now=NOW - timedelta(days=1))

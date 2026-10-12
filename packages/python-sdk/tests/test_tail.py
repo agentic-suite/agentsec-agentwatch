@@ -13,10 +13,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli import main
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.tail import Tail, follow, render_record
+from agentsec_agentwatch.cli import main
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.tail import Tail, follow, render_record
 
 
 def _record(

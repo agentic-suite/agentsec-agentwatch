@@ -11,13 +11,13 @@ from typing import Any
 
 import pytest
 
-from agentwatch.aat import (
+from agentsec_agentwatch.aat import (
     AAT_DRAFT,
     AAT_DRAFT_FIELDS,
     aat_version_line,
     check_aat_drift,
 )
-from agentwatch.cli.main import main
+from agentsec_agentwatch.cli.main import main
 
 REPO = Path(__file__).resolve().parents[3]
 

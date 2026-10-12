@@ -14,7 +14,7 @@ for _cand in (
     if os.path.isdir(_cand):
         sys.path.insert(0, _cand)
 
-from agentwatch import naming  # noqa: E402
+from agentsec_agentwatch import naming  # noqa: E402
 
 
 def main() -> int:

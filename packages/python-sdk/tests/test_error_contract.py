@@ -17,11 +17,11 @@ from typing import Any
 
 import pytest
 
-from agentwatch import errors
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch import errors
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
-cli_main = import_module("agentwatch.cli.main")
+cli_main = import_module("agentsec_agentwatch.cli.main")
 
 REPO = Path(__file__).resolve().parents[3]
 ERRORS_DOC = REPO / "docs" / "reference" / "errors.md"

@@ -15,8 +15,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.incident_cases import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.incident_cases import (
     CASE_BUNDLE_FORMAT,
     CASE_TOOL,
     active_cases,
@@ -29,8 +29,8 @@ from agentwatch.incident_cases import (
     render_case_timeline,
     verify_case_bundle,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 NOW = datetime(2026, 10, 6, 10, 0, tzinfo=timezone.utc)
 

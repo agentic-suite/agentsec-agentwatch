@@ -12,7 +12,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agentwatch.capabilities import (
+from agentsec_agentwatch.capabilities import (
     CAP_KIND_COMMAND,
     CAP_KIND_HOOK,
     CAP_KIND_MCP,
@@ -29,7 +29,7 @@ from agentwatch.capabilities import (
     capabilities_to_json,
     discover_capabilities,
 )
-from agentwatch.cli.main import main
+from agentsec_agentwatch.cli.main import main
 
 
 def _seed_claude_home(home: Path) -> None:
@@ -175,9 +175,9 @@ def test_coverage_declares_per_harness_gaps(tmp_path: Path) -> None:
 
 
 def test_bom_includes_capabilities_as_components(tmp_path: Path) -> None:
-    from agentwatch.bom import build_bom
-    from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.bom import build_bom
+    from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+    from agentsec_agentwatch.store import RecordStore
 
     home = tmp_path / "home"
     _seed_claude_home(home)

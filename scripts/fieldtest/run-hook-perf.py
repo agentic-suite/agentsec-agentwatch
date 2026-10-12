@@ -13,7 +13,7 @@ for _cand in (
     if os.path.isdir(_cand):
         sys.path.insert(0, _cand)
 
-from agentwatch import hook_perf  # noqa: E402
+from agentsec_agentwatch import hook_perf  # noqa: E402
 
 
 def main() -> int:

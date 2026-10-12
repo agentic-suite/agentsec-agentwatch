@@ -16,9 +16,9 @@ from typing import Any, cast
 
 import pytest
 
-from agentwatch import compatibility, conformance, frameworks
-from agentwatch.ingest import transcode_otel_detailed
-from agentwatch.records import validate_record
+from agentsec_agentwatch import compatibility, conformance, frameworks
+from agentsec_agentwatch.ingest import transcode_otel_detailed
+from agentsec_agentwatch.records import validate_record
 
 TESTS = Path(__file__).resolve().parent
 REPO = TESTS.parents[2]

@@ -13,9 +13,9 @@ from typing import Any
 
 import pytest
 
-from agentwatch import hook, mcp_proxy
-from agentwatch.adapters import mcp_proxy as adapter
-from agentwatch.records import StepType
+from agentsec_agentwatch import hook, mcp_proxy
+from agentsec_agentwatch.adapters import mcp_proxy as adapter
+from agentsec_agentwatch.records import StepType
 
 TASK = "task-9f2"
 

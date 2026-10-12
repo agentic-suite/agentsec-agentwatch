@@ -27,7 +27,7 @@ from typing import Any
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "packages" / "python-sdk" / "src"))
 
-from agentwatch.codex_rollout import read_rollout  # noqa: E402
+from agentsec_agentwatch.codex_rollout import read_rollout  # noqa: E402
 
 # Pinned, attributed (MIT) independent parsers.
 PINS: dict[str, dict[str, str]] = {

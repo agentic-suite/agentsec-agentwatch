@@ -14,8 +14,8 @@ from types import ModuleType
 
 import pytest
 
-from agentwatch.ocsf import session_ocsf
-from agentwatch.records import SecurityEvent, SecurityEventType
+from agentsec_agentwatch.ocsf import session_ocsf
+from agentsec_agentwatch.records import SecurityEvent, SecurityEventType
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 OCSF_EXAMPLE = REPO_ROOT / "examples" / "ocsf_consumer.py"

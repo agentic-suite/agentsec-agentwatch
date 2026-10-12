@@ -11,9 +11,9 @@ import threading
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.streaming import StreamHub
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.streaming import StreamHub
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

@@ -11,7 +11,7 @@ from typing import Any
 
 import pytest
 
-from agentwatch import a2a_proxy, hook
+from agentsec_agentwatch import a2a_proxy, hook
 
 ECHO = Path(__file__).resolve().parent / "fixtures" / "a2a" / "echo_agent.py"
 

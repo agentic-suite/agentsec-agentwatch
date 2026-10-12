@@ -6,14 +6,14 @@ Confirms the two hard rules: principals are hashed by default (plaintext only in
 
 from __future__ import annotations
 
-from agentwatch.adapters.claude_code import identity_for
-from agentwatch.identity import (
+from agentsec_agentwatch.adapters.claude_code import identity_for
+from agentsec_agentwatch.identity import (
     IDENTITY_HASH_PREFIX,
     apply_identity_privacy,
     hash_principal,
     identity_secret_kinds,
 )
-from agentwatch.records import AgentIdentity, CredentialClass, RecordPrivacyMode
+from agentsec_agentwatch.records import AgentIdentity, CredentialClass, RecordPrivacyMode
 
 KEY = b"per-install-test-key"
 

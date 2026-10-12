@@ -12,8 +12,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from agentwatch import conformance, frameworks
-from agentwatch.ingest import transcode_otel_detailed
+from agentsec_agentwatch import conformance, frameworks
+from agentsec_agentwatch.ingest import transcode_otel_detailed
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "frameworks"
 

@@ -9,11 +9,11 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agentwatch.query import search
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.tail import Tail
-from agentwatch.view import list_sessions
+from agentsec_agentwatch.query import search
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.tail import Tail
+from agentsec_agentwatch.view import list_sessions
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

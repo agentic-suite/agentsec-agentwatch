@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.mcp_config import (
+from agentsec_agentwatch.mcp_config import (
     McpConfigError,
     McpConfigTarget,
     McpProxyCommand,
@@ -154,12 +154,12 @@ def test_uninstall_reports_not_installed(tmp_path: Path) -> None:
 def test_resolve_mcp_proxy_command_falls_back_to_module(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
-    monkeypatch.setattr("agentwatch.mcp_config.shutil.which", lambda _name: None)
+    monkeypatch.setattr("agentsec_agentwatch.mcp_config.shutil.which", lambda _name: None)
     command = resolve_mcp_proxy_command(str(tmp_path / "python"))
-    assert command.args_prefix == ("-m", "agentwatch.mcp_proxy")
+    assert command.args_prefix == ("-m", "agentsec_agentwatch.mcp_proxy")
     assert command.args_for("s", "cmd", ["a"]) == [
         "-m",
-        "agentwatch.mcp_proxy",
+        "agentsec_agentwatch.mcp_proxy",
         "--server",
         "s",
         "--",

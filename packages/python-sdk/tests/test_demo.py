@@ -7,11 +7,11 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.coverage import is_tool_call_record
-from agentwatch.demo import purge_demo, render_demo, run_demo
-from agentwatch.records import ProducerKind, effective_producer
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.coverage import is_tool_call_record
+from agentsec_agentwatch.demo import purge_demo, render_demo, run_demo
+from agentsec_agentwatch.records import ProducerKind, effective_producer
+from agentsec_agentwatch.store import RecordStore
 
 # Built at runtime so no provider-shaped literal sits in the source.
 SECRET = "sk-" + "abcdefghijklmnop"
@@ -64,7 +64,7 @@ def test_demo_records_are_excluded_from_coverage(tmp_path: Path) -> None:
 
 
 def test_demo_excluded_from_evidence_bundle(tmp_path: Path) -> None:
-    from agentwatch.evidence import build_bundle
+    from agentsec_agentwatch.evidence import build_bundle
 
     store = RecordStore(tmp_path / "records.jsonl")
     run_demo(store, cwd=str(tmp_path))

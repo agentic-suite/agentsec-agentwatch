@@ -17,10 +17,10 @@ from typing import Any
 
 import pytest
 
-from agentwatch import transcript
-from agentwatch.adapters import cursor
-from agentwatch.records import validate_record
-from agentwatch.secrets import detect
+from agentsec_agentwatch import transcript
+from agentsec_agentwatch.adapters import cursor
+from agentsec_agentwatch.records import validate_record
+from agentsec_agentwatch.secrets import detect
 
 KIT = Path(__file__).resolve().parent / "testkit"
 MANIFESTS = sorted(KIT.rglob("manifest.json"))

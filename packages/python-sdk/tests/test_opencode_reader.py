@@ -13,9 +13,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import opencode_reader
-from agentwatch.records import RecordPrivacyMode, SecurityEventType
-from agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch import opencode_reader
+from agentsec_agentwatch.records import RecordPrivacyMode, SecurityEventType
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
 
 START = 1_766_000_000_000  # epoch ms
 
@@ -139,7 +139,7 @@ def test_secret_in_input_fires_and_is_not_stored(tmp_path: Path) -> None:
 
 
 def test_ingest_is_idempotent(tmp_path: Path) -> None:
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.store import RecordStore
 
     tree = _tree(tmp_path)
     store = RecordStore(tmp_path / "records.jsonl")
@@ -166,7 +166,7 @@ def test_reader_never_spawns_a_shell() -> None:
 
 
 def test_cli_ingest_opencode(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     tree = _tree(tmp_path)
     store_dir = tmp_path / "store"

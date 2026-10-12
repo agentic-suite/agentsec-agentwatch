@@ -15,8 +15,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.coverage import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.coverage import (
     CAUSE_DAEMON_DOWN,
     CAUSE_HARNESS_DRIFT,
     CAUSE_HOOK_NOT_INSTALLED,
@@ -33,10 +33,10 @@ from agentwatch.coverage import (
     quarantine_counts,
     store_tool_calls,
 )
-from agentwatch.quarantine import QuarantineLog
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.transcript import extract_tool_calls
+from agentsec_agentwatch.quarantine import QuarantineLog
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.transcript import extract_tool_calls
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.semconv import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.semconv import (
     AGENT_SPAN_OPERATIONS,
     PINNED_ATTRIBUTES,
     SEMCONV_VERSION,

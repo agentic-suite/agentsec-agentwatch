@@ -15,9 +15,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.compliance import build_report
-from agentwatch.configuration import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.compliance import build_report
+from agentsec_agentwatch.configuration import (
     AgentwatchConfig,
     ExportSection,
     HealthSection,
@@ -26,8 +26,8 @@ from agentwatch.configuration import (
     RedactionSection,
     StoreSection,
 )
-from agentwatch.evidence import build_bundle
-from agentwatch.holds import (
+from agentsec_agentwatch.evidence import build_bundle
+from agentsec_agentwatch.holds import (
     Hold,
     HoldKind,
     active_holds,
@@ -38,8 +38,8 @@ from agentwatch.holds import (
     record_hold_release,
     record_matches_hold,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 NOW = datetime(2026, 10, 6, 12, 0, tzinfo=timezone.utc)
 

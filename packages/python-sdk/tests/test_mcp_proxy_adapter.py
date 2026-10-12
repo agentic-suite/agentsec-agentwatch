@@ -11,9 +11,9 @@ from typing import Any
 
 import pytest
 
-from agentwatch.adapters import mcp_proxy
-from agentwatch.records import RecordPrivacyMode, SecurityEventType
-from agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch.adapters import mcp_proxy
+from agentsec_agentwatch.records import RecordPrivacyMode, SecurityEventType
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
 
 
 def _request(**event_overrides: Any) -> dict[str, Any]:

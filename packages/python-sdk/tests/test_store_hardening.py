@@ -10,9 +10,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import posture
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore, repair_store
+from agentsec_agentwatch import posture
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore, repair_store
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -183,7 +183,7 @@ def test_repair_is_a_noop_when_chain_is_green(tmp_path: Path) -> None:
 def test_cli_verify_store_repair_requires_yes(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    main = importlib.import_module("agentwatch.cli.main")
+    main = importlib.import_module("agentsec_agentwatch.cli.main")
     monkeypatch.setenv("AGENTWATCH_STORE__PATH", str(tmp_path))
     store = RecordStore(tmp_path / "records.jsonl")
     for index in range(3):

@@ -14,9 +14,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.adapters import claude_code
-from agentwatch.cli.main import main
-from agentwatch.quarantine import (
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.quarantine import (
     QuarantineError,
     QuarantineLog,
     clear_entries,
@@ -25,8 +25,8 @@ from agentwatch.quarantine import (
     requeue_entries,
     select_entries,
 )
-from agentwatch.store import RecordStore
-from agentwatch.store_access import store_accesses
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.store_access import store_accesses
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 SECRET = "sk-LEAK-abcdefgh"

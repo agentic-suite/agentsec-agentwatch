@@ -15,8 +15,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import doctor
-from agentwatch.configuration import (
+from agentsec_agentwatch import doctor
+from agentsec_agentwatch.configuration import (
     AgentwatchConfig,
     ExportSection,
     HealthSection,
@@ -25,8 +25,8 @@ from agentwatch.configuration import (
     RedactionSection,
     StoreSection,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 
 def _cfg(**overrides: object) -> AgentwatchConfig:
@@ -221,7 +221,7 @@ def test_missing_hook_entrypoint_is_fail(tmp_path: Path) -> None:
 def test_redaction_self_test_failure_is_fail(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
-    from agentwatch.selftest import SelfTestResult
+    from agentsec_agentwatch.selftest import SelfTestResult
 
     monkeypatch.setattr(
         doctor,
@@ -312,7 +312,7 @@ def test_json_payload_schema(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) ->
 def test_doctor_cli_prints_checks(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    from agentwatch.cli import main
+    from agentsec_agentwatch.cli import main
 
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("HOME", str(tmp_path))
@@ -333,7 +333,7 @@ def test_doctor_cli_prints_checks(
 def test_doctor_cli_json(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    from agentwatch.cli import main
+    from agentsec_agentwatch.cli import main
 
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("HOME", str(tmp_path))

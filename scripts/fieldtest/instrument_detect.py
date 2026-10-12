@@ -3,7 +3,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from agentwatch import autoinstrument, frameworks  # real APIs
+from agentsec_agentwatch import autoinstrument, frameworks  # real APIs
 from _ftutil import ok
 
 def main(argv):

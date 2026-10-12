@@ -11,15 +11,15 @@ from typing import Any
 
 import pytest
 
-from agentwatch.adapters import claude_code
-from agentwatch.records import (
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.records import (
     Outcome,
     RecordPrivacyMode,
     SecurityEventType,
     StepType,
     validate_record,
 )
-from agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
 
 PRE: dict[str, Any] = {
     "phase": "pre",

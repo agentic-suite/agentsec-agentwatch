@@ -16,7 +16,7 @@ REPO = Path(__file__).resolve().parents[1]
 SDK = REPO / "packages" / "python-sdk"
 sys.path.insert(0, str(SDK / "src"))
 
-from agentwatch import compatibility  # noqa: E402
+from agentsec_agentwatch import compatibility  # noqa: E402
 
 FIXTURES = SDK / "tests" / "fixtures"
 BASELINE = FIXTURES / "harness-versions.json"

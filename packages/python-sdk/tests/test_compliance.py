@@ -13,10 +13,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.compliance import build_report, render_report
-from agentwatch.configuration import AgentwatchConfig
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.compliance import build_report, render_report
+from agentsec_agentwatch.configuration import AgentwatchConfig
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 NOW = datetime(2026, 6, 1, tzinfo=timezone.utc)
 
@@ -114,7 +114,7 @@ def test_cli_compliance_report(
     store_dir.mkdir()
     _store(store_dir)
 
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     rc = main(
         [

@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from types import MappingProxyType
 
-from agentwatch.secrets import SECRET_KINDS, detect, redact_mapping, redact_secrets
+from agentsec_agentwatch.secrets import SECRET_KINDS, detect, redact_mapping, redact_secrets
 
 
 def test_api_key_masked_to_redacted_kind() -> None:

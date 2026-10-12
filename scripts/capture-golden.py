@@ -24,8 +24,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from agentwatch.adapters.claude_code import normalize
-from agentwatch.secrets import detect, redact_mapping
+from agentsec_agentwatch.adapters.claude_code import normalize
+from agentsec_agentwatch.secrets import detect, redact_mapping
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUT = REPO_ROOT / "packages/python-sdk/tests/fixtures/claude-code/golden/real"

@@ -10,8 +10,8 @@ from typing import Any
 
 import pytest
 
-import agentwatch.hook as hook_module
-from agentwatch.drift import (
+import agentsec_agentwatch.hook as hook_module
+from agentsec_agentwatch.drift import (
     Deployment,
     DriftSignal,
     Sample,
@@ -23,7 +23,7 @@ from agentwatch.drift import (
     signal_to_event,
     trailing_baseline,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -31,7 +31,7 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 BASE = datetime(2026, 1, 2, 3, 0, 0, tzinfo=timezone.utc)
 
@@ -180,7 +180,7 @@ def test_metric_series_rejects_unknown_metric() -> None:
 def test_cli_drift_reports_a_signal_and_exits_zero(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    main = importlib.import_module("agentwatch.cli.main")
+    main = importlib.import_module("agentsec_agentwatch.cli.main")
     monkeypatch.setenv("AGENTWATCH_STORE__PATH", str(tmp_path))
     store = RecordStore(tmp_path / "records.jsonl")
     # Ten baseline sessions alternating 0/1 errors, then a spike of 8 errors.

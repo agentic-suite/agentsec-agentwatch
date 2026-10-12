@@ -15,8 +15,8 @@ import json
 import sys
 from pathlib import Path
 
-from agentwatch import doctor
-from agentwatch.configuration import (
+from agentsec_agentwatch import doctor
+from agentsec_agentwatch.configuration import (
     AgentwatchConfig,
     ExportSection,
     HealthSection,
@@ -25,8 +25,8 @@ from agentwatch.configuration import (
     RedactionSection,
     StoreSection,
 )
-from agentwatch.install import HookCommand, InstallError, resolve_scope
-from agentwatch.managed_policy import (
+from agentsec_agentwatch.install import HookCommand, InstallError, resolve_scope
+from agentsec_agentwatch.managed_policy import (
     HOOKS_EFFECTIVE_BLOCKED,
     HOOKS_EFFECTIVE_UNKNOWN,
     HOOKS_EFFECTIVE_YES,

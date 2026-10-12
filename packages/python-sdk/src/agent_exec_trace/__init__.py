@@ -15,13 +15,13 @@ import importlib.util
 import sys
 from types import ModuleType
 
-import agentwatch
+import agentsec_agentwatch
 
 _LEGACY = __name__
-_NEW = "agentwatch"
+_NEW = "agentsec_agentwatch"
 
 # ``import agent_exec_trace`` yields the agentwatch package.
-sys.modules[_LEGACY] = agentwatch
+sys.modules[_LEGACY] = agentsec_agentwatch
 
 
 class _LegacyAliasLoader(importlib.abc.Loader):

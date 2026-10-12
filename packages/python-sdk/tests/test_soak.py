@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from agentwatch.soak import run_soak
+from agentsec_agentwatch.soak import run_soak
 
 
 def test_small_soak_is_within_bounds(tmp_path: Path) -> None:

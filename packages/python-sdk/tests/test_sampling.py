@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Approval,
@@ -18,7 +18,7 @@ from agentwatch.records import (
     SecurityEventType,
     ToolCall,
 )
-from agentwatch.sampling import SampleDecision, SecurityRelevantSampler
+from agentsec_agentwatch.sampling import SampleDecision, SecurityRelevantSampler
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

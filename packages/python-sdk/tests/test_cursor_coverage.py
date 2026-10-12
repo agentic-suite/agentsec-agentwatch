@@ -12,14 +12,14 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.coverage import (
+from agentsec_agentwatch.coverage import (
     CAUSE_CURSOR_HOOK_COVERAGE,
     CAUSE_UNEXPLAINED,
     build_coverage,
     discover_cursor_transcripts,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 TRACER = Path(__file__).resolve().parent / "testkit" / "cursor" / "cursor-session-tracer"
 AT = datetime(2026, 5, 9, 14, 32, 1, tzinfo=timezone.utc)
@@ -99,7 +99,7 @@ def test_cli_coverage_cursor(
 ) -> None:
     import json
 
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     store_dir = tmp_path / "store"
     store_dir.mkdir()

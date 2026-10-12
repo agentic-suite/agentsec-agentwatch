@@ -14,8 +14,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.redact import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.redact import (
     CORPUS_SCHEMA,
     evaluate_corpus,
     load_corpus,

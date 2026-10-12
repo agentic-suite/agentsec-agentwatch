@@ -14,9 +14,9 @@ from typing import Any
 
 import pytest
 
-from agentwatch.adapters import claude_code
-from agentwatch.records import validate_record
-from agentwatch.secrets import detect
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.records import validate_record
+from agentsec_agentwatch.secrets import detect
 
 GOLDEN = Path(__file__).resolve().parent / "fixtures" / "claude-code" / "golden"
 MANIFEST = GOLDEN / "manifest.json"

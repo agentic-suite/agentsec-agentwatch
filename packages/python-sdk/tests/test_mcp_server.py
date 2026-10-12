@@ -14,8 +14,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.mcp_server import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.mcp_server import (
     MCP_TOOLS,
     READ_ONLY_TOOLS,
     UNTRUSTED_LABEL,
@@ -25,9 +25,9 @@ from agentwatch.mcp_server import (
     serve_stdio,
     tool_definitions,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.store_access import STORE_ACCESS_TOOL
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.store_access import STORE_ACCESS_TOOL
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

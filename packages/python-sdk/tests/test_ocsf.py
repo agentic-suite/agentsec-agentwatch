@@ -9,8 +9,8 @@ from typing import Any
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.ocsf import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.ocsf import (
     CLOUDEVENTS_VERSION,
     MAPPING_TABLE,
     OCSF_VERSION,
@@ -18,7 +18,7 @@ from agentwatch.ocsf import (
     to_cloudevents,
     to_ocsf,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -27,7 +27,7 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

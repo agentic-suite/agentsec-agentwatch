@@ -41,7 +41,7 @@ from __future__ import annotations
 from collections.abc import Iterator
 
 import pytest
-from agentwatch.attrs import (
+from agentsec_agentwatch.attrs import (
     GEN_AI_AGENT_NAME,
     GEN_AI_AGENT_RUN_ID,
     GEN_AI_AGENT_VERSION_LABEL,
@@ -50,9 +50,9 @@ from agentwatch.attrs import (
     SPAN_KIND_PLAN,
     SPAN_KIND_TOOL,
 )
-from agentwatch.config import SDKConfig
-from agentwatch.langgraph import trace_graph
-from agentwatch.tracer import configure_tracing, reset_tracing
+from agentsec_agentwatch.config import SDKConfig
+from agentsec_agentwatch.langgraph import trace_graph
+from agentsec_agentwatch.tracer import configure_tracing, reset_tracing
 from opentelemetry.sdk.trace.export import SimpleSpanProcessor
 from opentelemetry.sdk.trace.export.in_memory_span_exporter import (
     InMemorySpanExporter,

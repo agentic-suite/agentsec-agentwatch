@@ -3,8 +3,8 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from agentwatch import mcp_surface  # real API
-from agentwatch.store import RecordStore
+from agentsec_agentwatch import mcp_surface  # real API
+from agentsec_agentwatch.store import RecordStore
 from _ftutil import STORE, fail, ok
 
 def main(argv):

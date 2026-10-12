@@ -13,9 +13,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.compliance_api import classify_discrepancies, read_compliance_export
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, Producer, ProducerKind, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.compliance_api import classify_discrepancies, read_compliance_export
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, Producer, ProducerKind, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -85,7 +85,7 @@ def test_discrepancies_are_classified_not_merged(tmp_path: Path) -> None:
 
 
 def test_cli_requires_consent(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     rc = main(
         [
@@ -105,7 +105,7 @@ def test_cli_requires_consent(tmp_path: Path, capsys: pytest.CaptureFixture[str]
 def test_cli_consent_records_store_access_and_ingests(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     store_dir = tmp_path / "store"
     rc = main(

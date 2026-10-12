@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.ingest import (
+from agentsec_agentwatch.ingest import (
     IngestError,
     iter_grpc_messages,
     run_ingest,
@@ -22,8 +22,8 @@ from agentwatch.ingest import (
     transcode_grpc_chunks,
     transcode_otlp_protobuf,
 )
-from agentwatch.records import validate_record
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import validate_record
+from agentsec_agentwatch.store import RecordStore
 
 pytest.importorskip("opentelemetry.proto")
 
@@ -191,7 +191,7 @@ def test_cli_ingest_protobuf(
     path = tmp_path / "trace.pb"
     path.write_bytes(_request([_span()]).SerializeToString())
 
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     rc = main(["ingest", str(path), "--format", "otel", "--json"])
 

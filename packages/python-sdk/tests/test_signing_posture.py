@@ -15,10 +15,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import doctor
-from agentwatch.aat import export_aat
-from agentwatch.cli.main import main
-from agentwatch.configuration import (
+from agentsec_agentwatch import doctor
+from agentsec_agentwatch.aat import export_aat
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.configuration import (
     AgentwatchConfig,
     ExportSection,
     HealthSection,
@@ -27,11 +27,11 @@ from agentwatch.configuration import (
     RedactionSection,
     StoreSection,
 )
-from agentwatch.evidence import build_bundle
-from agentwatch.health import HealthSnapshot
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, RecordPrivacyMode, ToolCall
-from agentwatch.session_export import export_session
-from agentwatch.signing import (
+from agentsec_agentwatch.evidence import build_bundle
+from agentsec_agentwatch.health import HealthSnapshot
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, RecordPrivacyMode, ToolCall
+from agentsec_agentwatch.session_export import export_session
+from agentsec_agentwatch.signing import (
     KEY_FILENAME,
     KEY_ROTATION_TOOL,
     generate_key,
@@ -43,7 +43,7 @@ from agentwatch.signing import (
     signing_status,
     verify_digest,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

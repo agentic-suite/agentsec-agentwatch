@@ -22,7 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, "/work/packages/python-sdk/src")
 
-from agentwatch.records import (  # noqa: E402
+from agentsec_agentwatch.records import (  # noqa: E402
     AgentIdentity,
     AgentRecord,
     Approval,
@@ -35,7 +35,7 @@ from agentwatch.records import (  # noqa: E402
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore  # noqa: E402
+from agentsec_agentwatch.store import RecordStore  # noqa: E402
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

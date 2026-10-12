@@ -17,21 +17,21 @@ from typing import Any
 import jsonschema  # type: ignore[import-untyped]
 import pytest
 
-from agentwatch.annotate import annotate_session
-from agentwatch.cli.main import main
-from agentwatch.egress_audit import audit
-from agentwatch.evidence import build_bundle
-from agentwatch.incident_report import (
+from agentsec_agentwatch.annotate import annotate_session
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.egress_audit import audit
+from agentsec_agentwatch.evidence import build_bundle
+from agentsec_agentwatch.incident_report import (
     INCIDENT_REPORT_FILENAME,
     INCIDENT_REPORT_SCHEMA,
     build_incident_report,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 ROOT = Path(__file__).resolve().parents[3]
 SCHEMA = ROOT / "schema" / "vectors" / "incident" / "incident-report.schema.json"
-MODULE = Path(__file__).resolve().parents[1] / "src" / "agentwatch" / "incident_report.py"
+MODULE = Path(__file__).resolve().parents[1] / "src" / "agentsec_agentwatch" / "incident_report.py"
 
 AT = datetime(2026, 10, 6, 12, 0, 0, tzinfo=timezone.utc)
 

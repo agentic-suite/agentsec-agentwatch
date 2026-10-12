@@ -8,11 +8,11 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.recorder_state import close_coverage_window, open_coverage_window
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.window import build_window, parse_duration, parse_moment, render_window
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.recorder_state import close_coverage_window, open_coverage_window
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.window import build_window, parse_duration, parse_moment, render_window
 
 BASE = datetime(2026, 1, 2, 3, 0, 0, tzinfo=timezone.utc)
 

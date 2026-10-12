@@ -14,10 +14,10 @@ from typing import Any
 
 import pytest
 
-from agentwatch import hook, mcp_proxy
-from agentwatch.adapters import mcp_proxy as adapter
-from agentwatch.daemon import Daemon
-from agentwatch.store import RecordStore
+from agentsec_agentwatch import hook, mcp_proxy
+from agentsec_agentwatch.adapters import mcp_proxy as adapter
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.store import RecordStore
 
 
 def _frame(method: str) -> dict[str, Any]:

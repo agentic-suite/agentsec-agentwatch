@@ -22,14 +22,14 @@ from typing import Any
 
 import pytest
 
-from agentwatch import hook
-from agentwatch.cli.main import main
-from agentwatch.coverage import build_coverage
-from agentwatch.daemon import Daemon
-from agentwatch.health import HealthSnapshot
-from agentwatch.install import hooks_installed, install_hooks, resolve_hook_command, uninstall_hooks
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore, StoreFullError
+from agentsec_agentwatch import hook
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.coverage import build_coverage
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.health import HealthSnapshot
+from agentsec_agentwatch.install import hooks_installed, install_hooks, resolve_hook_command, uninstall_hooks
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore, StoreFullError
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -182,7 +182,7 @@ def test_moved_store_is_neither_clean_nor_detected_by_the_chain(tmp_path: Path) 
     # The chain on the old path looks clean-but-empty: the chain alone cannot tell.
     assert RecordStore(tmp_path / "records.jsonl").verify().ok is True
     # S2 coverage is the compensating control: transcript ground truth vs empty store.
-    from agentwatch.coverage import TranscriptCoverage
+    from agentsec_agentwatch.coverage import TranscriptCoverage
 
     report = build_coverage(
         RecordStore(tmp_path / "records.jsonl"),

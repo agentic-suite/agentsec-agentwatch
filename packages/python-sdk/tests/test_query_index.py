@@ -17,15 +17,15 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.query import search
-from agentwatch.query_index import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.query import search
+from agentsec_agentwatch.query_index import (
     INDEX_FILENAME,
     QueryIndex,
     index_path_for_store,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -150,7 +150,7 @@ def test_sessions_and_count(tmp_path: Path) -> None:
 def test_import_does_not_pull_pyarrow(tmp_path: Path) -> None:
     """The core index ships with the CLI; parquet is a lazy optional extra (ADR-0035)."""
     code = (
-        "import sys; import agentwatch.query_index; "
+        "import sys; import agentsec_agentwatch.query_index; "
         "assert 'pyarrow' not in sys.modules, 'pyarrow imported eagerly'"
     )
     proc = subprocess.run(

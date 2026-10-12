@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from agentwatch.sinks import WebhookSink
+from agentsec_agentwatch.sinks import WebhookSink
 
 # Presentation default only — the user's routing stack owns urgency, not agentwatch.
 _SEVERITY = {

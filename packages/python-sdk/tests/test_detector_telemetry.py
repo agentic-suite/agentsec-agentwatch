@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.detector_telemetry import (
+from agentsec_agentwatch.detector_telemetry import (
     OUTCOME_FALSE_POSITIVE,
     OUTCOME_FIRED,
     OUTCOME_SUPPRESSED,

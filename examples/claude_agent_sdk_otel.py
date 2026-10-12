@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from agentwatch.claude_otel import transcode_agent_sdk
+from agentsec_agentwatch.claude_otel import transcode_agent_sdk
 
 
 def load_payload(path: str | Path) -> Any:

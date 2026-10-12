@@ -16,15 +16,15 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.provenance import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.provenance import (
     CommitFacts,
     LineRange,
     build_provenance,
     parse_target,
     to_attribution_arguments,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Approval,
@@ -33,7 +33,7 @@ from agentwatch.records import (
     Outcome,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 BASE = datetime(2026, 2, 1, 12, 0, 0, tzinfo=timezone.utc)
 CONTENT = "def add(a, b):\n    return a + b\n"
@@ -84,7 +84,7 @@ def _record(
 
 
 def _range_args(path: str, start: int, end: int) -> dict[str, object]:
-    from agentwatch.provenance import capture_ranges
+    from agentsec_agentwatch.provenance import capture_ranges
 
     capture = capture_ranges(
         {"file_path": path, "start_line": start, "end_line": end, "new_string": "x"},
@@ -279,14 +279,14 @@ def test_cli_provenance_json(tmp_path: Path, capsys: pytest.CaptureFixture[str])
 
 
 def test_export_agent_trace_is_pinned_and_content_free(tmp_path: Path) -> None:
-    from agentwatch.agent_trace import (
+    from agentsec_agentwatch.agent_trace import (
         AGENT_TRACE_SPEC_REVISION,
         export_agent_trace,
         to_agent_trace_json,
         verify_agent_trace,
     )
-    from agentwatch.provenance import is_content_free
-    from agentwatch.session_export import export_session
+    from agentsec_agentwatch.provenance import is_content_free
+    from agentsec_agentwatch.session_export import export_session
 
     store = _store(tmp_path)
     export = export_session(store, "s1")
@@ -305,8 +305,8 @@ def test_export_agent_trace_is_pinned_and_content_free(tmp_path: Path) -> None:
 
 
 def test_agent_trace_export_marks_unmapped_without_a_range(tmp_path: Path) -> None:
-    from agentwatch.agent_trace import export_agent_trace
-    from agentwatch.session_export import export_session
+    from agentsec_agentwatch.agent_trace import export_agent_trace
+    from agentsec_agentwatch.session_export import export_session
 
     store = RecordStore(tmp_path / "records.jsonl")
     store.append(_record("s9", "Write", {"file_path": "/repo/x.py", "content": CONTENT}, minute=0))
@@ -320,7 +320,7 @@ def test_agent_trace_export_marks_unmapped_without_a_range(tmp_path: Path) -> No
 
 
 def test_agent_trace_drift_reports_a_revision_move() -> None:
-    from agentwatch.agent_trace import AGENT_TRACE_SPEC_FIELDS, check_agent_trace_drift
+    from agentsec_agentwatch.agent_trace import AGENT_TRACE_SPEC_FIELDS, check_agent_trace_drift
 
     moved = check_agent_trace_drift(
         {"revision": "agent-trace-rfc-0.2", "fields": list(AGENT_TRACE_SPEC_FIELDS)}
@@ -334,7 +334,7 @@ def test_agent_trace_drift_reports_a_revision_move() -> None:
 
 
 def test_agent_trace_pin_matches_the_committed_snapshot() -> None:
-    from agentwatch.agent_trace import check_agent_trace_drift
+    from agentsec_agentwatch.agent_trace import check_agent_trace_drift
 
     snapshot = json.loads(
         (REPO / "schema" / "agent-trace" / "upstream-revision.json").read_text(encoding="utf-8")
@@ -344,7 +344,7 @@ def test_agent_trace_pin_matches_the_committed_snapshot() -> None:
 
 
 def test_cross_validate_classifies_agree_disagree_and_only() -> None:
-    from agentwatch.agent_trace import AgentTraceRecord, cross_validate
+    from agentsec_agentwatch.agent_trace import AgentTraceRecord, cross_validate
 
     ours = (
         AgentTraceRecord(
@@ -406,12 +406,12 @@ def test_agent_trace_default_export_writes_nothing_to_the_repo(tmp_path: Path) -
         ["git", "-C", str(repo), "rev-parse", "HEAD"], check=True, capture_output=True, text=True
     ).stdout.strip()
 
-    from agentwatch.agent_trace import (
+    from agentsec_agentwatch.agent_trace import (
         export_agent_trace,
         read_agent_trace,
         write_agent_trace_notes,
     )
-    from agentwatch.session_export import export_session
+    from agentsec_agentwatch.session_export import export_session
 
     store = RecordStore(tmp_path / "records.jsonl")
     store.append(
@@ -446,7 +446,7 @@ def test_agent_trace_default_export_writes_nothing_to_the_repo(tmp_path: Path) -
 def test_cli_export_session_agent_trace(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    from agentwatch.agent_trace import AGENT_TRACE_SPEC_REVISION
+    from agentsec_agentwatch.agent_trace import AGENT_TRACE_SPEC_REVISION
 
     store_dir = tmp_path / "store"
     store_dir.mkdir()
@@ -471,8 +471,8 @@ def test_cli_provenance_cross_validates_git_notes(
 ) -> None:
     import subprocess
 
-    from agentwatch.agent_trace import read_agent_trace, write_agent_trace_notes
-    from agentwatch.session_export import export_session
+    from agentsec_agentwatch.agent_trace import read_agent_trace, write_agent_trace_notes
+    from agentsec_agentwatch.session_export import export_session
 
     repo = tmp_path / "repo"
     repo.mkdir()
@@ -511,7 +511,7 @@ def test_cli_provenance_cross_validates_git_notes(
 
     shutil.copy(store.path, store_dir / "records.jsonl")
 
-    from agentwatch.agent_trace import export_agent_trace
+    from agentsec_agentwatch.agent_trace import export_agent_trace
 
     bundle = export_agent_trace(export_session(store, "s1"), privacy_mode="metadata-only")
     write_agent_trace_notes(str(repo), read_agent_trace(bundle))

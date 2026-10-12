@@ -12,10 +12,10 @@ from typing import Any
 
 import pytest
 
-from agentwatch import conformance
-from agentwatch.adapters import a2a_proxy
-from agentwatch.records import RecordPrivacyMode, SecurityEventType
-from agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch import conformance
+from agentsec_agentwatch.adapters import a2a_proxy
+from agentsec_agentwatch.records import RecordPrivacyMode, SecurityEventType
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
 
 
 def _request(**event_overrides: Any) -> dict[str, Any]:

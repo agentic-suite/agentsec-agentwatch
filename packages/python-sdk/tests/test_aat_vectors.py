@@ -17,7 +17,7 @@ from typing import Any
 
 import pytest
 
-from agentwatch.aat import verify_aat_report
+from agentsec_agentwatch.aat import verify_aat_report
 
 VECTORS = Path(__file__).resolve().parents[3] / "schema" / "vectors" / "aat"
 TABLE = json.loads((VECTORS / "expected-verdicts.json").read_text(encoding="utf-8"))

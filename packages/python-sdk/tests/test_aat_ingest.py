@@ -15,11 +15,11 @@ from typing import Any
 
 import pytest
 
-from agentwatch.aat import export_aat, to_aat_json
-from agentwatch.cli.main import main
-from agentwatch.ingest import run_ingest
-from agentwatch.quarantine import QuarantineLog
-from agentwatch.records import (
+from agentsec_agentwatch.aat import export_aat, to_aat_json
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.ingest import run_ingest
+from agentsec_agentwatch.quarantine import QuarantineLog
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -27,8 +27,8 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.session_export import export_session
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.session_export import export_session
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

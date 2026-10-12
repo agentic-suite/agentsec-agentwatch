@@ -12,10 +12,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.blame import build_blame, normalize_path, render_blame
-from agentwatch.cli.main import main
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.blame import build_blame, normalize_path, render_blame
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

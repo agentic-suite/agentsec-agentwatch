@@ -21,16 +21,16 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import hook
-from agentwatch.daemon import Daemon
-from agentwatch.health import (
+from agentsec_agentwatch import hook
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.health import (
     HealthSnapshot,
     fetch_health,
     local_snapshot,
     start_health_server,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import ChainStatus, RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import ChainStatus, RecordStore
 
 _VERSION = "9.9.9"
 

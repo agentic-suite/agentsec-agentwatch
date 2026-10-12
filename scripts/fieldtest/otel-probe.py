@@ -19,8 +19,8 @@ import sys
 
 sys.path.insert(0, "/work/packages/python-sdk/src")
 
-from agentwatch.config import SDKConfig  # noqa: E402
-from agentwatch.tracer import configure_otlp_tracing, get_tracer  # noqa: E402
+from agentsec_agentwatch.config import SDKConfig  # noqa: E402
+from agentsec_agentwatch.tracer import configure_otlp_tracing, get_tracer  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:

@@ -17,7 +17,7 @@ from pathlib import Path
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
-from agentwatch.attestation import (
+from agentsec_agentwatch.attestation import (
     ATTESTATION_ABSENT,
     ATTESTATION_PRESENT,
     attest_session,
@@ -25,13 +25,13 @@ from agentwatch.attestation import (
     config_digest,
     last_attestation,
 )
-from agentwatch.coverage import build_coverage
-from agentwatch.recorder_state import (
+from agentsec_agentwatch.coverage import build_coverage
+from agentsec_agentwatch.recorder_state import (
     MARKER_TOOLS,
     RECORDER_ATTESTED_TOOL,
     RECORDER_CONFIG_CHANGED_TOOL,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -173,7 +173,7 @@ def test_coverage_and_evidence_surface_the_attestation(tmp_path: Path) -> None:
 
 
 def test_daemon_attests_once_per_session(tmp_path: Path) -> None:
-    from agentwatch.daemon import Daemon
+    from agentsec_agentwatch.daemon import Daemon
 
     store = RecordStore(tmp_path / "records.jsonl", durability="none")
     daemon = Daemon(
@@ -202,7 +202,7 @@ def test_attestation_never_stores_config_values(secret: str) -> None:
     # attestation digest is over booleans/mode only, so the value never enters.
     import tempfile
 
-    from agentwatch.managed_policy import detect_managed_policy
+    from agentsec_agentwatch.managed_policy import detect_managed_policy
 
     base = Path(tempfile.mkdtemp(prefix="aw-attest-"))
     settings_path = base / "managed.json"

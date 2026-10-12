@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -98,14 +98,14 @@ def test_producer_kind_must_be_a_string() -> None:
 
 
 def test_import_override_tags_records() -> None:
-    from agentwatch.importer import IMPORT_PRODUCER
+    from agentsec_agentwatch.importer import IMPORT_PRODUCER
 
     assert IMPORT_PRODUCER.kind is ProducerKind.IMPORT
 
 
 def test_search_filters_by_producer(tmp_path: Path) -> None:
-    from agentwatch.query import search
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.query import search
+    from agentsec_agentwatch.store import RecordStore
 
     store = RecordStore(tmp_path / "records.jsonl")
     store.append(_record(producer=Producer(kind=ProducerKind.HOOK, name="claude-code")))

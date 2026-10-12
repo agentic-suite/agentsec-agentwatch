@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import sdk_conformance_registry  # noqa: F401  (registers the packs)
 
-from agentwatch import conformance
+from agentsec_agentwatch import conformance
 
 
 def test_langgraph_sdk_pack_conforms() -> None:

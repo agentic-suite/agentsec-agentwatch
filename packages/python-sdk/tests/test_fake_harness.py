@@ -7,10 +7,10 @@ from pathlib import Path
 import fake_harness
 import pytest
 
-from agentwatch.adapters import claude_code, codex_cli, cursor, gemini_cli, mcp_proxy
-from agentwatch.daemon import Daemon
-from agentwatch.records import validate_record
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.adapters import claude_code, codex_cli, cursor, gemini_cli, mcp_proxy
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.records import validate_record
+from agentsec_agentwatch.store import RecordStore
 
 _ADAPTERS = {
     "claude-code": claude_code,

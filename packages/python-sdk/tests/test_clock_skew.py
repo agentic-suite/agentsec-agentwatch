@@ -6,9 +6,9 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
-from agentwatch.daemon import Daemon
-from agentwatch.health import HealthSnapshot
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.health import HealthSnapshot
+from agentsec_agentwatch.store import RecordStore
 
 
 def _daemon(tmp_path: Path, *, tolerance: float = 60.0) -> tuple[Daemon, HealthSnapshot]:

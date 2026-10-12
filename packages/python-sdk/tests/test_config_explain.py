@@ -7,9 +7,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.config_explain import explain_config, render_explanations
-from agentwatch.configuration import ConfigError
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.config_explain import explain_config, render_explanations
+from agentsec_agentwatch.configuration import ConfigError
 
 
 def _write(path: Path, text: str) -> None:

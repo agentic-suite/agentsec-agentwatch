@@ -34,8 +34,8 @@ sys.path.insert(0, str(REPO / "packages" / "python-sdk" / "src"))
 
 from opentelemetry.trace import Status, StatusCode  # noqa: E402
 
-from agentwatch.config import SDKConfig  # noqa: E402
-from agentwatch.tracer import configure_otlp_tracing, get_tracer  # noqa: E402
+from agentsec_agentwatch.config import SDKConfig  # noqa: E402
+from agentsec_agentwatch.tracer import configure_otlp_tracing, get_tracer  # noqa: E402
 
 SERVICE = "agentwatch-m25-evidence"
 CONVERSATION = "conv-m25-evidence"

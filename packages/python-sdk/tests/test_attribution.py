@@ -9,9 +9,9 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agentwatch.blame import build_blame
-from agentwatch.impact import build_impact, render_impact
-from agentwatch.records import (
+from agentsec_agentwatch.blame import build_blame
+from agentsec_agentwatch.impact import build_impact, render_impact
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Approval,
@@ -20,9 +20,9 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
-from agentwatch.trace import build_trace, render_trace
-from agentwatch.tree import build_tree, render_tree
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.trace import build_trace, render_trace
+from agentsec_agentwatch.tree import build_tree, render_tree
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 TRACE = "aa" * 16

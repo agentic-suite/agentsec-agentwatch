@@ -22,12 +22,12 @@ import sys
 from pathlib import Path
 
 try:
-    from agentwatch.aat import check_aat_drift
+    from agentsec_agentwatch.aat import check_aat_drift
 except ImportError:  # pragma: no cover - guidance when run without the SDK
     sys.path.insert(
         0, str(Path(__file__).resolve().parent.parent / "packages" / "python-sdk" / "src")
     )
-    from agentwatch.aat import check_aat_drift
+    from agentsec_agentwatch.aat import check_aat_drift
 
 
 def main(argv: list[str] | None = None) -> int:

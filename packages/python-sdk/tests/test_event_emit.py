@@ -19,15 +19,15 @@ from typing import Any
 
 import pytest
 
-from agentwatch import hook
-from agentwatch.cli import main
-from agentwatch.daemon import (
+from agentsec_agentwatch import hook
+from agentsec_agentwatch.cli import main
+from agentsec_agentwatch.daemon import (
     DEFAULT_EVENT_SESSION,
     EXTERNAL_EVENT_TOOL,
     Daemon,
 )
-from agentwatch.records import AgentRecord, SecurityEventType
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentRecord, SecurityEventType
+from agentsec_agentwatch.store import RecordStore
 
 EVENT = {
     "event_version": "0.1.0",
@@ -201,7 +201,7 @@ def test_event_emit_cli_sends_a_validated_frame(
         sent.append(message)
         return True
 
-    monkeypatch.setattr("agentwatch.hook.send", fake_send)
+    monkeypatch.setattr("agentsec_agentwatch.hook.send", fake_send)
 
     rc = main(
         [
@@ -232,7 +232,7 @@ def test_event_emit_cli_sends_a_validated_frame(
 
 
 def test_event_emit_cli_rejects_bad_evidence(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr("agentwatch.hook.send", lambda *a, **k: True)
+    monkeypatch.setattr("agentsec_agentwatch.hook.send", lambda *a, **k: True)
     rc = main(["event", "emit", "policy-fired", "--evidence", "not json"])
     assert rc != 0
 
@@ -240,7 +240,7 @@ def test_event_emit_cli_rejects_bad_evidence(monkeypatch: pytest.MonkeyPatch) ->
 def test_event_emit_cli_fails_closed_when_daemon_is_down(
     monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    monkeypatch.setattr("agentwatch.hook.send", lambda *a, **k: False)
+    monkeypatch.setattr("agentsec_agentwatch.hook.send", lambda *a, **k: False)
     rc = main(["event", "emit", "policy-fired"])
     assert rc != 0
     assert capsys.readouterr().err.strip()

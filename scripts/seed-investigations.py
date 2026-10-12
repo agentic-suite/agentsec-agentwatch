@@ -22,7 +22,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT / "packages/python-sdk/src"))
 
-from agentwatch.records import (  # noqa: E402
+from agentsec_agentwatch.records import (  # noqa: E402
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -32,7 +32,7 @@ from agentwatch.records import (  # noqa: E402
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore  # noqa: E402
+from agentsec_agentwatch.store import RecordStore  # noqa: E402
 
 _T0 = datetime(2026, 3, 1, 14, 0, tzinfo=timezone.utc)
 

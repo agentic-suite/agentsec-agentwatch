@@ -17,7 +17,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "packages" / "python-sdk" / "src"))
 
-from agentwatch.streaming_soak import run_streaming_soak  # noqa: E402
+from agentsec_agentwatch.streaming_soak import run_streaming_soak  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:

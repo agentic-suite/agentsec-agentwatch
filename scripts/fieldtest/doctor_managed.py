@@ -15,8 +15,8 @@ for _cand in (
     if os.path.isdir(_cand):
         sys.path.insert(0, _cand)
 
-from agentwatch.doctor import _check_hooks  # noqa: E402
-from agentwatch.managed_policy import ManagedPolicy  # noqa: E402
+from agentsec_agentwatch.doctor import _check_hooks  # noqa: E402
+from agentsec_agentwatch.managed_policy import ManagedPolicy  # noqa: E402
 
 _SETTINGS = {"user": Path("/nonexistent/user-settings.json"),
              "project": Path("/nonexistent/project-settings.json")}

@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.install import InstallError, start_mcp_proxy, stop_mcp_proxy
+from agentsec_agentwatch.install import InstallError, start_mcp_proxy, stop_mcp_proxy
 
 
 def _free_port() -> int:

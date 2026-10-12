@@ -14,8 +14,8 @@ from typing import Any
 import conformance_registry  # noqa: F401  (registers shipped adapters)
 import pytest
 
-from agentwatch.adapters import claude_code
-from agentwatch.records import validate_record
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.records import validate_record
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "claude-code"
 CASES = sorted(FIXTURES.glob("*.json"))
@@ -58,6 +58,6 @@ def test_each_declared_gap_is_rejected_explicitly(gap: str) -> None:
 
 def test_claude_code_passes_the_shared_conformance_runner() -> None:
     # The checks above are the Claude Code instance of the reusable runner (O1).
-    from agentwatch import conformance
+    from agentsec_agentwatch import conformance
 
     conformance.assert_conforms(conformance_registry.claude_code_spec())

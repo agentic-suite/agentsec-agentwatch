@@ -19,15 +19,15 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.records import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
     RecordPrivacyMode,
     ToolCall,
 )
-from agentwatch.runner_segments import (
+from agentsec_agentwatch.runner_segments import (
     SEGMENT_FORMAT,
     anchor_records,
     custody_rows,
@@ -36,8 +36,8 @@ from agentwatch.runner_segments import (
     seal_segment,
     verify_segment,
 )
-from agentwatch.store import RecordStore
-from agentwatch.trace_context import format_traceparent
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.trace_context import format_traceparent
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 TRACE = "4bf92f3577b34da6a3ce929d0e0e4736"
@@ -61,7 +61,7 @@ def _record(
         traceparent=traceparent,
     )
     if traceparent is not None:
-        from agentwatch.trace_context import parse_traceparent
+        from agentsec_agentwatch.trace_context import parse_traceparent
 
         context = parse_traceparent(traceparent)
         if context is not None:

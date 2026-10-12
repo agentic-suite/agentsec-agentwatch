@@ -12,18 +12,18 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
-from agentwatch import claude_otel
-from agentwatch.adapters import claude_code
-from agentwatch.impact import build_impact
-from agentwatch.permission_mode import (
+from agentsec_agentwatch import claude_otel
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.impact import build_impact
+from agentsec_agentwatch.permission_mode import (
     MODE_CHANGED_TOOL,
     effective_modes,
     is_permission_mode_change,
     mode_intervals,
     permission_mode_change_record,
 )
-from agentwatch.query import search
-from agentwatch.records import (
+from agentsec_agentwatch.query import search
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -34,7 +34,7 @@ from agentwatch.records import (
     ToolCall,
     validate_record,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 BASE = datetime(2026, 1, 2, 3, 0, 0, tzinfo=timezone.utc)
 
@@ -111,7 +111,7 @@ def test_missing_mode_is_unknown() -> None:
 
 
 def test_transition_mode_reads_arguments_when_field_absent() -> None:
-    from agentwatch.records import AgentRecord, Producer, ProducerKind, ToolCall
+    from agentsec_agentwatch.records import AgentRecord, Producer, ProducerKind, ToolCall
 
     record = AgentRecord(
         session_id="s1",
@@ -123,7 +123,7 @@ def test_transition_mode_reads_arguments_when_field_absent() -> None:
         producer=Producer(kind=ProducerKind.INGEST, name="claude-code-otel"),
         step_type=None,
     )
-    from agentwatch.permission_mode import transition_mode
+    from agentsec_agentwatch.permission_mode import transition_mode
 
     assert transition_mode(record) is PermissionMode.PLAN
 
@@ -211,7 +211,7 @@ def test_impact_flags_the_bypass_interval(tmp_path: Path) -> None:
 
 
 def test_coverage_counts_unknown_modes(tmp_path: Path) -> None:
-    from agentwatch.coverage import build_coverage
+    from agentsec_agentwatch.coverage import build_coverage
 
     store = RecordStore(tmp_path / "records.jsonl")
     store.append(_call("s1", BASE))

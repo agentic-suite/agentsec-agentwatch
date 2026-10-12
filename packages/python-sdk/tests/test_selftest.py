@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from agentwatch import selftest
-from agentwatch.selftest import SELF_TEST_CORPUS, export_allowed, run_redaction_self_test
+from agentsec_agentwatch import selftest
+from agentsec_agentwatch.selftest import SELF_TEST_CORPUS, export_allowed, run_redaction_self_test
 
 
 def test_self_test_passes_for_default_corpus() -> None:

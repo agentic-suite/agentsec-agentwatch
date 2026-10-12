@@ -15,17 +15,17 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.concurrency import build_concurrency, render_concurrency
-from agentwatch.provenance import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.concurrency import build_concurrency, render_concurrency
+from agentsec_agentwatch.provenance import (
     CommitFacts,
     LineRange,
     build_provenance,
     capture_ranges,
     to_attribution_arguments,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 FIXTURE = Path(__file__).parent / "fixtures" / "provenance" / "two_sessions.jsonl"
 BASE = datetime(2026, 2, 1, 12, 0, 0, tzinfo=timezone.utc)

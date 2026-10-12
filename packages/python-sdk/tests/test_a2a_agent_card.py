@@ -18,8 +18,8 @@ from cryptography.hazmat.primitives import hashes, serialization
 from cryptography.hazmat.primitives.asymmetric import ec, padding, rsa
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 
-from agentwatch import agent_card
-from agentwatch.adapters import a2a_proxy
+from agentsec_agentwatch import agent_card
+from agentsec_agentwatch.adapters import a2a_proxy
 
 
 def _b64url(data: bytes) -> str:

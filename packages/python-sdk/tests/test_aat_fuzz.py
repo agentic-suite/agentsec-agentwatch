@@ -11,7 +11,7 @@ import json
 from hypothesis import given
 from hypothesis import strategies as st
 
-from agentwatch.aat import AAT_DRAFT, verify_aat
+from agentsec_agentwatch.aat import AAT_DRAFT, verify_aat
 
 ARBITRARY_JSON = st.recursive(
     st.none() | st.booleans() | st.integers() | st.text(max_size=50),

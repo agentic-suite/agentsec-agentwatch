@@ -5,8 +5,8 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agentwatch.attrs import GEN_AI_TOOL_NAME
-from agentwatch.otel_component import (
+from agentsec_agentwatch.attrs import GEN_AI_TOOL_NAME
+from agentsec_agentwatch.otel_component import (
     SEMCONV_VERSION,
     collect_spans,
     component_manifest,
@@ -14,7 +14,7 @@ from agentwatch.otel_component import (
     record_to_span,
     resource_attributes,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -23,7 +23,7 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

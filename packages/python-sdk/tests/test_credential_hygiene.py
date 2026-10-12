@@ -10,9 +10,9 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
-from agentwatch.attrs import AGENTWATCH_CREDENTIAL_CLASS
-from agentwatch.export import record_to_attributes
-from agentwatch.records import (
+from agentsec_agentwatch.attrs import AGENTWATCH_CREDENTIAL_CLASS
+from agentsec_agentwatch.export import record_to_attributes
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     CredentialClass,

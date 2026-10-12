@@ -15,9 +15,9 @@ from collections.abc import Callable, Iterator, MutableMapping
 
 import pytest
 
-import agentwatch
-from agentwatch import autoinstrument
-from agentwatch.frameworks import RECIPES, FrameworkRecipe
+import agentsec_agentwatch
+from agentsec_agentwatch import autoinstrument
+from agentsec_agentwatch.frameworks import RECIPES, FrameworkRecipe
 
 
 @pytest.fixture(autouse=True)
@@ -41,8 +41,8 @@ def _all_modules() -> list[str]:
 
 
 def test_agentwatch_instrument_is_callable_and_keeps_the_module() -> None:
-    assert callable(agentwatch.instrument)
-    from agentwatch.instrument import invoke_agent  # noqa: PLC0415 - back-compat check
+    assert callable(agentsec_agentwatch.instrument)
+    from agentsec_agentwatch.instrument import invoke_agent  # noqa: PLC0415 - back-compat check
 
     assert callable(invoke_agent)
 

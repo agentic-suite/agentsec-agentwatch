@@ -17,7 +17,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.access import (
+from agentsec_agentwatch.access import (
     ACCESS_COMMANDS,
     ACCESS_MATRIX,
     DEFAULT_FLEET_PROFILE,
@@ -32,17 +32,17 @@ from agentwatch.access import (
     render_matrix,
     resolve_identity,
 )
-from agentwatch.cli.main import main
-from agentwatch.configuration import AgentwatchConfig, PrivacySection
-from agentwatch.records import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.configuration import AgentwatchConfig, PrivacySection
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
     RecordPrivacyMode,
     ToolCall,
 )
-from agentwatch.store import RecordStore
-from agentwatch.store_access import STORE_ACCESS_TOOL
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.store_access import STORE_ACCESS_TOOL
 
 START = datetime(2026, 10, 6, 12, 0, tzinfo=timezone.utc)
 

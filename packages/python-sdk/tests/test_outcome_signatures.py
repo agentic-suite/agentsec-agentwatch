@@ -10,14 +10,14 @@ from __future__ import annotations
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from agentwatch.digest import (
+from agentsec_agentwatch.digest import (
     SIGNATURES_VERSION,
     TOP_SIGNATURES,
     build_digest,
     render_digest,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 NOW = datetime(2026, 1, 8, 12, 0, 0, tzinfo=timezone.utc)
 

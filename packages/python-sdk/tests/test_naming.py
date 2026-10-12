@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from agentwatch import naming
+from agentsec_agentwatch import naming
 
 
 def test_no_warning_when_our_distribution_provides_the_module() -> None:
@@ -42,7 +42,7 @@ def test_install_guard_is_silent_when_clean() -> None:
 def test_version_banner_includes_the_warning(
     monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     monkeypatch.setattr(naming, "distribution_warning", lambda *a, **k: naming.NAMESAKE_WARNING)
     with pytest.raises(SystemExit) as exc:

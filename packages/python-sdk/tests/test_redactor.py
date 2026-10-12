@@ -7,8 +7,8 @@ import json
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.redactor import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.redactor import (
     FINDINGS_SCHEMA,
     RedactorError,
     findings_to_dict,

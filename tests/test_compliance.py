@@ -10,8 +10,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SDK_SRC = ROOT / "packages" / "python-sdk" / "src"
 sys.path.insert(0, str(SDK_SRC))
 
-from agentwatch.protocol import STORE_FORMAT_VERSION  # noqa: E402
-from agentwatch.records import (  # noqa: E402
+from agentsec_agentwatch.protocol import STORE_FORMAT_VERSION  # noqa: E402
+from agentsec_agentwatch.records import (  # noqa: E402
     EVENT_VERSION,
     SCHEMA_VERSION,
     SUPPORTED_EVENT_VERSIONS,

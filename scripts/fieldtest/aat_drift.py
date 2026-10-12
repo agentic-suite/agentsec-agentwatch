@@ -3,7 +3,7 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from agentwatch.aat import check_aat_drift, aat_version_line  # real API
+from agentsec_agentwatch.aat import check_aat_drift, aat_version_line  # real API
 from _ftutil import fail, ok
 
 def main(argv):

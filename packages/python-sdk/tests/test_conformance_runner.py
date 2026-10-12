@@ -17,8 +17,8 @@ from typing import Any
 import conformance_registry  # noqa: F401  (registers shipped adapters)
 import pytest
 
-from agentwatch import adapters, conformance
-from agentwatch.records import (
+from agentsec_agentwatch import adapters, conformance
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -106,7 +106,7 @@ def test_claude_code_is_registered_by_the_registry_module() -> None:
 
 def test_all_shipped_adapters_are_registered() -> None:
     for module_name in adapters.__all__:
-        module = importlib.import_module(f"agentwatch.adapters.{module_name}")
+        module = importlib.import_module(f"agentsec_agentwatch.adapters.{module_name}")
         harness_id = module.HARNESS_ID
         assert harness_id in conformance.registered_names(), (
             f"{module_name} is shipped but not registered for conformance"
