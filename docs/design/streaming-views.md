@@ -34,7 +34,7 @@ requirement is [PRD 42](../prd/42-harness-fidelity-and-realtime.md) (STR-1..3).
 - Latency target: p99 hook → operator view ≤ 1 s (perf gate extension).
 
 **STR-2 (M26):** the live consumer is store-truth + notification. The STR-1 transport notifies by sequence number;
-[`agentwatch.live.LiveTail`](../../packages/python-sdk/src/agentwatch/live.py) reconciles a poll into rendered
+[`agentwatch.live.LiveTail`](../../packages/python-sdk/src/agentsec_agentwatch/live.py) reconciles a poll into rendered
 lines, **classified gaps** (`stream-drop`, `purged`, `missing`, `rotated`), and a visible `degraded` flag. A
 backpressured subscriber (or a late join, or a rotated store file) is **back-filled from the store**, so the live
 view never diverges from the chain. The operator live views themselves are `26.UI-1`.
@@ -49,12 +49,12 @@ correlation stays within the opt-in self-hosted fleet.
 across every host/session the fleet store holds. Parentage (`parent_span_id`) defines the tree; a child whose
 timestamps disagree with its parent across hosts is surfaced as `skew_ms` plus a `clock-skew` gap (never silently
 reordered), and a record whose parent span is absent is attached as an orphan with a `missing-parent` gap (never
-dropped). Implementation: [`agentwatch.trace`](../../packages/python-sdk/src/agentwatch/trace.py).
+dropped). Implementation: [`agentwatch.trace`](../../packages/python-sdk/src/agentsec_agentwatch/trace.py).
 
 **UI-1 (M30):** the local console's live timeline, live anomaly inbox, and streaming tail consume the same
 store-truth tail: `agentwatch.ui` polls `LiveTail` (STR-2) and serves `/api/live/timeline`,
 `/api/live/anomalies`, and an SSE `/api/live/stream`, so a backpressured subscriber is back-filled from the store
-and `degraded` stays visible. Implementation: [`agentwatch.ui`](../../packages/python-sdk/src/agentwatch/ui.py),
+and `degraded` stays visible. Implementation: [`agentwatch.ui`](../../packages/python-sdk/src/agentsec_agentwatch/ui.py),
 [tests/test_console.py](../../packages/python-sdk/tests/test_console.py).
 
 ## Testing

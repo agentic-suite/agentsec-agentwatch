@@ -59,7 +59,7 @@ class MutationResult:
 MUTATIONS: tuple[Mutation, ...] = (
     Mutation(
         id="store.chain-seq-and-prev-hash",
-        module="agentwatch/store.py",
+        module="agentsec_agentwatch/store.py",
         old="if entry.seq != expected_seq or entry.prev_hash != prev:",
         new="if False:  # MUTANT",
         tests=("tests/test_store.py", "tests/test_store_hardening.py"),
@@ -67,7 +67,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="store.chain-checkpoint-hash",
-        module="agentwatch/store.py",
+        module="agentsec_agentwatch/store.py",
         old="if _entry_hash(entry.prev_hash, payload) != entry.hash:",
         new="if False:  # MUTANT",
         tests=("tests/test_store_hardening.py", "tests/test_purge.py"),
@@ -75,7 +75,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="store.chain-record-hash",
-        module="agentwatch/store.py",
+        module="agentsec_agentwatch/store.py",
         old="and _entry_hash(entry.prev_hash, entry.record.to_dict()) != entry.hash",
         new="and False  # MUTANT",
         tests=("tests/test_store.py", "tests/test_store_hardening.py"),
@@ -83,7 +83,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="redact.field-and-mode-gate",
-        module="agentwatch/redact.py",
+        module="agentsec_agentwatch/redact.py",
         old="if not allowed or self.mode is PrivacyMode.METADATA_ONLY:",
         new="if False:  # MUTANT",
         tests=("tests/test_redact.py",),
@@ -91,7 +91,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="redact.truncate-boundary",
-        module="agentwatch/redact.py",
+        module="agentsec_agentwatch/redact.py",
         old="if len(value) > self.truncate_at:",
         new="if False:  # MUTANT",
         tests=("tests/test_redact.py",),
@@ -99,7 +99,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="secrets.mask-span",
-        module="agentwatch/secrets.py",
+        module="agentsec_agentwatch/secrets.py",
         old='parts.append(f"<REDACTED:{match.kind}>")',
         new="parts.append(text[match.start : match.end])  # MUTANT",
         tests=(
@@ -111,7 +111,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="records.validate-before-model",
-        module="agentwatch/records.py",
+        module="agentsec_agentwatch/records.py",
         old="    _validate_record_dict(data)\n",
         new="    pass  # MUTANT\n",
         tests=("tests/test_records.py", "tests/test_schema_contract.py"),
@@ -119,7 +119,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="cursor.reject-unknown-phase",
-        module="agentwatch/adapters/cursor.py",
+        module="agentsec_agentwatch/adapters/cursor.py",
         old="    if phase not in CAPABILITIES:\n",
         new="    if False:  # MUTANT\n",
         tests=("tests/test_cursor_adapter.py",),
@@ -127,7 +127,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="cursor.split-mcp-server",
-        module="agentwatch/adapters/cursor.py",
+        module="agentsec_agentwatch/adapters/cursor.py",
         old='    if len(parts) >= 3 and parts[0] == "mcp" and parts[1] and "__".join(parts[2:]):\n',
         new="    if False:  # MUTANT\n",
         tests=("tests/test_cursor_adapter.py",),
@@ -135,7 +135,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="aat.verify-chain-hash",
-        module="agentwatch/aat.py",
+        module="agentsec_agentwatch/aat.py",
         old='        if expected != chain.get("hash"):\n',
         new="        if False:  # MUTANT\n",
         tests=("tests/test_aat.py", "tests/test_aat_fuzz.py"),
@@ -143,7 +143,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="aat.lossless-unmapped",
-        module="agentwatch/aat.py",
+        module="agentsec_agentwatch/aat.py",
         old='        "unmapped": dict(_UNMAPPED_FIELDS),\n',
         new='        "unmapped": {},  # MUTANT\n',
         tests=("tests/test_aat.py",),
@@ -151,7 +151,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="sampling.never-sample-security",
-        module="agentwatch/sampling.py",
+        module="agentsec_agentwatch/sampling.py",
         old="        if is_security_relevant(record):\n",
         new="        if False:  # MUTANT\n",
         tests=("tests/test_sampling.py",),
@@ -159,7 +159,7 @@ MUTATIONS: tuple[Mutation, ...] = (
     ),
     Mutation(
         id="streaming.drop-on-overflow",
-        module="agentwatch/streaming.py",
+        module="agentsec_agentwatch/streaming.py",
         old=(
             "            if self._queue.maxlen is not None and len(self._queue) "
             ">= self._queue.maxlen:\n"
@@ -233,7 +233,7 @@ def run_mutation(mutation: Mutation, *, timeout: float) -> MutationResult:
 # by --self-test to prove the gate flags an uncaught mutant.
 SELF_TEST_MUTATION = Mutation(
     id="selftest.no-op-docstring",
-    module="agentwatch/redact.py",
+    module="agentsec_agentwatch/redact.py",
     old='"""Redaction and privacy controls.\n',
     new='"""Redaction and privacy controls (mutated docstring).\n',
     tests=("tests/test_redact.py",),

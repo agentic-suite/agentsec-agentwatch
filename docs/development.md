@@ -23,8 +23,8 @@ schema/                machine-readable contracts
 ```
 
 The `agentwatch` console script and its argparse framework live in
-`packages/python-sdk/src/agentwatch/cli/`; the operator config loader is
-`packages/python-sdk/src/agentwatch/configuration.py` (PRD 16). See the
+`packages/python-sdk/src/agentsec_agentwatch/cli/`; the operator config loader is
+`packages/python-sdk/src/agentsec_agentwatch/configuration.py` (PRD 16). See the
 [CLI reference](reference/cli-reference.md).
 
 ## Setup

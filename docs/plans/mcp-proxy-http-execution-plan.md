@@ -34,7 +34,7 @@
 ### Task 1: HTTP/SSE proxy engine
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/mcp_proxy.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/mcp_proxy.py`
 - Test: `packages/python-sdk/tests/test_mcp_proxy_http.py`
 
 **Interfaces:**
@@ -52,8 +52,8 @@
 ### Task 2: `main` HTTP mode + `--http` CLI flags
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/mcp_proxy.py`
-- Modify: `packages/python-sdk/src/agentwatch/cli/main.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/mcp_proxy.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/cli/main.py`
 - Test: `packages/python-sdk/tests/test_cli_mcp_proxy.py`
 
 **Interfaces:**
@@ -71,7 +71,7 @@
 ### Task 3: Config install / restore module
 
 **Files:**
-- Create: `packages/python-sdk/src/agentwatch/mcp_config.py`
+- Create: `packages/python-sdk/src/agentsec_agentwatch/mcp_config.py`
 - Test: `packages/python-sdk/tests/test_mcp_config.py`
 
 **Interfaces:**
@@ -98,8 +98,8 @@
 ### Task 4: `init --mcp-proxy` + `uninstall` integration
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/install.py` (background proxy process: `start_mcp_proxy`, `stop_mcp_proxy`, `mcp_proxy_pid_path`)
-- Modify: `packages/python-sdk/src/agentwatch/cli/main.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/install.py` (background proxy process: `start_mcp_proxy`, `stop_mcp_proxy`, `mcp_proxy_pid_path`)
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/cli/main.py`
 - Test: `packages/python-sdk/tests/test_cli_init_mcp_proxy.py`
 
 **Interfaces:**

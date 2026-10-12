@@ -37,7 +37,7 @@
 ### Task 1: Additive record fields (`project`, `parent_session_id`)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/records.py` (`AgentRecord`, `_RECORD_FIELDS`, `_validate_record_dict`)
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/records.py` (`AgentRecord`, `_RECORD_FIELDS`, `_validate_record_dict`)
 - Modify: `schema/agent-record.schema.json`
 - Test: `packages/python-sdk/tests/test_records.py`
 - Fixtures: `packages/python-sdk/tests/fixtures/records/valid/` (one new fixture)
@@ -73,7 +73,7 @@ def test_unknown_record_key_is_still_rejected():
 ### Task 2: Adapter populates MCP server, project, prompt_version, parent session
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/adapters/claude_code.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/adapters/claude_code.py`
 - Test: `packages/python-sdk/tests/test_claude_code_adapter.py`, `tests/test_conformance.py`
 - Fixtures: `tests/fixtures/claude-code/mcp_tool.json`, `tests/fixtures/claude-code/resume_session.json`
 
@@ -111,7 +111,7 @@ def test_resume_session_links_parent():
 ### Task 3: Hook prompt-version fingerprint (CLAUDE.md digest)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/hook.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/hook.py`
 - Test: `packages/python-sdk/tests/test_hook.py`
 
 **Interfaces:**
@@ -143,8 +143,8 @@ def test_fingerprint_multi_file_order_is_path_sorted(tmp_path):
 ### Task 4: `agentwatch.inventory` + `agentwatch inventory` CLI (R9)
 
 **Files:**
-- Create: `packages/python-sdk/src/agentwatch/inventory.py`
-- Modify: `packages/python-sdk/src/agentwatch/cli/main.py`
+- Create: `packages/python-sdk/src/agentsec_agentwatch/inventory.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/cli/main.py`
 - Test: `packages/python-sdk/tests/test_inventory.py`
 
 **Interfaces:**
@@ -176,7 +176,7 @@ def test_inventory_project_filter(...): ...
 ### Task 5: Per-project filtering (`sessions`, `search`, `tail`)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/view.py`, `query.py`, `tail.py`, `cli/main.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/view.py`, `query.py`, `tail.py`, `cli/main.py`
 - Test: `packages/python-sdk/tests/test_project_filter.py`
 
 **Interfaces:**
@@ -201,7 +201,7 @@ def test_project_filter_missing_cwd_is_unknown(...): ...
 ### Task 6: Replay follows the parent-session chain
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/replay.py`, `cli/main.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/replay.py`, `cli/main.py`
 - Test: `packages/python-sdk/tests/test_session_correlation.py`
 
 **Interfaces:**
@@ -227,7 +227,7 @@ def test_replay_guards_against_parent_cycle(...): ...  # terminates; no infinite
 ### Task 7: Retention hardening + `agentwatch retention apply`
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/cli/main.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/cli/main.py`
 - Test: `packages/python-sdk/tests/test_retention_cli.py`
 
 **Interfaces:**
@@ -252,7 +252,7 @@ def test_retention_apply_json_shape(...): ...
 ### Task 8: Session purge (right to erasure)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/store.py`, `cli/main.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/store.py`, `cli/main.py`
 - Test: `packages/python-sdk/tests/test_purge.py`
 
 **Interfaces:**

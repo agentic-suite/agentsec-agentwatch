@@ -35,7 +35,7 @@ The spec implies these and no task's happy-path tests exercise them; each gets a
 ### Task 1: MCP adapter module
 
 **Files:**
-- Create: `packages/python-sdk/src/agentwatch/adapters/mcp_proxy.py`
+- Create: `packages/python-sdk/src/agentsec_agentwatch/adapters/mcp_proxy.py`
 - Test: `packages/python-sdk/tests/test_mcp_proxy_adapter.py`
 
 **Interfaces:**
@@ -182,7 +182,7 @@ Expected: PASS.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add packages/python-sdk/src/agentwatch/adapters/mcp_proxy.py packages/python-sdk/tests/test_mcp_proxy_adapter.py
+git add packages/python-sdk/src/agentsec_agentwatch/adapters/mcp_proxy.py packages/python-sdk/tests/test_mcp_proxy_adapter.py
 git commit -s -m "feat(adapters): MCP proxy adapter normalizes tools/call frames (M10 N1 #83)"
 ```
 
@@ -191,7 +191,7 @@ git commit -s -m "feat(adapters): MCP proxy adapter normalizes tools/call frames
 ### Task 2: Publish the `mcp` daemon phase
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/protocol.py` (`FRAME_PHASES`)
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/protocol.py` (`FRAME_PHASES`)
 - Modify: `packages/python-sdk/tests/test_protocol_contract.py`
 - Modify: `docs/reference/daemon-protocol.md`
 
@@ -224,7 +224,7 @@ Expected: PASS.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add packages/python-sdk/src/agentwatch/protocol.py packages/python-sdk/tests/test_protocol_contract.py docs/reference/daemon-protocol.md
+git add packages/python-sdk/src/agentsec_agentwatch/protocol.py packages/python-sdk/tests/test_protocol_contract.py docs/reference/daemon-protocol.md
 git commit -s -m "docs(protocol): publish the mcp daemon phase (M10 N1 #212)"
 ```
 
@@ -233,7 +233,7 @@ git commit -s -m "docs(protocol): publish the mcp daemon phase (M10 N1 #212)"
 ### Task 3: Register the adapter for conformance
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/adapters/__init__.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/adapters/__init__.py`
 - Modify: `packages/python-sdk/tests/conformance_registry.py`
 - Create: `packages/python-sdk/tests/fixtures/mcp-proxy/tools-call-request.json`, `.../tools-call-response.json`
 - Modify: `docs/reference/adapter-conformance.md`
@@ -301,7 +301,7 @@ Expected: PASS (including `fixtures-populated` and `fixture-replay`).
 - [ ] **Step 5: Commit**
 
 ```bash
-git add packages/python-sdk/src/agentwatch/adapters/__init__.py packages/python-sdk/tests/conformance_registry.py packages/python-sdk/tests/fixtures/mcp-proxy docs/reference/adapter-conformance.md
+git add packages/python-sdk/src/agentsec_agentwatch/adapters/__init__.py packages/python-sdk/tests/conformance_registry.py packages/python-sdk/tests/fixtures/mcp-proxy docs/reference/adapter-conformance.md
 git commit -s -m "test(conformance): register the MCP proxy adapter (M10 N1 #83)"
 ```
 
@@ -310,7 +310,7 @@ git commit -s -m "test(conformance): register the MCP proxy adapter (M10 N1 #83)
 ### Task 4: Route the `mcp` phase in the daemon
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/daemon.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/daemon.py`
 - Test: `packages/python-sdk/tests/test_mcp_proxy_daemon.py`
 
 **Interfaces:**
@@ -402,7 +402,7 @@ Expected: PASS.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add packages/python-sdk/src/agentwatch/daemon.py packages/python-sdk/tests/test_mcp_proxy_daemon.py
+git add packages/python-sdk/src/agentsec_agentwatch/daemon.py packages/python-sdk/tests/test_mcp_proxy_daemon.py
 git commit -s -m "feat(daemon): route mcp frames through the proxy adapter (M10 N1 #83)"
 ```
 
@@ -411,7 +411,7 @@ git commit -s -m "feat(daemon): route mcp frames through the proxy adapter (M10 
 ### Task 5: Proxy framing, pairing, and session helpers
 
 **Files:**
-- Create: `packages/python-sdk/src/agentwatch/mcp_proxy.py` (helpers only in this task)
+- Create: `packages/python-sdk/src/agentsec_agentwatch/mcp_proxy.py` (helpers only in this task)
 - Test: `packages/python-sdk/tests/test_mcp_proxy_frames.py`
 
 **Interfaces:**
@@ -533,7 +533,7 @@ Expected: PASS.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add packages/python-sdk/src/agentwatch/mcp_proxy.py packages/python-sdk/tests/test_mcp_proxy_frames.py
+git add packages/python-sdk/src/agentsec_agentwatch/mcp_proxy.py packages/python-sdk/tests/test_mcp_proxy_frames.py
 git commit -s -m "feat(mcp): proxy framing, pairing, and session helpers (M10 N1 #83)"
 ```
 
@@ -542,7 +542,7 @@ git commit -s -m "feat(mcp): proxy framing, pairing, and session helpers (M10 N1
 ### Task 6: stdio relay + `run_stdio` + `main`
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/mcp_proxy.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/mcp_proxy.py`
 - Create: `packages/python-sdk/tests/fixtures/mcp/echo_server.py`
 - Test: `packages/python-sdk/tests/test_mcp_proxy_stdio.py`
 
@@ -678,7 +678,7 @@ Expected: PASS.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add packages/python-sdk/src/agentwatch/mcp_proxy.py packages/python-sdk/tests/fixtures/mcp/echo_server.py packages/python-sdk/tests/test_mcp_proxy_stdio.py
+git add packages/python-sdk/src/agentsec_agentwatch/mcp_proxy.py packages/python-sdk/tests/fixtures/mcp/echo_server.py packages/python-sdk/tests/test_mcp_proxy_stdio.py
 git commit -s -m "feat(mcp): stdio relay records tools/call both directions (M10 N1 #83)"
 ```
 
@@ -688,7 +688,7 @@ git commit -s -m "feat(mcp): stdio relay records tools/call both directions (M10
 
 **Files:**
 - Modify: `packages/python-sdk/pyproject.toml` (`[project.scripts]`)
-- Modify: `packages/python-sdk/src/agentwatch/cli/main.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/cli/main.py`
 - Modify: `packages/python-sdk/tests/test_packaging_metadata.py`
 - Test: `packages/python-sdk/tests/test_cli_mcp_proxy.py`
 
@@ -760,7 +760,7 @@ Expected: PASS.
 - [ ] **Step 5: Commit**
 
 ```bash
-git add packages/python-sdk/pyproject.toml packages/python-sdk/src/agentwatch/cli/main.py packages/python-sdk/tests/test_packaging_metadata.py packages/python-sdk/tests/test_cli_mcp_proxy.py
+git add packages/python-sdk/pyproject.toml packages/python-sdk/src/agentsec_agentwatch/cli/main.py packages/python-sdk/tests/test_packaging_metadata.py packages/python-sdk/tests/test_cli_mcp_proxy.py
 git commit -s -m "feat(cli): agentwatch mcp-proxy + console entry point (M10 N1 #83)"
 ```
 

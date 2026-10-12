@@ -49,12 +49,12 @@ detection, dedup, the hash chain, and the conformance runner are reused unchange
 
 | Unit | Path | Responsibility |
 |---|---|---|
-| Adapter | `src/agentwatch/adapters/mcp_proxy.py` | JSON-RPC frame → `AgentRecord`s; strict capability/gap boundary |
-| Proxy engine | `src/agentwatch/mcp_proxy.py` | stdio + HTTP/SSE relay, request/response pairing, frame emission, `main` |
-| Config | `src/agentwatch/mcp_config.py` | re-point `mcpServers`, byte-exact backup, hash-guarded restore |
-| Daemon route | `src/agentwatch/daemon.py` | handle `phase == "mcp"` → adapter; quarantine on normalize error |
-| Protocol | `src/agentwatch/protocol.py` | add `"mcp"` to `FRAME_PHASES` (additive) |
-| CLI | `src/agentwatch/cli/main.py` | `init --mcp-proxy`, `uninstall`, `mcp-proxy` subcommand |
+| Adapter | `src/agentsec_agentwatch/adapters/mcp_proxy.py` | JSON-RPC frame → `AgentRecord`s; strict capability/gap boundary |
+| Proxy engine | `src/agentsec_agentwatch/mcp_proxy.py` | stdio + HTTP/SSE relay, request/response pairing, frame emission, `main` |
+| Config | `src/agentsec_agentwatch/mcp_config.py` | re-point `mcpServers`, byte-exact backup, hash-guarded restore |
+| Daemon route | `src/agentsec_agentwatch/daemon.py` | handle `phase == "mcp"` → adapter; quarantine on normalize error |
+| Protocol | `src/agentsec_agentwatch/protocol.py` | add `"mcp"` to `FRAME_PHASES` (additive) |
+| CLI | `src/agentsec_agentwatch/cli/main.py` | `init --mcp-proxy`, `uninstall`, `mcp-proxy` subcommand |
 | Packaging | `packages/python-sdk/pyproject.toml` | `agentsec-agentwatch-mcp-proxy` console entry point |
 
 ## Adapter boundary contract

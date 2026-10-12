@@ -15,7 +15,7 @@ Claude Code hook, the daemon, normalization, and conformance.
 ## Decisions (rulings taken at planning time)
 
 - **D1 — Record home:** the record + security-event model and validators live in
-  `packages/python-sdk/src/agentwatch/records.py`. *Why:* it is the shared vocabulary every service
+  `packages/python-sdk/src/agentsec_agentwatch/records.py`. *Why:* it is the shared vocabulary every service
   consumes; the SDK is the core distribution. *Cost if wrong:* move the module + imports.
 - **D2 — Dependency-free validation:** `validate_record`/`validate_event` are hand-written and reject
   unknown fields/wrong types/bad enums/unknown versions (F8) with no runtime dependency. A **dev-only**

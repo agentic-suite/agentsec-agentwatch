@@ -13,7 +13,7 @@ Source of truth for the decision: ecosystem `strategy/03-ssot-ownership.md` (run
 | Contract | Owning repo | Source file | Consumers |
 |---|---|---|---|
 | **Security-event schema** | `agentsec-agentwatch` | `schema/security-event.schema.json` | all ecosystems |
-| **OTel `gen_ai.*` + run-health (`gen_ai.agent.*`)** | `agentsec-agentwatch` | `packages/python-sdk/src/agentwatch/semconv.py`, `spans.py` | agentops, agentplane, agentforge, devops |
+| **OTel `gen_ai.*` + run-health (`gen_ai.agent.*`)** | `agentsec-agentwatch` | `packages/python-sdk/src/agentsec_agentwatch/semconv.py`, `spans.py` | agentops, agentplane, agentforge, devops |
 | **Policy engine** | `agentsec-agentpolicy` | `agentpolicy` (ported from `agent-tooltrust`) | agentmesh, agentplane |
 | **Capability + policy-binding schema** | `agentmesh-fabric` | `Capability` / `CapabilityMapping` model | agentplane |
 | **Workload / budget / permission / certification schema** | `agentplane-hiveplane` | `core/` (`workload.py`, `spec.py`, `certification/models.py`, `auth/rbac.py`) | agentops (budget), agentmesh |

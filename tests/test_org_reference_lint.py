@@ -19,6 +19,7 @@ ALLOWLIST = {
     "ROADMAP.md",
     "CHANGELOG.md",
     "docs/wbs/v0.3.0/wbs-v0.3.0-index.md",
+    "docs/release/v0.3.0/migration-guide.md",
     "tests/test_org_reference_lint.py",
 }
 

@@ -4,7 +4,7 @@
 (DD-12). The v0.1.0 local store is JSONL (DD-08).
 
 Status: **draft** (v0.2.0+). The v0.1.0 record contract itself is in
-[`agentwatch.records`](../../packages/python-sdk/src/agentwatch/records.py) and the
+[`agentwatch.records`](../../packages/python-sdk/src/agentsec_agentwatch/records.py) and the
 [record-format spec](../reference/record-format-spec.md).
 
 | Table | Key fields |
@@ -35,7 +35,7 @@ source of truth, and no query here authorizes data the store cannot reproduce.
 ## Record & security-event contract (v0.2.0 additions)
 
 The normative field contract is the [record-format spec](../reference/record-format-spec.md) and
-[`agentwatch.records`](../../packages/python-sdk/src/agentwatch/records.py); this is the dictionary of the
+[`agentwatch.records`](../../packages/python-sdk/src/agentsec_agentwatch/records.py); this is the dictionary of the
 v0.2.0 additive fields. All are optional; absent means an honest default, never a coerced value.
 
 | Field | Type | Meaning | Default when absent |
@@ -54,7 +54,7 @@ v0.2.0 additive fields. All are optional; absent means an honest default, never 
 
 Versioning: `schema_version` / `event_version` accept the supported range `0.1.0`–`0.2.0`; the current
 emit version stays `0.1.0` until the v0.2.0 release bump (M30 30.3). The emit/supported pair lives in
-[`agentwatch.records`](../../packages/python-sdk/src/agentwatch/records.py).
+[`agentwatch.records`](../../packages/python-sdk/src/agentsec_agentwatch/records.py).
 
 ## Notes
 

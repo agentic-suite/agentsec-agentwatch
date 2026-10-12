@@ -96,7 +96,7 @@ the revision in `--version`, exported metadata, and the CI drift check; a new re
 silently changing output.
 
 - **Single source of truth:** `AAT_DRAFT` (and the mapped field set `AAT_DRAFT_FIELDS`) in
-  [`agentwatch.aat`](../../packages/python-sdk/src/agentwatch/aat.py). `aat_version_line()` carries
+  [`agentwatch.aat`](../../packages/python-sdk/src/agentsec_agentwatch/aat.py). `aat_version_line()` carries
   `IETF AAT <revision>` in `agentwatch --version`; every bundle carries `aat_version`.
 - **Drift check:** [`scripts/aat_drift_check.py`](../../scripts/aat_drift_check.py) compares the pin against
   [`schema/aat/upstream-revision.json`](../../schema/aat/upstream-revision.json). A revision bump, or a mapped

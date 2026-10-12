@@ -12,7 +12,7 @@ public redaction corpus are scoped out by an explicit, reviewed allowlist — no
 - **Out of scope (allowlisted, with reason):**
   - `m13-agents/**` — ported predecessor example agents (third-party; not agentwatch source).
   - Intentional secret material used to test redaction / the self-test:
-    `packages/python-sdk/src/agentwatch/selftest.py` (`MIIEowSECRETMATERIAL`),
+    `packages/python-sdk/src/agentsec_agentwatch/selftest.py` (`MIIEowSECRETMATERIAL`),
     `packages/python-sdk/tests/test_secrets.py`, `test_redaction_properties.py`, `_secret_oracle.py`,
     `test_aat_ingest.py`, `test_gemini_ingest.py`, `test_m25_integration.py`,
     `packages/python-sdk/tests/fixtures/ingest/otel_trace.json`, and the field fixture
@@ -43,7 +43,7 @@ Run everything with `make security-scan` (or `bash scripts/security_scan.sh`). E
 
 | File | Detector | Why it is not a leak |
 |---|---|---|
-| `packages/python-sdk/src/agentwatch/selftest.py` | Postgres | `postgres://admin:pgLEAK@db:5432/app` — the redaction self-test fixture |
+| `packages/python-sdk/src/agentsec_agentwatch/selftest.py` | Postgres | `postgres://admin:pgLEAK@db:5432/app` — the redaction self-test fixture |
 | `packages/python-sdk/tests/test_secrets.py` (×2) | Postgres | `postgres://user:pass@host:5432/app` — redaction unit fixture |
 | `packages/python-sdk/tests/test_config_explain.py` | Postgres | the same placeholder in a config-explain fixture |
 | `docs/plans/m4-store-redaction-execution-plan.md` | Postgres | RFC-style placeholder in a design note |

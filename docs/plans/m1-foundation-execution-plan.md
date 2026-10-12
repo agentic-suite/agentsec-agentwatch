@@ -11,7 +11,7 @@ CLI, configuration, CI, and packaging foundation.
 ## Decisions (rulings taken at planning time)
 
 - **D1 — CLI home:** the `agentwatch` CLI lives in the existing `agentwatch` distribution
-  (`packages/python-sdk/src/agentwatch/cli/`), exposed as console script `agentwatch`. *Why:* the docs
+  (`packages/python-sdk/src/agentsec_agentwatch/cli/`), exposed as console script `agentwatch`. *Why:* the docs
   publish the core as `pip install agentwatch` ([upgrade runbook](../runbooks/upgrade-and-rollback.md)); one
   distribution named `agentwatch` cannot be duplicated. *Cost if wrong:* move the module + one entry point.
 - **D2 — CLI framework:** stdlib `argparse`. *Why:* the SDK package is the dependency-light core and currently

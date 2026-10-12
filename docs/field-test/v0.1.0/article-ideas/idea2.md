@@ -223,4 +223,4 @@ never blocks.
 *This article is grounded in evidence from the agentwatch v0.1.0 field test. The soak data,
 timing measurements, and code diffs are in
 `field-test/v0.1.0/results/all/cases/FT-28/` and
-`packages/python-sdk/src/agentwatch/store.py`.*
+`packages/python-sdk/src/agentsec_agentwatch/store.py`.*
