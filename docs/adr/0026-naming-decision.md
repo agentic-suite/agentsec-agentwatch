@@ -21,3 +21,22 @@
   supply-chain-reputation risk. No trademark is held by us for "agentwatch" (verify; not legal advice).
 - **Actions that happen regardless:** fully-qualified install in every doc example; a distribution-check
   warning in `--version`/`init`/`doctor` (detect the wrong package); an honest namesake FAQ.
+
+## Decision recorded (2026-10-12, v0.3.0 — closes NAME-1)
+
+The deferred target name is chosen. The ecosystem brand is `agentsec`; the tool keeps its
+**ecosystem-prefixed** identity and drops the colliding bare name.
+
+| Layer | Name |
+|---|---|
+| Distribution (PyPI) | **`agentsec-agentwatch`** *(unchanged — already ecosystem-prefixed)* |
+| Import module | **`agentsec_agentwatch`** *(was `agentwatch`)* |
+| Console script | **`agentsec-agentwatch`** *(was `agentwatch`)* |
+
+**Availability (checked 2026-10-12):** PyPI `agentsec-agentwatch` is owned by us. `agentwatch` remains
+unpublishable (PyPI rejects it as too similar to `agent-watch`); `agentsec`, `agentsec-cli` are taken by
+others. npm is not used (distribution is PyPI-only). No new PyPI reservation is required — the distribution
+name is unchanged; only the import module and CLI move off the bare `agentwatch`.
+
+**Shim:** `import agentwatch` and the `agentwatch` CLI stay working across the v0.3.x window (NAME-3).
+**Migration guide:** `docs/release/v0.3.0/` (NAME-4).
