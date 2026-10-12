@@ -1,7 +1,7 @@
 # WBS — agentwatch v0.3.0 (Index)
 
 **BLUF:** **v0.3.0 is the identity & structure release.** It (1) renames the GitHub org
-`agentic-suite` → `agentic-suite`, (2) stands up the new ecosystem skeleton (parent profile, template,
+`agentsec-ecosystem` → `agentic-suite`, (2) stands up the new ecosystem skeleton (parent profile, template,
 governance, SSOT index), and (3) completes the deferred **ADR-0026** rename (distribution + import + CLI + npm
 scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acceptance seed, and a tracking issue.
 
@@ -25,7 +25,7 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 
 | M | Name | Tickets | GitHub # | Theme |
 |---|---|---|---|---|
-| **M33** | Org Rename & New Structure | ORG-1 … ORG-9 | #37 | `agentic-suite` → `agentic-suite`; skeleton; SSOT index |
+| **M33** | Org Rename & New Structure | ORG-1 … ORG-9 | #37 | `agentsec-ecosystem` → `agentic-suite`; skeleton; SSOT index |
 | **M34** | Identity & Distribution (ADR-0026) | NAME-1 … NAME-7 | #38 | Distribution + import + CLI + npm scope rename; shim; migration guide |
 | **M35** | Field Tests | FT-1 … FT-5 | #39 | Rename + distribution + fresh-install verification + **full functional regression** + **release-readiness test** |
 | **M36** | Release Readiness | REL-1 … REL-6 | #40 | Scan, **all-docs sweep**, **dev.to article links**, tag, publish from the new org |
@@ -41,9 +41,9 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 
 | ID | Title | Deliverable | Acceptance | Issue |
 |---|---|---|---|---|
-| ORG-1 | Rename the GitHub org | `agentic-suite` → `agentic-suite` | Repo URLs redirect; branch rulesets, 2FA, secret scanning/push protection survive | #500 |
+| ORG-1 | Rename the GitHub org | `agentsec-ecosystem` → `agentic-suite` | Repo URLs redirect; branch rulesets, 2FA, secret scanning/push protection survive | #500 |
 | ORG-2 | Repo naming — **ecosystem prefixes (decided 2026-10-11)** | Rename every repo to its ecosystem prefix (`agentsec-agentwatch`, `agentops-loopguard`, …) | Repos disambiguated by ecosystem; remotes/badges/CI updated | #501 |
-| ORG-3 | npm scope migration | `@agentic-suite/*` → `@agentic-suite/*` | New scope published; old deprecated with redirect note | #502 |
+| ORG-3 | npm scope migration | `@agentsec-ecosystem/*` → `@agentic-suite/*` | New scope published; old deprecated with redirect note | #502 |
 | ORG-4 | Reference sweep | Badges, CI/CD URLs, GHCR image names, Codecov | No `agentic-suite` reference left in build/CI/badges | #503 |
 | ORG-5 | Org profile + governance docs | `.github` profile, GOVERNANCE, TRADEMARK, install-UX | Docs reference the new org | #504 |
 | ORG-6 | New skeleton | Parent profile + `template` + governance floor + **AgentLens project skeleton** — scaffold the repo (from `template` + governance) for the TypeScript local-first trace debugger (the `agent-inspect` equivalent; vault #235) under `agentsec`/`agentwatch`; **scaffold only — implementation is a later effort** | A new ecosystem can be stood up from the skeleton; the AgentLens repo is scaffolded (not built) | #505 |
