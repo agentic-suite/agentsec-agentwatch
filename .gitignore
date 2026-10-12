@@ -60,3 +60,6 @@ deploy/.env
 # Tooling
 .virtual_documents/
 .cache/
+
+# Screenshot/store writer temp files (atomic-write residue, 0 bytes)
+.!*
