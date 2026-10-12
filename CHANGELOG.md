@@ -723,7 +723,7 @@ versioning: [Semantic Versioning](https://semver.org/).
 - Initial release: Claude Code recording, OTel GenAI export, security-event schema, redaction-by-default,
   local-first hash-chained store, session replay (R1–R8).
 
-[Unreleased]: https://github.com/agentic-suite/agentwatch/compare/v0.2.1...HEAD
-[0.2.1]: https://github.com/agentic-suite/agentwatch/compare/v0.2.0...v0.2.1
-[0.2.0]: https://github.com/agentic-suite/agentwatch/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/agentic-suite/agentwatch/releases/tag/v0.1.0
+[Unreleased]: https://github.com/agentic-suite/agentsec-agentwatch/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/agentic-suite/agentsec-agentwatch/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/agentic-suite/agentsec-agentwatch/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/agentic-suite/agentsec-agentwatch/releases/tag/v0.1.0

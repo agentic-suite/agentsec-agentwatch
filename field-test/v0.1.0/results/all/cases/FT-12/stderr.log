@@ -59,4 +59,4 @@
  Container agentwatch-web-1 Starting 
  Container agentwatch-web-1 Started 
 agentwatch: configuration error: unknown configuration key: config.nope
-{"error": {"code": "E_CONFIG", "message": "configuration error: unknown configuration key: config.nope", "hint": "Fix or remove the reported key/value; configuration is strict.", "doc_url": "https://github.com/agentic-suite/agentwatch/blob/main/docs/reference/errors.md#e-config"}}
+{"error": {"code": "E_CONFIG", "message": "configuration error: unknown configuration key: config.nope", "hint": "Fix or remove the reported key/value; configuration is strict.", "doc_url": "https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/reference/errors.md#e-config"}}

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/agentic-suite/agentwatch/schema/security-event.schema.json",
+  "$id": "https://github.com/agentic-suite/agentsec-agentwatch/schema/security-event.schema.json",
   "title": "agentwatch security event",
   "description": "The named, versioned agent-security event vocabulary.",
   "type": "object",

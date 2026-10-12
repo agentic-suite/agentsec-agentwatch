@@ -6,7 +6,7 @@
 [![Status: v0.2.0](https://img.shields.io/badge/status-v0.2.0-green.svg)](docs/release/v0.2.0/release-notes.md)
 [![Ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Type checked: mypy strict](https://img.shields.io/badge/mypy-strict-blue.svg)](https://github.com/python/mypy)
-[![Coverage](https://img.shields.io/badge/coverage-95%25%20gate-green.svg)](https://github.com/agentic-suite/agentwatch/actions)
+[![Coverage](https://img.shields.io/badge/coverage-95%25%20gate-green.svg)](https://github.com/agentic-suite/agentsec-agentwatch/actions)
 [![OpenSSF Best Practices](https://img.shields.io/badge/OpenSSF-best%20practices-blue.svg)](docs/compliance/openssf-badge.md)
 [![Field Test](https://img.shields.io/badge/field%20test-v0.2.0%20%7C%2092%2F94%20cases-brightgreen.svg)](docs/field-test/v0.2.0/FIELD_TEST_REPORT.md)
 [![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-%23E05735.svg)](CHANGELOG.md)

@@ -39,5 +39,5 @@ omlx             OK         responds
 == case FT-15: pass ==
 ==> Tearing down the stack (and volumes)
 
-==> Aggregating results into /Users/deghosal/Desktop/code/github/agentic-suite/agentwatch/field-test/v0.1.0/results/ft15
-collect-results: 1 pass / 0 fail -> /Users/deghosal/Desktop/code/github/agentic-suite/agentwatch/field-test/v0.1.0/results/ft15/summary.{json,md}
+==> Aggregating results into /Users/deghosal/Desktop/code/github/agentic-suite/agentsec-agentwatch/field-test/v0.1.0/results/ft15
+collect-results: 1 pass / 0 fail -> /Users/deghosal/Desktop/code/github/agentic-suite/agentsec-agentwatch/field-test/v0.1.0/results/ft15/summary.{json,md}

@@ -1,3 +1,3 @@
 
 [notice] A new release of pip is available: 26.1.1 -> 26.2.1
-[notice] To update, run: /Users/deghosal/Desktop/code/github/agentic-suite/agentwatch/field-test/v0.1.0/results/all/cases/FT-27/artifacts/venv/bin/python3.14 -m pip install --upgrade pip
+[notice] To update, run: /Users/deghosal/Desktop/code/github/agentic-suite/agentsec-agentwatch/field-test/v0.1.0/results/all/cases/FT-27/artifacts/venv/bin/python3.14 -m pip install --upgrade pip

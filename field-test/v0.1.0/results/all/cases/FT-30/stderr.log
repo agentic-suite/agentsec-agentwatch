@@ -59,4 +59,4 @@
  Container agentwatch-web-1 Starting 
  Container agentwatch-web-1 Started 
 agentwatch: 'migrate' is not implemented in v0.1.0; see the WBS for its milestone.
-{"error": {"code": "E_NOT_IMPLEMENTED", "message": "'migrate' is not implemented in v0.1.0; see the WBS for its milestone.", "hint": "See the WBS for the milestone that lands it.", "doc_url": "https://github.com/agentic-suite/agentwatch/blob/main/docs/reference/errors.md#e-not-implemented"}}
+{"error": {"code": "E_NOT_IMPLEMENTED", "message": "'migrate' is not implemented in v0.1.0; see the WBS for its milestone.", "hint": "See the WBS for the milestone that lands it.", "doc_url": "https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/reference/errors.md#e-not-implemented"}}

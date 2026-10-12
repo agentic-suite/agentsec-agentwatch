@@ -73,11 +73,11 @@ agentwatch-mcp-proxy = "agentwatch.mcp_proxy:main"
 agentwatch-a2a-proxy = "agentwatch.a2a_proxy:main"
 
 [project.urls]
-Homepage = "https://github.com/agentic-suite/agentwatch"
-Repository = "https://github.com/agentic-suite/agentwatch"
-Issues = "https://github.com/agentic-suite/agentwatch/issues"
-Documentation = "https://github.com/agentic-suite/agentwatch/blob/main/docs/README.md"
-Changelog = "https://github.com/agentic-suite/agentwatch/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/agentic-suite/agentsec-agentwatch"
+Repository = "https://github.com/agentic-suite/agentsec-agentwatch"
+Issues = "https://github.com/agentic-suite/agentsec-agentwatch/issues"
+Documentation = "https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/README.md"
+Changelog = "https://github.com/agentic-suite/agentsec-agentwatch/blob/main/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 where = ["src"]

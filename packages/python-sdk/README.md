@@ -2,12 +2,12 @@
 
 [![PyPI version](https://img.shields.io/pypi/v/agentsec-agentwatch.svg)](https://pypi.org/project/agentsec-agentwatch/)
 [![Python versions](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
-[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green.svg)](https://github.com/agentic-suite/agentwatch/blob/main/LICENSE)
-[![Status: v0.1.0](https://img.shields.io/badge/status-v0.1.0-green.svg)](https://github.com/agentic-suite/agentwatch/blob/main/docs/release/v0.1.0/release-notes.md)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green.svg)](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/LICENSE)
+[![Status: v0.1.0](https://img.shields.io/badge/status-v0.1.0-green.svg)](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/release/v0.1.0/release-notes.md)
 
 **Instrumentation SDK for AI agents** — turn agent behavior into OpenTelemetry GenAI
 spans and validated, redacted execution records. Part of
-[agentwatch](https://github.com/agentic-suite/agentwatch).
+[agentwatch](https://github.com/agentic-suite/agentsec-agentwatch).
 
 ## Installation
 
@@ -91,14 +91,14 @@ and gated on a redaction self-test.
 
 ## Documentation
 
-- [SDK reference](https://github.com/agentic-suite/agentwatch/blob/main/docs/reference/sdk.md)
-- [User guide](https://github.com/agentic-suite/agentwatch/blob/main/docs/guides/user-guide.md)
-- [Record format spec](https://github.com/agentic-suite/agentwatch/blob/main/docs/reference/record-format-spec.md)
-- [Docs index](https://github.com/agentic-suite/agentwatch/blob/main/docs/README.md)
-- [Changelog](https://github.com/agentic-suite/agentwatch/blob/main/CHANGELOG.md) ·
-  [Security policy](https://github.com/agentic-suite/agentwatch/blob/main/SECURITY.md) ·
-  [Issues](https://github.com/agentic-suite/agentwatch/issues)
+- [SDK reference](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/reference/sdk.md)
+- [User guide](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/guides/user-guide.md)
+- [Record format spec](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/reference/record-format-spec.md)
+- [Docs index](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/README.md)
+- [Changelog](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/CHANGELOG.md) ·
+  [Security policy](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/SECURITY.md) ·
+  [Issues](https://github.com/agentic-suite/agentsec-agentwatch/issues)
 
 ## License
 
-Apache-2.0 — see [LICENSE](https://github.com/agentic-suite/agentwatch/blob/main/LICENSE).
+Apache-2.0 — see [LICENSE](https://github.com/agentic-suite/agentsec-agentwatch/blob/main/LICENSE).
