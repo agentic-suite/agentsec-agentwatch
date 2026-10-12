@@ -34,7 +34,7 @@ scripts/fieldtest/
   cases/registry.json            the case list
 ```
 
-Results land in **`field-test/v0.1.0/results/<run-id>/`** (stable step name; no timestamps) (gitignored except `.gitkeep`).
+Results land in **`field-test/0.3.0/results/<run-id>/`** (stable step name; no timestamps) (gitignored except `.gitkeep`).
 
 Screenshot case: [`../../apps/web/tests/e2e/screenshots.spec.ts`](../../apps/web/tests/e2e/screenshots.spec.ts)
 writes full-page PNGs to `results/<run-id>/cases/FT-36/artifacts/screenshots/`.
@@ -72,12 +72,12 @@ status.
 ## v0.2.0 (M31 31.1–31.4)
 
 The v0.2.0 field tests extend the same harness; they do **not** fork it. Results land under
-**`field-test/v0.2.0/results/<suite>/`** (version-scoped), and the plan/report live under
+**`field-test/0.3.0/results/<suite>/`** (version-scoped), and the plan/report live under
 `docs/field-test/v0.2.0/`.
 
 | Piece | What |
 |---|---|
-| `run-suite.sh SUITE` | run one suite (`s1-install … s15-hostile`) → `field-test/v0.2.0/results/<suite>/` |
+| `run-suite.sh SUITE` | run one suite (`s1-install … s15-hostile`) → `field-test/0.3.0/results/<suite>/` |
 | `stack-v020.sh up\|down\|ps\|verify\|reset` | the v0.2.0 compose environment (profile services) |
 | `seed-v020.sh [SERVICE]` | seed the fixture store in a service |
 | `gen_cases.py` (+ `cases/registry.json`) | source of truth: 50 v0.1.0 + 94 v0.2.0 cases |
@@ -90,8 +90,8 @@ The v0.2.0 field tests extend the same harness; they do **not** fork it. Results
 scripts/fieldtest/stack-v020.sh up
 scripts/fieldtest/seed-v020.sh
 
-# one suite, or all (results under field-test/v0.2.0/results/)
-FT_VERSION=v0.2.0 bash scripts/fieldtest/run-suite.sh s1-install
+# one suite, or all (results under field-test/0.3.0/results/)
+FT_VERSION=0.3.0 bash scripts/fieldtest/run-suite.sh s1-install
 make fieldtest-v020          # runs every case (v0.1.0 regression + v0.2.0)
 make fieldtest-suite SUITE=s7-platform
 ```
@@ -101,4 +101,4 @@ only where the release gate says "or declared"; a `declared` case is recorded di
 verdict, `summary.json`, and the report — never as a pass. A hard-gate case can never declare.
 
 **Versioning.** `FT_VERSION` selects the results root (`field-test/<FT_VERSION>/results`); `FT_RESULTS_ROOT`
-overrides it outright. `run-suite.sh` sets `FT_VERSION=v0.2.0` by default.
+overrides it outright. `run-suite.sh` sets `FT_VERSION=0.3.0` by default.

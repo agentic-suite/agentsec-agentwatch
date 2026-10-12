@@ -10,7 +10,7 @@
 #
 # Single source of truth: this reuses lib.sh's STACK_COMPOSE, V020_PROFILES and
 # V020_SERVICES (never re-declares the compose files or the service list).
-# Results are written by the runners to field-test/v0.2.0/results/.
+# Results are written by the runners to field-test/0.3.0/results/.
 set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

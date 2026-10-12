@@ -14,7 +14,7 @@ The case-specific assertions in `cases/steps/CUJ-13.sh` (each recorded in
 `assertions.ndjson`). **Pass = all assertions true. There is no skip.**
 
 ## Artifacts
-`field-test/v0.1.0/results/<UTC-ts>/cases/CUJ-13/artifacts/`.
+`field-test/0.3.0/results/<UTC-ts>/cases/CUJ-13/artifacts/`.
 
 ## Cleanup
 Shared stack: reset in place between cases; `recycle` cases get a fresh `down -v`

@@ -48,7 +48,7 @@ TPR ≥ 95% / FPR ≤ 5% (zero FPs on known-normal runs).
 - Detector names present in `services/analytics` and matched in the matrix.
 - `/anomalies` returns the expected rows; web view renders them.
 
-## Artifacts → `field-test/v0.1.0/results/<UTC-ts>/cases/FT-15/artifacts/`
+## Artifacts → `field-test/0.3.0/results/<UTC-ts>/cases/FT-15/artifacts/`
 
 - `detector-results.json` (per-detector fired/severity/TP/FP/FN)
 - `anomalies.json` (API dump)

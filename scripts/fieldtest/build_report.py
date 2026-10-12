@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fill docs/field-test/v0.2.0/FIELD_TEST_REPORT.md from the run results.
 
-Reads every field-test/v0.2.0/results/<suite>/cases/<ID>/verdict.json and the
+Reads every field-test/0.3.0/results/<suite>/cases/<ID>/verdict.json and the
 Layer-0 (v0.1.0) results, then rewrites these report sections:
 
   * Scenario Results (Master Table)      -- every case: PASS | FAIL | not run

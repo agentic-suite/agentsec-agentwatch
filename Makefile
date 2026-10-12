@@ -86,22 +86,22 @@ fieldtest-fixtures: ## Rebuild the v0.2.0 field-test fixtures from repo sources.
 fieldtest-check: ## Validate every field-test invocation against the shipped CLI.
 	python3 scripts/fieldtest/check_cli_usage.py
 
-fieldtest: ## Run the Docker-backed field-test suite (results under field-test/v0.1.0/results/).
+fieldtest: ## Run the Docker-backed field-test suite (results under field-test/0.3.0/results/).
 	bash scripts/fieldtest/run-all.sh
 
 fieldtest-case: ## Run one field-test case: make fieldtest-case ID=FT-04
 	@test -n "$(ID)" || (echo "usage: make fieldtest-case ID=FT-04" >&2 && exit 2)
 	bash scripts/fieldtest/run-case.sh "$(ID)"
 
-fieldtest-v020: ## Run the v0.2.0 field-test suite (results under field-test/v0.2.0/results/).
-	FT_VERSION=v0.2.0 bash scripts/fieldtest/run-all.sh
+fieldtest-v020: ## Run the v0.2.0 field-test suite (results under field-test/0.3.0/results/).
+	FT_VERSION=0.3.0 bash scripts/fieldtest/run-all.sh
 
 fieldtest-suite: ## Run one v0.2.0 suite: make fieldtest-suite SUITE=s1-install
 	@test -n "$(SUITE)" || (echo "usage: make fieldtest-suite SUITE=s1-install" >&2 && exit 2)
-	FT_VERSION=v0.2.0 bash scripts/fieldtest/run-suite.sh "$(SUITE)"
+	FT_VERSION=0.3.0 bash scripts/fieldtest/run-suite.sh "$(SUITE)"
 
 fieldtest-clean: ## Remove field-test run artifacts (keeps the results .gitkeep).
-	find field-test/v0.1.0/results field-test/v0.2.0/results -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} + 2>/dev/null || true
+	find field-test/0.3.0/results -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} + 2>/dev/null || true
 
 clean: ## Remove generated artifacts.
 	@find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null || true

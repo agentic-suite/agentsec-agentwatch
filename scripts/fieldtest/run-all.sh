@@ -3,7 +3,7 @@
 #   run-all.sh                 # all cases, in registry order
 #   run-all.sh FT-04 FT-15     # only these
 #
-# Results are written once to field-test/v0.1.0/results/<UTC-ts>/.
+# Results are written once to field-test/0.3.0/results/<UTC-ts>/.
 set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

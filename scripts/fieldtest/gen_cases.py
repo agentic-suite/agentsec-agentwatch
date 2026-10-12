@@ -206,7 +206,7 @@ The case-specific assertions in `cases/steps/{id}.sh` (each recorded in
 `assertions.ndjson`). **Pass = all assertions true. There is no skip.**
 
 ## Artifacts
-`field-test/{doc_version}/results/{results_token}/cases/{id}/artifacts/`.
+`field-test/0.3.0/results/{results_token}/cases/{id}/artifacts/`.
 
 ## Cleanup
 Shared stack: reset in place between cases; `recycle` cases get a fresh `down -v`
