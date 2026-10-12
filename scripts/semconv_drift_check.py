@@ -19,10 +19,10 @@ import sys
 from pathlib import Path
 
 try:
-    from agentwatch.semconv import check_drift
+    from agentsec_agentwatch.semconv import check_drift
 except ImportError:  # pragma: no cover - guidance when run without the SDK
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "packages" / "python-sdk" / "src"))
-    from agentwatch.semconv import check_drift
+    from agentsec_agentwatch.semconv import check_drift
 
 
 def main(argv: list[str] | None = None) -> int:

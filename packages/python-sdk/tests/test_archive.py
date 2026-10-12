@@ -13,7 +13,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.archive import (
+from agentsec_agentwatch.archive import (
     ARCHIVE_ANCHOR_TOOL,
     archive_anchors,
     archive_store,
@@ -22,11 +22,11 @@ from agentwatch.archive import (
     restore_archive,
     verify_archives,
 )
-from agentwatch.cli.main import main
-from agentwatch.query import search
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.replay import replay_session
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.query import search
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.replay import replay_session
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -184,8 +184,8 @@ def test_archive_without_a_format_marker(tmp_path: Path) -> None:
 
 
 def test_rechain_handles_tombstones_and_checkpoints() -> None:
-    from agentwatch.archive import _rechain
-    from agentwatch.store import ChainEntry
+    from agentsec_agentwatch.archive import _rechain
+    from agentsec_agentwatch.store import ChainEntry
 
     tombstone = ChainEntry(seq=5, prev_hash="p", hash="h", record=None, tombstone=True)
     line, digest = _rechain(3, "prev", tombstone)

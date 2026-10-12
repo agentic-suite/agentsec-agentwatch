@@ -7,12 +7,12 @@
 # Builds the images ONCE, keeps one stack up across the whole run, resets state
 # between cases in place (down -v only for `recycle` cases, which mutate durable /
 # container state a soft reset cannot clear), and tears the stack down once at the
-# end. Every result lands under field-test/v0.2.0/results/ (layer0 + s1..s15);
-# field-test/v0.1.0/results/ is never written (lib.sh freeze guard).
+# end. Every result lands under field-test/0.3.0/results/ (layer0 + s1..s15);
+# field-test/0.3.0/results/ is never written (lib.sh freeze guard).
 set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export FT_VERSION="${FT_VERSION:-v0.2.0}"
+export FT_VERSION="${FT_VERSION:-0.3.0}"
 # STACK_KEEP=0 permanently; the stack is torn down once, at the end.
 export STACK_KEEP=0
 export FT_SHARED_STACK=1

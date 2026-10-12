@@ -6,7 +6,7 @@ PRD, a deliverable, an acceptance seed, an issue number, and a fidelity/honesty 
 the seven part files carry the milestone-level detail (Goal · Requirements · Work-item tables · Tests · Evidence ·
 Exit criteria · Design docs).
 
-**Parent:** agentsec-ecosystem #209 · **Program:** [PRD 40](../../prd/40-v0.2.0-program.md) · **Branch:**
+**Parent:** agentic-suite #209 · **Program:** [PRD 40](../../prd/40-v0.2.0-program.md) · **Branch:**
 `feat-v0.2.0`.
 
 ## Standard milestone exit criteria (applies to EVERY milestone)

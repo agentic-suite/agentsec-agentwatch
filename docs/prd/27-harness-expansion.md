@@ -4,7 +4,7 @@
 GenAI ingestion — instead of N bespoke integrations, all held to one shared conformance bar and a
 generated compatibility matrix.
 
-**Status:** proposed (2026-10-02) · **Parent:** agentsec-ecosystem #209
+**Status:** proposed (2026-10-02) · **Parent:** agentic-suite #209
 
 > **Extended in M20 (PRD 36).** The MCP horizontal gains tool-surface snapshot + drift: an `mcp-surface`
 > carrier per server/session and the `tool-surface-changed` security event, feeding `inventory

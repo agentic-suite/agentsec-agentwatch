@@ -32,8 +32,8 @@
 ### Task 1: Shared modeled-adapter helper + Cursor adapter
 
 **Files:**
-- Create: `packages/python-sdk/src/agentwatch/adapters/modeled.py`, `.../adapters/cursor.py`
-- Modify: `packages/python-sdk/src/agentwatch/adapters/__init__.py`
+- Create: `packages/python-sdk/src/agentsec_agentwatch/adapters/modeled.py`, `.../adapters/cursor.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/adapters/__init__.py`
 - Test: `packages/python-sdk/tests/test_cursor_adapter.py`
 - Fixtures: `packages/python-sdk/tests/fixtures/cursor/before_shell.json`, `after_edit_error.json`
 

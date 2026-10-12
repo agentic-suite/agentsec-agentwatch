@@ -14,10 +14,10 @@ from typing import Any
 
 import pytest
 
-from agentwatch.records import validate_record
-from agentwatch.replay import replay_session
-from agentwatch.session_export import export_session, parse_ndjson, to_ndjson, verify_export
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import validate_record
+from agentsec_agentwatch.replay import replay_session
+from agentsec_agentwatch.session_export import export_session, parse_ndjson, to_ndjson, verify_export
+from agentsec_agentwatch.store import RecordStore
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "store-versions"
 CASES: list[dict[str, Any]] = json.loads(

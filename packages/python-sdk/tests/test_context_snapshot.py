@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.adapters import claude_code
-from agentwatch.context_snapshot import (
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.context_snapshot import (
     CONTEXT_CI,
     CONTEXT_HEADLESS,
     CONTEXT_INTERACTIVE,

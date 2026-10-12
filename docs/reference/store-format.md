@@ -66,7 +66,7 @@ exactly "data left, or could leave" — local `search`/`view`/`replay` write not
 ## Verification
 
 `RecordStore.verify()` recomputes every link and reports the first break as
-`ChainStatus(ok=False, broken_at=<seq>)`; `agentwatch verify-store` exits non-zero on a break. A break is
+`ChainStatus(ok=False, broken_at=<seq>)`; `agentsec-agentwatch verify-store` exits non-zero on a break. A break is
 never silent.
 
 ## Conformance vectors
@@ -88,7 +88,7 @@ per release.
 
 ## Derived index (not part of the store format)
 
-`agentwatch` maintains an optional **derived** query index beside the store
+`agentsec-agentwatch` maintains an optional **derived** query index beside the store
 (`<store.path>/index.sqlite3`, M30 LUI-2, [ADR-0035](../adr/0035-embedded-query-index.md)).
 It is **not** part of this contract and carries no authority:
 
@@ -97,7 +97,7 @@ It is **not** part of this contract and carries no authority:
   bit-for-bit from the chain.
 - It is a stdlib `sqlite3` artifact — no heavyweight runtime dependency.
 - A purge/retention tombstone invalidates it (the freshness digest includes the
-  tombstone bit), and `agentwatch index rebuild` regenerates it from the chain.
+  tombstone bit), and `agentsec-agentwatch index rebuild` regenerates it from the chain.
 - `purge` and `retention` propagate to the index (the erased rows are dropped),
   and both **enumerate known leftover artifacts** beside the store (archives,
   parquet/NDJSON exports, repair-evidence copies, quarantine) rather than

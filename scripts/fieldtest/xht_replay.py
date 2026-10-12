@@ -16,14 +16,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import agentwatch  # noqa: E402
-from agentwatch import conformance  # noqa: E402
+import agentsec_agentwatch  # noqa: E402
+from agentsec_agentwatch import conformance  # noqa: E402
 from _ftutil import ok  # noqa: E402
 
 
 def _register() -> None:
     """Register the shipped adapters via the SDK's canonical registry."""
-    sdk_root = Path(agentwatch.__file__).resolve().parents[2]  # packages/python-sdk
+    sdk_root = Path(agentsec_agentwatch.__file__).resolve().parents[2]  # packages/python-sdk
     tests = sdk_root / "tests"
     if str(tests) not in sys.path:
         sys.path.insert(0, str(tests))

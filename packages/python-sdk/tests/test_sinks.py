@@ -9,9 +9,9 @@ from typing import Any
 
 import pytest
 
-from agentwatch.configuration import ConfigError, load_config
-from agentwatch.daemon import Daemon
-from agentwatch.sinks import (
+from agentsec_agentwatch.configuration import ConfigError, load_config
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.sinks import (
     EventForwarder,
     SinkError,
     SyslogSink,

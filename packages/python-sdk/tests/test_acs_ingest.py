@@ -15,8 +15,8 @@ from typing import Any
 
 import pytest
 
-from agentwatch import acs
-from agentwatch.records import (
+from agentsec_agentwatch import acs
+from agentsec_agentwatch.records import (
     Outcome,
     ProducerKind,
     RecordPhase,
@@ -24,8 +24,8 @@ from agentwatch.records import (
     SecurityEventType,
     validate_record,
 )
-from agentwatch.redact import PrivacyMode, RedactionConfig
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 4, 30, 10, 30, 0, tzinfo=timezone.utc)
 REQ_ID = "550e8400-e29b-41d4-a716-446655440000"
@@ -269,7 +269,7 @@ def test_secrets_are_masked_before_storage() -> None:
 
 
 def test_run_ingest_appends_acs_decisions(tmp_path: Path) -> None:
-    from agentwatch.ingest import run_ingest
+    from agentsec_agentwatch.ingest import run_ingest
 
     store = RecordStore(tmp_path / "records.jsonl")
     source = tmp_path / "trail.json"
@@ -286,7 +286,7 @@ def test_run_ingest_appends_acs_decisions(tmp_path: Path) -> None:
 def test_conformance_pack_conforms() -> None:
     import sdk_conformance_registry  # noqa: F401
 
-    from agentwatch import conformance
+    from agentsec_agentwatch import conformance
 
     report = conformance.run_sdk(sdk_conformance_registry.acs_spec())
     assert report.ok, report.summary()
@@ -294,7 +294,7 @@ def test_conformance_pack_conforms() -> None:
 
 
 def test_cli_ingests_an_acs_trail(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     source = tmp_path / "trail.json"
     source.write_text(

@@ -206,7 +206,7 @@ The case-specific assertions in `cases/steps/{id}.sh` (each recorded in
 `assertions.ndjson`). **Pass = all assertions true. There is no skip.**
 
 ## Artifacts
-`field-test/{doc_version}/results/{results_token}/cases/{id}/artifacts/`.
+`field-test/0.3.0/results/{results_token}/cases/{id}/artifacts/`.
 
 ## Cleanup
 Shared stack: reset in place between cases; `recycle` cases get a fresh `down -v`
@@ -292,7 +292,7 @@ ft_capture_store
 ft_finalize
 """,
     "store_full": """ft_up_recorder
-ft_recorder bash -lc 'AGENTWATCH_STORE__MAX_SIZE_MB=1 agentwatch-daemon >/tmp/daemon.log 2>&1 & for i in $(seq 1 50); do [ -S "$AGENTWATCH_SOCKET" ] && break; sleep 0.2; done'
+ft_recorder bash -lc 'AGENTWATCH_STORE__MAX_SIZE_MB=1 agentsec-agentwatch-daemon >/tmp/daemon.log 2>&1 & for i in $(seq 1 50); do [ -S "$AGENTWATCH_SOCKET" ] && break; sleep 0.2; done'
 ft_recorder python3 /ft/scripts/run-soak.py --count 6000 --interval 0.001 || true
 ft_assert_recorder "stopped-and-surfaced" "agentwatch status | grep -qi stopped"
 ft_capture_store
@@ -369,10 +369,10 @@ ft_finalize
     "fidelity": """ft_up_recorder
 for mode in metadata-only truncated hashed full; do
   d="/data/agentwatch-$mode"
-  ft_recorder bash -lc "AGENTWATCH_STORE__PATH=$d AGENTWATCH_PRIVACY__MODE=$mode AGENTWATCH_SOCKET=/run/agentwatch/$mode.sock agentwatch-daemon >/tmp/daemon-$mode.log 2>&1 & for i in \\$(seq 1 50); do [ -S /run/agentwatch/$mode.sock ] && break; sleep 0.2; done"
+  ft_recorder bash -lc "AGENTWATCH_STORE__PATH=$d AGENTWATCH_PRIVACY__MODE=$mode AGENTWATCH_SOCKET=/run/agentwatch/$mode.sock agentsec-agentwatch-daemon >/tmp/daemon-$mode.log 2>&1 & for i in \\$(seq 1 50); do [ -S /run/agentwatch/$mode.sock ] && break; sleep 0.2; done"
   ft_recorder bash -lc "AGENTWATCH_SOCKET=/run/agentwatch/$mode.sock python3 /ft/scripts/emit-hook.py --corpus secrets" || true
   ft_assert_recorder "mode-$mode" "grep -q '\\"privacy_mode\\": \\"$mode\\"' $d/records.jsonl"
-  ft_recorder bash -lc "pkill -f agentwatch-daemon || true; sleep 0.3"
+  ft_recorder bash -lc "pkill -f agentsec-agentwatch-daemon || true; sleep 0.3"
 done
 ft_capture_store_soft
 ft_finalize

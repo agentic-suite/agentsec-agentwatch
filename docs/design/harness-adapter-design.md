@@ -65,7 +65,7 @@ the version-tagged `cursor-session-tracer` corpus under `tests/testkit/cursor/`.
 `agentwatch.coverage.discover_cursor_transcripts` / `extract_cursor_trace` read each trace's
 `session.cursor_stats.tool_call_count` (fallback: structural file ops) as the per-session ground truth, and the
 S2 gap taxonomy gains `gap:cursor-hook-coverage` so a Cursor shortfall (phase-gated IDE/cloud/Tab hooks) is
-classified rather than `gap:unexplained`. CLI: `agentwatch coverage --harness cursor [--transcripts DIR]`. The
+classified rather than `gap:unexplained`. CLI: `agentsec-agentwatch coverage --harness cursor [--transcripts DIR]`. The
 golden corpus reconciles to zero `unexplained` (`tests/test_cursor_coverage.py`).
 
 ## v0.2.0 — capture levels and real harnesses
@@ -85,7 +85,7 @@ Contract additions: an adapter declares its **fidelity tier** (`live-verified | 
 its **capture level**; blocking-hook events are recorded as observations and **never answered** (monitor-only, R2).
 Foreign log/rollout content follows the untrusted-data rule ([ADR-0024](../adr/0024-foreign-data-threat-posture.md)).
 
-**A2A interposition (M29 A2A-1).** `agentwatch a2a-proxy` mirrors the MCP proxy for the agent↔agent protocol
+**A2A interposition (M29 A2A-1).** `agentsec-agentwatch a2a-proxy` mirrors the MCP proxy for the agent↔agent protocol
 ([PRD 45](../prd/45-new-capture-surfaces.md), [ADR-0025](../adr/0025-a2a-interposition.md)): stdio and HTTP relays
 frame `message/send`, `message/stream`, `tasks/get`, and `tasks/cancel` (intent → outcome, artifacts as
 observations) plus agent-card exchanges; `tasks/resubscribe` and the push-notification-config family are declared

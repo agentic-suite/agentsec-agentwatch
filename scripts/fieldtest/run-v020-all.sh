@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Run every v0.2.0 field-test suite (S1-S15) and collect results.
-# Results land under field-test/v0.2.0/results/<suite>/ (per plan §10).
+# Results land under field-test/0.3.0/results/<suite>/ (per plan §10).
 #
 #   run-v020-all.sh              # all 15 suites
 #   run-v020-all.sh s1-install   # just these suites
@@ -11,7 +11,7 @@
 set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export FT_VERSION="${FT_VERSION:-v0.2.0}"
+export FT_VERSION="${FT_VERSION:-0.3.0}"
 export STACK_KEEP=0
 export FT_SHARED_STACK=1
 # Child suites share this runner's stack (they must not tear it down).

@@ -17,10 +17,10 @@ REPO = Path(__file__).resolve().parents[1]
 SDK = REPO / "packages" / "python-sdk"
 sys.path.insert(0, str(SDK / "src"))
 
-from agentwatch.adapters import claude_code  # noqa: E402
-from agentwatch.replay import replay_session  # noqa: E402
-from agentwatch.selftest import run_redaction_self_test  # noqa: E402
-from agentwatch.store import RecordStore  # noqa: E402
+from agentsec_agentwatch.adapters import claude_code  # noqa: E402
+from agentsec_agentwatch.replay import replay_session  # noqa: E402
+from agentsec_agentwatch.selftest import run_redaction_self_test  # noqa: E402
+from agentsec_agentwatch.store import RecordStore  # noqa: E402
 
 
 def main() -> int:

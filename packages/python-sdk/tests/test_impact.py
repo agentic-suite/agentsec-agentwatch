@@ -13,7 +13,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.classify import (
+from agentsec_agentwatch.classify import (
     CLASSIFIER_VERSION,
     CMD_DESTRUCTIVE,
     CMD_INSTALL,
@@ -29,10 +29,10 @@ from agentwatch.classify import (
     classify_command,
     pattern_table,
 )
-from agentwatch.cli.main import main
-from agentwatch.impact import build_impact, render_impact
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.impact import build_impact, render_impact
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

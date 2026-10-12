@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from agentwatch.egress_audit import audit, third_party_roots
+from agentsec_agentwatch.egress_audit import audit, third_party_roots
 
-SRC = Path(__file__).resolve().parents[1] / "src" / "agentwatch"
+SRC = Path(__file__).resolve().parents[1] / "src" / "agentsec_agentwatch"
 
 
 def test_sdk_source_is_egress_clean() -> None:
@@ -37,4 +37,4 @@ def test_third_party_roots_excludes_stdlib_and_first_party() -> None:
     roots = third_party_roots(SRC)
     assert "opentelemetry" in roots
     assert "json" not in roots
-    assert "agentwatch" not in roots
+    assert "agentsec_agentwatch" not in roots

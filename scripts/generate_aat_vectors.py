@@ -25,15 +25,15 @@ OUT = REPO / "schema" / "vectors" / "aat"
 
 sys.path.insert(0, str(REPO / "packages" / "python-sdk" / "src"))
 
-from agentwatch.aat import export_aat, verify_aat_report  # noqa: E402
-from agentwatch.records import (  # noqa: E402
+from agentsec_agentwatch.aat import export_aat, verify_aat_report  # noqa: E402
+from agentsec_agentwatch.records import (  # noqa: E402
     AgentIdentity,
     AgentRecord,
     Outcome,
     ToolCall,
 )
-from agentwatch.session_export import export_session  # noqa: E402
-from agentwatch.store import RecordStore  # noqa: E402
+from agentsec_agentwatch.session_export import export_session  # noqa: E402
+from agentsec_agentwatch.store import RecordStore  # noqa: E402
 
 _AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

@@ -12,7 +12,7 @@ from typing import Any
 
 import pytest
 
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     EVENT_VERSION,
     SCHEMA_VERSION,
     SUPPORTED_EVENT_VERSIONS,

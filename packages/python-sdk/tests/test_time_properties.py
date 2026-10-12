@@ -16,11 +16,11 @@ from zoneinfo import ZoneInfo
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
-from agentwatch.drift import metric_series
-from agentwatch.query import search, since_cutoff
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall, _iso, _parse_iso
-from agentwatch.store import RecordStore
-from agentwatch.tail import render_record
+from agentsec_agentwatch.drift import metric_series
+from agentsec_agentwatch.query import search, since_cutoff
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall, _iso, _parse_iso
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.tail import render_record
 
 UTC = timezone.utc
 NEW_YORK = ZoneInfo("America/New_York")

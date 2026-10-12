@@ -4,7 +4,7 @@
 content came from before it was used as an instruction (S22), and where an exposed secret went afterward
 (S23). Both are observation-only, local, and keyed so the store holds no recovered content.
 
-**Status:** shipped (2026-10-03) · **Parent:** agentsec-ecosystem #209 · **Milestone:** M18
+**Status:** shipped (2026-10-03) · **Parent:** agentic-suite #209 · **Milestone:** M18
 
 > Cross-cutting rules (PRD 19–30): fail closed and never silent (PRD 17); redaction before storage (DD-06);
 > the trust boundary stays deterministic — **no LLM in redaction, validation, or chain verification**

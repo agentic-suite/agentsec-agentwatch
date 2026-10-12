@@ -8,7 +8,7 @@ a schema-level `producer` provenance field, a store-access audit trail, operator
 redaction receipts.
 
 **Architecture:** Read-side/derived work only — no new capture path, enforcement, or egress. New modules
-under `packages/python-sdk/src/agentwatch/` (`provenance`, `annotate`, `evidence`, `bom`, `receipts`),
+under `packages/python-sdk/src/agentsec_agentwatch/` (`provenance`, `annotate`, `evidence`, `bom`, `receipts`),
 new CLI verbs, and one additive record-schema change (`producer`, S26). Bundle format is versioned and open.
 
 **Tech Stack:** Python 3.10+; `pytest` + `pytest-cov` (≥95%); `ruff`; `mypy --strict`. No new runtime

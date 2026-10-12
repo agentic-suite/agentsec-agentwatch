@@ -7,11 +7,11 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli import main
-from agentwatch.explain import explain_session, summarize_session
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.view import list_sessions, render_session
+from agentsec_agentwatch.cli import main
+from agentsec_agentwatch.explain import explain_session, summarize_session
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.view import list_sessions, render_session
 
 _T0 = datetime(2026, 1, 1, tzinfo=timezone.utc)
 

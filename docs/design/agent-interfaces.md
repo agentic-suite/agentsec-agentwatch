@@ -1,6 +1,6 @@
 # Design — Agent Interfaces
 
-**BLUF:** How agentwatch exposes the record to agents **safely**: a read-only MCP server (`agentwatch mcp-serve`), a
+**BLUF:** How agentwatch exposes the record to agents **safely**: a read-only MCP server (`agentsec-agentwatch mcp-serve`), a
 shipped investigation skill, and a versioned CLI JSON contract. Records are already redacted and (by default) contain no
 content; responses are labeled untrusted with record citations; every query is itself recorded as `store-access`.
 
@@ -10,7 +10,7 @@ content; responses are labeled untrusted with record citations; every query is i
 read-only server threat model).
 
 > **Implemented (M30 AGI-1).** `agentwatch.mcp_server` serves the read-only tool set over local stdio via
-> `agentwatch mcp-serve --enable` (off by default). The exposed set is fixed and test-enumerated, responses
+> `agentsec-agentwatch mcp-serve --enable` (off by default). The exposed set is fixed and test-enumerated, responses
 > are labeled `untrusted-data` with record citations, results are bounded and rate-limited, and every query
 > is appended as a metadata-only `store-access` record. Proving test:
 > `packages/python-sdk/tests/test_mcp_server.py`.

@@ -15,12 +15,12 @@ from typing import Any
 
 import pytest
 
-from agentwatch import system_ingest
-from agentwatch.classify import NETWORK, classify_record
-from agentwatch.impact import build_impact
-from agentwatch.records import ProducerKind, RecordPrivacyMode, SecurityEventType, validate_record
-from agentwatch.redact import PrivacyMode, RedactionConfig
-from agentwatch.store import RecordStore
+from agentsec_agentwatch import system_ingest
+from agentsec_agentwatch.classify import NETWORK, classify_record
+from agentsec_agentwatch.impact import build_impact
+from agentsec_agentwatch.records import ProducerKind, RecordPrivacyMode, SecurityEventType, validate_record
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -428,7 +428,7 @@ def test_malformed_events_are_problems_never_crashes() -> None:
 def test_run_system_ingest_requires_optin_and_handles_unreadable(
     tmp_path: Path,
 ) -> None:
-    from agentwatch.quarantine import QuarantineLog
+    from agentsec_agentwatch.quarantine import QuarantineLog
 
     store = RecordStore(tmp_path / "records.jsonl")
     with pytest.raises(system_ingest.SystemIngestNotOptedInError):
@@ -472,7 +472,7 @@ def test_run_system_ingest_requires_optin_and_handles_unreadable(
 
 def _pid_record(session: str, pid: int, *, at: datetime) -> Any:
     """A minimal hook record that anchors ``pid`` to ``session`` (test helper)."""
-    from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+    from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
 
     record = AgentRecord(
         session_id=session,
@@ -492,7 +492,7 @@ def _pid_record(session: str, pid: int, *, at: datetime) -> Any:
 def test_conformance_pack_conforms() -> None:
     import sdk_conformance_registry  # noqa: F401  (registers the packs)
 
-    from agentwatch import conformance
+    from agentsec_agentwatch import conformance
 
     report = conformance.run_sdk(sdk_conformance_registry.system_ingest_spec())
     assert report.ok, report.summary()
@@ -519,7 +519,7 @@ def _events_file(tmp_path: Path) -> Path:
 
 
 def test_cli_requires_consent(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     rc = main(
         [
@@ -539,7 +539,7 @@ def test_cli_requires_consent(tmp_path: Path, capsys: pytest.CaptureFixture[str]
 def test_cli_consent_ingests_unjoined_records(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     store_dir = tmp_path / "store"
     rc = main(

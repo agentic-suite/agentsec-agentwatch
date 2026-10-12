@@ -27,14 +27,14 @@ import pytest
 from hypothesis import HealthCheck, example, given, settings
 from hypothesis import strategies as st
 
-from agentwatch import hook as hook_module
-from agentwatch import mcp_proxy, session_export, transcript
-from agentwatch.aat import verify_aat
-from agentwatch.adapters import cursor as cursor_adapter
-from agentwatch.daemon import Daemon
-from agentwatch.ingest import transcode_ndjson, transcode_otel
-from agentwatch.records import RecordValidationError, validate_event, validate_record
-from agentwatch.store import RecordStore
+from agentsec_agentwatch import hook as hook_module
+from agentsec_agentwatch import mcp_proxy, session_export, transcript
+from agentsec_agentwatch.aat import verify_aat
+from agentsec_agentwatch.adapters import cursor as cursor_adapter
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.ingest import transcode_ndjson, transcode_otel
+from agentsec_agentwatch.records import RecordValidationError, validate_event, validate_record
+from agentsec_agentwatch.store import RecordStore
 
 settings.register_profile(
     "agentwatch_fuzz",
@@ -313,7 +313,7 @@ _36937_ROLLOUT = (
     '"payload":{"type":"exec_command","command":"echo `rm -rf $HOME`"}}'
 )
 
-_SRC = Path(__file__).resolve().parents[1] / "src" / "agentwatch"
+_SRC = Path(__file__).resolve().parents[1] / "src" / "agentsec_agentwatch"
 _FOREIGN_PARSERS = (
     "ingest.py",
     "aat.py",

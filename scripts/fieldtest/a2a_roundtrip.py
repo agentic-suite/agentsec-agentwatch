@@ -3,8 +3,8 @@
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from agentwatch.agent_card import verify_agent_card  # real API
-from agentwatch.a2a_proxy import is_recordable_request
+from agentsec_agentwatch.agent_card import verify_agent_card  # real API
+from agentsec_agentwatch.a2a_proxy import is_recordable_request
 from _ftutil import ok
 
 def main(argv):

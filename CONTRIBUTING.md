@@ -49,7 +49,7 @@ trace files to records. Pin the upstream commit in the workflow and in `THIRD_PA
 
 ## Redaction & fixture rules (non-negotiable)
 
-agentwatch never persists secrets, and contributions must not either.
+agentsec-agentwatch never persists secrets, and contributions must not either.
 
 - **Fixtures are synthetic or redaction-verified.** Never commit real credentials, tokens, customer content, or
   PII. Build fixtures from public formats or the redaction attack pack.
@@ -63,7 +63,7 @@ agentwatch never persists secrets, and contributions must not either.
 
 ## Legacy import name
 
-New code imports `agentwatch`. If you are migrating an older codebase that imports `agent_exec_trace`, run the
+New code imports `agentsec-agentwatch`. If you are migrating an older codebase that imports `agent_exec_trace`, run the
 codemod:
 
 ```sh

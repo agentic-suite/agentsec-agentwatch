@@ -9,9 +9,9 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from agentwatch import errors
-from agentwatch.cli import main as cli
-from agentwatch.release_verify import verify_release
+from agentsec_agentwatch import errors
+from agentsec_agentwatch.cli import main as cli
+from agentsec_agentwatch.release_verify import verify_release
 
 REPO = Path(__file__).resolve().parents[3]
 WORKFLOWS = REPO / ".github" / "workflows"

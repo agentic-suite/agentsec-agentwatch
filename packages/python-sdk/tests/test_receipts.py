@@ -11,17 +11,17 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.receipts import record_receipt, redact_preview, session_receipts
-from agentwatch.records import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.receipts import record_receipt, redact_preview, session_receipts
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
     RecordPrivacyMode,
     ToolCall,
 )
-from agentwatch.redact import PrivacyMode, RedactionConfig
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

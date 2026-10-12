@@ -17,7 +17,7 @@ paths = [
 [[allowlists]]
 description = "Intentional secret material used to test redaction/self-test (must NOT be removed)"
 paths = [
-  '''^packages/python-sdk/src/agentwatch/selftest\.py$''',
+  '''^packages/python-sdk/src/agentsec_agentwatch/selftest\.py$''',
   '''^packages/python-sdk/tests/test_secrets\.py$''',
   '''^packages/python-sdk/tests/test_redaction_properties\.py$''',
   '''^packages/python-sdk/tests/_secret_oracle\.py$''',

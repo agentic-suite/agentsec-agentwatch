@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 RELEASE = ROOT / "scripts" / "release"
 WORKFLOW = ROOT / ".github" / "workflows" / "release.yml"
 SDK_PYPROJECT = ROOT / "packages" / "python-sdk" / "pyproject.toml"
-SDK_INIT = ROOT / "packages" / "python-sdk" / "src" / "agentwatch" / "__init__.py"
+SDK_INIT = ROOT / "packages" / "python-sdk" / "src" / "agentsec_agentwatch" / "__init__.py"
 CLI_PACKAGE = ROOT / "packages" / "cli" / "package.json"
 CHANGELOG = ROOT / "CHANGELOG.md"
 

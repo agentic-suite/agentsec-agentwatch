@@ -16,8 +16,8 @@ for _cand in (
     if os.path.isdir(_cand):
         sys.path.insert(0, _cand)
 
-from agentwatch import attestation  # noqa: E402
-from agentwatch.store import RecordStore  # noqa: E402
+from agentsec_agentwatch import attestation  # noqa: E402
+from agentsec_agentwatch.store import RecordStore  # noqa: E402
 
 STORE = Path("/data/agentwatch/records.jsonl")
 

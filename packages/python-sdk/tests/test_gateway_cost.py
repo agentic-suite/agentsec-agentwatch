@@ -10,11 +10,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, cast
 
-from agentwatch.cost import build_cost, render_cost
-from agentwatch.ingest import transcode_otel
-from agentwatch.pricing import USAGE_TOOL
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cost import build_cost, render_cost
+from agentsec_agentwatch.ingest import transcode_otel
+from agentsec_agentwatch.pricing import USAGE_TOOL
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

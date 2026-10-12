@@ -2,7 +2,7 @@
 """End-to-end hook wall-clock gate (M29 DEP-3, #443; PRD 50).
 
 Publishes and gates the process-spawn cost a developer feels per tool call: the
-real wall-clock of ``agentwatch-hook pre`` (two hooks per tool call) on macOS and
+real wall-clock of ``agentsec-agentwatch-hook pre`` (two hooks per tool call) on macOS and
 Linux, with a user-visible budget, a 500-call session overhead quote, and a
 committed per-OS baseline. Windows is reported blocked on WIN-1 (named-pipe
 transport re-pointed to M31), never silently measured.
@@ -25,8 +25,8 @@ from typing import Any
 REPO = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO / "packages" / "python-sdk" / "src"))
 
-from agentwatch import hook_perf  # noqa: E402
-from agentwatch.perf import PerfStats  # noqa: E402
+from agentsec_agentwatch import hook_perf  # noqa: E402
+from agentsec_agentwatch.perf import PerfStats  # noqa: E402
 
 BASELINE_PATH = REPO / "perf" / "hook-e2e-baseline.json"
 DOC_PATH = REPO / "docs" / "reference" / "performance.md"

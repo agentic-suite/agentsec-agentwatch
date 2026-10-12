@@ -4,7 +4,7 @@
 applicable) a shipped-feature **parity row**. Nothing is orphaned. **v0.2.0** requirements are added below the
 same way — each ties to its CUJ, WBS work item, proving test, and field case.
 
-**Status:** v0.1.0 + v0.2.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 + v0.2.0 · **Parent:** agentic-suite #209
 
 ## v0.1.0 requirements
 

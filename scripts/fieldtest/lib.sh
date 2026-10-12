@@ -3,7 +3,7 @@
 #
 # Reuses the repo's stack lifecycle primitive (stack_up / stack_verify /
 # stack_teardown_on_exit) and adds per-case result capture. Results are written
-# to field-test/v0.1.0/results/<UTC-ts>/ (see docs/field-test/v0.1.0/field-test-plan.md).
+# to field-test/0.3.0/results/<UTC-ts>/ (see docs/field-test/v0.1.0/field-test-plan.md).
 #
 # Source from a runner:
 #   source "$(dirname "$0")/lib.sh"
@@ -25,13 +25,13 @@ if [[ -f "$FT_DIR/.env" ]]; then
   set +a
 fi
 # Results are version-scoped: field-test/<FT_VERSION>/results/<run-id>/.
-# The v0.2.0 runner sets FT_VERSION=v0.2.0 (see run-suite.sh / `make fieldtest-v020`).
+# The v0.2.0 runner sets FT_VERSION=0.3.0 (see run-suite.sh / `make fieldtest-v020`).
 # FT_RESULTS_ROOT overrides the whole path when set.
-FT_VERSION="${FT_VERSION:-v0.1.0}"
+FT_VERSION="${FT_VERSION:-0.3.0}"
 # FREEZE GUARD: the v0.1.0 field-test results are frozen forever and must never
 # be written by a v0.2.0 run. This blocks any accidental target.
 if [[ "${FT_VERSION}" == "v0.1.0" && "${FT_ALLOW_V010_WRITE:-0}" != "1" ]]; then
-  echo "FATAL: refusing to write to field-test/v0.1.0 (frozen). Set FT_VERSION=v0.2.0." >&2
+  echo "FATAL: refusing to write to field-test/v0.1.0 (frozen). Set FT_VERSION=0.3.0." >&2
   echo "       (override only with FT_ALLOW_V010_WRITE=1, and only for the v0.1.0 report itself)" >&2
   exit 3
 fi
@@ -268,7 +268,7 @@ ft_build_images() {
   mkdir -p "$FT_RUN_DIR"
   ft_record "compose build (once per run)"
   local rc=0
-  if [[ "${FT_VERSION:-v0.1.0}" == "v0.2.0" ]]; then
+  if [[ "${FT_VERSION:-0.3.0}" != "v0.1.0" ]]; then
     "${STACK_COMPOSE[@]}" "${V020_PROFILES[@]}" build "${V020_SERVICES[@]}" \
       >> "$FT_RUN_DIR/.build.log" 2>&1 || rc=$?
   else
@@ -280,7 +280,7 @@ ft_build_images() {
 
 # Expected running services for the active version.
 _ft_expected_services() {
-  if [[ "${FT_VERSION:-v0.1.0}" == "v0.2.0" ]]; then
+  if [[ "${FT_VERSION:-0.3.0}" != "v0.1.0" ]]; then
     printf '%s\n' "${V020_SERVICES[@]}"
   else
     printf '%s\n' postgres jaeger otel-collector api analytics web recorder verifier
@@ -301,7 +301,7 @@ _ft_stack_up() {
 # Bring up the full stack and verify it (used only when the stack is not already
 # running). Build happens once per run, so this is `up -d` on the shared path.
 _ft_boot_recorder_fresh() {
-  if [[ "${FT_VERSION:-v0.1.0}" == "v0.2.0" ]]; then
+  if [[ "${FT_VERSION:-0.3.0}" != "v0.1.0" ]]; then
     ft_up_v020
     ft_verify_v020
   else

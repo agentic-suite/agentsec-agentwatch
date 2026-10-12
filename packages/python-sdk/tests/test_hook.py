@@ -19,7 +19,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import hook
+from agentsec_agentwatch import hook
 
 EVENT = {
     "session_id": "sess-1",
@@ -129,7 +129,7 @@ def test_default_socket_path_falls_back_to_tmp(monkeypatch: pytest.MonkeyPatch) 
 
 
 def test_hook_spools_when_daemon_is_down(tmp_path: Path) -> None:
-    from agentwatch.spool import Spool
+    from agentsec_agentwatch.spool import Spool
 
     socket_path = tmp_path / "nope.sock"
 

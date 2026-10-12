@@ -60,7 +60,7 @@ def test_corpus_cases_are_machine_checkable() -> None:
 
 def test_corpus_is_governance_clean() -> None:
     pytest.importorskip("agentwatch")
-    from agentwatch.secrets import detect
+    from agentsec_agentwatch.secrets import detect
 
     text = CORPUS.read_text(encoding="utf-8")
     assert detect(text) == []

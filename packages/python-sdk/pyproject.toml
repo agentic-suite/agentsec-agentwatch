@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentsec-agentwatch"
-version = "0.2.1"
+version = "0.3.0"
 description = "Execution traces for agent behavior - OpenTelemetry-style observability for AI agent workflows"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -66,18 +66,24 @@ mutation = [
 ]
 
 [project.scripts]
-agentwatch = "agentwatch.cli:main"
-agentwatch-hook = "agentwatch.hook:main"
-agentwatch-daemon = "agentwatch.daemon:main"
-agentwatch-mcp-proxy = "agentwatch.mcp_proxy:main"
-agentwatch-a2a-proxy = "agentwatch.a2a_proxy:main"
+agentsec-agentwatch = "agentsec_agentwatch.cli:main"
+agentsec-agentwatch-hook = "agentsec_agentwatch.hook:main"
+agentsec-agentwatch-daemon = "agentsec_agentwatch.daemon:main"
+agentsec-agentwatch-mcp-proxy = "agentsec_agentwatch.mcp_proxy:main"
+agentsec-agentwatch-a2a-proxy = "agentsec_agentwatch.a2a_proxy:main"
+# v0.3.x compatibility aliases (ADR-0026 shim) — old CLI names keep working.
+agentwatch = "agentsec_agentwatch.cli:main"
+agentwatch-hook = "agentsec_agentwatch.hook:main"
+agentwatch-daemon = "agentsec_agentwatch.daemon:main"
+agentwatch-mcp-proxy = "agentsec_agentwatch.mcp_proxy:main"
+agentwatch-a2a-proxy = "agentsec_agentwatch.a2a_proxy:main"
 
 [project.urls]
-Homepage = "https://github.com/agentsec-ecosystem/agentwatch"
-Repository = "https://github.com/agentsec-ecosystem/agentwatch"
-Issues = "https://github.com/agentsec-ecosystem/agentwatch/issues"
-Documentation = "https://github.com/agentsec-ecosystem/agentwatch/blob/main/docs/README.md"
-Changelog = "https://github.com/agentsec-ecosystem/agentwatch/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/agentic-suite/agentsec-agentwatch"
+Repository = "https://github.com/agentic-suite/agentsec-agentwatch"
+Issues = "https://github.com/agentic-suite/agentsec-agentwatch/issues"
+Documentation = "https://github.com/agentic-suite/agentsec-agentwatch/blob/main/docs/README.md"
+Changelog = "https://github.com/agentic-suite/agentsec-agentwatch/blob/main/CHANGELOG.md"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -90,7 +96,7 @@ line-length = 100
 select = ["E", "F", "I", "UP", "B", "SIM", "N"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["agentwatch"]
+known-first-party = ["agentsec_agentwatch"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

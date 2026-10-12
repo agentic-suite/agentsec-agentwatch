@@ -3,7 +3,7 @@
 **BLUF:** Two-line instrumentation for a LangGraph agent.
 
 ```python
-from agentwatch import AgentTracer, TracedGraph
+from agentsec_agentwatch import AgentTracer, TracedGraph
 
 AgentTracer.setup(otlp_endpoint="http://localhost:4317")
 

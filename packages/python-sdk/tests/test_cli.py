@@ -16,9 +16,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli import main
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli import main
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 ALL_COMMANDS = [
     "init",
@@ -200,7 +200,7 @@ def test_export_requires_action(
     assert exc.value.code != 0
 
 
-@pytest.mark.parametrize("module", ["agentwatch", "agentwatch.cli"])
+@pytest.mark.parametrize("module", ["agentsec_agentwatch", "agentsec_agentwatch.cli"])
 def test_module_entry_point_runs(tmp_path: Path, module: str) -> None:
     """``python -m <module> --help`` works (guards __main__.py)."""
     src = Path(__file__).resolve().parents[1] / "src"

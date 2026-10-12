@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from agentwatch.rotating_log import RotatingLog
+from agentsec_agentwatch.rotating_log import RotatingLog
 
 
 def test_rotates_only_at_the_cap(tmp_path: Path) -> None:

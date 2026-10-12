@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import community_adapter
 
-from agentwatch import conformance
+from agentsec_agentwatch import conformance
 
 
 def test_sample_community_adapter_conforms() -> None:

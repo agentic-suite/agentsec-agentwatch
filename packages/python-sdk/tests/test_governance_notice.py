@@ -15,15 +15,15 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.config_explain import explain_config
-from agentwatch.configuration import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.config_explain import explain_config
+from agentsec_agentwatch.configuration import (
     AgentwatchConfig,
     ExportSection,
     PrivacySection,
     SinksSection,
 )
-from agentwatch.governance import (
+from agentsec_agentwatch.governance import (
     NOT_LEGAL_ADVICE,
     Notice,
     NoticeStatement,

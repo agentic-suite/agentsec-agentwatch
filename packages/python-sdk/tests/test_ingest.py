@@ -9,15 +9,15 @@ from typing import Any
 
 import pytest
 
-from agentwatch.ingest import (
+from agentsec_agentwatch.ingest import (
     run_ingest,
     transcode_ndjson,
     transcode_otel,
 )
-from agentwatch.quarantine import QuarantineLog
-from agentwatch.records import SecurityEventType, validate_record
-from agentwatch.redact import redaction_config_from_mode
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.quarantine import QuarantineLog
+from agentsec_agentwatch.records import SecurityEventType, validate_record
+from agentsec_agentwatch.redact import redaction_config_from_mode
+from agentsec_agentwatch.store import RecordStore
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "ingest"
 TRACE = FIXTURES / "otel_trace.json"
@@ -115,7 +115,7 @@ def test_cli_ingest_records_into_the_store(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
     monkeypatch.setenv("AGENTWATCH_STORE__PATH", str(tmp_path))
-    main = importlib.import_module("agentwatch.cli.main")
+    main = importlib.import_module("agentsec_agentwatch.cli.main")
 
     rc = main.main(["ingest", str(TRACE), "--format", "otel", "--json"])
 

@@ -14,7 +14,7 @@ import sys
 sys.path.insert(0, "/ft/scripts")
 from _ftutil import fail, ok  # noqa: E402
 
-from agentwatch import frameworks  # noqa: E402
+from agentsec_agentwatch import frameworks  # noqa: E402
 
 
 def main(argv: list[str]) -> int:

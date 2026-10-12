@@ -13,7 +13,7 @@ is **manual/local only** — there is no registry egress path.
 
 Implemented in `agentwatch.incident_cases`.
 
-- `agentwatch case create --title … [--severity …] [--ref …]` appends one metadata-only chain record; the case ID is a
+- `agentsec-agentwatch case create --title … [--severity …] [--ref …]` appends one metadata-only chain record; the case ID is a
   stable per-store counter (`C1`, `C2`, …).
 - `case add <id> --session <sid>` / `case remove <id> --session <sid>` append `add`/`remove` chain records. An unknown
   case fails closed (`ValueError` → nonzero exit). `case list` reconstructs current membership from the chain.
@@ -45,7 +45,7 @@ Gaps are **classified**, never silently dropped:
 - `incident-report.json` — a COR-3-shaped, metadata-only report (`submission.auto_egress: false`, `endpoint: null`);
 - `manifest.json` — format/version and the sha256 of every member.
 
-`agentwatch case verify <bundle>` re-checks the member hashes **and** re-hashes each `records.ndjson` row from its
+`agentsec-agentwatch case verify <bundle>` re-checks the member hashes **and** re-hashes each `records.ndjson` row from its
 `prev_hash`, so a tampered payload is caught even if an attacker re-computes the manifest hashes. A missing member, a
 bad zip, or a malformed segment never raises — it returns a verdict with the problems enumerated.
 

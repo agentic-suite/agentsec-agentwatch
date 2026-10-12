@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.annotate import (
+from agentsec_agentwatch.annotate import (
     NOTE_MAX_LENGTH,
     OPERATOR_NOTE_TOOL,
     AnnotateError,
@@ -19,9 +19,9 @@ from agentwatch.annotate import (
     operator_notes,
     tagged_sessions,
 )
-from agentwatch.cli.main import main
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

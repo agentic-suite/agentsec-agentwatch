@@ -4,7 +4,7 @@
 `diff --explain`. The LLM explains what the deterministic pipeline found; it never decides what is
 redacted or whether the chain is intact.
 
-**Status:** proposed (2026-10-02) · **Parent:** agentsec-ecosystem #209
+**Status:** proposed (2026-10-02) · **Parent:** agentic-suite #209
 
 > Cross-cutting rules (PRD 19–29): fail closed and never silent (PRD 17); redaction before
 > storage (DD-06); **the trust boundary stays deterministic — no LLM in redaction, validation, or

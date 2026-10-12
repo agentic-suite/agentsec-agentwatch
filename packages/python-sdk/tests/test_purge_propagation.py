@@ -15,12 +15,12 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.holds import parse_scope, record_hold_add
-from agentwatch.query_index import QueryIndex, derived_artifacts, index_path_for_store
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.ui import ConsoleServer
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.holds import parse_scope, record_hold_add
+from agentsec_agentwatch.query_index import QueryIndex, derived_artifacts, index_path_for_store
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.ui import ConsoleServer
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

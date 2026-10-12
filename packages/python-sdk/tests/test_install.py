@@ -22,9 +22,9 @@ from typing import Any
 
 import pytest
 
-import agentwatch
-from agentwatch import hook
-from agentwatch.install import (
+import agentsec_agentwatch
+from agentsec_agentwatch import hook
+from agentsec_agentwatch.install import (
     HookCommand,
     InstallError,
     daemon_paths,
@@ -37,11 +37,11 @@ from agentwatch.install import (
     stop_daemon,
     uninstall_hooks,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 # A fixed, hand-written command so expected JSON is derived independently of
 # the resolver under test.
-HOOK = HookCommand(command="/opt/aw/bin/agentwatch-hook", args_prefix=())
+HOOK = HookCommand(command="/opt/aw/bin/agentsec-agentwatch-hook", args_prefix=())
 
 
 def _read(path: Path) -> dict[str, Any]:
@@ -131,7 +131,7 @@ def test_install_hooks_replaces_a_stale_agentwatch_handler(tmp_path: Path) -> No
     settings = tmp_path / "settings.local.json"
     stale = {
         "matcher": "*",
-        "hooks": [{"type": "command", "command": "/old/bin/agentwatch-hook", "args": ["pre"]}],
+        "hooks": [{"type": "command", "command": "/old/bin/agentsec-agentwatch-hook", "args": ["pre"]}],
     }
     settings.write_text(json.dumps({"hooks": {"PreToolUse": [stale]}}), encoding="utf-8")
 
@@ -223,7 +223,7 @@ def test_default_hook_command_forwards_over_the_socket(short_dir: Path) -> None:
     thread.start()
     try:
         command = resolve_hook_command()
-        src = Path(agentwatch.__file__).resolve().parents[1]
+        src = Path(agentsec_agentwatch.__file__).resolve().parents[1]
         env = {
             **os.environ,
             "PYTHONPATH": str(src),
@@ -362,10 +362,10 @@ def test_daemon_paths_live_under_the_store(
 
 def test_entry_point_module_is_importable() -> None:
     # The daemon is spawned as ``python -m agentwatch.daemon``; guard the module.
-    src = Path(agentwatch.__file__).resolve().parents[1]
+    src = Path(agentsec_agentwatch.__file__).resolve().parents[1]
     env = {**os.environ, "PYTHONPATH": str(src)}
     result = subprocess.run(
-        [sys.executable, "-c", "import agentwatch.daemon"],
+        [sys.executable, "-c", "import agentsec_agentwatch.daemon"],
         capture_output=True,
         text=True,
         env=env,

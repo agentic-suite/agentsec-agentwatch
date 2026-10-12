@@ -1,0 +1,101 @@
+{
+  "cases": [
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "role-matrix",
+          "ok": true
+        },
+        {
+          "name": "access-model-semantics",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-ACC-1",
+      "run_id": "s12-governance",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "governance-notice-backed",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-ACC-2",
+      "run_id": "s12-governance",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "hold-survives",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-HLD-1",
+      "run_id": "s12-governance",
+      "status": "pass"
+    }
+  ],
+  "env": {
+    "arch": "arm64",
+    "compose": "5.5.1",
+    "docker": "Docker version 29.5.2, build 79eb04c7d8",
+    "omlx_base_url": "http://host.docker.internal:8000/v1",
+    "omlx_model": "Qwen3-4B-Instruct-2507-4bit",
+    "os": "Darwin",
+    "run_id": "s12-governance",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-10-12T23:03:44.014863+00:00",
+  "green": true,
+  "run_id": "s12-governance",
+  "totals": {
+    "declared": 0,
+    "fail": 0,
+    "pass": 3
+  }
+}

@@ -5,7 +5,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from agentwatch.quarantine import QuarantineLog
+from agentsec_agentwatch.quarantine import QuarantineLog
 
 
 def test_add_preserves_the_raw_bytes(tmp_path: Path) -> None:

@@ -15,9 +15,9 @@ from typing import Any
 
 import pytest
 
-from agentwatch import codex_rollout
-from agentwatch.records import RecordPrivacyMode, SecurityEventType
-from agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch import codex_rollout
+from agentsec_agentwatch.records import RecordPrivacyMode, SecurityEventType
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
 
 SESSION = "rollout-2025-12-08T00-37-46-abc123"
 
@@ -176,7 +176,7 @@ def test_reader_never_spawns_a_shell() -> None:
 
 
 def test_ingest_rollouts_is_idempotent(tmp_path: Path) -> None:
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.store import RecordStore
 
     path = _write(tmp_path, _lines())
     store = RecordStore(tmp_path / "records.jsonl")

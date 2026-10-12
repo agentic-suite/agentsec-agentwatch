@@ -6,7 +6,7 @@
   "for agents"; agentwatch holds the record of what agents did but exposed no agent-usable interface. Giving
   an agent read access to its own history is itself a trust surface (OWASP ASI01/ASI06), and record content
   is foreign data that may be injection-shaped (see [ADR-0024](0024-foreign-data-threat-posture.md)).
-- **Decision:** `agentwatch mcp-serve` serves a **small, read-only** tool set over local stdio —
+- **Decision:** `agentsec-agentwatch mcp-serve` serves a **small, read-only** tool set over local stdio —
   `sessions`, `search`, `replay`, `impact`, `blame`, `coverage`, `cost`, `oversight`, `provenance`,
   `inventory` — under these controls:
   - **Read-only by construction.** The exposed set is fixed and enumerated by a test; every tool advertises

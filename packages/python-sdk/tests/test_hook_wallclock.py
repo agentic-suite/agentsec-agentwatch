@@ -12,8 +12,8 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-from agentwatch import hook_perf
-from agentwatch.perf import PerfStats
+from agentsec_agentwatch import hook_perf
+from agentsec_agentwatch.perf import PerfStats
 
 REPO = Path(__file__).resolve().parents[3]
 WORKFLOW = REPO / ".github" / "workflows" / "hook-perf.yml"

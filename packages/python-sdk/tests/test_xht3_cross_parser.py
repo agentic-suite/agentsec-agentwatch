@@ -16,7 +16,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.codex_rollout import read_rollout
+from agentsec_agentwatch.codex_rollout import read_rollout
 
 REPO = Path(__file__).resolve().parents[3]
 GOLDEN = REPO / "packages" / "python-sdk" / "tests" / "fixtures" / "codex-cli" / "golden"

@@ -5,7 +5,7 @@ in its own console. The result is a single, shared failure: *"we had no record o
 agentwatch provides that record in a vendor-neutral, OpenTelemetry GenAI format, and defines the
 security-event schema the entire ecosystem emits and ingests.
 
-**Status:** v0.1.0 · **Owner:** @deghosal-2026 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Owner:** @deghosal-2026 · **Parent:** agentic-suite #209
 
 ## The problem
 

@@ -12,9 +12,9 @@ from datetime import datetime, timezone
 from hypothesis import given
 from hypothesis import strategies as st
 
-from agentwatch.attrs import CONTENT_ATTRIBUTE_KEYS
-from agentwatch.export import exported_content_keys, record_to_attributes
-from agentwatch.records import (
+from agentsec_agentwatch.attrs import CONTENT_ATTRIBUTE_KEYS
+from agentsec_agentwatch.export import exported_content_keys, record_to_attributes
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,

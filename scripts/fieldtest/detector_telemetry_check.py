@@ -15,7 +15,7 @@ sys.path.insert(0, _HERE)
 sys.path.insert(0, "/work/packages/python-sdk/src")
 from _ftutil import fail, ok  # noqa: E402
 
-from agentwatch.detector_telemetry import (  # noqa: E402
+from agentsec_agentwatch.detector_telemetry import (  # noqa: E402
     OUTCOME_FALSE_POSITIVE,
     OUTCOME_FIRED,
     DetectorTelemetry,

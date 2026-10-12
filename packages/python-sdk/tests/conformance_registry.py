@@ -9,8 +9,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from agentwatch import conformance
-from agentwatch.adapters import (
+from agentsec_agentwatch import conformance
+from agentsec_agentwatch.adapters import (
     a2a_proxy,
     claude_code,
     codex_cli,

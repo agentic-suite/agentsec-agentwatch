@@ -18,7 +18,7 @@ Sources: [v0.2.0 research sources](v0.2.0-research-sources.md) §identity · des
 
 ## Field mapping
 
-`agentwatch` records the identity dimension additively (`schema/agent-record.schema.json`,
+`agentsec-agentwatch` records the identity dimension additively (`schema/agent-record.schema.json`,
 `agent_identity`); where a harness does not expose a fact the value is an honest `unknown` — never
 inferred. `principal` and each `delegation_chain` entry are hashed by default under `metadata-only`
 (`agentwatch.identity`).

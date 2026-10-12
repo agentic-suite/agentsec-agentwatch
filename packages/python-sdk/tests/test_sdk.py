@@ -7,7 +7,7 @@ OTel ForceFlush semantic with a bounded result; the context manager flushes on e
 
 from __future__ import annotations
 
-from agentwatch.sdk import AgentWatchProvider, FlushResult
+from agentsec_agentwatch.sdk import AgentWatchProvider, FlushResult
 
 
 class RecordingProcessor:
@@ -115,7 +115,7 @@ def test_flush_result_is_truthy_only_when_ok() -> None:
 
 
 def test_resource_attributes_carry_telemetry_sdk_and_service() -> None:
-    from agentwatch.sdk import resource_attributes
+    from agentsec_agentwatch.sdk import resource_attributes
 
     attrs = resource_attributes(service_name="triage")
 
@@ -144,7 +144,7 @@ def test_sampler_is_thread_safe_and_deterministic() -> None:
     import threading
     from datetime import datetime, timezone
 
-    from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+    from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
 
     record = AgentRecord(
         session_id="s",
@@ -158,7 +158,7 @@ def test_sampler_is_thread_safe_and_deterministic() -> None:
     lock = threading.Lock()
 
     def decide() -> None:
-        from agentwatch.sampling import SecurityRelevantSampler
+        from agentsec_agentwatch.sampling import SecurityRelevantSampler
 
         value = SecurityRelevantSampler().should_sample(record, ratio=0.5).value
         with lock:

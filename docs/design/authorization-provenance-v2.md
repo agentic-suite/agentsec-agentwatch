@@ -45,7 +45,7 @@ Other harnesses (Cursor, Gemini, Codex) map their facts or declare `authorizatio
 
 ## `oversight` report
 
-`agentwatch oversight [--since] [--project] [--by day|user|mode|tool-class]`. Facts only:
+`agentsec-agentwatch oversight [--since] [--project] [--by day|user|mode|tool-class]`. Facts only:
 
 - authorization mix (calls by source); sessions by starting/ending mode;
 - human-prompted calls: approve/reject rate, time-to-decision distribution, sub-second fraction;

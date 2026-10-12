@@ -1,6 +1,6 @@
 # agentwatch-api
 
-Read API service for `agentwatch` — serves product-facing views (run timeline, fleet health, version compare, anomaly inbox) from the normalized Postgres read model.
+Read API service for `agentsec-agentwatch` — serves product-facing views (run timeline, fleet health, version compare, anomaly inbox) from the normalized Postgres read model.
 
 ## Installation
 

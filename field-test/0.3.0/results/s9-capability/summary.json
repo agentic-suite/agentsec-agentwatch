@@ -1,0 +1,109 @@
+{
+  "cases": [
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "capability-drift",
+          "ok": true
+        },
+        {
+          "name": "capability-drift-semantics",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-CAP-1",
+      "run_id": "s9-capability",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "emit",
+          "ok": true
+        },
+        {
+          "name": "capability-load-attribution",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-CAP-2",
+      "run_id": "s9-capability",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "memory-oob-edit",
+          "ok": true
+        },
+        {
+          "name": "memory-capability-semantics",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-MEM-1",
+      "run_id": "s9-capability",
+      "status": "pass"
+    }
+  ],
+  "env": {
+    "arch": "arm64",
+    "compose": "5.5.1",
+    "docker": "Docker version 29.5.2, build 79eb04c7d8",
+    "omlx_base_url": "http://host.docker.internal:8000/v1",
+    "omlx_model": "Qwen3-4B-Instruct-2507-4bit",
+    "os": "Darwin",
+    "run_id": "s9-capability",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-10-12T23:02:31.830013+00:00",
+  "green": true,
+  "run_id": "s9-capability",
+  "totals": {
+    "declared": 0,
+    "fail": 0,
+    "pass": 3
+  }
+}

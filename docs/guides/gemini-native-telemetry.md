@@ -4,7 +4,7 @@
 ([ADR-0022](../adr/0022-gemini-native-telemetry-ingest.md)).
 
 Gemini CLI ships built-in OpenTelemetry. Point it at a collector, or write to a file and ingest it — either way
-agentwatch records it, with the same redaction-before-storage guarantee as every other path.
+agentsec-agentwatch records it, with the same redaction-before-storage guarantee as every other path.
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ Point `otlpEndpoint` at your OTLP collector, and export the collected spans as J
 Then ingest the captured file:
 
 ```bash
-agentwatch ingest --format otel /tmp/gemini-telemetry.json
+agentsec-agentwatch ingest --format otel /tmp/gemini-telemetry.json
 ```
 
 ## Redaction is mandatory
@@ -64,6 +64,6 @@ at the source.
 ## Verify
 
 ```bash
-agentwatch verify-store      # the chain verifies
-agentwatch view <session>     # the ingested records appear
+agentsec-agentwatch verify-store      # the chain verifies
+agentsec-agentwatch view <session>     # the ingested records appear
 ```

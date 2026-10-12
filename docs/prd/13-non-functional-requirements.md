@@ -3,7 +3,7 @@
 **BLUF:** The NFRs that make agentwatch safe to leave on: bounded overhead, bounded storage, local-only
 privacy, fail-closed behavior, and portability across macOS/Linux.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 | ID | NFR | Target | Notes |
 |---|---|---|---|

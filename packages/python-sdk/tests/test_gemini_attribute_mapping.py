@@ -10,8 +10,8 @@ from __future__ import annotations
 
 from typing import Any
 
-from agentwatch.adapters import gemini_cli
-from agentwatch.records import Approval
+from agentsec_agentwatch.adapters import gemini_cli
+from agentsec_agentwatch.records import Approval
 
 
 def _tool_call(**overrides: Any) -> dict[str, Any]:

@@ -30,7 +30,7 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from agentwatch.records import SecurityEvent, validate_event
+    from agentsec_agentwatch.records import SecurityEvent, validate_event
 except ImportError:  # pragma: no cover - guidance when run without the SDK
     print(
         "security_event_consumer: install the agentwatch SDK first "

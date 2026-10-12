@@ -1,6 +1,6 @@
 # OWASP Agentic coverage map (ASI 2026 + AST10) — executable evidence
 
-**BLUF:** `agentwatch compliance report --framework owasp-asi-2026` renders one row per OWASP Top 10 for
+**BLUF:** `agentsec-agentwatch compliance report --framework owasp-asi-2026` renders one row per OWASP Top 10 for
 Agentic Applications 2026 risk (ASI01–ASI10) and a section for the Agentic Skills Top 10 (AST01–AST10). Each row
 states **what the record evidences**, the **command that regenerates it** (or `not evidenced`), **what it cannot
 evidence**, and a **fidelity tier**. It cites regenerable evidence or says plainly that the record cannot
@@ -40,19 +40,19 @@ Seed the reproducible dataset, then regenerate the report:
 ```sh run
 export DEMO_STORE="${DEMO_STORE:-/tmp/agentwatch-demo}"
 python3 scripts/seed-investigations.py --store "$DEMO_STORE"
-agentwatch --set store.path="$DEMO_STORE" compliance report --framework owasp-asi-2026
+agentsec-agentwatch --set store.path="$DEMO_STORE" compliance report --framework owasp-asi-2026
 ```
 
 The ASI rows that cite a command — each command is run here so the map cannot drift:
 
 ```sh run
-agentwatch --set store.path="$DEMO_STORE" flow sess-secret
-agentwatch --set store.path="$DEMO_STORE" impact sess-loop
-agentwatch --set store.path="$DEMO_STORE" search --identity demo-agent
-agentwatch --set store.path="$DEMO_STORE" impact sess-denied
-agentwatch --set store.path="$DEMO_STORE" search --memory
-agentwatch --set store.path="$DEMO_STORE" tree sess-loop
-agentwatch --set store.path="$DEMO_STORE" sessions --group-by-behavior
+agentsec-agentwatch --set store.path="$DEMO_STORE" flow sess-secret
+agentsec-agentwatch --set store.path="$DEMO_STORE" impact sess-loop
+agentsec-agentwatch --set store.path="$DEMO_STORE" search --identity demo-agent
+agentsec-agentwatch --set store.path="$DEMO_STORE" impact sess-denied
+agentsec-agentwatch --set store.path="$DEMO_STORE" search --memory
+agentsec-agentwatch --set store.path="$DEMO_STORE" tree sess-loop
+agentsec-agentwatch --set store.path="$DEMO_STORE" sessions --group-by-behavior
 ```
 
 The `not evidenced` rows (ASI04, ASI07, ASI09, AST01–AST10) carry **no** command: the surface is not captured on

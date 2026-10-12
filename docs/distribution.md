@@ -1,7 +1,7 @@
 # Distribution & Packaging Plan
 
-**BLUF:** One Python core, published to PyPI as `agentwatch`, plus a thin `npx @agentsec-ecosystem/cli`
-launcher and a Docker stack for the services.
+**BLUF:** One Python core, published to PyPI as `agentsec-agentwatch` (v0.3.0 released), plus a Docker stack
+for the services.
 
 Status: **draft** (v0.1.0).
 
@@ -9,14 +9,13 @@ Status: **draft** (v0.1.0).
 
 | Channel | Artifact | Notes |
 |---|---|---|
-| PyPI | `agentwatch` (free) | CLI + SDK core; `pip` / `uvx` |
-| npm | `@agentsec-ecosystem/cli` | Thin launcher that installs/invokes the Python CLI |
+| PyPI | `agentsec-agentwatch` (v0.3.0) | CLI + SDK core; `pip` / `uvx` |
 | Docker | local stack (API, analytics, web, collector, jaeger/tempo, postgres) | v0.2.0+ |
 | GitHub Releases | wheel + sdist + SBOM + provenance | Signed (org supply-chain policy) |
 
 ## Decisions
 
-- Name `agentwatch` reserved on PyPI + npm before publish (D2).
+- Name `agentsec-agentwatch` published on PyPI (npm is not used; D2).
 - Apache-2.0 with `THIRD_PARTY_NOTICES` crediting MIT `agent-exec-trace` (D1).
 
 ## Release checklist

@@ -18,10 +18,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import hook
-from agentwatch.daemon import HOOK_ERROR_TOOL, Daemon
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall, validate_record
-from agentwatch.store import RecordStore
+from agentsec_agentwatch import hook
+from agentsec_agentwatch.daemon import HOOK_ERROR_TOOL, Daemon
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall, validate_record
+from agentsec_agentwatch.store import RecordStore
 
 PRE = {
     "session_id": "sess-1",
@@ -431,7 +431,7 @@ def test_normalize_error_is_quarantined(short_dir: Path) -> None:
 
 
 def test_daemon_drains_spool_on_start(short_dir: Path) -> None:
-    from agentwatch.spool import Spool
+    from agentsec_agentwatch.spool import Spool
 
     socket_path = short_dir / "d.sock"
     records_path = short_dir / "records.jsonl"

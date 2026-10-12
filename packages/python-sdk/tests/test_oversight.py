@@ -13,8 +13,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.oversight import OVERSIGHT_VERSION, build_oversight, render_oversight
-from agentwatch.records import (
+from agentsec_agentwatch.oversight import OVERSIGHT_VERSION, build_oversight, render_oversight
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Authorization,
@@ -28,7 +28,7 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 BASE = datetime(2026, 1, 2, 3, 0, 0, tzinfo=timezone.utc)
 HOOK = Producer(kind=ProducerKind.HOOK, name="claude-code")
@@ -221,7 +221,7 @@ def test_cli_oversight_json(
     store_dir.mkdir()
     _store(store_dir)
 
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     rc = main(["--set", f"store.path={store_dir}", "oversight", "--json"])
 
@@ -231,7 +231,7 @@ def test_cli_oversight_json(
 
 
 def test_digest_includes_oversight(tmp_path: Path) -> None:
-    from agentwatch.digest import build_digest, render_digest
+    from agentsec_agentwatch.digest import build_digest, render_digest
 
     report = build_digest(_store(tmp_path), now=BASE + timedelta(days=1))
     assert report.oversight_calls == 4
@@ -239,8 +239,8 @@ def test_digest_includes_oversight(tmp_path: Path) -> None:
 
 
 def test_compliance_has_art14_oversight_row(tmp_path: Path) -> None:
-    from agentwatch.compliance import build_report
-    from agentwatch.configuration import AgentwatchConfig
+    from agentsec_agentwatch.compliance import build_report
+    from agentsec_agentwatch.configuration import AgentwatchConfig
 
     store = _store(tmp_path)
     report = build_report(store, "eu-ai-act-art14", config=AgentwatchConfig(), now=BASE)

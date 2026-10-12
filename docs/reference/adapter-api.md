@@ -24,7 +24,7 @@ Compatibility: additive minor, breaking major + deprecation.
 ## Registering + running conformance
 
 ```python
-from agentwatch import conformance
+from agentsec_agentwatch import conformance
 
 spec = conformance.AdapterSpec(
     name=my.HARNESS_ID,

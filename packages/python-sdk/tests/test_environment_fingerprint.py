@@ -12,15 +12,15 @@ from __future__ import annotations
 import json
 from datetime import datetime, timedelta, timezone
 
-from agentwatch.capabilities import (
+from agentsec_agentwatch.capabilities import (
     CAP_KIND_SKILL,
     SCOPE_USER,
     Capability,
     snapshot_records,
 )
-from agentwatch.cli.main import main
-from agentwatch.diff import diff_sessions
-from agentwatch.env_fingerprint import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.diff import diff_sessions
+from agentsec_agentwatch.env_fingerprint import (
     UNKNOWN,
     annotate_environment,
     environment_changes,
@@ -30,14 +30,14 @@ from agentwatch.env_fingerprint import (
     render_env_groups,
     session_environments,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

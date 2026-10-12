@@ -55,5 +55,5 @@ Fields OCSF cannot express natively are preserved verbatim under `unmapped`
 
 ## CLI
 
-`agentwatch export-session <id> --format ocsf|cloudevents` transcodes the session's security events to
+`agentsec-agentwatch export-session <id> --format ocsf|cloudevents` transcodes the session's security events to
 NDJSON. It is read-only and local; no network.

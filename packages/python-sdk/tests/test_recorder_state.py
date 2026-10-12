@@ -14,9 +14,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.configuration import load_config
-from agentwatch.recorder_state import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.configuration import load_config
+from agentsec_agentwatch.recorder_state import (
     CONFIG_CHANGED_TOOL,
     COVERAGE_WINDOW_CLOSE_TOOL,
     COVERAGE_WINDOW_OPEN_TOOL,
@@ -38,7 +38,7 @@ from agentwatch.recorder_state import (
     record_recorder_uninstalled,
     record_retention_changed,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

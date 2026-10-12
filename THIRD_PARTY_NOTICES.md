@@ -1,12 +1,12 @@
 # Third-Party Notices
 
-agentwatch is licensed under the Apache License 2.0. It incorporates or derives from third-party work
+agentsec-agentwatch is licensed under the Apache License 2.0. It incorporates or derives from third-party work
 listed below.
 
 ## agent-exec-trace (AgentObservatory)
 
 - **License:** MIT
-- **Source:** https://github.com/agentsec-ecosystem/agent-exec-trace (archived; retained as a private repo — not deleted)
+- **Source:** https://github.com/agentic-suite/agent-exec-trace (archived; retained as a private repo — not deleted)
 - **Imported commit:** `008e1c7eeed9de74044e8065e1be241bfee20704` (imported 2026-10-02)
 - **What is retained:** behavior trace schema concepts, instrumentation approach, detector catalog,
   analytics pipeline design, operator UI concepts, and field-test methodology — absorbed into agentwatch

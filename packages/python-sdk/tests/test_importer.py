@@ -6,10 +6,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli import main
-from agentwatch.importer import import_transcripts, iter_records, resolve_paths
-from agentwatch.redact import redaction_config_from_mode
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli import main
+from agentsec_agentwatch.importer import import_transcripts, iter_records, resolve_paths
+from agentsec_agentwatch.redact import redaction_config_from_mode
+from agentsec_agentwatch.store import RecordStore
 
 _FIXTURE = Path(__file__).parent / "fixtures" / "claude-code" / "transcript_sample.jsonl"
 

@@ -30,7 +30,7 @@ from hypothesis import HealthCheck, given, settings
 from hypothesis import strategies as st
 from hypothesis.strategies import DataObject
 
-from agentwatch.secrets import redact_secrets
+from agentsec_agentwatch.secrets import redact_secrets
 
 _ALNUM = string.ascii_letters + string.digits
 _B64URL = string.ascii_letters + string.digits + "_-"

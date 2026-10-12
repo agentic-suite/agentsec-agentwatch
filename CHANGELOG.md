@@ -5,6 +5,18 @@ versioning: [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-10-12
+
+### Changed
+- **Org rename (v0.3.0 M33):** the GitHub org `agentsec-ecosystem` → `agentic-suite`; every active repo moved
+  with it and took the `agentsec-*` ecosystem prefix (`agentwatch` → `agentsec-agentwatch`). Old repo URLs
+  redirect. WBS: `docs/wbs/v0.3.0/wbs-v0.3.0-index.md` (§ORG-1…§ORG-9).
+- **Package/import/CLI rename (v0.3.0 M34, ADR-0026):** the import module `agentwatch` → `agentsec_agentwatch`
+  and the console scripts `agentwatch`/`-hook`/`-daemon`/`-mcp-proxy`/`-a2a-proxy` → `agentsec-agentwatch[-…]`.
+  The PyPI distribution stays `agentsec-agentwatch`. `import agentwatch`, the old CLI names, and the
+  `agent_exec_trace` path keep working across the v0.3.x window via shims. Migration guide:
+  `docs/release/v0.3.0/migration-guide.md`. (npm is not used.)
+
 ## [0.2.1] - 2026-10-09
 
 ### Fixed
@@ -557,7 +569,7 @@ versioning: [Semantic Versioning](https://semver.org/).
 - Operator configuration loader `agentwatch.configuration` (PRD 16): system < user < project < env < CLI
   precedence, strict unknown-key rejection, and fail-closed export rules (WBS M1).
 - `agentwatch` console script, `tomli` backport for Python 3.10, and `python -m build` wheel + sdist
-  configuration; `@agentsec-ecosystem/cli` npx launcher (`packages/cli/`) (WBS M1).
+  configuration; `@agentic-suite/cli` npx launcher (`packages/cli/`) (WBS M1).
 - Real CI workflow (ruff, `mypy --strict`, pytest with coverage ≥95% on Python 3.10 and 3.12) (WBS M1).
 - Imported the `agent-exec-trace` codebase (MIT, commit `008e1c7`) — `packages/`, `services/`, `apps/`,
   `deploy/`, `examples/`, `scripts/`, and build tooling (WBS M0).
@@ -723,7 +735,8 @@ versioning: [Semantic Versioning](https://semver.org/).
 - Initial release: Claude Code recording, OTel GenAI export, security-event schema, redaction-by-default,
   local-first hash-chained store, session replay (R1–R8).
 
-[Unreleased]: https://github.com/agentsec-ecosystem/agentwatch/compare/v0.2.1...HEAD
-[0.2.1]: https://github.com/agentsec-ecosystem/agentwatch/compare/v0.2.0...v0.2.1
-[0.2.0]: https://github.com/agentsec-ecosystem/agentwatch/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/agentsec-ecosystem/agentwatch/releases/tag/v0.1.0
+[Unreleased]: https://github.com/agentic-suite/agentsec-agentwatch/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/agentic-suite/agentsec-agentwatch/compare/v0.2.1...v0.3.0
+[0.2.1]: https://github.com/agentic-suite/agentsec-agentwatch/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/agentic-suite/agentsec-agentwatch/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/agentic-suite/agentsec-agentwatch/releases/tag/v0.1.0

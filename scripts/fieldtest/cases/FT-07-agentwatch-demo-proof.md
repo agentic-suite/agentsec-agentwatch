@@ -3,7 +3,7 @@
 **Layer:** recorder · **LLM:** no · **Requires:** docker · **PRD / claim:** S31
 
 ## Goal
-agentwatch demo proof. See `docs/field-test/v0.1.0/field-test-plan.md` for the rationale.
+agentsec-agentwatch demo proof. See `docs/field-test/v0.1.0/field-test-plan.md` for the rationale.
 
 ## Steps
 Run by `cases/steps/FT-07.sh` (generated from `gen_cases.py`); every command is
@@ -14,7 +14,7 @@ The case-specific assertions in `cases/steps/FT-07.sh` (each recorded in
 `assertions.ndjson`). **Pass = all assertions true. There is no skip.**
 
 ## Artifacts
-`field-test/v0.1.0/results/<UTC-ts>/cases/FT-07/artifacts/`.
+`field-test/0.3.0/results/<UTC-ts>/cases/FT-07/artifacts/`.
 
 ## Cleanup
 Shared stack: reset in place between cases; `recycle` cases get a fresh `down -v`

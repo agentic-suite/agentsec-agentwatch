@@ -60,24 +60,24 @@ def _pre_message(span: int = 1) -> dict[str, Any]:
 
 
 def _measure_normalize(iterations: int) -> float:
-    from agentwatch.adapters import claude_code
-    from agentwatch.perf import time_call
+    from agentsec_agentwatch.adapters import claude_code
+    from agentsec_agentwatch.perf import time_call
 
     return time_call(lambda: claude_code.normalize(_pre_message()), iterations=iterations).p99_ms
 
 
 def _measure_redaction(iterations: int) -> float:
-    from agentwatch.perf import time_call
-    from agentwatch.secrets import redact_mapping
+    from agentsec_agentwatch.perf import time_call
+    from agentsec_agentwatch.secrets import redact_mapping
 
     args = {"command": "ls", "token": "sk-abcdefghijklmnop", "note": "hello"}
     return time_call(lambda: redact_mapping(args), iterations=iterations).p99_ms
 
 
 def _measure_daemon(iterations: int) -> float:
-    from agentwatch.daemon import Daemon
-    from agentwatch.perf import time_call
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.daemon import Daemon
+    from agentsec_agentwatch.perf import time_call
+    from agentsec_agentwatch.store import RecordStore
 
     root = Path(tempfile.mkdtemp(prefix="agentwatch-perf-"))
     daemon = Daemon(
@@ -96,8 +96,8 @@ def _measure_daemon(iterations: int) -> float:
 
 def _measure_otlp_protobuf(iterations: int) -> float:
     """One bare OTLP protobuf message -> records (M26 OTEL-3)."""
-    from agentwatch.ingest import transcode_otlp_protobuf
-    from agentwatch.perf import time_call
+    from agentsec_agentwatch.ingest import transcode_otlp_protobuf
+    from agentsec_agentwatch.perf import time_call
     from opentelemetry.proto.collector.trace.v1 import trace_service_pb2
     from opentelemetry.proto.common.v1 import common_pb2
     from opentelemetry.proto.trace.v1 import trace_pb2
@@ -133,10 +133,10 @@ def _measure_otlp_protobuf(iterations: int) -> float:
 
 def _measure_live_tail(iterations: int) -> float:
     """One live-tail reconciliation poll (M26 STR-2)."""
-    from agentwatch.live import LiveTail
-    from agentwatch.perf import time_call
-    from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.live import LiveTail
+    from agentsec_agentwatch.perf import time_call
+    from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+    from agentsec_agentwatch.store import RecordStore
 
     root = Path(tempfile.mkdtemp(prefix="agentwatch-perf-live-"))
     path = root / "records.jsonl"
@@ -157,7 +157,7 @@ def _measure_live_tail(iterations: int) -> float:
 
 def _measure_detector_eval(iterations: int) -> float:
     """One run of the rule-detector field-test matrix (M26 DET-2)."""
-    from agentwatch.perf import time_call
+    from agentsec_agentwatch.perf import time_call
 
     analytics_src = str(REPO / "services" / "analytics" / "src")
     # Force *this* checkout's analytics package to the front and drop any cached
@@ -286,14 +286,14 @@ baseline: dict[str, float] = _load_baseline()
 
 
 def _run_self_test() -> int:
-    from agentwatch.perf import time_call
+    from agentsec_agentwatch.perf import time_call
 
     # A deliberately slowed "normalize": 10 ms/step blows the 5 ms NFR cap.
     def slowed() -> None:
         time.sleep(0.010)
 
     def normalize_slow() -> None:
-        from agentwatch.adapters import claude_code
+        from agentsec_agentwatch.adapters import claude_code
 
         slowed()
         claude_code.normalize(_pre_message())

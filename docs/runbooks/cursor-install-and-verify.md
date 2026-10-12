@@ -13,18 +13,18 @@ Cursor adapter normalizes those payloads.
 #    (see docs/design/harness-adapter-design.md for the exact hook list)
 
 # 2. Record normally, then confirm a session landed:
-agentwatch sessions
-agentwatch replay <session-id>
+agentsec-agentwatch sessions
+agentsec-agentwatch replay <session-id>
 
 # 3. Reconcile coverage against Cursor transcripts (where ground truth exists):
-agentwatch coverage --harness cursor
+agentsec-agentwatch coverage --harness cursor
 ```
 
 ## Verify
 
-- [ ] `agentwatch sessions` shows a Cursor session after a tool call.
-- [ ] `agentwatch replay <id>` reconstructs reads/edits/reasoning steps.
-- [ ] `agentwatch coverage --harness cursor` reports no unexplained gaps.
+- [ ] `agentsec-agentwatch sessions` shows a Cursor session after a tool call.
+- [ ] `agentsec-agentwatch replay <id>` reconstructs reads/edits/reasoning steps.
+- [ ] `agentsec-agentwatch coverage --harness cursor` reports no unexplained gaps.
 
 ## Notes / limitations
 

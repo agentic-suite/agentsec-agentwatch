@@ -11,7 +11,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from agentwatch import compatibility
+from agentsec_agentwatch import compatibility
 
 REPO = Path(__file__).resolve().parents[3]
 DOC = REPO / "docs" / "reference" / "compatibility.md"

@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.mcp_config import (
+from agentsec_agentwatch.mcp_config import (
     McpConfigError,
     McpConfigTarget,
     McpProxyCommand,
@@ -18,7 +18,7 @@ from agentwatch.mcp_config import (
     uninstall_mcp_proxy,
 )
 
-PROXY = McpProxyCommand(command="agentwatch-mcp-proxy")
+PROXY = McpProxyCommand(command="agentsec-agentwatch-mcp-proxy")
 
 
 def _target(tmp_path: Path) -> McpConfigTarget:
@@ -59,7 +59,7 @@ def test_install_repoints_stdio_and_preserves_keys(tmp_path: Path) -> None:
     assert report.repointed == ("github", "unrelated")
     data = json.loads(path.read_text())
     github = data["mcpServers"]["github"]
-    assert github["command"] == "agentwatch-mcp-proxy"
+    assert github["command"] == "agentsec-agentwatch-mcp-proxy"
     assert github["args"] == ["--server", "github", "--", "node", "server.js", "--flag"]
     assert github["env"] == {"TOKEN": "x"}  # preserved
     assert github["type"] == "stdio"  # preserved
@@ -154,12 +154,12 @@ def test_uninstall_reports_not_installed(tmp_path: Path) -> None:
 def test_resolve_mcp_proxy_command_falls_back_to_module(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path
 ) -> None:
-    monkeypatch.setattr("agentwatch.mcp_config.shutil.which", lambda _name: None)
+    monkeypatch.setattr("agentsec_agentwatch.mcp_config.shutil.which", lambda _name: None)
     command = resolve_mcp_proxy_command(str(tmp_path / "python"))
-    assert command.args_prefix == ("-m", "agentwatch.mcp_proxy")
+    assert command.args_prefix == ("-m", "agentsec_agentwatch.mcp_proxy")
     assert command.args_for("s", "cmd", ["a"]) == [
         "-m",
-        "agentwatch.mcp_proxy",
+        "agentsec_agentwatch.mcp_proxy",
         "--server",
         "s",
         "--",

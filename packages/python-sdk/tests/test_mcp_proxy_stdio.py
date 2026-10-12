@@ -11,7 +11,7 @@ from typing import Any
 
 import pytest
 
-from agentwatch import hook, mcp_proxy
+from agentsec_agentwatch import hook, mcp_proxy
 
 ECHO = Path(__file__).resolve().parent / "fixtures" / "mcp" / "echo_server.py"
 

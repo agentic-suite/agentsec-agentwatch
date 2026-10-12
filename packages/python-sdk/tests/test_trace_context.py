@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from agentwatch.trace_context import (
+from agentsec_agentwatch.trace_context import (
     TraceContext,
     format_traceparent,
     parse_traceparent,
@@ -52,7 +52,7 @@ def test_child_span_shares_the_parent_trace_id() -> None:
 
 def test_claude_code_adapter_carries_traceparent() -> None:
     """A hook that reports a traceparent has it propagated onto the record."""
-    from agentwatch.adapters import claude_code
+    from agentsec_agentwatch.adapters import claude_code
 
     message = {
         "phase": "pre",
@@ -73,7 +73,7 @@ def test_claude_code_adapter_carries_traceparent() -> None:
 
 
 def test_adapter_ignores_a_malformed_traceparent() -> None:
-    from agentwatch.adapters import claude_code
+    from agentsec_agentwatch.adapters import claude_code
 
     message = {
         "phase": "pre",

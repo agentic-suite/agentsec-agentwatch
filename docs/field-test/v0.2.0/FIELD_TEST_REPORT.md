@@ -813,7 +813,7 @@ Both defects exposed by the hardening are fixed and re-run green (one at a time)
 | Defect | Fix | Re-run |
 |---|---|---|
 | FT-BACKEND-2 / R4: Tempo never started; collector jaeger-only | `scripts/fieldtest/lib.sh`: `tempo` added to `V020_PROFILE_SERVICES`; `deploy/otel-collector-config.yml`: new `otlp/tempo` exporter + `exporters: [otlp/jaeger, otlp/tempo]` | `FT-BACKEND-2` **PASS** (`svc-tempo` up; `/api/search?tags=service.name=agentwatch` resolves) |
-| FT-MATRIX-1 / FT-XHT-4: `gemini-cli` Tier-1 `modeled` | `packages/python-sdk/src/agentwatch/compatibility.py`: new `HarnessInfo.declared` flag; `gemini-cli` set `declared=True` (provisional/modeled per the M10 #82 ruling → a *declared* tier, not a full-fidelity claim); `scripts/generate_compatibility.py` regenerated the doc; the gate skips declared rows | `FT-MATRIX-1` **PASS**, `FT-XHT-4` **PASS** |
+| FT-MATRIX-1 / FT-XHT-4: `gemini-cli` Tier-1 `modeled` | `packages/python-sdk/src/agentsec_agentwatch/compatibility.py`: new `HarnessInfo.declared` flag; `gemini-cli` set `declared=True` (provisional/modeled per the M10 #82 ruling → a *declared* tier, not a full-fidelity claim); `scripts/generate_compatibility.py` regenerated the doc; the gate skips declared rows | `FT-MATRIX-1` **PASS**, `FT-XHT-4` **PASS** |
 
 Product suite: `packages/python-sdk/tests/test_compatibility.py` — 9 passed after the change.
 

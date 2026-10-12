@@ -7,8 +7,8 @@ what users get out of the box.
 
 from __future__ import annotations
 
-from agentwatch.config import SDKConfig, default_config
-from agentwatch.redact import PrivacyMode
+from agentsec_agentwatch.config import SDKConfig, default_config
+from agentsec_agentwatch.redact import PrivacyMode
 
 
 def test_default_config_is_truncated_with_tool_args() -> None:

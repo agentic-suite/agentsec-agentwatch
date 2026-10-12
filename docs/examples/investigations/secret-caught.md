@@ -7,7 +7,7 @@ Seed the store and find the session:
 ```sh run
 export DEMO_STORE="${DEMO_STORE:-/tmp/agentwatch-demo}"
 python3 scripts/seed-investigations.py --store "$DEMO_STORE"
-agentwatch --set store.path="$DEMO_STORE" search --session sess-secret
+agentsec-agentwatch --set store.path="$DEMO_STORE" search --session sess-secret
 ```
 
 The record shows a `Bash` call whose arguments are already redacted
@@ -17,7 +17,7 @@ was never written — redaction happens **before storage** (DD-06).
 Prove the store is clean:
 
 ```sh run
-agentwatch --set store.path="$DEMO_STORE" verify-privacy
+agentsec-agentwatch --set store.path="$DEMO_STORE" verify-privacy
 ```
 
 `verify-privacy` re-scans stored records for secret patterns and known leak

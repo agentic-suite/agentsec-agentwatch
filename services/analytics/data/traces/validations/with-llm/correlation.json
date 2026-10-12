@@ -1,30 +1,11 @@
 {
   "matrix": {
-    "top_co_fires": [
-      {
-        "pair": [
-          "empty_response",
-          "hallucination"
-        ],
-        "count": 1,
-        "pct": 100.0
-      },
-      {
-        "pair": [
-          "hallucination",
-          "empty_response"
-        ],
-        "count": 1,
-        "pct": 100.0
-      }
-    ],
+    "top_co_fires": [],
     "type_counts": {
-      "empty_response": 1,
-      "hallucination": 1
+      "empty_response": 1
     }
   },
   "suspicious": {
-    "empty_response": 100.0,
-    "hallucination": 100.0
+    "empty_response": 100.0
   }
 }

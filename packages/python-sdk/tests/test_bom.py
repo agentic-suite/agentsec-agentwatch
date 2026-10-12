@@ -12,21 +12,21 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.bom import (
+from agentsec_agentwatch.bom import (
     build_bom,
     to_agentwatch_json,
     to_cyclonedx,
     validate_cyclonedx,
 )
-from agentwatch.cli.main import main
-from agentwatch.records import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
     ToolCall,
 )
-from agentwatch.store import RecordStore
-from agentwatch.store_access import store_accesses
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.store_access import store_accesses
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -115,7 +115,7 @@ def test_cyclonedx_document_validates(tmp_path: Path) -> None:
 
 def test_unknown_model_has_no_fabricated_version(tmp_path: Path) -> None:
     # An observed record without a model_version contributes no model component.
-    from agentwatch.bom import _MODEL
+    from agentsec_agentwatch.bom import _MODEL
 
     store = RecordStore(tmp_path / "records.jsonl")
     store.append(

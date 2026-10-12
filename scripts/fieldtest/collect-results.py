@@ -6,8 +6,8 @@ Usage::
     python3 collect-results.py [RESULTS_DIR]
 
 Reads every ``cases/<ID>/verdict.json`` under the run directory (default: the
-newest under field-test/v0.1.0/results/) and writes ``summary.json`` and
-``summary.md`` beside it. Results live under field-test/v0.1.0/results/; the
+newest under field-test/0.3.0/results/) and writes ``summary.json`` and
+``summary.md`` beside it. Results live under field-test/0.3.0/results/; the
 report is assembled from them, never the reverse.
 """
 
@@ -23,7 +23,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 # Version-scoped results root: FT_RESULTS_ROOT wins, else field-test/<FT_VERSION>/results.
 RESULTS_ROOT = Path(
     os.environ.get("FT_RESULTS_ROOT")
-    or (REPO_ROOT / "field-test" / os.environ.get("FT_VERSION", "v0.1.0") / "results")
+    or (REPO_ROOT / "field-test" / os.environ.get("FT_VERSION", "0.3.0") / "results")
 )
 REGISTRY = Path(__file__).resolve().parent / "cases" / "registry.json"
 

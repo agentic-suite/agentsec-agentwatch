@@ -11,12 +11,12 @@ from typing import Any
 
 import pytest
 
-from agentwatch.configuration import ConfigError, load_config
-from agentwatch.daemon import Daemon
-from agentwatch.export import ExportError, ExportOrchestrator
-from agentwatch.health import HealthSnapshot
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore, StoreFullError, repair_store
+from agentsec_agentwatch.configuration import ConfigError, load_config
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.export import ExportError, ExportOrchestrator
+from agentsec_agentwatch.health import HealthSnapshot
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore, StoreFullError, repair_store
 
 
 def _record(*, session: str = "s1", span: str = "sp1", age_s: float = 0.0) -> AgentRecord:

@@ -12,9 +12,9 @@ import json
 from pathlib import Path
 from typing import Any, cast
 
-from agentwatch.ingest import run_ingest, transcode
-from agentwatch.records import validate_record
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.ingest import run_ingest, transcode
+from agentsec_agentwatch.records import validate_record
+from agentsec_agentwatch.store import RecordStore
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "ingest"
 RECIPE = Path(__file__).resolve().parents[3] / "docs" / "guides" / "gateway-otel-ingest.md"

@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from agentwatch.transcript import extract_tool_calls, extract_usage
+from agentsec_agentwatch.transcript import extract_tool_calls, extract_usage
 
 
 def _line(message: dict[str, object]) -> str:

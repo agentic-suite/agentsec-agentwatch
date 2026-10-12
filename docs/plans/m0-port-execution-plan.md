@@ -70,7 +70,7 @@ recorded for source repo + commit + date.
 
 **Expected**
 
-- `packages/python-sdk/src/agentwatch/` exists; no `agent_exec_trace` package dir.
+- `packages/python-sdk/src/agentsec_agentwatch/` exists; no `agent_exec_trace` package dir.
 - The allowlist in Task 5 passes; grep shows only shim + migration guide.
 
 ---

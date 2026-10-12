@@ -16,8 +16,8 @@ import argparse
 import json
 from pathlib import Path
 
-from agentwatch import frameworks
-from agentwatch.ingest import transcode_otel_detailed
+from agentsec_agentwatch import frameworks
+from agentsec_agentwatch.ingest import transcode_otel_detailed
 
 FIXTURES = (
     Path(__file__).resolve().parents[1]

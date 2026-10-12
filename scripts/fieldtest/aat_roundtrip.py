@@ -3,7 +3,7 @@
 import json, sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from agentwatch.aat import verify_aat  # real API
+from agentsec_agentwatch.aat import verify_aat  # real API
 from _ftutil import ok, run
 
 def main(argv):

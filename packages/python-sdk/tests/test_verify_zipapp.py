@@ -14,9 +14,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from types import ModuleType
 
-from agentwatch.evidence import EvidenceBundle, build_bundle
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.evidence import EvidenceBundle, build_bundle
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 REPO = Path(__file__).resolve().parents[3]
 VERIFY_DIR = REPO / "scripts" / "agentwatch_verify"

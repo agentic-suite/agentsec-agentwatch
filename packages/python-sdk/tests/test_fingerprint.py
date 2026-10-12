@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.fingerprint import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.fingerprint import (
     DIGEST_VERSION,
     action_sequence,
     behavior_digest,
@@ -16,8 +16,8 @@ from agentwatch.fingerprint import (
     render_behavior_groups,
     session_behavior_digest,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

@@ -77,5 +77,5 @@ omlx             OK         responds
 == case FT-28: pass ==
 ==> Tearing down the stack (and volumes)
 
-==> Aggregating results into /Users/deghosal/Desktop/code/github/agentsec-ecosystem/agentwatch/field-test/v0.1.0/results/all
-collect-results: 49 pass / 1 fail -> /Users/deghosal/Desktop/code/github/agentsec-ecosystem/agentwatch/field-test/v0.1.0/results/all/summary.{json,md}
+==> Aggregating results into /Users/deghosal/Desktop/code/github/agentic-suite/agentsec-agentwatch/field-test/v0.1.0/results/all
+collect-results: 49 pass / 1 fail -> /Users/deghosal/Desktop/code/github/agentic-suite/agentsec-agentwatch/field-test/v0.1.0/results/all/summary.{json,md}

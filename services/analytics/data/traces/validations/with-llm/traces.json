@@ -4,9 +4,6 @@
     "anomalies": [
       {
         "type": "empty_response"
-      },
-      {
-        "type": "hallucination"
       }
     ]
   }

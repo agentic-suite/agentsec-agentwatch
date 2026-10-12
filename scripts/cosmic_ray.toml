@@ -13,7 +13,7 @@
 # combination, so this config does not use operator filters. Scope a run by
 # pointing `module-path` at one module and `test-command` at its focused tests.
 [cosmic-ray]
-module-path = "packages/python-sdk/src/agentwatch/redact.py"
+module-path = "packages/python-sdk/src/agentsec_agentwatch/redact.py"
 timeout = 30.0
 excluded-modules = []
 test-command = "python -m pytest packages/python-sdk/tests/test_redact.py -q"

@@ -15,8 +15,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.policy_suggest import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.policy_suggest import (
     POLICY_FORMAT_VERSION,
     WHATIF_FORMAT_VERSION,
     PolicyParseError,
@@ -25,8 +25,8 @@ from agentwatch.policy_suggest import (
     simulate_policy,
     whatif_to_dict,
 )
-from agentwatch.records import AgentIdentity, AgentRecord, Approval, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Approval, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 NOW = datetime(2026, 1, 31, 12, 0, 0, tzinfo=timezone.utc)
 

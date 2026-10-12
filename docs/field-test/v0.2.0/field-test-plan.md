@@ -219,7 +219,7 @@ Two browser UIs are exercised by Playwright; both recapture screenshots for v0.2
   via `FT_SCREENSHOT_DIR`. Runs in the Layer-0 regression block and again at M31 (FT-36 / `make e2e`); the suite
   count is reconciled against the "49" the plan claims (a count discrepancy is recorded in the report, not waived).
 - **Local console** (`agentwatch ui`, FT-LUI-1/2; PRD 54, CUJ-24) — **gap closed in v0.2.0.** The console is a
-  Python-served loopback UI (`packages/python-sdk/src/agentwatch/ui.py`) with no browser test of its own; its only
+  Python-served loopback UI (`packages/python-sdk/src/agentsec_agentwatch/ui.py`) with no browser test of its own; its only
   prior evidence was `ui --check` plus axe-under-jsdom (no real browser). v0.2.0 adds
   `apps/web/tests/e2e/console.spec.ts` — screenshots of the console views (`#health`/`#sessions`/`#signatures`) and a
   real-browser axe gate — run against a live console (`FT_CONSOLE_URL`, started by the LUI driver).

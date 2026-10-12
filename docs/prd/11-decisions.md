@@ -3,13 +3,13 @@
 **BLUF:** All review decisions were **accepted on 2026-10-02**. This page records the choices. Two items
 (DD-14, DD-15) have an accepted direction but are finalized during the build.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## A. Design decisions — accepted
 
 | ID | Decision |
 |---|---|
-| DD-01 | **Python core** for true parity; `npx @agentsec-ecosystem/cli` is a thin launcher; CLI on PyPI |
+| DD-01 | **Python core** for true parity; `npx @agentic-suite/cli` is a thin launcher; CLI on PyPI |
 | DD-02 | Record format = OTel GenAI spans + versioned security-event schema |
 | DD-03 | Local-first storage; export opt-in via OTLP |
 | DD-04 | Adapter boundary as an explicit contract; Claude Code hooks first |
@@ -24,7 +24,7 @@
 | B1 | **v0.1.0 = Claude Code only** (monitor-only); Cursor lands in v0.1.x |
 | B2 | **Parity gate at v1.0** — full shipped-feature parity delivered + tested |
 | B3 | **Superset positioning** — agentwatch is record **+ analyze + explore + UI** (not telemetry-only) |
-| B4 | **PyPI/npm name `agentwatch`**; `@agentsec-ecosystem/cli` stays the npx launcher |
+| B4 | **PyPI/npm name `agentwatch`**; `@agentic-suite/cli` stays the npx launcher |
 | B5 | **Preserve** `@trace_agent`/`TracedGraph` + read-API shapes; ship a compat shim + migration note |
 
 ## C. Technical — accepted

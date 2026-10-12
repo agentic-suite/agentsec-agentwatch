@@ -18,7 +18,7 @@ import urllib.error
 import urllib.request
 
 sys.path.insert(0, "/work/packages/python-sdk/src")
-from agentwatch.hook import build_message, default_socket_path, send  # noqa: E402
+from agentsec_agentwatch.hook import build_message, default_socket_path, send  # noqa: E402
 
 ALLOWED = {"echo", "ls", "cat", "pwd"}
 SCRIPTED = [

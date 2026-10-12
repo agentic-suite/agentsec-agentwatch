@@ -9,7 +9,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.fleet import (
+from agentsec_agentwatch.fleet import (
     FleetSource,
     aggregate,
     build_fleet,
@@ -18,7 +18,7 @@ from agentwatch.fleet import (
     parse_sources,
     render_fleet,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -27,7 +27,7 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -159,7 +159,7 @@ def test_render_and_json_shapes(tmp_path: Path) -> None:
 def test_cli_fleet_ingest_then_show(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    main = importlib.import_module("agentwatch.cli.main")
+    main = importlib.import_module("agentsec_agentwatch.cli.main")
     monkeypatch.setenv("AGENTWATCH_STORE__PATH", str(tmp_path / "fleet"))
     host_a = _host_store(tmp_path / "a.jsonl", [_record()])
     host_b = _host_store(tmp_path / "b.jsonl", [_record(session="s2", span="b1")])

@@ -7,20 +7,20 @@ Seed the store and look at the session:
 ```sh run
 export DEMO_STORE="${DEMO_STORE:-/tmp/agentwatch-demo}"
 python3 scripts/seed-investigations.py --store "$DEMO_STORE"
-agentwatch --set store.path="$DEMO_STORE" view sess-loop
+agentsec-agentwatch --set store.path="$DEMO_STORE" view sess-loop
 ```
 
 You get the ordered timeline — the same `Read` four times:
 
 ```sh run
-agentwatch --set store.path="$DEMO_STORE" search --tool Read --session sess-loop
+agentsec-agentwatch --set store.path="$DEMO_STORE" search --tool Read --session sess-loop
 ```
 
 Reconstruct it step by step, or ask for the deterministic summary:
 
 ```sh run
-agentwatch --set store.path="$DEMO_STORE" replay sess-loop
-agentwatch --set store.path="$DEMO_STORE" explain sess-loop
+agentsec-agentwatch --set store.path="$DEMO_STORE" replay sess-loop
+agentsec-agentwatch --set store.path="$DEMO_STORE" explain sess-loop
 ```
 
 `explain` prints the facts (record count, outcomes, tools, tokens, duration)

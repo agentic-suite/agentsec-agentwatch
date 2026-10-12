@@ -12,10 +12,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from agentwatch import claude_otel
-from agentwatch.adapters import claude_code
-from agentwatch.cost import build_cost
-from agentwatch.records import (
+from agentsec_agentwatch import claude_otel
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.cost import build_cost
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Authorization,
@@ -30,8 +30,8 @@ from agentwatch.records import (
     ToolCall,
     validate_record,
 )
-from agentwatch.redact import PrivacyMode, RedactionConfig
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -592,7 +592,7 @@ def test_otel_join_summary_none_without_native() -> None:
 def test_ingest_transcode_claude_otel_format(tmp_path: Path) -> None:
     import json
 
-    from agentwatch.ingest import run_ingest, transcode
+    from agentsec_agentwatch.ingest import run_ingest, transcode
 
     payload = _payload([
         _log_record(
@@ -614,7 +614,7 @@ def test_ingest_transcode_claude_otel_format(tmp_path: Path) -> None:
 
 
 def test_coverage_reports_native_telemetry_join(tmp_path: Path) -> None:
-    from agentwatch.coverage import build_coverage
+    from agentsec_agentwatch.coverage import build_coverage
 
     store = RecordStore(tmp_path / "records.jsonl")
     store.append(_hook("s1", "call-1", phase="pre"))

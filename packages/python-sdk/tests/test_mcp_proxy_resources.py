@@ -17,10 +17,10 @@ from typing import Any
 
 import pytest
 
-from agentwatch import hook, mcp_proxy
-from agentwatch.adapters import mcp_proxy as adapter
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch import hook, mcp_proxy
+from agentsec_agentwatch.adapters import mcp_proxy as adapter
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -214,7 +214,7 @@ def test_search_filters_by_mcp_resource(tmp_path: Path) -> None:
         )
     )
 
-    from agentwatch.query import search
+    from agentsec_agentwatch.query import search
 
     assert [r.tool.name for r in search(store, mcp_resource="README")] == ["resources/read"]
     assert search(store, mcp_resource="not-present") == []
@@ -226,7 +226,7 @@ def test_cli_search_mcp_resource(tmp_path: Path, capsys: pytest.CaptureFixture[s
     store = RecordStore(store_dir / "records.jsonl")
     store.append(_record(README))
 
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     rc = main(
         ["--set", f"store.path={store_dir}", "search", "--mcp-resource", "README", "--json"]

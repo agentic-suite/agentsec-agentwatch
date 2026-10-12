@@ -1,7 +1,7 @@
 # ADR-0036 — Local console security model
 
 - **Status:** accepted (2026-10-07, v0.2.0 M30 LUI-1)
-- **Context:** `agentwatch ui` (PRD 54 §LUI-1, [design/local-console.md](../design/local-console.md)) opens a browser
+- **Context:** `agentsec-agentwatch ui` (PRD 54 §LUI-1, [design/local-console.md](../design/local-console.md)) opens a browser
   view of the local chain store in one command with no Docker. A browser-facing local server on a developer machine
   is exposed to two concrete threats: **DNS rebinding** (a malicious page resolves its own hostname to `127.0.0.1`
   and reaches the server) and **drive-by / cross-site requests** from any page the developer has open. It must never

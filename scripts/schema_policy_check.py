@@ -15,10 +15,10 @@ import sys
 from pathlib import Path
 
 try:
-    from agentwatch.schema_policy import check_schema_policy
+    from agentsec_agentwatch.schema_policy import check_schema_policy
 except ImportError:  # pragma: no cover - guidance when run without the SDK
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "packages" / "python-sdk" / "src"))
-    from agentwatch.schema_policy import check_schema_policy
+    from agentsec_agentwatch.schema_policy import check_schema_policy
 
 
 def main(argv: list[str] | None = None) -> int:

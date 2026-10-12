@@ -20,10 +20,10 @@ from typing import Any
 
 import pytest
 
-from agentwatch.compliance import FRAMEWORKS, build_report, render_report
-from agentwatch.configuration import AgentwatchConfig
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.compliance import FRAMEWORKS, build_report, render_report
+from agentsec_agentwatch.configuration import AgentwatchConfig
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 REPO = Path(__file__).resolve().parents[3]
 ASI_DOC = REPO / "docs" / "compliance" / "owasp-asi-2026.md"
@@ -127,7 +127,7 @@ def test_cli_owasp_asi_report(tmp_path: Path, capsys: pytest.CaptureFixture[str]
     store_dir.mkdir()
     _store(store_dir)
 
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     rc = main(
         [

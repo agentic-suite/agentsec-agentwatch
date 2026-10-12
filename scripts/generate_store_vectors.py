@@ -24,8 +24,8 @@ OUT = REPO / "schema" / "vectors" / "store"
 
 sys.path.insert(0, str(REPO / "packages" / "python-sdk" / "src"))
 
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall  # noqa: E402
-from agentwatch.store import RecordStore  # noqa: E402
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall  # noqa: E402
+from agentsec_agentwatch.store import RecordStore  # noqa: E402
 
 _OLD = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

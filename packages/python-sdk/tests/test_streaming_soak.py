@@ -9,7 +9,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from agentwatch.streaming_soak import run_streaming_soak
+from agentsec_agentwatch.streaming_soak import run_streaming_soak
 
 
 def test_streaming_soak_no_store_loss_and_bounded(tmp_path: Path) -> None:

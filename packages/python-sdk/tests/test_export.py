@@ -19,7 +19,7 @@ from opentelemetry.sdk.trace.export import SpanExporter, SpanExportResult
 from opentelemetry.sdk.trace.export.in_memory_span_exporter import InMemorySpanExporter
 from opentelemetry.trace import StatusCode
 
-from agentwatch.attrs import (
+from agentsec_agentwatch.attrs import (
     GEN_AI_AGENT_NAME,
     GEN_AI_CONVERSATION_ID,
     GEN_AI_OPERATION_NAME,
@@ -27,7 +27,7 @@ from agentwatch.attrs import (
     GEN_AI_TOOL_NAME,
     SPAN_KIND_TOOL,
 )
-from agentwatch.export import (
+from agentsec_agentwatch.export import (
     ExportError,
     ExportOrchestrator,
     ExportState,
@@ -36,7 +36,7 @@ from agentwatch.export import (
     _TrackingExporter,
     record_to_attributes,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     EVENT_VERSION,
     AgentIdentity,
     AgentRecord,
@@ -45,7 +45,7 @@ from agentwatch.records import (
     SecurityEventType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 
 def _record(
@@ -328,7 +328,7 @@ def test_default_gate_uses_the_redaction_self_test(
     store = RecordStore(tmp_path / "records.jsonl")
     store.append(_record())
     sink, exporter = _sink()
-    monkeypatch.setattr("agentwatch.export.export_allowed", lambda: False)
+    monkeypatch.setattr("agentsec_agentwatch.export.export_allowed", lambda: False)
 
     report = ExportOrchestrator(store, sink).export_pending()
 

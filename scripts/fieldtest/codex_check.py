@@ -21,8 +21,8 @@ def _store_records() -> list[dict]:
 
 
 def main(argv: list[str]) -> int:
-    from agentwatch.codex_rollout import ingest_rollouts
-    from agentwatch.store import RecordStore
+    from agentsec_agentwatch.codex_rollout import ingest_rollouts
+    from agentsec_agentwatch.store import RecordStore
 
     files = sorted(FIXTURE.rglob("*.jsonl"))
     if not files:

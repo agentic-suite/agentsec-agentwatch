@@ -5,12 +5,12 @@
 ## Repository layout (ported in M0)
 
 The tree below was ported from `agent-exec-trace` at commit `008e1c7` (MIT; see
-[THIRD_PARTY_NOTICES](../THIRD_PARTY_NOTICES.md)). The Python namespace is `agentwatch`; the legacy
+[THIRD_PARTY_NOTICES](../THIRD_PARTY_NOTICES.md)). The Python namespace is `agentsec-agentwatch`; the legacy
 `agent_exec_trace` import path is served by a compatibility shim (DD-12).
 
 ```
 packages/python-sdk/   agentwatch SDK (instrumentation, redaction, CLI, config)
-packages/cli/          @agentsec-ecosystem/cli npx launcher (Node)
+packages/cli/          @agentic-suite/cli npx launcher (Node)
 services/analytics/    analytics pipeline + detectors
 services/api/          FastAPI read API
 apps/web/              React operator UI (Vite)
@@ -22,9 +22,9 @@ docs/                  this documentation
 schema/                machine-readable contracts
 ```
 
-The `agentwatch` console script and its argparse framework live in
-`packages/python-sdk/src/agentwatch/cli/`; the operator config loader is
-`packages/python-sdk/src/agentwatch/configuration.py` (PRD 16). See the
+The `agentsec-agentwatch` console script and its argparse framework live in
+`packages/python-sdk/src/agentsec_agentwatch/cli/`; the operator config loader is
+`packages/python-sdk/src/agentsec_agentwatch/configuration.py` (PRD 16). See the
 [CLI reference](reference/cli-reference.md).
 
 ## Setup
@@ -72,7 +72,7 @@ unavailable; they never silently pass. Sign commits with `git commit -s` (DCO).
 ### Configuration
 
 The operator config loader (`agentwatch.configuration`, PRD 16) is layered and fail-closed. Run
-`agentwatch status` to print the resolved configuration, or `agentwatch --set log.level=debug status` to
+`agentsec-agentwatch status` to print the resolved configuration, or `agentsec-agentwatch --set log.level=debug status` to
 override one key. Precedence, defaults, and the strict-validation rules are in the
 [CLI reference](reference/cli-reference.md) and [PRD 16](prd/16-configuration.md).
 

@@ -5,10 +5,10 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agentwatch.daemon import Daemon
-from agentwatch.guard import RULE_DEPTH, RULE_FIELD_SIZE, RULE_RECORD_SIZE, Limits, guard_record
-from agentwatch.receipts import record_receipt
-from agentwatch.records import (
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.guard import RULE_DEPTH, RULE_FIELD_SIZE, RULE_RECORD_SIZE, Limits, guard_record
+from agentsec_agentwatch.receipts import record_receipt
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -16,7 +16,7 @@ from agentwatch.records import (
     ToolCall,
     validate_record,
 )
-from agentwatch.redact import redaction_config_from_mode
+from agentsec_agentwatch.redact import redaction_config_from_mode
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 BIG = "x" * 5000
@@ -117,7 +117,7 @@ def test_daemon_applies_limits_on_append(tmp_path: Path) -> None:
 
 
 def test_limits_are_configurable() -> None:
-    from agentwatch.configuration import load_config
+    from agentsec_agentwatch.configuration import load_config
 
     cfg = load_config(paths=[], env={}, cli_overrides={"limits.field_bytes": 123})
     assert cfg.limits.field_bytes == 123

@@ -1,6 +1,6 @@
 # Examples
 
-Ready-to-run examples showing how to instrument agents with the `agentwatch` SDK.
+Ready-to-run examples showing how to instrument agents with the `agentsec-agentwatch` SDK.
 
 ---
 
@@ -52,7 +52,7 @@ See `examples/demo-agent/scenario-matrix.md` for the full scenario catalog.
 ### Raw Python agent
 
 ```python
-from agentwatch import AgentTracer, trace_agent, tool_span
+from agentsec_agentwatch import AgentTracer, trace_agent, tool_span
 
 # Configure OTLP export once at startup
 AgentTracer.setup(otlp_endpoint="http://localhost:4317", service_name="my-agent")
@@ -77,7 +77,7 @@ async def handle_request(query: str) -> str:
 ### LangGraph agent
 
 ```python
-from agentwatch import AgentTracer, TracedGraph
+from agentsec_agentwatch import AgentTracer, TracedGraph
 
 AgentTracer.setup(otlp_endpoint="http://localhost:4317")
 
@@ -102,7 +102,7 @@ Control what data is captured in spans:
 | `FULL` | Full argument content (use with care) |
 
 ```python
-from agentwatch import RedactionConfig, PrivacyMode
+from agentsec_agentwatch import RedactionConfig, PrivacyMode
 
 config = RedactionConfig(mode=PrivacyMode.TRUNCATED, capture_tool_args=True)
 ```

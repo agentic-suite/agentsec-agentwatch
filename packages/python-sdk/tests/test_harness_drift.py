@@ -11,9 +11,9 @@ from __future__ import annotations
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from agentwatch.daemon import Daemon
-from agentwatch.doctor import WARN, run_checks
-from agentwatch.harness_drift import (
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.doctor import WARN, run_checks
+from agentsec_agentwatch.harness_drift import (
     HARNESS_DRIFT_TOOL,
     MAX_FIELDS,
     DriftTracker,
@@ -23,7 +23,7 @@ from agentwatch.harness_drift import (
     seed_events,
     unknown_event_fields,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -225,7 +225,7 @@ def test_doctor_warns_on_drift(tmp_path: Path) -> None:
     assert observation is not None
     store.append(harness_drift_record(observation))
 
-    from agentwatch.configuration import load_config
+    from agentsec_agentwatch.configuration import load_config
 
     cfg = load_config(paths=[], env={})
     results = run_checks(

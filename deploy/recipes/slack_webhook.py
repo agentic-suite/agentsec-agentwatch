@@ -22,7 +22,7 @@ import sys
 from pathlib import Path
 from typing import Any
 
-from agentwatch.sinks import WebhookSink
+from agentsec_agentwatch.sinks import WebhookSink
 
 
 def to_slack(event: dict[str, Any]) -> dict[str, Any]:

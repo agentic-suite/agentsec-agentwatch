@@ -11,16 +11,16 @@ Status: **shipped** (v0.1.0 M4; retention controls + single-session purge M9).
 - **Envelope:** `{"seq", "prev_hash", "hash", "record"}`; `hash = sha256(prev_hash + canonical_json(record))`,
   genesis `prev_hash = "0"*64`.
 - **Verify:** `RecordStore.verify()` recomputes each live entry and checks every link; a break is reported as
-  `ChainStatus(ok=False, broken_at=<seq>)` and surfaced by `agentwatch verify-store` (exit 1) — never silent (F4).
+  `ChainStatus(ok=False, broken_at=<seq>)` and surfaced by `agentsec-agentwatch verify-store` (exit 1) — never silent (F4).
 - **Retention:** entries older than `retention_days` are rewritten as tombstones
   (`{"seq","prev_hash","hash","tombstone":true,"purged_at"}`) that keep the chain links; `max_size_mb` reached
-  makes `append` raise `StoreFullError` and stop recording without overwriting (F3). `agentwatch retention apply`
+  makes `append` raise `StoreFullError` and stop recording without overwriting (F3). `agentsec-agentwatch retention apply`
   runs a retention pass on demand and exits non-zero if the chain is not green (M9). **Profiles (M28 CMP-3):**
   `--profile high-risk-12mo` (365d, AAT §9), `general-6mo` (180d), or `custom` (the configured
   `store.retention_days`) choose the window; the resulting policy change is appended as a metadata-only
   `retention-changed` marker (S5) and `doctor` warns when records have fallen past the window without a run.
 - **Purge (right to erasure, M9):** `RecordStore.purge_session` tombstones one session's records and appends a
-  metadata-only `session-purge` marker (who/why); `agentwatch purge <id> --yes` exposes it. Never hard-deletes
+  metadata-only `session-purge` marker (who/why); `agentsec-agentwatch purge <id> --yes` exposes it. Never hard-deletes
   (D-K); `verify()` stays green and other sessions are untouched.
 - **Sink:** the daemon writes through the store and verifies the chain on startup.
 

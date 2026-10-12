@@ -8,15 +8,15 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.mcp_surface import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.mcp_surface import (
     MCP_SURFACE_TOOL,
     detect_surface_changes,
     record_mcp_surface,
     surface_digest,
     survey,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -24,7 +24,7 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

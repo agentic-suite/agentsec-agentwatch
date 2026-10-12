@@ -11,7 +11,7 @@ import json
 import conformance_registry  # noqa: F401  (registers shipped adapters)
 import pytest
 
-from agentwatch import conformance
+from agentsec_agentwatch import conformance
 
 
 def test_registered_adapters_have_populated_packs() -> None:

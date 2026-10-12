@@ -14,7 +14,7 @@ The case-specific assertions in `cases/steps/FT-18.sh` (each recorded in
 `assertions.ndjson`). **Pass = all assertions true. There is no skip.**
 
 ## Artifacts
-`field-test/v0.1.0/results/<UTC-ts>/cases/FT-18/artifacts/`.
+`field-test/0.3.0/results/<UTC-ts>/cases/FT-18/artifacts/`.
 
 ## Cleanup
 Shared stack: reset in place between cases; `recycle` cases get a fresh `down -v`

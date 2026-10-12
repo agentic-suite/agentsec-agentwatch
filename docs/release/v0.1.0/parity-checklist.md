@@ -9,7 +9,7 @@ Status: **passing** · Spec: [PRD 10](../../prd/10-feature-parity.md) · Gate: `
 
 | Row | Capability | Evidence |
 |---|---|---|
-| A1 | Instrumentation SDK: `@trace_agent` (sync + async), `plan/tool/retrieval/memory/approval_span`, LangGraph `TracedGraph`, PydanticAI adapter, four privacy modes, version/workload metadata | `packages/python-sdk/src/agentwatch/{raw,spans,langgraph,pydantic}.py`; `tests/test_spans.py` |
+| A1 | Instrumentation SDK: `@trace_agent` (sync + async), `plan/tool/retrieval/memory/approval_span`, LangGraph `TracedGraph`, PydanticAI adapter, four privacy modes, version/workload metadata | `packages/python-sdk/src/agentsec_agentwatch/{raw,spans,langgraph,pydantic}.py`; `tests/test_spans.py` |
 | A2 | 35 rule detectors + ≥5 optional LLM detectors with structured anomalies | `services/analytics/src/analytics/detectors/` |
 | A3 | Analytics pipeline: Jaeger polling, run summaries, fleet rollup + version cohorts | `services/analytics/src/analytics/{ingest,materializer,worker}.py` |
 | A4 | Read API: `/runs`, `/runs/{id}`, `/fleet`, `/compare`, `/anomalies` | `services/api/src/api/routes.py` |

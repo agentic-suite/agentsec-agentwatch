@@ -28,7 +28,7 @@ derived/rebuildable invariant above; Postgres must satisfy the same invariant (d
 ## Invariant: derived, never authoritative
 
 1. The JSONL chain store is the **only** source of truth. Postgres holds no fact that cannot be rebuilt from it.
-2. `agentwatch db rebuild` reproduces the index **bit-for-bit** from the chain; a rebuild divergence is a test
+2. `agentsec-agentwatch db rebuild` reproduces the index **bit-for-bit** from the chain; a rebuild divergence is a test
    failure.
 3. **Drop-Postgres mode:** with no Postgres reachable, every read command still works (slower) directly from the
    chain. CI runs a no-Postgres leg.

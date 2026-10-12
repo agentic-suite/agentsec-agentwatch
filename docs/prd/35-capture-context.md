@@ -4,7 +4,7 @@
 whether the context was **compacted** (S15), what **revision** the agent acted on (S16), what **OS principal**
 it ran as (S29), and a one-command **demo** that proves the pipeline (S31).
 
-**Status:** shipped (2026-10-03) · **Parent:** agentsec-ecosystem #209 · **Milestone:** M19
+**Status:** shipped (2026-10-03) · **Parent:** agentic-suite #209 · **Milestone:** M19
 
 > Cross-cutting rules (PRD 19–30): fail closed and never silent (PRD 17); redaction before storage (DD-06);
 > the trust boundary stays deterministic — no LLM in redaction, validation, or chain verification; monitor-only,

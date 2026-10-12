@@ -5,13 +5,13 @@
 
 | Clause / control area | agentwatch feature | Evidence |
 |---|---|---|
-| Operational planning and control — traceability | Append-only, hash-chained activity records | `agentwatch verify-store` |
-| AI system lifecycle — logging and monitoring | Session boundaries, behavior records, drift signals | `agentwatch sessions`, `agentwatch drift` |
-| Data for AI systems — minimization | Redaction before storage; metadata-only default | `agentwatch verify-privacy` |
-| Transparency and explainability of records | Layered config explanation; deterministic, LLM-free transforms | `agentwatch config explain` |
-| Third-party / supply-chain (tools, MCP) | Agent + MCP inventory; tool-surface drift | `agentwatch inventory`, `agentwatch inventory --diff` |
-| Incident management — evidence | Self-contained, verifiable evidence bundle | `agentwatch evidence <id>` |
-| Continual improvement | Coverage reconciliation names gaps instead of hiding them | `agentwatch coverage` |
+| Operational planning and control — traceability | Append-only, hash-chained activity records | `agentsec-agentwatch verify-store` |
+| AI system lifecycle — logging and monitoring | Session boundaries, behavior records, drift signals | `agentsec-agentwatch sessions`, `agentsec-agentwatch drift` |
+| Data for AI systems — minimization | Redaction before storage; metadata-only default | `agentsec-agentwatch verify-privacy` |
+| Transparency and explainability of records | Layered config explanation; deterministic, LLM-free transforms | `agentsec-agentwatch config explain` |
+| Third-party / supply-chain (tools, MCP) | Agent + MCP inventory; tool-surface drift | `agentsec-agentwatch inventory`, `agentsec-agentwatch inventory --diff` |
+| Incident management — evidence | Self-contained, verifiable evidence bundle | `agentsec-agentwatch evidence <id>` |
+| Continual improvement | Coverage reconciliation names gaps instead of hiding them | `agentsec-agentwatch coverage` |
 
 ## Not applicable / elsewhere
 

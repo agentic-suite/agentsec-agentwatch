@@ -1,6 +1,6 @@
 # Reference — Compliance reports
 
-**BLUF:** `agentwatch compliance report` renders a framework's controls as
+**BLUF:** `agentsec-agentwatch compliance report` renders a framework's controls as
 **control → evidence command → verdict → refs**, offline, from the local store
 and the active configuration, plus retention and checkpoint-signature status.
 It produces **evidence, not a certification**.
@@ -8,7 +8,7 @@ It produces **evidence, not a certification**.
 ## Command
 
 ```sh
-agentwatch compliance report --framework eu-ai-act-art12 [--period P] [--out FILE] [--json]
+agentsec-agentwatch compliance report --framework eu-ai-act-art12 [--period P] [--out FILE] [--json]
 ```
 
 Frameworks: `generic`, `eu-ai-act-art12`, `eu-ai-act-art14`, `iso-42001`,
@@ -53,13 +53,13 @@ Each row is computed, never asserted:
 
 | Control | Evidence command | Verdict from |
 |---|---|---|
-| `log-integrity` | `agentwatch verify-store` | the hash chain verifies |
-| `redaction-default` | `agentwatch verify-privacy` | `privacy.mode` is not `full` |
-| `retention-configured` | `agentwatch retention apply` | a retention window is set (cites the active profile) |
-| `checkpointing` | `agentwatch checkpoint` | `store.checkpoint_every` is set |
-| `recording-coverage` | `agentwatch coverage` | `unknown` without a transcript |
-| `identity-attribution` | `agentwatch search --identity` | records carry an on-behalf-of/workload identity |
-| `evidence-bundle` | `agentwatch evidence <session>` | a session exists to bundle |
+| `log-integrity` | `agentsec-agentwatch verify-store` | the hash chain verifies |
+| `redaction-default` | `agentsec-agentwatch verify-privacy` | `privacy.mode` is not `full` |
+| `retention-configured` | `agentsec-agentwatch retention apply` | a retention window is set (cites the active profile) |
+| `checkpointing` | `agentsec-agentwatch checkpoint` | `store.checkpoint_every` is set |
+| `recording-coverage` | `agentsec-agentwatch coverage` | `unknown` without a transcript |
+| `identity-attribution` | `agentsec-agentwatch search --identity` | records carry an on-behalf-of/workload identity |
+| `evidence-bundle` | `agentsec-agentwatch evidence <session>` | a session exists to bundle |
 
 A verdict is `pass`, `fail`, or `unknown`; a row with no evidence fails rather
 than being omitted. Every row names a command that regenerates it.

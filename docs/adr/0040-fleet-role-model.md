@@ -12,7 +12,7 @@
      (`agentwatch.access`). The `self` role has **no cross-user grant**.
   2. A cross-user read the role is not granted returns **nothing** and is itself appended
      as a metadata-only `store-access` record (S21), so the subject can see who read their
-     records and when (`agentwatch access log --owner <id>`).
+     records and when (`agentsec-agentwatch access log --owner <id>`).
   3. `identity-resolved` is **never** reachable by a plain read. Resolving a hashed
      principal to a person is a separate, explicit, recorded action by a permitted role
      (`security-auditor` / `admin`).
@@ -21,7 +21,7 @@
 - **Consequences:** Role *assignment* (which human is which role, and under a managed
   policy) is owned by 29.DEP-1 (PRD 50, WS-B). This decision defines the model and the
   enforcement/recording boundary it must adopt, not a second policy engine. The matrix is
-  published (`agentwatch access matrix`) and tested; content visibility is gated on the
+  published (`agentsec-agentwatch access matrix`) and tested; content visibility is gated on the
   store actually holding content, so a metadata-only fleet cannot leak arguments.
 - **Alternatives rejected:** per-view ad-hoc filtering (unprovable, drifts); a single
   `admin` gate with no team scope (breaks least privilege); auto-resolving hashed

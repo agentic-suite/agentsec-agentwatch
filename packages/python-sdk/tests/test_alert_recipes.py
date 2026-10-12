@@ -16,7 +16,7 @@ from pathlib import Path
 from types import ModuleType
 from typing import Any, cast
 
-from agentwatch import sinks
+from agentsec_agentwatch import sinks
 
 REPO = Path(__file__).resolve().parents[3]
 RECIPES = REPO / "deploy" / "recipes"

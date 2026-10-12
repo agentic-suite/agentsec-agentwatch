@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/agentsec-ecosystem/agentwatch/schema/agent-record.schema.json",
+  "$id": "https://github.com/agentic-suite/agentsec-agentwatch/schema/agent-record.schema.json",
   "title": "agentwatch record",
   "description": "A normalized agent activity record (tool call / behavior span).",
   "type": "object",

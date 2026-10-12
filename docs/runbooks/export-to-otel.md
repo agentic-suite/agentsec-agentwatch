@@ -3,7 +3,7 @@
 Goal: send records to a backend you own (Phoenix, Jaeger/Tempo, Splunk, Datadog).
 
 ```sh
-agentwatch export enable --otlp-endpoint http://localhost:4317
+agentsec-agentwatch export enable --otlp-endpoint http://localhost:4317
 ```
 
 ## Preconditions
@@ -19,5 +19,5 @@ agentwatch export enable --otlp-endpoint http://localhost:4317
 ## Rollback
 
 ```sh
-agentwatch export disable
+agentsec-agentwatch export disable
 ```

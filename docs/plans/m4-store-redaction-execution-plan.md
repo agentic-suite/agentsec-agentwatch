@@ -53,7 +53,7 @@ The daemon writes through the store; the CLI exposes `verify-store`; a self-test
 ### Task 1: Secret/PII detection engine (`4.2`)
 
 **Files:**
-- Create: `packages/python-sdk/src/agentwatch/secrets.py`
+- Create: `packages/python-sdk/src/agentsec_agentwatch/secrets.py`
 - Test: `packages/python-sdk/tests/test_secrets.py`
 
 **Interfaces:**
@@ -88,7 +88,7 @@ The daemon writes through the store; the CLI exposes `verify-store`; a self-test
 ### Task 2: Add `FULL` privacy mode (`4.1`)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/redact.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/redact.py`
 - Modify: `packages/python-sdk/tests/test_redact.py`
 
 **Interfaces:**
@@ -114,7 +114,7 @@ The daemon writes through the store; the CLI exposes `verify-store`; a self-test
 ### Task 3: Adapter applies secret masking and emits `secret-detected` (`4.2`)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/adapters/claude_code.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/adapters/claude_code.py`
 - Modify: `packages/python-sdk/tests/test_claude_code_adapter.py`
 - Create: `packages/python-sdk/tests/fixtures/claude-code/secret_args.json`
 
@@ -145,7 +145,7 @@ The daemon writes through the store; the CLI exposes `verify-store`; a self-test
 ### Task 4: Append-only JSONL store (`4.3`)
 
 **Files:**
-- Create: `packages/python-sdk/src/agentwatch/store.py`
+- Create: `packages/python-sdk/src/agentsec_agentwatch/store.py`
 - Test: `packages/python-sdk/tests/test_store.py`
 
 **Interfaces:**
@@ -178,8 +178,8 @@ The daemon writes through the store; the CLI exposes `verify-store`; a self-test
 ### Task 5: Chain verification + `verify-store` (`4.4`)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/store.py`
-- Modify: `packages/python-sdk/src/agentwatch/cli/main.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/store.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/cli/main.py`
 - Modify: `packages/python-sdk/tests/test_store.py`, `packages/python-sdk/tests/test_cli.py`
 
 **Interfaces:**
@@ -210,7 +210,7 @@ The daemon writes through the store; the CLI exposes `verify-store`; a self-test
 ### Task 6: Retention + size cap (`4.5`, `4.7` F3)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/store.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/store.py`
 - Modify: `packages/python-sdk/tests/test_store.py`
 
 **Interfaces:**
@@ -241,7 +241,7 @@ The daemon writes through the store; the CLI exposes `verify-store`; a self-test
 ### Task 7: Redaction self-test and export gate (`4.6`)
 
 **Files:**
-- Create: `packages/python-sdk/src/agentwatch/selftest.py`
+- Create: `packages/python-sdk/src/agentsec_agentwatch/selftest.py`
 - Test: `packages/python-sdk/tests/test_selftest.py`
 
 **Interfaces:**
@@ -270,7 +270,7 @@ The daemon writes through the store; the CLI exposes `verify-store`; a self-test
 ### Task 8: Daemon writes through the store (`4.3`, `4.7`)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/daemon.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/daemon.py`
 - Modify: `packages/python-sdk/tests/test_daemon.py`
 
 **Interfaces:**
@@ -297,7 +297,7 @@ The daemon writes through the store; the CLI exposes `verify-store`; a self-test
 ### Task 9: `sessions` reads through the store (`4.3`)
 
 **Files:**
-- Modify: `packages/python-sdk/src/agentwatch/cli/main.py`
+- Modify: `packages/python-sdk/src/agentsec_agentwatch/cli/main.py`
 - Modify: `packages/python-sdk/tests/test_cli_init.py`
 
 **Interfaces:**

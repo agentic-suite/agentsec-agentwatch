@@ -27,7 +27,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _ftutil import arg, ok, run  # noqa: E402
 
-from agentwatch.records import (  # noqa: E402
+from agentsec_agentwatch.records import (  # noqa: E402
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -37,7 +37,7 @@ from agentwatch.records import (  # noqa: E402
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore  # noqa: E402
+from agentsec_agentwatch.store import RecordStore  # noqa: E402
 
 TRACE = "4bf92f3577b34da6a3ce929d0e0e4736"
 ROOT = "0af7651916cd43dd"

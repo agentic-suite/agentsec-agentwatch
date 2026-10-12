@@ -12,13 +12,13 @@ from typing import Any
 
 import pytest
 
-from agentwatch.adapters import claude_code
-from agentwatch.authorization import (
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.authorization import (
     AUTHORIZATION_TAXONOMY_VERSION,
     authorization_from_decision_source,
     derive_authorization,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Approval,
@@ -80,8 +80,8 @@ def test_native_unknown_decision_source_is_none() -> None:
 
 
 def test_permission_mode_from_rejects_unknown_values() -> None:
-    from agentwatch.authorization import permission_mode_from
-    from agentwatch.records import PermissionMode
+    from agentsec_agentwatch.authorization import permission_mode_from
+    from agentsec_agentwatch.records import PermissionMode
 
     assert permission_mode_from("bypassPermissions") is PermissionMode.BYPASS_PERMISSIONS
     assert permission_mode_from("nonsense") is PermissionMode.UNKNOWN
@@ -97,7 +97,7 @@ def test_classifier_is_never_user_or_rule() -> None:
 
 
 def test_bypass_mode_when_no_more_specific_source() -> None:
-    from agentwatch.records import PermissionMode
+    from agentsec_agentwatch.records import PermissionMode
 
     auth = derive_authorization(
         approval=Approval.UNKNOWN, permission_mode=PermissionMode.BYPASS_PERMISSIONS
@@ -107,7 +107,7 @@ def test_bypass_mode_when_no_more_specific_source() -> None:
 
 
 def test_native_source_beats_bypass_mode() -> None:
-    from agentwatch.records import PermissionMode
+    from agentsec_agentwatch.records import PermissionMode
 
     auth = derive_authorization(
         approval=Approval.UNKNOWN,
@@ -248,7 +248,7 @@ def test_authorization_rejects_unknown_source() -> None:
     record = _record(approval=None)
     payload = record.to_dict()
     payload["authorization"] = {"source": "not-a-source"}
-    from agentwatch.records import RecordValidationError
+    from agentsec_agentwatch.records import RecordValidationError
 
     with pytest.raises(RecordValidationError):
         validate_record(payload)

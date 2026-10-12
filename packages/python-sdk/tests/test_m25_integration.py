@@ -14,16 +14,16 @@ from typing import Any
 
 import pytest
 
-from agentwatch.aat import export_aat, verify_aat
-from agentwatch.adapters import cursor
-from agentwatch.ingest import run_ingest
-from agentwatch.records import validate_record
-from agentwatch.redact import PrivacyMode, RedactionConfig, redaction_config_from_mode
-from agentwatch.replay import replay_session
-from agentwatch.sampling import SampleDecision, SecurityRelevantSampler
-from agentwatch.session_export import export_session
-from agentwatch.store import RecordStore
-from agentwatch.streaming import StreamHub
+from agentsec_agentwatch.aat import export_aat, verify_aat
+from agentsec_agentwatch.adapters import cursor
+from agentsec_agentwatch.ingest import run_ingest
+from agentsec_agentwatch.records import validate_record
+from agentsec_agentwatch.redact import PrivacyMode, RedactionConfig, redaction_config_from_mode
+from agentsec_agentwatch.replay import replay_session
+from agentsec_agentwatch.sampling import SampleDecision, SecurityRelevantSampler
+from agentsec_agentwatch.session_export import export_session
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.streaming import StreamHub
 
 AT = "2026-01-02T03:04:05+00:00"
 TRACEPARENT = "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"

@@ -4,7 +4,7 @@
 #   run-suite.sh SUITE              # e.g. s1-install
 #   run-suite.sh SUITE FT-AAT-1     # only these cases within the suite
 #
-# Results land under field-test/v0.2.0/results/<SUITE>/ (version-scoped), per
+# Results land under field-test/0.3.0/results/<SUITE>/ (version-scoped), per
 # docs/field-test/v0.2.0/field-test-plan.md §10. There is no skip: a case that
 # cannot run is recorded as a failure. P/F|D cases may resolve to `declared`.
 set -euo pipefail
@@ -22,7 +22,7 @@ if [[ -z "$SUITE" ]]; then
   exit 2
 fi
 
-export FT_VERSION="${FT_VERSION:-v0.2.0}"
+export FT_VERSION="${FT_VERSION:-0.3.0}"
 export FT_RUN_ID="$SUITE"
 # STACK_KEEP=0 permanently: every run tears the stack down at the end.
 export STACK_KEEP=0

@@ -5,7 +5,7 @@ record-keeping mapping, real ISO/NIST appendices, adoption of the open artifact 
 semconv version, published schema stewardship, a forensic-soundness statement, optional checkpoint
 notarization/signing, and OpenSSF/OSV readiness.
 
-**Status:** shipped (2026-10-03) · **Parent:** agentsec-ecosystem #209 · **Milestone:** M22
+**Status:** shipped (2026-10-03) · **Parent:** agentic-suite #209 · **Milestone:** M22
 
 > Cross-cutting rules (PRD 19–30): fail closed and never silent (PRD 17); redaction before storage (DD-06);
 > the trust boundary stays deterministic — no LLM in redaction, validation, or chain verification; monitor-only,

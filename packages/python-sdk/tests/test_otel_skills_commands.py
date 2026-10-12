@@ -18,7 +18,7 @@ from opentelemetry.sdk.trace import ReadableSpan
 from opentelemetry.sdk.trace.export import SimpleSpanProcessor
 from opentelemetry.sdk.trace.export.in_memory_span_exporter import InMemorySpanExporter
 
-from agentwatch.attrs import (
+from agentsec_agentwatch.attrs import (
     AGENT_SPAN_OPERATIONS,
     AGENTWATCH_EXTENSION_OPERATIONS,
     AGENTWATCH_SKILL_NAME,
@@ -29,9 +29,9 @@ from agentwatch.attrs import (
     SPAN_KIND_LOAD_SKILL,
     SPAN_KIND_READ_SKILL_RESOURCE,
 )
-from agentwatch.config import SDKConfig
-from agentwatch.spans import command_span, skill_span
-from agentwatch.tracer import configure_tracing, reset_tracing
+from agentsec_agentwatch.config import SDKConfig
+from agentsec_agentwatch.spans import command_span, skill_span
+from agentsec_agentwatch.tracer import configure_tracing, reset_tracing
 
 
 @pytest.fixture(autouse=True)

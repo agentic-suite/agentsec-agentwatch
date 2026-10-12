@@ -14,16 +14,16 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.cli_schema import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.cli_schema import (
     CLI_SCHEMA_VERSION,
     READ_COMMANDS,
     check_cli_schemas,
     registered_schemas,
     validate,
 )
-from agentwatch.demo import run_demo
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.demo import run_demo
+from agentsec_agentwatch.store import RecordStore
 
 REPO = Path(__file__).resolve().parents[3]
 SKILL_DIR = REPO / "docs" / "skills" / "investigation"

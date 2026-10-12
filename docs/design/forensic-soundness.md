@@ -10,7 +10,7 @@ its public home.
 ## The chain proves
 
 - **Append-order integrity** and **no undetected in-place edit** of any covered
-  line (`agentwatch verify-store`).
+  line (`agentsec-agentwatch verify-store`).
 
 ## The chain does **not** prove
 
@@ -18,7 +18,7 @@ its public home.
   rewritten before any checkpoint is anchored, and the rewrite will verify.
 - **Absence of a record is not proof of absence of an action.** Missed hooks,
   a down daemon, or a trust-gated headless run leave no record; coverage windows
-  and `agentwatch coverage` narrow and name the gap.
+  and `agentsec-agentwatch coverage` narrow and name the gap.
 - **Origin.** Hash integrity is not attributability; optional signed checkpoints
   add "produced by this installation," never "by this human."
 - **Content truth.** It records what the harness reported.
@@ -30,21 +30,21 @@ its public home.
   the zero-infrastructure options (commit the digest to git, email it to
   yourself).
 - **Signed checkpoints** (W9) add attributability to this installation.
-  Signing is a **supported posture**, not an experiment: `agentwatch checkpoint
+  Signing is a **supported posture**, not an experiment: `agentsec-agentwatch checkpoint
   export --sign` signs a digest with the installation key, and
-  `agentwatch checkpoint rotate` replaces that key and records the change as a
+  `agentsec-agentwatch checkpoint rotate` replaces that key and records the change as a
   metadata-only `key-rotation` chain event (previous → new key id). A signature
   is tied to its **epoch**; a verifier who does not hold the epoch key reports
   *"signed by key id X, key unavailable"* rather than silently passing. The
-  posture is surfaced by `agentwatch verify-store`, `agentwatch evidence`,
-  AAT export, `agentwatch doctor`, and `/healthz`.
+  posture is surfaced by `agentsec-agentwatch verify-store`, `agentsec-agentwatch evidence`,
+  AAT export, `agentsec-agentwatch doctor`, and `/healthz`.
 - **Coverage windows** (S5) reconcile the store against an independent
   transcript.
 
 ## Handling a bundle
 
-1. `agentwatch verify-store` — verify the chain.
-2. `agentwatch verify-privacy` — verify no leak.
+1. `agentsec-agentwatch verify-store` — verify the chain.
+2. `agentsec-agentwatch verify-privacy` — verify no leak.
 3. Read the coverage section; a gap is stated on the front page.
 4. Verify checkpoint signatures and timestamps with the published key.
 5. Preserve the bundle unchanged.

@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.configuration import ConfigError, load_config
+from agentsec_agentwatch.configuration import ConfigError, load_config
 
 
 def _write(path: Path, text: str) -> Path:

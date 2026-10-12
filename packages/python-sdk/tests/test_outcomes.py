@@ -13,15 +13,15 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.cost import build_cost
-from agentwatch.outcomes import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.cost import build_cost
+from agentsec_agentwatch.outcomes import (
     OUTCOME_DERIVATION_VERSION,
     Ratio,
     build_outcomes,
     retained_changes,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Authorization,
@@ -30,7 +30,7 @@ from agentwatch.records import (
     SecurityEvent,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 3, 1, 10, 0, 0, tzinfo=timezone.utc)
 

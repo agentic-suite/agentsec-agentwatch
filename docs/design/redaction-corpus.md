@@ -1,7 +1,7 @@
 # Design — Public Redaction Corpus
 
 **BLUF:** "0 leaks" is only as strong as the attack pack behind it. RED-1 makes the pack **public, versioned, and
-reproducible**: a synthetic corpus drives `agentwatch redact eval --corpus vN` to publish per-class recall and a
+reproducible**: a synthetic corpus drives `agentsec-agentwatch redact eval --corpus vN` to publish per-class recall and a
 false-positive rate, offline and deterministically, with known misses declared rather than hidden.
 
 **Status:** implemented (2026-10-07, v0.2.0 M30) · **Milestone:** M30 · Sources:
@@ -25,7 +25,7 @@ false-positive rate, offline and deterministically, with known misses declared r
 ## Implementation
 
 `agentwatch.redact` exposes `load_corpus(version)`, `evaluate_corpus(corpus)`, and `render_report_table(report)`.
-`agentwatch redact eval --corpus vN [--json]` prints the published table (human) or the numbers document (JSON).
+`agentsec-agentwatch redact eval --corpus vN [--json]` prints the published table (human) or the numbers document (JSON).
 The machine-readable source of truth is
 [`docs/reference/redaction-corpus-numbers.json`](../reference/redaction-corpus-numbers.json), reproduced from the
 corpus by `packages/python-sdk/tests/test_redact_eval.py` (drift is a test failure).

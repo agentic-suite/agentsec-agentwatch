@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import a2a_proxy
-from agentwatch.cli import main
+from agentsec_agentwatch import a2a_proxy
+from agentsec_agentwatch.cli import main
 
 ECHO = Path(__file__).resolve().parent / "fixtures" / "a2a" / "echo_agent.py"
 

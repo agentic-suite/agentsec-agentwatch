@@ -13,14 +13,14 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.evidence import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.evidence import (
     BUNDLE_FORMAT,
     EvidenceBundle,
     build_bundle,
     verify_bundle,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -28,8 +28,8 @@ from agentwatch.records import (
     ProducerKind,
     ToolCall,
 )
-from agentwatch.store import RecordStore
-from agentwatch.store_access import store_accesses
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.store_access import store_accesses
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -232,7 +232,7 @@ def test_coverage_reports_per_producer_counts(tmp_path: Path) -> None:
 
 
 def test_bundle_includes_operator_notes_as_findings(tmp_path: Path) -> None:
-    from agentwatch.annotate import annotate_session
+    from agentsec_agentwatch.annotate import annotate_session
 
     store, path = _store(tmp_path)
     annotate_session(store, "s1", "root cause was a retry storm", tag="reviewed")
@@ -248,7 +248,7 @@ def test_bundle_includes_operator_notes_as_findings(tmp_path: Path) -> None:
 
 
 def test_coverage_ignores_tombstoned_entries(tmp_path: Path) -> None:
-    from agentwatch.evidence import _coverage
+    from agentsec_agentwatch.evidence import _coverage
 
     store, _ = _store(tmp_path)
     store.purge_session("s1")

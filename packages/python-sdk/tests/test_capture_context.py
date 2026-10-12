@@ -5,12 +5,12 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from agentwatch.adapters import claude_code
-from agentwatch.adapters.claude_code import derive_approval
-from agentwatch.daemon import Daemon
-from agentwatch.install import EVENT_PHASES
-from agentwatch.records import Approval, effective_approval
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.adapters import claude_code
+from agentsec_agentwatch.adapters.claude_code import derive_approval
+from agentsec_agentwatch.daemon import Daemon
+from agentsec_agentwatch.install import EVENT_PHASES
+from agentsec_agentwatch.records import Approval, effective_approval
+from agentsec_agentwatch.store import RecordStore
 
 TS = "2026-01-02T03:04:05+00:00"
 BASE = {"session_id": "s1", "cwd": "/work", "timestamp": TS}
@@ -168,7 +168,7 @@ def test_daemon_unprompted_pre_is_unknown(tmp_path: Path) -> None:
 
 
 def test_search_filters_by_approval(tmp_path: Path) -> None:
-    from agentwatch.query import search
+    from agentsec_agentwatch.query import search
 
     store = RecordStore(tmp_path / "records.jsonl")
     daemon = Daemon(socket_path=str(tmp_path / "d.sock"), store=store)

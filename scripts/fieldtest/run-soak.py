@@ -13,7 +13,7 @@ import sys
 import time
 
 sys.path.insert(0, "/work/packages/python-sdk/src")
-from agentwatch.hook import build_message, default_socket_path, send  # noqa: E402
+from agentsec_agentwatch.hook import build_message, default_socket_path, send  # noqa: E402
 
 
 def main(argv: list[str] | None = None) -> int:

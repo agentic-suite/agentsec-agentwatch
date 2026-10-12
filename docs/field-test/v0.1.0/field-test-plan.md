@@ -178,7 +178,7 @@ case calls a hosted model.
 
 agentwatch supersedes `agent-exec-trace`; the predecessor's field-test assets are the porting source.
 Its local path is `~/Desktop/code/github/agent-exec-trace` (also mirrored at
-`agentsec-ecosystem/_predecessors/agent-exec-trace`). Port these, adapting paths/names to agentwatch.
+`agentic-suite/_predecessors/agent-exec-trace`). Port these, adapting paths/names to agentwatch.
 
 | Source (agent-exec-trace) | What it is | Bring over as |
 |---|---|---|

@@ -9,15 +9,15 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.session_export import (
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.session_export import (
     EXPORT_SCHEMA,
     export_session,
     parse_ndjson,
     to_ndjson,
     verify_export,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -75,7 +75,7 @@ def test_verify_export_detects_tampering(tmp_path: Path) -> None:
 def test_cli_exports_to_stdout_and_file(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    main = importlib.import_module("agentwatch.cli.main")
+    main = importlib.import_module("agentsec_agentwatch.cli.main")
     monkeypatch.setenv("AGENTWATCH_STORE__PATH", str(tmp_path))
     _store(tmp_path)
     out_file = tmp_path / "session.ndjson"
@@ -95,7 +95,7 @@ def test_cli_exports_to_stdout_and_file(
 def test_cli_reports_missing_session(
     monkeypatch: pytest.MonkeyPatch, tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
-    main = importlib.import_module("agentwatch.cli.main")
+    main = importlib.import_module("agentsec_agentwatch.cli.main")
     monkeypatch.setenv("AGENTWATCH_STORE__PATH", str(tmp_path))
     _store(tmp_path)
 

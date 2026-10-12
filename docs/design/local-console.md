@@ -1,6 +1,6 @@
 # Design — Local Console
 
-**BLUF:** How `agentwatch ui` gives a **zero-Docker, loopback-only, read-only** browser view of the local chain store in
+**BLUF:** How `agentsec-agentwatch ui` gives a **zero-Docker, loopback-only, read-only** browser view of the local chain store in
 one command, and how the **embedded, rebuildable query index** makes long-window search interactive while the chain
 store stays the sole source of truth. Postgres (PRD 41 PG) becomes the optional fleet/multi-tenant tier, not the only tier.
 
@@ -61,7 +61,7 @@ ADR-0035 (embedded index + dependency), ADR-0036 (console security model).
 ## Live views (M30 UI-1)
 
 The console's live timeline, live anomaly inbox, and streaming tail consume the M26 STR-2 store-truth tail
-([`agentwatch.live.LiveTail`](../../packages/python-sdk/src/agentwatch/live.py)): the store remains
+([`agentwatch.live.LiveTail`](../../packages/python-sdk/src/agentsec_agentwatch/live.py)): the store remains
 authoritative, a backpressured subscriber is **back-filled from the store** and `degraded` stays visible, and
 gaps are classified (`stream-drop`/`purged`/`missing`/`rotated`) and rendered — never silent. The anomaly inbox
 is a derived, content-free filter (denied/error/security-event records). No mutation, no egress.

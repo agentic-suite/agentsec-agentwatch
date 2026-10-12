@@ -17,18 +17,18 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.classify import NETWORK
-from agentwatch.cli.main import main
-from agentwatch.impact import build_impact, render_impact
-from agentwatch.ocsf import ocsf_target
-from agentwatch.oversight import (
+from agentsec_agentwatch.classify import NETWORK
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.impact import build_impact, render_impact
+from agentsec_agentwatch.ocsf import ocsf_target
+from agentsec_agentwatch.oversight import (
     SANDBOX_EXPOSURE,
     build_oversight,
     render_oversight,
     sandbox_boundary_event,
     sandbox_exposure_matrix,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -38,7 +38,7 @@ from agentwatch.records import (
     ToolCall,
     validate_record,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

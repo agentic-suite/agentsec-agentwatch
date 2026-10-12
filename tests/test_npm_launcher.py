@@ -1,7 +1,7 @@
-"""Tests for the ``@agentsec-ecosystem/cli`` npx launcher (issue #14).
+"""Tests for the ``@agentic-suite/cli`` npx launcher (issue #14).
 
 The launcher is a thin shim that invokes the Python CLI, so ``npx
-@agentsec-ecosystem/cli <command>`` behaves like ``agentwatch <command>``.
+@agentic-suite/cli <command>`` behaves like ``agentwatch <command>``.
 """
 
 from __future__ import annotations
@@ -19,7 +19,7 @@ CLI_DIR = ROOT / "packages" / "cli"
 
 def test_package_json_declares_agentwatch_bin() -> None:
     pkg = json.loads((CLI_DIR / "package.json").read_text(encoding="utf-8"))
-    assert pkg["name"] == "@agentsec-ecosystem/cli"
+    assert pkg["name"] == "@agentic-suite/cli"
     assert pkg["bin"]["agentwatch"] == "bin/agentwatch.js"
     assert (CLI_DIR / pkg["bin"]["agentwatch"]).is_file()
 

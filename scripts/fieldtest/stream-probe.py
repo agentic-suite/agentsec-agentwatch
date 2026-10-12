@@ -23,7 +23,7 @@ STORE = "/data/agentwatch/records.jsonl"
 def _p99(argv: list[str]) -> int:
     budget = float(arg(argv, "--budget-ms", "1000") or 1000)
     calls = int(arg(argv, "--calls", "40") or 40)
-    from agentwatch.hook import build_message, default_socket_path, send
+    from agentsec_agentwatch.hook import build_message, default_socket_path, send
 
     session = "ft-str1"
     sock = default_socket_path()
@@ -63,7 +63,7 @@ def _drop_consumer(argv: list[str]) -> int:
     import os
     import tempfile
 
-    from agentwatch.streaming_soak import run_streaming_soak
+    from agentsec_agentwatch.streaming_soak import run_streaming_soak
 
     # The soak's `within_bounds` (delivered == count) assumes a clean store; the
     # recorder's live store already holds the daemon's attestation records, which

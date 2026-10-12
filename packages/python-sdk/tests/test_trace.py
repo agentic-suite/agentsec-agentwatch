@@ -8,9 +8,9 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.trace import (
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.trace import (
     TraceNode,
     build_trace,
     record_trace_id,
@@ -142,7 +142,7 @@ def test_cli_trace(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
     for record in _three_host_records():
         store.append(record)
 
-    from agentwatch.cli.main import main
+    from agentsec_agentwatch.cli.main import main
 
     rc = main(["--set", f"store.path={store_dir}", "trace", TRACE, "--json"])
 

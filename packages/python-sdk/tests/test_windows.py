@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.service import (
+from agentsec_agentwatch.service import (
     WINDOWS_TASK_NAME,
     default_unit_path,
     install_service,
@@ -29,7 +29,7 @@ def test_windows_task_runs_the_daemon() -> None:
     assert "<Task" in unit.content
     assert "<LogonTrigger>" in unit.content
     assert "C:\\Python\\python.exe" in unit.content
-    assert "-m agentwatch.daemon" in unit.content
+    assert "-m agentsec_agentwatch.daemon" in unit.content
     assert "<RunLevel>LeastPrivilege</RunLevel>" in unit.content
 
 

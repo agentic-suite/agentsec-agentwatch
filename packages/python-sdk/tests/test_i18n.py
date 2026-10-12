@@ -11,7 +11,7 @@ from datetime import datetime, timezone
 
 import pytest
 
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,

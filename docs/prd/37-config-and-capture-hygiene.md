@@ -5,7 +5,7 @@ with **named profiles** instead of a decision list (S35), bound the single patho
 the SDK and hook producers behind one read surface (S11), and reuse the redactor as a standalone primitive
 (S13).
 
-**Status:** shipped (2026-10-03) · **Parent:** agentsec-ecosystem #209 · **Milestone:** M21
+**Status:** shipped (2026-10-03) · **Parent:** agentic-suite #209 · **Milestone:** M21
 
 > Cross-cutting rules (PRD 19–30): fail closed and never silent (PRD 17); redaction before storage (DD-06);
 > the trust boundary stays deterministic — no LLM in redaction, validation, or chain verification; monitor-only,

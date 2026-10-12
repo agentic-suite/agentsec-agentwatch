@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch import a2a_config
+from agentsec_agentwatch import a2a_config
 
 
 def _target(tmp_path: Path) -> a2a_config.A2aConfigTarget:
@@ -101,12 +101,12 @@ def test_resolve_a2a_proxy_command_falls_back_to_module() -> None:
     command = a2a_config.resolve_a2a_proxy_command("/nonexistent/python")
 
     assert command.command == "/nonexistent/python"
-    assert command.args_prefix == ("-m", "agentwatch.a2a_proxy")
+    assert command.args_prefix == ("-m", "agentsec_agentwatch.a2a_proxy")
 
 
 def test_resolve_a2a_proxy_command_prefers_a_sibling(tmp_path: Path) -> None:
     interpreter = tmp_path / "python"
-    sibling = tmp_path / "agentwatch-a2a-proxy"
+    sibling = tmp_path / "agentsec-agentwatch-a2a-proxy"
     sibling.write_text("#!/bin/sh\n")
 
     command = a2a_config.resolve_a2a_proxy_command(str(interpreter))
@@ -116,11 +116,11 @@ def test_resolve_a2a_proxy_command_prefers_a_sibling(tmp_path: Path) -> None:
 
 
 def test_resolve_a2a_proxy_command_uses_path(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(shutil, "which", lambda name: "/usr/local/bin/agentwatch-a2a-proxy")
+    monkeypatch.setattr(shutil, "which", lambda name: "/usr/local/bin/agentsec-agentwatch-a2a-proxy")
 
     command = a2a_config.resolve_a2a_proxy_command("/nonexistent/python")
 
-    assert command.command == "/usr/local/bin/agentwatch-a2a-proxy"
+    assert command.command == "/usr/local/bin/agentsec-agentwatch-a2a-proxy"
 
 
 def test_resolve_user_scope_and_reject_an_unknown_scope(tmp_path: Path) -> None:

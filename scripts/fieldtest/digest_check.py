@@ -11,8 +11,8 @@ sys.path.insert(0, _HERE)
 sys.path.insert(0, "/work/packages/python-sdk/src")
 from _ftutil import fail, ok  # noqa: E402
 
-from agentwatch.digest import SIGNATURES_VERSION, build_digest  # noqa: E402
-from agentwatch.store import RecordStore  # noqa: E402
+from agentsec_agentwatch.digest import SIGNATURES_VERSION, build_digest  # noqa: E402
+from agentsec_agentwatch.store import RecordStore  # noqa: E402
 
 
 def main(argv: list[str]) -> int:

@@ -1,0 +1,122 @@
+{
+  "cases": [
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "doctor-effective",
+          "ok": true
+        }
+      ],
+      "class": "P/F|D",
+      "declared": false,
+      "id": "FT-DEP-1",
+      "run_id": "s1-install",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "emit",
+          "ok": true
+        },
+        {
+          "name": "attestation-config-changed",
+          "ok": true
+        },
+        {
+          "name": "store-has-records",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-DEP-2",
+      "run_id": "s1-install",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "hook-perf-gate",
+          "ok": true
+        }
+      ],
+      "class": "P/F|D",
+      "declared": false,
+      "id": "FT-DEP-3",
+      "run_id": "s1-install",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "first-run-timing",
+          "ok": true
+        },
+        {
+          "name": "naming-guard",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-ENV-0",
+      "run_id": "s1-install",
+      "status": "pass"
+    }
+  ],
+  "env": {
+    "arch": "arm64",
+    "compose": "5.5.1",
+    "docker": "Docker version 29.5.2, build 79eb04c7d8",
+    "omlx_base_url": "http://host.docker.internal:8000/v1",
+    "omlx_model": "Qwen3-4B-Instruct-2507-4bit",
+    "os": "Darwin",
+    "run_id": "s1-install",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-10-12T22:50:28.372364+00:00",
+  "green": true,
+  "run_id": "s1-install",
+  "totals": {
+    "declared": 0,
+    "fail": 0,
+    "pass": 4
+  }
+}

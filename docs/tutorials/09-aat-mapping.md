@@ -1,13 +1,13 @@
 # Tutorial 09 — AAT mapping
 
-agentwatch is the first reference implementation of the IETF **Agent Audit Trail**
+agentsec-agentwatch is the first reference implementation of the IETF **Agent Audit Trail**
 (AAT) — it can emit a standards-shaped bundle of a session and verify a foreign
 one before storage.
 
 ## 1. Emit AAT for a session
 
 ```sh
-agentwatch export-session <session-id> --format aat > session.aat.json
+agentsec-agentwatch export-session <session-id> --format aat > session.aat.json
 ```
 
 The bundle carries the chain envelope, a field-mapping coverage block, and an
@@ -17,7 +17,7 @@ explicit `unmapped` block (fields AAT cannot express, e.g. `response_hash`/
 ## 2. Verify a foreign AAT bundle
 
 ```sh
-agentwatch ingest session.aat.json --format aat
+agentsec-agentwatch ingest session.aat.json --format aat
 ```
 
 A foreign bundle's chain is **verified before storage**; untrusted or

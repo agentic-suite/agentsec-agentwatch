@@ -209,5 +209,5 @@ gaps would have been invisible.
 ---
 
 *This article is grounded in evidence from the agentwatch v0.1.0 field test. The gap
-detection code, test harness, and fix are in `packages/python-sdk/src/agentwatch/daemon.py`
+detection code, test harness, and fix are in `packages/python-sdk/src/agentsec_agentwatch/daemon.py`
 and `scripts/fieldtest/cases/steps/FT-14.sh`.*

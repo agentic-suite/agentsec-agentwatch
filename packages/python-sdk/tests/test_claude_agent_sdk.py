@@ -11,9 +11,9 @@ import importlib.util
 from pathlib import Path
 from types import ModuleType
 
-from agentwatch import compatibility
-from agentwatch.claude_otel import SDK_PRODUCER, transcode_agent_sdk
-from agentwatch.records import ProducerKind
+from agentsec_agentwatch import compatibility
+from agentsec_agentwatch.claude_otel import SDK_PRODUCER, transcode_agent_sdk
+from agentsec_agentwatch.records import ProducerKind
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 EXAMPLES = REPO_ROOT / "examples"

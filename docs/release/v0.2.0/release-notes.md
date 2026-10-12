@@ -32,7 +32,7 @@ happen at M32 (32.21/32.22).
 
 ```sh
 pip install agentsec-agentwatch==0.2.0    # Python CLI + SDK
-npx @agentsec-ecosystem/cli init           # install hooks + local daemon (monitor-only)
+npx @agentic-suite/cli init           # install hooks + local daemon (monitor-only)
 ```
 
 ## Field test

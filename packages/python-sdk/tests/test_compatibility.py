@@ -9,7 +9,7 @@ from pathlib import Path
 import conformance_registry  # noqa: F401  (registers shipped adapters)
 import pytest
 
-from agentwatch import compatibility, conformance
+from agentsec_agentwatch import compatibility, conformance
 
 TESTS = Path(__file__).resolve().parent
 REPO = TESTS.parents[2]

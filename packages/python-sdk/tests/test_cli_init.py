@@ -14,10 +14,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli import main
-from agentwatch.install import hooks_installed
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli import main
+from agentsec_agentwatch.install import hooks_installed
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 
 @pytest.fixture
@@ -68,7 +68,7 @@ def test_init_no_daemon_does_not_start_one(
     rc = main(["init", "--no-daemon"])
 
     assert rc == 0
-    from agentwatch.install import is_daemon_alive
+    from agentsec_agentwatch.install import is_daemon_alive
 
     assert is_daemon_alive() is False
 

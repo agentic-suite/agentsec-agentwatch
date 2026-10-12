@@ -8,7 +8,7 @@ from typing import Any
 
 import pytest
 
-from agentwatch import a2a_proxy, hook
+from agentsec_agentwatch import a2a_proxy, hook
 
 
 def _capture(monkeypatch: pytest.MonkeyPatch, frames: list[dict[str, Any]]) -> None:

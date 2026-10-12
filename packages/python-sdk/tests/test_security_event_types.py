@@ -12,13 +12,13 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agentwatch.ocsf import MAPPING_TABLE, ocsf_target, to_cloudevents, to_ocsf
-from agentwatch.records import (
+from agentsec_agentwatch.ocsf import MAPPING_TABLE, ocsf_target, to_cloudevents, to_ocsf
+from agentsec_agentwatch.records import (
     SecurityEvent,
     SecurityEventType,
     validate_event,
 )
-from agentwatch.schema_policy import check_schema_policy
+from agentsec_agentwatch.schema_policy import check_schema_policy
 
 REPO = Path(__file__).resolve().parents[3]
 SCHEMA_DIR = REPO / "schema"
@@ -104,7 +104,7 @@ def test_capability_changed_is_a_documented_forward_placeholder() -> None:
 
 
 def test_new_types_are_in_the_incident_taxonomy() -> None:
-    from agentwatch.incident_taxonomy import AIR_BY_EVENT, GMF_BY_EVENT
+    from agentsec_agentwatch.incident_taxonomy import AIR_BY_EVENT, GMF_BY_EVENT
 
     for member in NEW_TYPES:
         assert member.value in AIR_BY_EVENT

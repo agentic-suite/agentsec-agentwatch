@@ -74,11 +74,11 @@ do not guess field names.
 
 ## Documented answers on the demo store
 
-Run `agentwatch demo` to seed a synthetic session id `demo`, then:
+Run `agentsec-agentwatch demo` to seed a synthetic session id `demo`, then:
 
 | Question | Command | Answer |
 |---|---|---|
-| Which sessions exist? | `agentwatch sessions` | `demo` |
-| How many records? | `agentwatch search --session demo --json` | 6 record lines |
-| What is the timeline? | `agentwatch replay demo --json` | 6 ordered records |
-| What changed? | `agentwatch impact demo --json` | `records: 6` with 1 denial |
+| Which sessions exist? | `agentsec-agentwatch sessions` | `demo` |
+| How many records? | `agentsec-agentwatch search --session demo --json` | 6 record lines |
+| What is the timeline? | `agentsec-agentwatch replay demo --json` | 6 ordered records |
+| What changed? | `agentsec-agentwatch impact demo --json` | `records: 6` with 1 denial |

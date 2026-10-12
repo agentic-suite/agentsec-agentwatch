@@ -6,7 +6,7 @@ Status: **draft** (commands are the intended UX; the CLI ships with v0.1.0).
 
 ```sh
 # install the hooks + local daemon (monitor-only)
-npx @agentsec-ecosystem/cli init
+agentsec-agentwatch init
 
 # ... use Claude Code normally ...
 

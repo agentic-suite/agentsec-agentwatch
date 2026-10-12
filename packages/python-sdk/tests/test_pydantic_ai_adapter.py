@@ -12,8 +12,8 @@ from typing import Any
 
 import pytest
 
-from agentwatch.adapters import pydantic_ai
-from agentwatch.records import Outcome, SecurityEventType, StepType, validate_record
+from agentsec_agentwatch.adapters import pydantic_ai
+from agentsec_agentwatch.records import Outcome, SecurityEventType, StepType, validate_record
 
 
 def _msg(phase: str, event: dict[str, Any]) -> dict[str, Any]:

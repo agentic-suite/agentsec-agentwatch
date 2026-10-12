@@ -15,7 +15,7 @@ import pytest
 from hypothesis import given
 from hypothesis import strategies as st
 
-from agentwatch.provenance import (
+from agentsec_agentwatch.provenance import (
     AGENTWATCH_ATTRIBUTION_KEY,
     CONTENT_KEYS,
     RANGE_CAPTURE_VERSION,
@@ -25,7 +25,7 @@ from agentwatch.provenance import (
     range_facts_from_record,
     to_attribution_arguments,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,

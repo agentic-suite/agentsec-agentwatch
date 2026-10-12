@@ -68,7 +68,7 @@ jobs:
     name: Publish to PyPI
     needs: [build]
     # Trusted publishing (OIDC, no token). Enable after configuring a PyPI trusted
-    # publisher for: owner agentsec-ecosystem, repo agentwatch, workflow release.yml,
+    # publisher for: owner agentic-suite, repo agentwatch, workflow release.yml,
     # environment "pypi" — then set repository variable PYPI_TRUSTED_PUBLISHING=true.
     if: ${{ vars.PYPI_TRUSTED_PUBLISHING == 'true' }}
     runs-on: ubuntu-latest

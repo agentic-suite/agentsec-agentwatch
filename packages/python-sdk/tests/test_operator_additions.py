@@ -8,17 +8,17 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli import main
-from agentwatch.install import preflight
-from agentwatch.records import (
+from agentsec_agentwatch.cli import main
+from agentsec_agentwatch.install import preflight
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
     RecordPrivacyMode,
     ToolCall,
 )
-from agentwatch.store import RecordStore
-from agentwatch.verify_privacy import verify_privacy
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.verify_privacy import verify_privacy
 
 _T0 = datetime(2026, 1, 1, tzinfo=timezone.utc)
 

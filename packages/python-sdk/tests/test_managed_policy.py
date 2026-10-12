@@ -15,8 +15,8 @@ import json
 import sys
 from pathlib import Path
 
-from agentwatch import doctor
-from agentwatch.configuration import (
+from agentsec_agentwatch import doctor
+from agentsec_agentwatch.configuration import (
     AgentwatchConfig,
     ExportSection,
     HealthSection,
@@ -25,8 +25,8 @@ from agentwatch.configuration import (
     RedactionSection,
     StoreSection,
 )
-from agentwatch.install import HookCommand, InstallError, resolve_scope
-from agentwatch.managed_policy import (
+from agentsec_agentwatch.install import HookCommand, InstallError, resolve_scope
+from agentsec_agentwatch.managed_policy import (
     HOOKS_EFFECTIVE_BLOCKED,
     HOOKS_EFFECTIVE_UNKNOWN,
     HOOKS_EFFECTIVE_YES,
@@ -51,7 +51,7 @@ def _cfg(**overrides: object) -> AgentwatchConfig:
     )
 
 
-def _write_hooks(settings: Path, command: str = "/opt/aw/bin/agentwatch-hook") -> None:
+def _write_hooks(settings: Path, command: str = "/opt/aw/bin/agentsec-agentwatch-hook") -> None:
     settings.parent.mkdir(parents=True, exist_ok=True)
     settings.write_text(
         json.dumps(
@@ -144,7 +144,7 @@ def test_managed_agentwatch_hook_is_effective(tmp_path: Path) -> None:
                     "hooks": [
                         {
                             "type": "command",
-                            "command": "/opt/aw/bin/agentwatch-hook",
+                            "command": "/opt/aw/bin/agentsec-agentwatch-hook",
                             "args": ["pre"],
                         }
                     ],
@@ -259,7 +259,7 @@ def test_doctor_no_policy_installed_is_effective(tmp_path: Path) -> None:
 
 
 def test_managed_install_artifacts_cover_hooks_plugin_and_mdm() -> None:
-    command = HookCommand(command="/opt/aw/bin/agentwatch-hook", args_prefix=())
+    command = HookCommand(command="/opt/aw/bin/agentsec-agentwatch-hook", args_prefix=())
 
     artifacts = managed_install_artifacts(command)
 

@@ -17,13 +17,13 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.egress_audit import audit
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
-from agentwatch.ui import ConsoleServer
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.egress_audit import audit
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.ui import ConsoleServer
 
-SRC = Path(__file__).resolve().parents[1] / "src" / "agentwatch"
+SRC = Path(__file__).resolve().parents[1] / "src" / "agentsec_agentwatch"
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
 
@@ -246,7 +246,7 @@ def test_live_anomaly_inbox_surfaces_failures(tmp_path: Path) -> None:
 
 
 def test_live_shows_degraded_when_backpressured(tmp_path: Path) -> None:
-    from agentwatch.streaming import Subscriber
+    from agentsec_agentwatch.streaming import Subscriber
 
     subscriber: Subscriber[int] = Subscriber(1)
     subscriber.offer(0)
@@ -258,7 +258,7 @@ def test_live_shows_degraded_when_backpressured(tmp_path: Path) -> None:
 
 
 def test_console_signatures_match_the_digest(tmp_path: Path) -> None:
-    from agentwatch.digest import build_digest
+    from agentsec_agentwatch.digest import build_digest
 
     now = datetime.now(timezone.utc)
     directory = tmp_path / "window"

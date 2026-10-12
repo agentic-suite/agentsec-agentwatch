@@ -17,7 +17,7 @@ MDM or server-managed settings. Also defines what `doctor` may claim: never "ins
 
 ## The failure mode
 
-`agentwatch init` writes into project `settings.local.json` / user `settings.json` (hook contract). Under
+`agentsec-agentwatch init` writes into project `settings.local.json` / user `settings.json` (hook contract). Under
 `allowManagedHooksOnly`, only **managed hooks** and hooks from **managed force-enabled plugins** run; user/project/local
 hooks are blocked. In the environments the compliance PRDs target, a normal install is therefore **silently inert** — a
 declared-in-principle but silent gap.

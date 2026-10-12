@@ -10,7 +10,7 @@ REPO = Path(__file__).resolve().parents[1]
 SDK = REPO / "packages" / "python-sdk"
 sys.path.insert(0, str(SDK / "src"))
 
-from agentwatch.egress_audit import audit  # noqa: E402
+from agentsec_agentwatch.egress_audit import audit  # noqa: E402
 
 
 def main() -> int:

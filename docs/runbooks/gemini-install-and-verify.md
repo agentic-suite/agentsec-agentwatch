@@ -16,16 +16,16 @@ plus `ingest`), and confirm the approval/principal attributes.
 #    logPrompts defaults true — redaction is mandatory on this path.
 
 # 2. Ingest the captured telemetry:
-agentwatch ingest /tmp/gemini-telemetry.log --format otel
+agentsec-agentwatch ingest /tmp/gemini-telemetry.log --format otel
 
 # 3. Confirm the mapped dimensions:
-agentwatch search --session <session-id> --json   # approval + hashed principal
+agentsec-agentwatch search --session <session-id> --json   # approval + hashed principal
 ```
 
 ## Verify
 
 - [ ] Telemetry reaches the collector/outfile (check before ingest).
-- [ ] `agentwatch ingest` validates records; unmappable spans are quarantined with a reason.
+- [ ] `agentsec-agentwatch ingest` validates records; unmappable spans are quarantined with a reason.
 - [ ] `active_approval_mode` maps to `approval`; `user.email` is a **hashed** principal; ids map to identity.
 
 ## Notes / limitations

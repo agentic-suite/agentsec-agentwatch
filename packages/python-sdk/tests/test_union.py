@@ -8,8 +8,8 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli.main import main
-from agentwatch.records import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -18,8 +18,8 @@ from agentwatch.records import (
     StepType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
-from agentwatch.union import SOURCE_HOOK, SOURCE_SDK, render_union, source_of, union
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.union import SOURCE_HOOK, SOURCE_SDK, render_union, source_of, union
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 
@@ -69,7 +69,7 @@ def test_union_filters_by_source(tmp_path: Path) -> None:
 
 
 def test_render_labels_sdk_as_not_chain_protected() -> None:
-    from agentwatch.union import union_records
+    from agentsec_agentwatch.union import union_records
 
     text = render_union(union_records([SDK]))
 

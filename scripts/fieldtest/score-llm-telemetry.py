@@ -12,9 +12,9 @@ script reports the corpus-run telemetry that FT-11b/11d provide.
 Usage::
 
     python3 scripts/fieldtest/score-llm-telemetry.py \\
-        field-test/v0.1.0/results/all/cases/FT-11b/artifacts/llm/with-llm \\
-        field-test/v0.1.0/results/all/cases/FT-11d/artifacts/llm/with-llm \\
-        --out field-test/v0.1.0/results/ft15/cases/FT-15/artifacts/llm-telemetry.json
+        field-test/0.3.0/results/all/cases/FT-11b/artifacts/llm/with-llm \\
+        field-test/0.3.0/results/all/cases/FT-11d/artifacts/llm/with-llm \\
+        --out field-test/0.3.0/results/ft15/cases/FT-15/artifacts/llm-telemetry.json
 """
 from __future__ import annotations
 

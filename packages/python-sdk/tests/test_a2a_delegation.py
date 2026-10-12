@@ -11,17 +11,17 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from typing import Any
 
-from agentwatch.adapters import a2a_proxy
-from agentwatch.records import (
+from agentsec_agentwatch.adapters import a2a_proxy
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
     SecurityEventType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
-from agentwatch.trace import TraceNode, build_trace
-from agentwatch.tree import TreeNode, build_tree
+from agentsec_agentwatch.store import RecordStore
+from agentsec_agentwatch.trace import TraceNode, build_trace
+from agentsec_agentwatch.tree import TreeNode, build_tree
 
 NOW = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

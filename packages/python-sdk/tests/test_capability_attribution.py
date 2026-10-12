@@ -12,7 +12,7 @@ import json
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from agentwatch.capabilities import (
+from agentsec_agentwatch.capabilities import (
     CAP_KIND_SKILL,
     CAPABILITY_LOADED_TOOL,
     COVERAGE_NONE,
@@ -24,11 +24,11 @@ from agentwatch.capabilities import (
     load_exposure_matrix,
     record_capability_load,
 )
-from agentwatch.cli.main import main
-from agentwatch.impact import build_impact, render_impact
-from agentwatch.query import search
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.impact import build_impact, render_impact
+from agentsec_agentwatch.query import search
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, StepType, ToolCall
+from agentsec_agentwatch.store import RecordStore
 
 START = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 DESIGN_DOC = (

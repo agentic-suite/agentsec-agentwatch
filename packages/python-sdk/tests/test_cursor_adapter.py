@@ -18,9 +18,9 @@ from typing import Any
 import conformance_registry
 import pytest
 
-from agentwatch import conformance
-from agentwatch.adapters import cursor
-from agentwatch.records import Outcome, SecurityEventType, StepType, validate_record
+from agentsec_agentwatch import conformance
+from agentsec_agentwatch.adapters import cursor
+from agentsec_agentwatch.records import Outcome, SecurityEventType, StepType, validate_record
 
 
 def _msg(phase: str, **event: Any) -> dict[str, Any]:

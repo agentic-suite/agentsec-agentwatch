@@ -12,14 +12,14 @@ import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     CredentialClass,
     Outcome,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 ROOT = Path(__file__).resolve().parents[3]
 FROZEN_V0_1_0 = ROOT / "schema" / "vectors" / "store" / "valid.jsonl"

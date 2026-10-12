@@ -14,7 +14,7 @@ scoped out by an explicit, reviewed allowlist — not hidden.
 - **Out of scope (allowlisted, with reason):**
   - `m13-agents/**` — ported predecessor example agents (third-party; not agentwatch source).
   - Intentional secret material used to test redaction and the self-test:
-    `packages/python-sdk/src/agentwatch/selftest.py` (`MIIEowSECRETMATERIAL`),
+    `packages/python-sdk/src/agentsec_agentwatch/selftest.py` (`MIIEowSECRETMATERIAL`),
     `packages/python-sdk/tests/test_secrets.py`,
     `packages/python-sdk/tests/test_redaction_properties.py`,
     `packages/python-sdk/tests/_secret_oracle.py`,
@@ -63,7 +63,7 @@ credentials), so they are reported as unverified rather than hidden by an allowl
 
 | File:line | Detector | Why it is expected |
 |---|---|---|
-| `packages/python-sdk/src/agentwatch/selftest.py:21` | Postgres | Redaction self-test fixture (fake `pgLEAK` password) |
+| `packages/python-sdk/src/agentsec_agentwatch/selftest.py:21` | Postgres | Redaction self-test fixture (fake `pgLEAK` password) |
 | `packages/python-sdk/tests/test_secrets.py:93,108` | Postgres | Redaction test fixture (fake `user:pass` URI) |
 | `packages/python-sdk/tests/test_config_explain.py:66` | Postgres | Config-redaction test fixture (fake `pgLEAK` password) |
 | `docs/plans/m4-store-redaction-execution-plan.md:71` | Postgres | RFC-style placeholder URI in a plan doc |

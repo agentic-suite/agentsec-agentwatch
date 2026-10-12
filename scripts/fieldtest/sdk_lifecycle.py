@@ -17,9 +17,9 @@ from datetime import datetime, timezone
 sys.path.insert(0, "/ft/scripts")
 from _ftutil import fail, ok  # noqa: E402
 
-from agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall  # noqa: E402
-from agentwatch.sampling import SecurityRelevantSampler  # noqa: E402
-from agentwatch.sdk import AgentWatchProvider, FlushResult  # noqa: E402
+from agentsec_agentwatch.records import AgentIdentity, AgentRecord, Outcome, ToolCall  # noqa: E402
+from agentsec_agentwatch.sampling import SecurityRelevantSampler  # noqa: E402
+from agentsec_agentwatch.sdk import AgentWatchProvider, FlushResult  # noqa: E402
 
 
 class _Rec:

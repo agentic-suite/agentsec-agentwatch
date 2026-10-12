@@ -12,8 +12,8 @@ from collections.abc import Iterator
 
 import pytest
 
-from agentwatch import sinks
-from agentwatch.sinks import EventForwarder, SinkError, SyslogSink, build_sink
+from agentsec_agentwatch import sinks
+from agentsec_agentwatch.sinks import EventForwarder, SinkError, SyslogSink, build_sink
 
 _LOGGER = logging.getLogger("agentwatch.sinks.syslog")
 

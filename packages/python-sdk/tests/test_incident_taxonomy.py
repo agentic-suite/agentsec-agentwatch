@@ -13,14 +13,14 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.annotate import annotate_session
-from agentwatch.incident_taxonomy import (
+from agentsec_agentwatch.annotate import annotate_session
+from agentsec_agentwatch.incident_taxonomy import (
     AIR_BY_EVENT,
     GMF_BY_EVENT,
     air_mapping,
     gmf_mapping,
 )
-from agentwatch.records import (
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     Outcome,
@@ -28,7 +28,7 @@ from agentwatch.records import (
     SecurityEventType,
     ToolCall,
 )
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

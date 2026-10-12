@@ -11,9 +11,9 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from agentwatch.ingest import transcode_otel
-from agentwatch.records import SecurityEventType, validate_record
-from agentwatch.redact import redaction_config_from_mode
+from agentsec_agentwatch.ingest import transcode_otel
+from agentsec_agentwatch.records import SecurityEventType, validate_record
+from agentsec_agentwatch.redact import redaction_config_from_mode
 
 RECIPE = Path(__file__).resolve().parents[3] / "docs" / "guides" / "gemini-native-telemetry.md"
 

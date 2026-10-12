@@ -4,7 +4,7 @@
 the agentwatch **record format** (OTel GenAI `execute_tool` spans plus the named security-event schema),
 **redacts before persisting**, stores locally by default, and optionally exports over OTLP.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## Where agentwatch sits
 
@@ -61,7 +61,7 @@ shipped in `agent-exec-trace`:
 
 - **Core: Python** (instrumentation SDK + analytics service + FastAPI) — true parity with the shipped
   `agent-exec-trace` stack (`DD-01`, **accepted**).
-- **CLI / launcher:** `npx @agentsec-ecosystem/cli init` is a thin launcher that installs/invokes the Python
+- **CLI / launcher:** `npx @agentic-suite/cli init` is a thin launcher that installs/invokes the Python
   CLI; the Python CLI is also published on PyPI (`pip` / `uvx`).
 - **Operator UI:** React (the shipped views: Fleet Health, Run Timeline, Version Compare, Anomaly Inbox,
   Agent Detail).

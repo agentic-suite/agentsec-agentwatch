@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.aat import (
+from agentsec_agentwatch.aat import (
     AAT_DRAFT,
     AAT_MAPPING,
     aat_record,
@@ -16,8 +16,8 @@ from agentwatch.aat import (
     to_aat_json,
     verify_aat,
 )
-from agentwatch.cli.main import main
-from agentwatch.records import (
+from agentsec_agentwatch.cli.main import main
+from agentsec_agentwatch.records import (
     AgentIdentity,
     AgentRecord,
     CredentialClass,
@@ -27,8 +27,8 @@ from agentwatch.records import (
     ToolCall,
     validate_record,
 )
-from agentwatch.session_export import export_session
-from agentwatch.store import RecordStore
+from agentsec_agentwatch.session_export import export_session
+from agentsec_agentwatch.store import RecordStore
 
 AT = datetime(2026, 1, 2, 3, 4, 5, tzinfo=timezone.utc)
 

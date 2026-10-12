@@ -12,21 +12,46 @@ import importlib
 
 def test_legacy_package_resolves_to_agentwatch() -> None:
     legacy = importlib.import_module("agent_exec_trace")
-    current = importlib.import_module("agentwatch")
+    current = importlib.import_module("agentsec_agentwatch")
 
     assert legacy is current
 
 
 def test_legacy_submodule_resolves_to_agentwatch_submodule() -> None:
     legacy_context = importlib.import_module("agent_exec_trace.context")
-    current_context = importlib.import_module("agentwatch.context")
+    current_context = importlib.import_module("agentsec_agentwatch.context")
 
     assert legacy_context.RunContext is current_context.RunContext
 
 
 def test_legacy_import_preserves_canonical_module_metadata() -> None:
     importlib.import_module("agent_exec_trace.context")
-    current_context = importlib.import_module("agentwatch.context")
+    current_context = importlib.import_module("agentsec_agentwatch.context")
 
     assert current_context.__spec__ is not None
-    assert current_context.__spec__.name == "agentwatch.context"
+    assert current_context.__spec__.name == "agentsec_agentwatch.context"
+
+
+# --- ADR-0026 shim: agentwatch -> agentsec_agentwatch (v0.3.x) ----------------
+
+
+def test_agentwatch_shim_resolves_to_agentsec_agentwatch() -> None:
+    legacy = importlib.import_module("agentwatch")
+    current = importlib.import_module("agentsec_agentwatch")
+
+    assert legacy is current
+
+
+def test_agentwatch_shim_submodule_resolves() -> None:
+    legacy_context = importlib.import_module("agentwatch.context")
+    current_context = importlib.import_module("agentsec_agentwatch.context")
+
+    assert legacy_context.RunContext is current_context.RunContext
+
+
+def test_agentwatch_shim_import_preserves_canonical_metadata() -> None:
+    importlib.import_module("agentwatch.store")
+    current_store = importlib.import_module("agentsec_agentwatch.store")
+
+    assert current_store.__spec__ is not None
+    assert current_store.__spec__.name == "agentsec_agentwatch.store"

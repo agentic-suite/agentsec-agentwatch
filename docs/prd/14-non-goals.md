@@ -2,7 +2,7 @@
 
 **BLUF:** What agentwatch deliberately will **not** do — so scope stays honest.
 
-**Status:** v0.1.0 + v0.2.0 additions (2026-10-05) · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 + v0.2.0 additions (2026-10-05) · **Parent:** agentic-suite #209
 
 - **Not an enforcement tool.** No allow/deny/ask/rate-limit actions — those are **agentpolicy**.
 - **Not an evaluation/attack framework.** No attack packs or CI gates — those are **agentdrill**.

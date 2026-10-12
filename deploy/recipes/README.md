@@ -33,7 +33,7 @@ at these recipes the same way.
 
 Security events are the primary stream (a `denied`, `secret-detected`, `policy-fired`, `mode-transition`, or the
 forward-compatible `capability-changed` placeholder). For **oversight thresholds** (APV-3) or **capability drift**
-(CAP-2), evaluate the `agentwatch oversight` / capability output in your own job and emit an event into the same
+(CAP-2), evaluate the `agentsec-agentwatch oversight` / capability output in your own job and emit an event into the same
 stream — the recipe shape is unchanged. agentwatch still defines no rule.
 
 ## CI

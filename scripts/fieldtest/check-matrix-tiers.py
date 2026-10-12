@@ -23,7 +23,7 @@ for _cand in (
     if os.path.isdir(_cand):
         sys.path.insert(0, _cand)
 
-from agentwatch.compatibility import ALL_ROWS, FIDELITY_MODELED  # noqa: E402
+from agentsec_agentwatch.compatibility import ALL_ROWS, FIDELITY_MODELED  # noqa: E402
 
 
 def main() -> int:

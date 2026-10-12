@@ -8,10 +8,10 @@ from pathlib import Path
 
 import pytest
 
-from agentwatch.cli import main as cli_main
-from agentwatch.install import InstallError
+from agentsec_agentwatch.cli import main as cli_main
+from agentsec_agentwatch.install import InstallError
 
-cli_main_module = importlib.import_module("agentwatch.cli.main")
+cli_main_module = importlib.import_module("agentsec_agentwatch.cli.main")
 
 
 def _write(path: Path, data: object) -> None:

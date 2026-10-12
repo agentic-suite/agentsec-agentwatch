@@ -66,7 +66,7 @@ rebranded.
 | 1.2 | **Port** CLI framework + install pattern; wire all subcommands | [cli-reference](../../reference/cli-reference.md) | `agentwatch --help` lists commands | #11 |
 | 1.3 | Config loader + validation (precedence, strict, **fail-closed**) | [PRD 16](../../prd/16-configuration.md) | invalid config refuses to start (F7) | #12 |
 | 1.4 | CI (ruff, mypy, pytest, **coverage ≥95%**, DCO) | GitHub Actions | CI green on PR | #13 |
-| 1.5 | Packaging: wheel + sdist + `@agentsec-ecosystem/cli` launcher | artifacts | installable | #14 |
+| 1.5 | Packaging: wheel + sdist + `@agentic-suite/cli` launcher | artifacts | installable | #14 |
 | 1.6 | **Update design docs** | development, cli-reference, README | docs match identity | #15 |
 | 1.T | Add/expand test cases for this milestone (unit + integration + fault-injection) | tests | all new paths covered; coverage ≥ 95% | #115 |
 | 1.D | Create/update the design + reference docs for this milestone | docs | docs updated and linked from the WBS | #116 |

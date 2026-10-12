@@ -9,7 +9,7 @@ from typing import Any
 
 import pytest
 
-from agentwatch import hook, mcp_proxy
+from agentsec_agentwatch import hook, mcp_proxy
 
 
 def _capture(sent: list[dict[str, Any]]) -> Callable[..., bool]:

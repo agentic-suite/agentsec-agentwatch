@@ -49,13 +49,13 @@ detection, dedup, the hash chain, and the conformance runner are reused unchange
 
 | Unit | Path | Responsibility |
 |---|---|---|
-| Adapter | `src/agentwatch/adapters/mcp_proxy.py` | JSON-RPC frame → `AgentRecord`s; strict capability/gap boundary |
-| Proxy engine | `src/agentwatch/mcp_proxy.py` | stdio + HTTP/SSE relay, request/response pairing, frame emission, `main` |
-| Config | `src/agentwatch/mcp_config.py` | re-point `mcpServers`, byte-exact backup, hash-guarded restore |
-| Daemon route | `src/agentwatch/daemon.py` | handle `phase == "mcp"` → adapter; quarantine on normalize error |
-| Protocol | `src/agentwatch/protocol.py` | add `"mcp"` to `FRAME_PHASES` (additive) |
-| CLI | `src/agentwatch/cli/main.py` | `init --mcp-proxy`, `uninstall`, `mcp-proxy` subcommand |
-| Packaging | `packages/python-sdk/pyproject.toml` | `agentwatch-mcp-proxy` console entry point |
+| Adapter | `src/agentsec_agentwatch/adapters/mcp_proxy.py` | JSON-RPC frame → `AgentRecord`s; strict capability/gap boundary |
+| Proxy engine | `src/agentsec_agentwatch/mcp_proxy.py` | stdio + HTTP/SSE relay, request/response pairing, frame emission, `main` |
+| Config | `src/agentsec_agentwatch/mcp_config.py` | re-point `mcpServers`, byte-exact backup, hash-guarded restore |
+| Daemon route | `src/agentsec_agentwatch/daemon.py` | handle `phase == "mcp"` → adapter; quarantine on normalize error |
+| Protocol | `src/agentsec_agentwatch/protocol.py` | add `"mcp"` to `FRAME_PHASES` (additive) |
+| CLI | `src/agentsec_agentwatch/cli/main.py` | `init --mcp-proxy`, `uninstall`, `mcp-proxy` subcommand |
+| Packaging | `packages/python-sdk/pyproject.toml` | `agentsec-agentwatch-mcp-proxy` console entry point |
 
 ## Adapter boundary contract
 
@@ -143,7 +143,7 @@ detection, dedup, the hash chain, and the conformance runner are reused unchange
     `MCP-Protocol-Version` is relayed unchanged. Single-endpoint POST (JSON or SSE response) is the streamable shape.
   - **Transport (`MCP_TRANSPORT_HTTP_SSE`, legacy, deprecated-in-spec).** The relay is byte-verbatim, including
     `Mcp-Session-Id`, for servers still on the pre-2026 transport.
-- The **`init` install mode** runs one long-lived `agentwatch mcp-proxy --http --route NAME=URL …` process;
+- The **`init` install mode** runs one long-lived `agentsec-agentwatch mcp-proxy --http --route NAME=URL …` process;
   each harness `url` points at `http://127.0.0.1:<port>/<server>`. Default port 8765, configurable; an occupied
   port fails closed.
 - `Recorder` pairs responses to requests by `rpc.id` (remembering tool name + start time) and emits frames via
@@ -206,7 +206,7 @@ detection, dedup, the hash chain, and the conformance runner are reused unchange
 Delivered as **two implementation plans** (each produces working, testable software):
 
 - **Plan A — adapter + stdio proxy + daemon routing + conformance.** Records `tools/call` both directions
-  end-to-end through the daemon; the `agentwatch mcp-proxy` command is invoked manually. Independently shippable.
+  end-to-end through the daemon; the `agentsec-agentwatch mcp-proxy` command is invoked manually. Independently shippable.
 - **Plan B — HTTP/SSE proxy + `init --mcp-proxy` install/restore.** The headline acceptance: re-points config,
   records HTTP/SSE traffic, and restores the config byte-for-byte.
 

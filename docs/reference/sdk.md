@@ -8,7 +8,7 @@ Status: **draft**. A TypeScript SDK is directionally accepted for v0.3.0 but **n
 `tests/test_ts_schema_portability.py`.
 
 ```python
-from agentwatch import AgentTracer, trace_agent, tool_span
+from agentsec_agentwatch import AgentTracer, trace_agent, tool_span
 
 AgentTracer.setup(otlp_endpoint="http://localhost:4317")
 
