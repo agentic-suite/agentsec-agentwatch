@@ -59,4 +59,4 @@
  Container agentwatch-web-1 Starting 
  Container agentwatch-web-1 Started 
 agentwatch: configuration error: export.enabled requires export.otlp_endpoint
-{"error": {"code": "E_CONFIG", "message": "configuration error: export.enabled requires export.otlp_endpoint", "hint": "Fix or remove the reported key/value; configuration is strict.", "doc_url": "https://github.com/agentsec-ecosystem/agentwatch/blob/main/docs/reference/errors.md#e-config"}}
+{"error": {"code": "E_CONFIG", "message": "configuration error: export.enabled requires export.otlp_endpoint", "hint": "Fix or remove the reported key/value; configuration is strict.", "doc_url": "https://github.com/agentic-suite/agentwatch/blob/main/docs/reference/errors.md#e-config"}}
