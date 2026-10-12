@@ -45,9 +45,18 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 - ✅ **ORG-4** (#503) — reference sweep complete; no `agentsec-ecosystem` left in build/CI/badges (only the
   intentional `old → new` arrows in this WBS + `ROADMAP.md`).
 - ✅ **ORG-5** (#504) — `.github` profile README + ROADMAP/CONTRIBUTING/TRADEMARK/SECURITY updated to the new org.
-- ⏳ **ORG-3** (#502) — npm scope migration: code strings migrated to `@agentic-suite/*`; publish + old-scope
-  deprecation pending (needs npm publish rights).
-- ⏳ **ORG-6** (#505) · **ORG-7** (#506) · **ORG-8** (#507) · **ORG-9** (#508) — pending.
+- ⏳ **ORG-3** (#502) — npm scope migration: code strings migrated to `@agentic-suite/*`; **publish + old-scope
+  deprecation BLOCKED** — no npm auth, and neither `@agentsec-ecosystem/cli` nor `@agentic-suite/cli` is
+  published yet.
+- ✅ **ORG-6** (#505) — new skeleton: `template` + governance floor; **`agentsec-agentlens`** repo scaffolded
+  (TS local-first trace debugger; scaffold only) with the security floor enabled.
+- ✅ **ORG-7** (#506) — SSOT index: [`docs/ssot-index.md`](../../ssot-index.md) (contract → owning repo/file).
+- ✅ **ORG-8** (#507) — live vault docs swept to `agentic-suite` (metrics, work schedule, MOCs, notes 209–221);
+  historical journal entries + published articles left untouched.
+- ⏳ **ORG-9** (#508) — redirects verified; **clean-machine install BLOCKED** (depends on the ORG-3 publish).
+- ⏳ **33.T** (#523) — org-reference lint test + npm-scope assertion added; integration checks (redirect /
+  clean-machine install) deferred to ORG-9. **33.D** (#524) — SSOT index, CHANGELOG, README/ROADMAP,
+  `.github` profile/governance updated; migration-guide + compatibility rows land with M34.
 
 ---
 
