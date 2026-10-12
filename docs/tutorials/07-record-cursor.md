@@ -13,9 +13,9 @@ event calls the agentwatch hook command (the exact hook list is in
 ## 2. Use Cursor, then look
 
 ```sh
-agentwatch sessions
-agentwatch replay <session-id>
-agentwatch coverage --harness cursor
+agentsec-agentwatch sessions
+agentsec-agentwatch replay <session-id>
+agentsec-agentwatch coverage --harness cursor
 ```
 
 ## 3. What you should see

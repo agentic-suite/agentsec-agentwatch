@@ -1,6 +1,6 @@
 # Advisory process (OSV readiness)
 
-agentwatch is registered for vulnerability reporting through the OSV ecosystem
+agentsec-agentwatch is registered for vulnerability reporting through the OSV ecosystem
 and reports advisories in OSV's schema. This documents the flow end to end; a dry
 run in CI proves it.
 

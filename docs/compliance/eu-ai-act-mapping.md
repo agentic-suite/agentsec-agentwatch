@@ -43,5 +43,5 @@ Regulation version: EU AI Act (Regulation (EU) 2024/1689), as of 2026-10-03.
   substitute.
 - **Data governance / accuracy** (Art. 10) — out of scope.
 
-agentwatch records what the harness reports; it does not prove a reported action
+agentsec-agentwatch records what the harness reports; it does not prove a reported action
 occurred. See [forensic-soundness.md](../design/forensic-soundness.md).

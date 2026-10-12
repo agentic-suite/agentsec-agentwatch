@@ -29,7 +29,7 @@ is a support and supply-chain-reputation risk, so agentwatch ships a **distribut
 ```bash
 pip uninstall agentwatch          # remove the namesake if present
 pip install agentsec-agentwatch   # the real project
-agentwatch doctor                 # distribution check should be PASS
+agentsec-agentwatch doctor                 # distribution check should be PASS
 ```
 
 ## What about the rename?

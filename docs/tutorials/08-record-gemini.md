@@ -13,9 +13,9 @@ true, so the redaction pipeline runs on this path.
 ## 2. Ingest and inspect
 
 ```sh
-agentwatch ingest /tmp/gemini-telemetry.log --format otel
-agentwatch sessions
-agentwatch search --session <session-id> --json
+agentsec-agentwatch ingest /tmp/gemini-telemetry.log --format otel
+agentsec-agentwatch sessions
+agentsec-agentwatch search --session <session-id> --json
 ```
 
 ## 3. What you should see

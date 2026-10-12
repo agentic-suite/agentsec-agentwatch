@@ -78,7 +78,7 @@ export CLAUDE_CODE_ENABLE_TELEMETRY=1 OTEL_EXPORTER_OTLP_ENDPOINT=http://127.0.0
 
 The Agent SDK runs the same CLI and emits the same telemetry as Claude Code. It
 routes through the **shared** Claude Code OTel ingest owned by **29.CCO-1 (WS-A)**;
-agentwatch does **not** ship a second Claude Code ingest. The `tool_use_id` join to
+agentsec-agentwatch does **not** ship a second Claude Code ingest. The `tool_use_id` join to
 hook records is CCO-1's, so until it lands the `tool_use_id` attribute is reported
 in the explicit `unmapped` bucket — visible, not silently dropped.
 

@@ -17,8 +17,8 @@ cases assert nothing fires (false-positive control). Cases are added, never sile
 Run it:
 
 ```sh
-agentwatch redact eval --corpus v1            # published table
-agentwatch redact eval --corpus v1 --json     # machine-readable numbers
+agentsec-agentwatch redact eval --corpus v1            # published table
+agentsec-agentwatch redact eval --corpus v1 --json     # machine-readable numbers
 ```
 
 The machine-readable source of truth is [`redaction-corpus-numbers.json`](redaction-corpus-numbers.json).

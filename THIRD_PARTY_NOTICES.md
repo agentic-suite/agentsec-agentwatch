@@ -1,6 +1,6 @@
 # Third-Party Notices
 
-agentwatch is licensed under the Apache License 2.0. It incorporates or derives from third-party work
+agentsec-agentwatch is licensed under the Apache License 2.0. It incorporates or derives from third-party work
 listed below.
 
 ## agent-exec-trace (AgentObservatory)

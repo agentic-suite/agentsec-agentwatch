@@ -1,6 +1,6 @@
 # Open artifact standards
 
-agentwatch adopts the open standards that fit its outputs instead of inventing
+agentsec-agentwatch adopts the open standards that fit its outputs instead of inventing
 shapes, strengthening the "no proprietary formats" promise. Each output pins its
 standard version and is tested against it; the agentwatch schema stays the source
 of truth.

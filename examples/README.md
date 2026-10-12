@@ -23,5 +23,5 @@ a recipe must exist, be indexed here, and — if marked **executed** — pass in
 python examples/security_event_consumer.py --input examples/fixtures/events.ndjson
 
 # OCSF consumer over a session export
-agentwatch export-session <session-id> --format ocsf | python examples/ocsf_consumer.py
+agentsec-agentwatch export-session <session-id> --format ocsf | python examples/ocsf_consumer.py
 ```

@@ -9,11 +9,11 @@ npx @agentic-suite/cli init      # or: pipx run agentwatch init
 # use `init --scope user` to install for all projects (~/.claude/settings.json)
 
 # confirm recording is on
-agentwatch status
+agentsec-agentwatch status
 
 # use Claude Code normally, then:
-agentwatch sessions      # list recorded sessions
-agentwatch replay <id>   # reconstruct the timeline
+agentsec-agentwatch sessions      # list recorded sessions
+agentsec-agentwatch replay <id>   # reconstruct the timeline
 ```
 
 ## Verify

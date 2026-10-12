@@ -49,7 +49,7 @@ trace files to records. Pin the upstream commit in the workflow and in `THIRD_PA
 
 ## Redaction & fixture rules (non-negotiable)
 
-agentwatch never persists secrets, and contributions must not either.
+agentsec-agentwatch never persists secrets, and contributions must not either.
 
 - **Fixtures are synthetic or redaction-verified.** Never commit real credentials, tokens, customer content, or
   PII. Build fixtures from public formats or the redaction attack pack.

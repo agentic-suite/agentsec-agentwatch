@@ -11,7 +11,7 @@ configuration**. Run it next to this document so the assessment and the notice
 cannot drift:
 
 ```sh run
-agentwatch governance notice
+agentsec-agentwatch governance notice
 ```
 
 ## 1. Describe the processing

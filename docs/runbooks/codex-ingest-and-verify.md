@@ -8,9 +8,9 @@ Goal: record Codex CLI from its documented rollout logs (`~/.codex/sessions/…`
 
 ```sh
 # Intended (once COD-1 lands):
-agentwatch ingest ~/.codex/sessions --agent codex
-agentwatch sessions
-agentwatch replay <session-id>
+agentsec-agentwatch ingest ~/.codex/sessions --agent codex
+agentsec-agentwatch sessions
+agentsec-agentwatch replay <session-id>
 ```
 
 ## Verify (intended)

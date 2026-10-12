@@ -16,6 +16,6 @@
 
 ## Limits
 
-agentwatch is local-first and per-installation; it is not a central SIEM. See
+agentsec-agentwatch is local-first and per-installation; it is not a central SIEM. See
 [forensic-soundness.md](../design/forensic-soundness.md) for what the chain does
 and does not prove.

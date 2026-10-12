@@ -80,10 +80,10 @@ call:
 The same package installs the CLI:
 
 ```bash
-agentwatch init            # install Claude Code hooks + start the local daemon
-agentwatch sessions        # list recorded sessions
-agentwatch replay <id>     # reconstruct a session's action timeline
-agentwatch verify-store    # verify the hash chain
+agentsec-agentwatch init            # install Claude Code hooks + start the local daemon
+agentsec-agentwatch sessions        # list recorded sessions
+agentsec-agentwatch replay <id>     # reconstruct a session's action timeline
+agentsec-agentwatch verify-store    # verify the hash chain
 ```
 
 Records are written to a local-first, hash-chained JSONL store; OTLP export is opt-in

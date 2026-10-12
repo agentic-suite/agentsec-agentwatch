@@ -8,7 +8,7 @@
 
 **agentwatch** is an observability platform purpose-built for AI agent workflows. Agents are different from traditional services. A service handles requests predictably — you can monitor its latency, error rate, and throughput with standard tools. An agent makes decisions. It plans, calls tools, retrieves context, mutates memory, retries on failure, and accumulates cost with every LLM call. When an agent misbehaves, the failure mode is not a 500 error — it is a tool-call loop, a retry spiral, a cost spike, an output drift. Traditional observability was never designed to catch these failure modes.
 
-agentwatch solves this by treating every agent run as an execution trace — a structured, timestamped record of planning, tool calls, memory mutations, retries, approvals, and cost accumulation. These traces are captured through OpenTelemetry-compatible instrumentation and analyzed by 35 deterministic (rule-based) anomaly detectors across seven behavioral categories: Tool Execution, Cost & Resource, Runtime & Completion, Retry & Recovery, Interaction & Control, Output Quality, and Cross-Run Patterns. A further 5 LLM-augmented detectors provide semantic analysis for patterns that rule-based logic cannot detect — semantic loops, hallucinations, goal drift, quality degradation, and confusion patterns.
+agentsec-agentwatch solves this by treating every agent run as an execution trace — a structured, timestamped record of planning, tool calls, memory mutations, retries, approvals, and cost accumulation. These traces are captured through OpenTelemetry-compatible instrumentation and analyzed by 35 deterministic (rule-based) anomaly detectors across seven behavioral categories: Tool Execution, Cost & Resource, Runtime & Completion, Retry & Recovery, Interaction & Control, Output Quality, and Cross-Run Patterns. A further 5 LLM-augmented detectors provide semantic analysis for patterns that rule-based logic cannot detect — semantic loops, hallucinations, goal drift, quality degradation, and confusion patterns.
 
 The system is not a replacement for your existing observability stack. It layers on top of Jaeger, Tempo, or any OTLP-compatible backend. It does not require you to ship prompts or tool arguments — metadata-only mode is the default. And it is local-first: the entire stack runs on a laptop before it needs a cluster.
 
@@ -31,7 +31,7 @@ compare versions, and handle anomalies.
 
 ```sh
 npx @agentic-suite/cli init     # or: pipx run agentwatch init
-agentwatch status                    # confirm recording (monitor-only default)
+agentsec-agentwatch status                    # confirm recording (monitor-only default)
 ```
 
 Recording must not be silent: if `agentwatch status` shows no active daemon, fix that before
@@ -40,8 +40,8 @@ trusting any downstream view.
 ### Investigate
 
 ```sh
-agentwatch sessions                  # list recorded sessions
-agentwatch replay <session-id>       # ordered action timeline
+agentsec-agentwatch sessions                  # list recorded sessions
+agentsec-agentwatch replay <session-id>       # ordered action timeline
 ```
 
 ### Compare versions
@@ -57,7 +57,7 @@ and evidence payload. Use it as a triage queue; enforcement decisions belong to 
 ### Export (optional)
 
 ```sh
-agentwatch export enable --otlp-endpoint http://localhost:4317
+agentsec-agentwatch export enable --otlp-endpoint http://localhost:4317
 ```
 
 Export is blocked until the redaction self-test passes. See
@@ -103,7 +103,7 @@ See the [v0.2.0 release notes](../release/v0.2.0/release-notes.md),
 
 ### Prerequisites
 
-agentwatch runs as a local Docker Compose stack. You will need:
+agentsec-agentwatch runs as a local Docker Compose stack. You will need:
 
 | Prerequisite | Minimum Version | Check Command |
 |---|---|---|
@@ -861,7 +861,7 @@ The following step-by-step scenarios walk through the most common operator journ
 
 ## Reference: Anomaly Types
 
-agentwatch ships 35 deterministic (rule-based) anomaly detectors across 7 behavioural categories and 5 LLM-augmented detectors. Every rule-based detector produces structured anomaly records with severity, explanation, and evidence payloads. All detectors have configurable thresholds per workload.
+agentsec-agentwatch ships 35 deterministic (rule-based) anomaly detectors across 7 behavioural categories and 5 LLM-augmented detectors. Every rule-based detector produces structured anomaly records with severity, explanation, and evidence payloads. All detectors have configurable thresholds per workload.
 
 The detection engine is deterministic-first by design — no LLM is required to decide whether an anomaly occurred. The 5 LLM-augmented detectors provide additional semantic analysis and degrade gracefully (returning no anomaly) when the LLM is unavailable.
 

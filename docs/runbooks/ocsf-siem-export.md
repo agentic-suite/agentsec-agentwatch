@@ -5,7 +5,7 @@ redaction-gated.
 
 ```sh
 # One-off: export a session's events as OCSF 1.5.0 NDJSON
-agentwatch export-session <session-id> --format ocsf > events.ocsf.ndjson
+agentsec-agentwatch export-session <session-id> --format ocsf > events.ocsf.ndjson
 
 # Validate the stream with the reference consumer before you ingest it:
 python examples/ocsf_consumer.py --input events.ocsf.ndjson

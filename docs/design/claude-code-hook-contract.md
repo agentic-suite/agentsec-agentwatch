@@ -12,7 +12,7 @@ manages the **project** file `.claude/settings.local.json` (machine-local, gitig
 writes `~/.claude/settings.json` instead. `agentwatch uninstall` removes only the agentwatch-managed
 handlers and stops the daemon.
 
-Hooks use Claude Code's matcher-group schema. The handler is **exec form** invoking the `agentsec-agentwatch-hook`
+Hooks use Claude Code's matcher-group schema. The handler is **exec form** invoking the `agentsec-agentsec-agentwatch-hook`
 entry point, whose absolute path/args are resolved at install time so npx/pipx installs work even though
 they are not on the session `PATH`:
 
@@ -26,7 +26,7 @@ they are not on the session `PATH`:
 }
 ```
 
-`agentsec-agentwatch-hook` reads the event JSON from **stdin** and always exits `0` so it can never block the agent.
+`agentsec-agentsec-agentwatch-hook` reads the event JSON from **stdin** and always exits `0` so it can never block the agent.
 A failed tool call (`PostToolUseFailure`) is forwarded as a `post` phase; its `error` field makes the
 adapter emit `outcome="error"`. `agentwatch status` reports whether hooks are installed (project/user) and
 whether the daemon is running.

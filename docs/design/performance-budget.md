@@ -44,7 +44,7 @@ slowdown fails the gate.
 
 The in-process budget above is CPU cost; the latency a developer feels is the **process-spawn cost of a
 fresh hook interpreter**, and agentwatch installs two hooks per tool call. `agentwatch.hook_perf` measures
-the real `agentsec-agentwatch-hook pre` wall-clock against a draining socket, and
+the real `agentsec-agentsec-agentwatch-hook pre` wall-clock against a draining socket, and
 `scripts/hook_perf_gate.py` (CI: `.github/workflows/hook-perf.yml`) gates it per OS against a committed
 baseline (`perf/hook-e2e-baseline.json`), publishing the table in
 [reference/performance.md](../reference/performance.md) with a 500-call session overhead quote. The

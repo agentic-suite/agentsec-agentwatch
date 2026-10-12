@@ -29,11 +29,11 @@ pattern is simply piping a payload into the hook:
 ```sh
 # Claude Code shape
 echo '{"session_id":"s1","hook_event_name":"PreToolUse","tool_name":"Bash",
-       "tool_input":{"command":"ls"},"cwd":"/tmp"}' | agentsec-agentwatch-hook
+       "tool_input":{"command":"ls"},"cwd":"/tmp"}' | agentsec-agentsec-agentwatch-hook
 
 # Cursor shape (hooks.json; same stdin contract)
 echo '{"hook_event_name":"beforeShellExecution","command":"npm test",
-       "session_id":"f3b9...","ide":"cursor-cli"}' | agentsec-agentwatch-hook
+       "session_id":"f3b9...","ide":"cursor-cli"}' | agentsec-agentsec-agentwatch-hook
 ```
 
 Fixture sources to mine for real shapes (all OSS/published):

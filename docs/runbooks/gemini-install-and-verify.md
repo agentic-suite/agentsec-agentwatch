@@ -16,10 +16,10 @@ plus `ingest`), and confirm the approval/principal attributes.
 #    logPrompts defaults true — redaction is mandatory on this path.
 
 # 2. Ingest the captured telemetry:
-agentwatch ingest /tmp/gemini-telemetry.log --format otel
+agentsec-agentwatch ingest /tmp/gemini-telemetry.log --format otel
 
 # 3. Confirm the mapped dimensions:
-agentwatch search --session <session-id> --json   # approval + hashed principal
+agentsec-agentwatch search --session <session-id> --json   # approval + hashed principal
 ```
 
 ## Verify

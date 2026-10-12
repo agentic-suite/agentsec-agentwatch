@@ -7,7 +7,7 @@ Seed the store and pull the denial:
 ```sh run
 export DEMO_STORE="${DEMO_STORE:-/tmp/agentwatch-demo}"
 python3 scripts/seed-investigations.py --store "$DEMO_STORE"
-agentwatch --set store.path="$DEMO_STORE" search --outcome denied
+agentsec-agentwatch --set store.path="$DEMO_STORE" search --outcome denied
 ```
 
 You get the `Bash` record with `outcome: denied` and a `denied` security event
@@ -17,8 +17,8 @@ this is a record of a refusal, not an execution.
 Put it in context against a normal session:
 
 ```sh run
-agentwatch --set store.path="$DEMO_STORE" view sess-denied
-agentwatch --set store.path="$DEMO_STORE" diff sess-loop sess-secret
+agentsec-agentwatch --set store.path="$DEMO_STORE" view sess-denied
+agentsec-agentwatch --set store.path="$DEMO_STORE" diff sess-loop sess-secret
 ```
 
 `diff` shows how two sessions differ structurally (record counts, failures, and

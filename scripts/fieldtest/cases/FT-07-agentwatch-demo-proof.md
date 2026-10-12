@@ -3,7 +3,7 @@
 **Layer:** recorder · **LLM:** no · **Requires:** docker · **PRD / claim:** S31
 
 ## Goal
-agentwatch demo proof. See `docs/field-test/v0.1.0/field-test-plan.md` for the rationale.
+agentsec-agentwatch demo proof. See `docs/field-test/v0.1.0/field-test-plan.md` for the rationale.
 
 ## Steps
 Run by `cases/steps/FT-07.sh` (generated from `gen_cases.py`); every command is

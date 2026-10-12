@@ -18,4 +18,4 @@ Goal: respond when agentwatch reports a tamper/tampering signal (config edit or 
 
 ## Principle
 
-agentwatch fails **closed**, and a recording gap is surfaced — never silent (NFR-8/12).
+agentsec-agentwatch fails **closed**, and a recording gap is surfaced — never silent (NFR-8/12).

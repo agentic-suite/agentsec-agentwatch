@@ -37,7 +37,7 @@ The `provenance` job runs the reusable
 ```sh
 pip download agentwatch==0.1.0 --no-deps -d dist
 # fetch SHA256SUMS, sbom.cdx.json, and *.sigstore.json from the GitHub release
-agentwatch verify-release dist \
+agentsec-agentwatch verify-release dist \
   --cosign-identity-regexp "https://github.com/agentic-suite/agentsec-agentwatch/.*" \
   --cosign-issuer "https://token.actions.githubusercontent.com"
 ```

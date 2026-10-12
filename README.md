@@ -26,19 +26,19 @@ field test ran all 94 cases: **92 PASS · 0 FAIL**). See the
 
 ```sh
 pip install agentsec-agentwatch        # Python CLI + SDK (import + CLI: agentwatch)
-agentwatch --help                      # list commands
+agentsec-agentwatch --help                      # list commands
 
 # install hooks + local daemon (monitor-only, zero agent-side code changes)
 npx @agentic-suite/cli init       # or: pipx run agentwatch init
 
 # use Claude Code normally, then reconstruct a session
-agentwatch sessions                    # list recorded sessions
-agentwatch replay <session-id>         # replay the action timeline
-agentwatch verify-store                # verify the hash chain
+agentsec-agentwatch sessions                    # list recorded sessions
+agentsec-agentwatch replay <session-id>         # replay the action timeline
+agentsec-agentwatch verify-store                # verify the hash chain
 ```
 
-The recording path: `agentsec-agentwatch-hook` (called by Claude Code's `PreToolUse`/`PostToolUse` hooks) forwards
-events to `agentsec-agentwatch-daemon`, which normalizes them to validated, redacted records. See the
+The recording path: `agentsec-agentsec-agentwatch-hook` (called by Claude Code's `PreToolUse`/`PostToolUse` hooks) forwards
+events to `agentsec-agentsec-agentwatch-daemon`, which normalizes them to validated, redacted records. See the
 [hook contract](docs/design/claude-code-hook-contract.md). Configuration is layered and fail-closed — see
 the [CLI reference](docs/reference/cli-reference.md) and [PRD 16](docs/prd/16-configuration.md).
 

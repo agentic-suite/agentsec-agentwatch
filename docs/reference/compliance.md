@@ -8,7 +8,7 @@ It produces **evidence, not a certification**.
 ## Command
 
 ```sh
-agentwatch compliance report --framework eu-ai-act-art12 [--period P] [--out FILE] [--json]
+agentsec-agentwatch compliance report --framework eu-ai-act-art12 [--period P] [--out FILE] [--json]
 ```
 
 Frameworks: `generic`, `eu-ai-act-art12`, `eu-ai-act-art14`, `iso-42001`,

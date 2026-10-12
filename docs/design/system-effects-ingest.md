@@ -76,7 +76,7 @@ syscall truth without changing the record schema.
 ## Operations
 
 ```
-agentwatch ingest events.jsonl --format system-ingest --consent
+agentsec-agentwatch ingest events.jsonl --format system-ingest --consent
 ```
 
 | Property | Value |

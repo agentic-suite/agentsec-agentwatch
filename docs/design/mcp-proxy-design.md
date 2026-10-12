@@ -55,7 +55,7 @@ detection, dedup, the hash chain, and the conformance runner are reused unchange
 | Daemon route | `src/agentwatch/daemon.py` | handle `phase == "mcp"` → adapter; quarantine on normalize error |
 | Protocol | `src/agentwatch/protocol.py` | add `"mcp"` to `FRAME_PHASES` (additive) |
 | CLI | `src/agentwatch/cli/main.py` | `init --mcp-proxy`, `uninstall`, `mcp-proxy` subcommand |
-| Packaging | `packages/python-sdk/pyproject.toml` | `agentwatch-mcp-proxy` console entry point |
+| Packaging | `packages/python-sdk/pyproject.toml` | `agentsec-agentwatch-mcp-proxy` console entry point |
 
 ## Adapter boundary contract
 

@@ -13,7 +13,7 @@
 
 ### Hook latency (measured)
 
-Each Claude Code tool call spawns `agentsec-agentwatch-hook`, which forwards one frame and exits 0
+Each Claude Code tool call spawns `agentsec-agentsec-agentwatch-hook`, which forwards one frame and exits 0
 (fire-and-forget). Installed handlers use `"async": true`, so this does **not** block the agent's
 tool-call path. The hook's own wall time (spawn → socket send → exit) is bounded by
 `tests/test_hook.py::test_hook_latency_is_bounded` at **< 2 s**; a typical local run is well under
