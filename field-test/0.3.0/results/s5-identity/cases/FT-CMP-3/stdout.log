@@ -1,0 +1,6 @@
+DO
+ok: all 5 compliance templates ran offline and wrote a report
+ok: rotation recorded as chain event seq=3 (new key aa0b213a86760274); store verifies
+............                                                             [100%]
+12 passed in 1.34s
+ok: shipped test(s) passed: packages/python-sdk/tests/test_signing_posture.py

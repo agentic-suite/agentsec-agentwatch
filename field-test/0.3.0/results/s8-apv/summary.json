@@ -1,0 +1,109 @@
+{
+  "cases": [
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "approval-fidelity",
+          "ok": true
+        },
+        {
+          "name": "authorization-semantics",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-APV-1",
+      "run_id": "s8-apv",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "oversight-report",
+          "ok": true
+        },
+        {
+          "name": "permission-mode-semantics",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-APV-2",
+      "run_id": "s8-apv",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "permission-mode",
+          "ok": true
+        },
+        {
+          "name": "oversight-semantics",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-APV-3",
+      "run_id": "s8-apv",
+      "status": "pass"
+    }
+  ],
+  "env": {
+    "arch": "arm64",
+    "compose": "5.5.1",
+    "docker": "Docker version 29.5.2, build 79eb04c7d8",
+    "omlx_base_url": "http://host.docker.internal:8000/v1",
+    "omlx_model": "Qwen3-4B-Instruct-2507-4bit",
+    "os": "Darwin",
+    "run_id": "s8-apv",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-10-12T23:02:09.966825+00:00",
+  "green": true,
+  "run_id": "s8-apv",
+  "totals": {
+    "declared": 0,
+    "fail": 0,
+    "pass": 3
+  }
+}

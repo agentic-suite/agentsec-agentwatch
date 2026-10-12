@@ -1,0 +1,76 @@
+{
+  "cases": [
+    {
+      "assertions": [
+        {
+          "name": "ui-console-check",
+          "ok": true
+        },
+        {
+          "name": "ui-module",
+          "ok": true
+        },
+        {
+          "name": "console-playwright",
+          "ok": true
+        },
+        {
+          "name": "console-semantics",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-LUI-1",
+      "run_id": "s11-console",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "index-rebuild-delete",
+          "ok": true
+        },
+        {
+          "name": "index-semantics",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-LUI-2",
+      "run_id": "s11-console",
+      "status": "pass"
+    }
+  ],
+  "env": {
+    "arch": "arm64",
+    "compose": "5.5.1",
+    "docker": "Docker version 29.5.2, build 79eb04c7d8",
+    "omlx_base_url": "http://host.docker.internal:8000/v1",
+    "omlx_model": "Qwen3-4B-Instruct-2507-4bit",
+    "os": "Darwin",
+    "run_id": "s11-console",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-10-12T23:03:22.428879+00:00",
+  "green": true,
+  "run_id": "s11-console",
+  "totals": {
+    "declared": 0,
+    "fail": 0,
+    "pass": 2
+  }
+}

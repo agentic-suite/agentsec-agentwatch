@@ -1,0 +1,117 @@
+{
+  "cases": [
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "commit-to-session",
+          "ok": true
+        },
+        {
+          "name": "provenance-semantics",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-PRV-1",
+      "run_id": "s10-provenance",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "emit",
+          "ok": true
+        },
+        {
+          "name": "agent-trace-export",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-PRV-2",
+      "run_id": "s10-provenance",
+      "status": "pass"
+    },
+    {
+      "assertions": [
+        {
+          "name": "reset-recorder-restart",
+          "ok": true
+        },
+        {
+          "name": "state-reset",
+          "ok": true
+        },
+        {
+          "name": "stack-reused",
+          "ok": true
+        },
+        {
+          "name": "emit",
+          "ok": true
+        },
+        {
+          "name": "range-hash-capture",
+          "ok": true
+        },
+        {
+          "name": "range-hash-semantics",
+          "ok": true
+        },
+        {
+          "name": "store-has-records",
+          "ok": true
+        }
+      ],
+      "class": "P/F",
+      "declared": false,
+      "id": "FT-PRV-3",
+      "run_id": "s10-provenance",
+      "status": "pass"
+    }
+  ],
+  "env": {
+    "arch": "arm64",
+    "compose": "5.5.1",
+    "docker": "Docker version 29.5.2, build 79eb04c7d8",
+    "omlx_base_url": "http://host.docker.internal:8000/v1",
+    "omlx_model": "Qwen3-4B-Instruct-2507-4bit",
+    "os": "Darwin",
+    "run_id": "s10-provenance",
+    "version": "0.3.0"
+  },
+  "generated_at": "2026-10-12T23:02:54.295792+00:00",
+  "green": true,
+  "run_id": "s10-provenance",
+  "totals": {
+    "declared": 0,
+    "fail": 0,
+    "pass": 3
+  }
+}

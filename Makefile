@@ -94,7 +94,7 @@ fieldtest-case: ## Run one field-test case: make fieldtest-case ID=FT-04
 	bash scripts/fieldtest/run-case.sh "$(ID)"
 
 fieldtest-v020: ## Run the v0.2.0 field-test suite (results under field-test/0.3.0/results/).
-	FT_VERSION=0.3.0 bash scripts/fieldtest/run-all.sh
+	FT_VERSION=0.3.0 bash scripts/fieldtest/run-v020-all.sh
 
 fieldtest-suite: ## Run one v0.2.0 suite: make fieldtest-suite SUITE=s1-install
 	@test -n "$(SUITE)" || (echo "usage: make fieldtest-suite SUITE=s1-install" >&2 && exit 2)
