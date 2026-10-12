@@ -65,8 +65,16 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
   import `agentsec_agentwatch`, CLI `agentsec-agentwatch`. Availability checked.
 - ✅ **NAME-2** (#510) — renamed import module `agentwatch` → `agentsec_agentwatch` and console scripts to
   `agentsec-agentwatch[-hook|-daemon|-mcp-proxy|-a2a-proxy]` (code, services, packaging, tests, hook contract).
+- ✅ **NAME-3** (#511) — `agentwatch` compatibility shim (`import agentwatch` + legacy CLI aliases), v0.3.x window.
+- ✅ **NAME-4** (#512) — migration guide at `docs/release/v0.3.0/migration-guide.md` (full name chain).
+- ✅ **NAME-5** (#513) — live-doc sweep to `agentsec_agentwatch` / `agentsec-agentwatch`; historical records kept.
 - ⛔ **NAME-6** (#514) — **descoped**: npm is not used (PyPI install path); no npx launcher deliverable.
-- NAME-3/4/5/7 — pending.
+- ✅ **NAME-7** (#515) — namesake guard detects the new module + legacy shim; wired into `--version`/`init`/`doctor`.
+- ✅ **34.T** (#526) / **34.D** (#527) / **34.R** (#528) — tests / docs / review.
+
+> **M34 complete (2026-10-12).** Gate run once: failures (analytics coverage omit, doc links, mutation inventory,
+> npm launcher, org-lint allowlist, release-tooling path) fixed and re-verified with the specific failing tests;
+> analytics coverage back to 96.11%.
 
 ---
 
