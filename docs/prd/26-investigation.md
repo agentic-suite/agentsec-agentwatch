@@ -3,7 +3,7 @@
 **BLUF:** Turn records into answers: transcript import, `diff`, `search`, terminal `view`, live
 alerts, session `purge`, and the investigation cookbook.
 
-**Status:** proposed (2026-10-02) · **Parent:** agentsec-ecosystem #209
+**Status:** proposed (2026-10-02) · **Parent:** agentic-suite #209
 
 > Cross-cutting rules (PRD 19–29): fail closed and never silent (PRD 17); redaction before
 > storage (DD-06); the trust boundary stays deterministic — no LLM in redaction, validation, or

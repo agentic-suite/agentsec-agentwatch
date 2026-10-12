@@ -4,7 +4,7 @@
 exfiltration, and fail-closed when its own configuration is tampered with. Its records are the evidence
 other tools and auditors rely on, so their integrity is a first-class requirement.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 > **M16 update (2026-10-03):** the recorder's own tamper scenarios are now exercised by the
 > anti-forensics suite and published as the [recorder attack matrix](../design/recorder-attack-matrix.md)
@@ -50,7 +50,7 @@ guidance will cover redaction verification before enabling export.
 ## Disclosure
 
 Report vulnerabilities per the organization
-[SECURITY policy](https://github.com/agentsec-ecosystem/.github/blob/main/SECURITY.md) — private advisory,
+[SECURITY policy](https://github.com/agentic-suite/.github/blob/main/SECURITY.md) — private advisory,
 never a public issue.
 
 ## Decisions

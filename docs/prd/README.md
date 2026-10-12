@@ -1,7 +1,7 @@
 # agentwatch — Product Requirements (v0.1.0 + v0.2.0)
 
 Requirements for **agentwatch** — the vendor-neutral telemetry and security-event layer for AI
-agents. Part of the [agentsec-ecosystem](https://github.com/agentsec-ecosystem).
+agents. Part of the [agentic-suite](https://github.com/agentic-suite).
 
 > **Status: v0.1.0 decisions accepted (2026-10-02); v0.2.0 proposed (2026-10-05); v0.2.0-expanded
 > proposed (2026-10-05, PRD 49–59).** PRDs 00–39 are the shipped v0.1.0 baseline; PRDs 40–48 are the
@@ -89,7 +89,7 @@ agents. Part of the [agentsec-ecosystem](https://github.com/agentsec-ecosystem).
 
 ## Sources
 
-Seeded from the agentsec-ecosystem research base:
+Seeded from the agentic-suite research base:
 `training/research/agent-security/ecosystem/prds/210-agentwatch.md` and
 `.../projs/01-agentwatch.md`, plus the interception-points architecture and harness-compatibility matrix.
 Absorbed predecessor notes: `projects/Done/102-AgentObservatory.md`, `projects/High/66-AgentWatch.md`.

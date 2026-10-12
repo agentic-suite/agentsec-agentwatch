@@ -3,7 +3,7 @@
 **BLUF:** What's configurable, the defaults, where config lives, how it's validated, and the fail-closed rule
 when config is bad or tampered. Configuration is a security surface, so it's explicit and validated.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## Where config lives
 

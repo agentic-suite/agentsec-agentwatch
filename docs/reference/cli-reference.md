@@ -8,7 +8,7 @@ subcommands are filled in by M3–M5 (they fail closed, with a non-zero exit, un
 
 ```sh
 pip install agentsec-agentwatch        # Python CLI on PyPI (import + CLI: agentwatch)
-npx @agentsec-ecosystem/cli <command>  # thin launcher that invokes the Python CLI
+npx @agentic-suite/cli <command>  # thin launcher that invokes the Python CLI
 ```
 
 The launcher is equivalent to `agentwatch <command>`. It invokes `python3 -m agentwatch.cli`; set

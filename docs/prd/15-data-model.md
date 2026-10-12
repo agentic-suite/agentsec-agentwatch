@@ -4,7 +4,7 @@
 and their lifecycle from creation to purge. One home for what's currently split across the schema, the
 record-format spec, and the data dictionary.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## Entities
 

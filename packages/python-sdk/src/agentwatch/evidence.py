@@ -321,8 +321,8 @@ def build_bundle(
     members["summary.md"] = summary.encode("utf-8")
 
     schema_ids = [
-        "https://github.com/agentsec-ecosystem/agentwatch/schema/agent-record.schema.json",
-        "https://github.com/agentsec-ecosystem/agentwatch/schema/security-event.schema.json",
+        "https://github.com/agentic-suite/agentwatch/schema/agent-record.schema.json",
+        "https://github.com/agentic-suite/agentwatch/schema/security-event.schema.json",
     ]
     manifest = {
         "bundle_format": BUNDLE_FORMAT,

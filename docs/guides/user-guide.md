@@ -30,7 +30,7 @@ compare versions, and handle anomalies.
 ### Install & record
 
 ```sh
-npx @agentsec-ecosystem/cli init     # or: pipx run agentwatch init
+npx @agentic-suite/cli init     # or: pipx run agentwatch init
 agentwatch status                    # confirm recording (monitor-only default)
 ```
 

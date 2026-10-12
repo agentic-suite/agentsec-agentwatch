@@ -1,6 +1,6 @@
 # Distribution & Packaging Plan
 
-**BLUF:** One Python core, published to PyPI as `agentwatch`, plus a thin `npx @agentsec-ecosystem/cli`
+**BLUF:** One Python core, published to PyPI as `agentwatch`, plus a thin `npx @agentic-suite/cli`
 launcher and a Docker stack for the services.
 
 Status: **draft** (v0.1.0).
@@ -10,7 +10,7 @@ Status: **draft** (v0.1.0).
 | Channel | Artifact | Notes |
 |---|---|---|
 | PyPI | `agentwatch` (free) | CLI + SDK core; `pip` / `uvx` |
-| npm | `@agentsec-ecosystem/cli` | Thin launcher that installs/invokes the Python CLI |
+| npm | `@agentic-suite/cli` | Thin launcher that installs/invokes the Python CLI |
 | Docker | local stack (API, analytics, web, collector, jaeger/tempo, postgres) | v0.2.0+ |
 | GitHub Releases | wheel + sdist + SBOM + provenance | Signed (org supply-chain policy) |
 

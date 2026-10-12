@@ -2,7 +2,7 @@
 
 **BLUF:** Every `agentwatch` CLI failure emits exactly **one** machine-readable JSON envelope on
 stderr, with a stable `code`, a human `message`, a `hint`, and a `doc_url`. The exit-code table below
-is generated from `agentwatch.errors` ([PRD 38 §Q8](https://github.com/agentsec-ecosystem/agentwatch/blob/main/docs/prd/38-engineering-rigor.md)).
+is generated from `agentwatch.errors` ([PRD 38 §Q8](https://github.com/agentic-suite/agentwatch/blob/main/docs/prd/38-engineering-rigor.md)).
 
 Errors are a published contract, like the [store format](store-format.md): a script (CI, a launcher, a
 community wrapper) can branch on `error.code` instead of scraping prose. Human-facing output is still
@@ -11,7 +11,7 @@ printed first; the envelope is the final line on stderr.
 ## Envelope
 
 ```json
-{"error": {"code": "E_CONFIG", "message": "configuration error: unknown key 'store.nope'", "hint": "Fix or remove the reported key/value; configuration is strict.", "doc_url": "https://github.com/agentsec-ecosystem/agentwatch/blob/main/docs/reference/errors.md#e-config"}}
+{"error": {"code": "E_CONFIG", "message": "configuration error: unknown key 'store.nope'", "hint": "Fix or remove the reported key/value; configuration is strict.", "doc_url": "https://github.com/agentic-suite/agentwatch/blob/main/docs/reference/errors.md#e-config"}}
 ```
 
 | Field | Meaning |
@@ -53,6 +53,6 @@ distinct values below (`1`, `2`, `3`).
 
 - **Adding** a code is a compatible change (a consumer's `else` branch already covers it).
 - **Removing or renaming** a code, or changing its exit status, is a breaking change and follows the
-  major/deprecation policy in [PRD 38 §Q7](https://github.com/agentsec-ecosystem/agentwatch/blob/main/docs/prd/38-engineering-rigor.md).
+  major/deprecation policy in [PRD 38 §Q7](https://github.com/agentic-suite/agentwatch/blob/main/docs/prd/38-engineering-rigor.md).
 - The catalog in `agentwatch.errors` is the single source of truth; the table above is generated from it
   and checked in CI (`packages/python-sdk/tests/test_error_contract.py`), so it cannot drift.

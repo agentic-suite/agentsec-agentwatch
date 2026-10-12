@@ -4,7 +4,7 @@
 posture and as the evidence source other tools (agentcomply) draw on. Coverage is explicit, published, and
 testable; we don't claim what we can't prove.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 > **Completed in M22 (PRD 39).** The controls mapping gains real appendices: EU AI Act (Art. 12/19/26),
 > ISO/IEC 27001 (A.8.15/A.8.16) and 42001, and NIST SP 800-92, each naming an evidence command, plus a
@@ -13,7 +13,7 @@ testable; we don't claim what we can't prove.
 
 Sources: ecosystem research
 `04-standards-and-architecture/01-standards-compliance-certifications.md` and the org
-[SECURITY policy](https://github.com/agentsec-ecosystem/.github/blob/main/SECURITY.md).
+[SECURITY policy](https://github.com/agentic-suite/.github/blob/main/SECURITY.md).
 
 ## A. Product's own security posture (what we implement)
 

@@ -5,7 +5,7 @@ is **mandatory and in-repo**: every feature that **shipped** in that project mus
 agentwatch itself** — not delegated to a sibling tool and not waived. Parity is scoped to **what actually
 shipped** (its `v0.1.0` release, 2026-08-05), not to its planned-but-unreleased milestones.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## Parity rule (non-negotiable)
 
@@ -106,5 +106,5 @@ Not present in agent-exec-trace; these are why agentwatch exists:
 
 **Accepted (2026-10-02): keep the Python core for true parity.** agentwatch preserves a Python-compatible
 core (instrumentation SDK + analytics service + FastAPI) and the shipped instrumentation/read-API
-contracts. `npx @agentsec-ecosystem/cli` remains a thin launcher that installs/invokes the Python CLI; the
+contracts. `npx @agentic-suite/cli` remains a thin launcher that installs/invokes the Python CLI; the
 Python CLI is also published on PyPI. See `DD-01` in `../design/design-decisions.md`.

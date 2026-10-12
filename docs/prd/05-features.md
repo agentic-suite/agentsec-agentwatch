@@ -6,7 +6,7 @@ local store, replay, security-event schema. Later versions restore **every capab
 agent-exec-trace** — the Python instrumentation SDK, the 40-detector analytics engine, the FastAPI read
 API, the React operator UI, and the local stack — plus agentwatch's security additions.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## v0.1.0 scope
 

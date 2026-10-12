@@ -84,7 +84,7 @@ path · redact-before-store).
 | 29.R DONE | Code review & risk sign-off for this milestone | review | M29 feature tickets + 29.T + 29.D | Review recorded; no unresolved findings | #457 |
 
 > **Issues filed:** #438–#457, under the **M29** GitHub milestone
-> ([milestones](https://github.com/agentsec-ecosystem/agentwatch/milestones)).
+> ([milestones](https://github.com/agentic-suite/agentwatch/milestones)).
 
 **Tests required:** authorization-derivation fixtures (every value; no inference from `outcome=ok`); managed-policy
 `doctor` fixture; hook-strip attestation; end-to-end hook perf gate on 3 OSes; native-telemetry join + discrepancy

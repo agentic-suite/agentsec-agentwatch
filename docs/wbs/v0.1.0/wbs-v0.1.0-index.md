@@ -201,7 +201,7 @@ web vitest 4; Playwright 34 cases discovered.
 
 ## Porting map (agent-exec-trace → agentwatch)
 
-Source: https://github.com/agentsec-ecosystem/agent-exec-trace (MIT; archived, made private and retained). The port is a **bulk move**
+Source: https://github.com/agentic-suite/agent-exec-trace (MIT; archived, made private and retained). The port is a **bulk move**
 (M0); later milestones adapt and add. Namespace rename `agent_exec_trace` → `agentwatch`.
 
 | Shipped artifact | Ported at |

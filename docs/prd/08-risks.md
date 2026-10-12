@@ -3,7 +3,7 @@
 **BLUF:** The hard parts are **harness surface area** and **the standards play**, not the recording itself.
 Each risk below has a concrete mitigation and an owner-facing trigger.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## Risks
 

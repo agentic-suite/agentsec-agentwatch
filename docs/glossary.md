@@ -1,6 +1,6 @@
 # Glossary
 
-**BLUF:** Shared vocabulary for agentwatch and the agentsec-ecosystem. Complements the org glossary.
+**BLUF:** Shared vocabulary for agentwatch and the agentic-suite. Complements the org glossary.
 
 | Term | Meaning |
 |---|---|

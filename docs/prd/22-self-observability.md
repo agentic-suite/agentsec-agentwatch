@@ -2,7 +2,7 @@
 
 **BLUF:** The recorder proves what it is doing: `/healthz`, `doctor`, `tail`, and continuous chain verification.
 
-**Status:** proposed (2026-10-02) · **Parent:** agentsec-ecosystem #209
+**Status:** proposed (2026-10-02) · **Parent:** agentic-suite #209
 
 > **M16 update (2026-10-03):** `/healthz` now carries a `drift` block surfacing harness-drift
 > observations (PRD 32 S19), and `doctor` gained a `harness-drift` check. A missing archive segment is

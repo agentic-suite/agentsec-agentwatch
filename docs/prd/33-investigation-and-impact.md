@@ -5,7 +5,7 @@ world** (change footprint), **who touched this file**, **when did anything happe
 **what did the subagents do**, and **was a denial followed by a workaround** — plus a stable behavior
 fingerprint to compare, dedupe, and detect drift.
 
-**Status:** shipped (2026-10-03) · **Parent:** agentsec-ecosystem #209 · **Milestone:** M17
+**Status:** shipped (2026-10-03) · **Parent:** agentic-suite #209 · **Milestone:** M17
 
 > Cross-cutting rules (PRD 19–30): fail closed and never silent (PRD 17); redaction before storage (DD-06);
 > the trust boundary stays deterministic — no LLM in redaction, validation, or chain verification; monitor-only,

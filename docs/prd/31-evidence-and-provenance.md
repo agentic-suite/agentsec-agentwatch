@@ -4,7 +4,7 @@
 offline-verifiable evidence bundle, a standalone verifier, an Agent Bill of Materials, an operator
 annotation/audit trail, and a schema-level `producer` provenance field.
 
-**Status:** proposed (2026-10-03) · **Parent:** agentsec-ecosystem #209
+**Status:** proposed (2026-10-03) · **Parent:** agentic-suite #209
 
 > Cross-cutting rules (PRD 19–30): fail closed and never silent (PRD 17); redaction before storage (DD-06);
 > the trust boundary stays deterministic — no LLM in redaction, validation, or chain verification

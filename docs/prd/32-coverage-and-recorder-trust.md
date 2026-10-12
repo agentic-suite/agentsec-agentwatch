@@ -5,7 +5,7 @@ not its **coverage**. This PRD answers "did you capture everything that happened
 against an independent ground truth, records the recorder's own state transitions in the chain, and treats
 the recorder as an attack target with a published detection matrix.
 
-**Status:** shipped (2026-10-03) · **Parent:** agentsec-ecosystem #209 · **Milestone:** M16
+**Status:** shipped (2026-10-03) · **Parent:** agentic-suite #209 · **Milestone:** M16
 
 > Cross-cutting rules (PRD 19–30): fail closed and never silent (PRD 17); redaction before storage (DD-06);
 > the trust boundary stays deterministic — no LLM in redaction, validation, or chain verification; monitor-only,

@@ -8,7 +8,7 @@
 
 Today we're releasing **agentwatch**, an open-source (Apache-2.0) recorder for AI-agent behavior. It writes
 what agents actually do — every tool call, in OpenTelemetry GenAI format — to a local store you control, and
-defines the open security-event schema the rest of the [agentsec-ecosystem](https://github.com/agentsec-ecosystem)
+defines the open security-event schema the rest of the [agentic-suite](https://github.com/agentic-suite)
 builds on.
 
 "Most teams can tell you a service is up. Almost none can tell you why an agent looped, overused a tool, or

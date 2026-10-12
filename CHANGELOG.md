@@ -557,7 +557,7 @@ versioning: [Semantic Versioning](https://semver.org/).
 - Operator configuration loader `agentwatch.configuration` (PRD 16): system < user < project < env < CLI
   precedence, strict unknown-key rejection, and fail-closed export rules (WBS M1).
 - `agentwatch` console script, `tomli` backport for Python 3.10, and `python -m build` wheel + sdist
-  configuration; `@agentsec-ecosystem/cli` npx launcher (`packages/cli/`) (WBS M1).
+  configuration; `@agentic-suite/cli` npx launcher (`packages/cli/`) (WBS M1).
 - Real CI workflow (ruff, `mypy --strict`, pytest with coverage ≥95% on Python 3.10 and 3.12) (WBS M1).
 - Imported the `agent-exec-trace` codebase (MIT, commit `008e1c7`) — `packages/`, `services/`, `apps/`,
   `deploy/`, `examples/`, `scripts/`, and build tooling (WBS M0).
@@ -723,7 +723,7 @@ versioning: [Semantic Versioning](https://semver.org/).
 - Initial release: Claude Code recording, OTel GenAI export, security-event schema, redaction-by-default,
   local-first hash-chained store, session replay (R1–R8).
 
-[Unreleased]: https://github.com/agentsec-ecosystem/agentwatch/compare/v0.2.1...HEAD
-[0.2.1]: https://github.com/agentsec-ecosystem/agentwatch/compare/v0.2.0...v0.2.1
-[0.2.0]: https://github.com/agentsec-ecosystem/agentwatch/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/agentsec-ecosystem/agentwatch/releases/tag/v0.1.0
+[Unreleased]: https://github.com/agentic-suite/agentwatch/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/agentic-suite/agentwatch/compare/v0.2.0...v0.2.1
+[0.2.0]: https://github.com/agentic-suite/agentwatch/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/agentic-suite/agentwatch/releases/tag/v0.1.0

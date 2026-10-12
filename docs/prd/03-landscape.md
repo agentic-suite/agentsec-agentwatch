@@ -4,7 +4,7 @@
 local-first, OpenTelemetry record with a *named security-event schema* — is not. The whitespace is the
 schema, not the trace viewer.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## What exists today
 

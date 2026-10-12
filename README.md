@@ -6,14 +6,14 @@
 [![Status: v0.2.0](https://img.shields.io/badge/status-v0.2.0-green.svg)](docs/release/v0.2.0/release-notes.md)
 [![Ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Type checked: mypy strict](https://img.shields.io/badge/mypy-strict-blue.svg)](https://github.com/python/mypy)
-[![Coverage](https://img.shields.io/badge/coverage-95%25%20gate-green.svg)](https://github.com/agentsec-ecosystem/agentwatch/actions)
+[![Coverage](https://img.shields.io/badge/coverage-95%25%20gate-green.svg)](https://github.com/agentic-suite/agentwatch/actions)
 [![OpenSSF Best Practices](https://img.shields.io/badge/OpenSSF-best%20practices-blue.svg)](docs/compliance/openssf-badge.md)
 [![Field Test](https://img.shields.io/badge/field%20test-v0.2.0%20%7C%2092%2F94%20cases-brightgreen.svg)](docs/field-test/v0.2.0/FIELD_TEST_REPORT.md)
 [![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-%23E05735.svg)](CHANGELOG.md)
 
 > **Observability and the security-event record for AI agents.** OpenTelemetry GenAI traces that tell you
 > *why* an agent looped, overused a tool, or burned budget — plus the open security-event schema the
-> [agentsec-ecosystem](https://github.com/agentsec-ecosystem) is built on.
+> [agentic-suite](https://github.com/agentic-suite) is built on.
 
 **Status: v0.2.0 released** — feature-complete, documented, and validated at the release gate (the v0.2.0
 field test ran all 94 cases: **92 PASS · 0 FAIL**). See the
@@ -29,7 +29,7 @@ pip install agentsec-agentwatch        # Python CLI + SDK (import + CLI: agentwa
 agentwatch --help                      # list commands
 
 # install hooks + local daemon (monitor-only, zero agent-side code changes)
-npx @agentsec-ecosystem/cli init       # or: pipx run agentwatch init
+npx @agentic-suite/cli init       # or: pipx run agentwatch init
 
 # use Claude Code normally, then reconstruct a session
 agentwatch sessions                    # list recorded sessions

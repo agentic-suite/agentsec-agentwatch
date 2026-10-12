@@ -158,7 +158,7 @@ the three packages plus the repo guard; DCO already present.
 ## Task 5 — Packaging: wheel + sdist + npx launcher (1.5 / #14)
 
 **Deliverable:** `python -m build` produces wheel + sdist exposing the `agentwatch` console script; the
-`@agentsec-ecosystem/cli` Node launcher shells to it.
+`@agentic-suite/cli` Node launcher shells to it.
 
 **Steps**
 
@@ -167,9 +167,9 @@ the three packages plus the repo guard; DCO already present.
    wheel entry point via `unzip -p <wheel> '*/entry_points.txt'`).
 3. **RED:** add `packages/python-sdk/tests/test_dist_artifacts.py` (skipped when artifacts absent) asserting a
    built wheel declares the `agentwatch` console script.
-4. Create `packages/cli/` (`@agentsec-ecosystem/cli`): `package.json` with `bin.agentwatch` and a
+4. Create `packages/cli/` (`@agentic-suite/cli`): `package.json` with `bin.agentwatch` and a
    `bin/agentwatch.js` that spawns `python3 -m agentwatch.cli` passing argv, forwarding exit code.
-5. Commit: `build(packaging): wheel+sdist and @agentsec-ecosystem/cli launcher (M1)`.
+5. Commit: `build(packaging): wheel+sdist and @agentic-suite/cli launcher (M1)`.
 
 **Expected**
 

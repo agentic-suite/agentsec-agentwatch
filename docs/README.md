@@ -1,7 +1,7 @@
 # agentwatch docs
 
 Documentation for **agentwatch** — the vendor-neutral telemetry and security-event layer for AI agents.
-Part of the [agentsec-ecosystem](https://github.com/agentsec-ecosystem).
+Part of the [agentic-suite](https://github.com/agentic-suite).
 
 > **Status: v0.1.0 released; v0.2.0 released (2026-10-09).** `agent-exec-trace` is **ported in
 > (M0)** and retained as a **private** repo (never deleted). agentwatch is the **shipped-feature superset** of

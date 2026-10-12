@@ -23,7 +23,7 @@ services (v0.2.0+). Decisions recorded in [design-decisions](../design/design-de
 
 | Layer | Choice |
 |---|---|
-| Node | thin `@agentsec-ecosystem/cli` package |
+| Node | thin `@agentic-suite/cli` package |
 | Purpose | install hooks, invoke the Python CLI |
 
 ## v0.2.0+ services (parity)

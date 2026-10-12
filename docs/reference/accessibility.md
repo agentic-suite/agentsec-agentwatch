@@ -5,7 +5,7 @@ automated evidence that backs it, and CI fails if a view regresses. This is a **
 conformance statement), not a certified third-party VPAT.
 
 Status: **conforms (automated checks + manual baseline)** · Owner: operator UI (M7, M12, M14 Q11) ·
-Issue: [#228](https://github.com/agentsec-ecosystem/agentwatch/issues/228)
+Issue: [#228](https://github.com/agentic-suite/agentwatch/issues/228)
 
 ## Conformance target
 

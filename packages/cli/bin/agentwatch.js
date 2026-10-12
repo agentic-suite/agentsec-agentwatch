@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-// Thin launcher: `npx @agentsec-ecosystem/cli <command>` forwards straight to
+// Thin launcher: `npx @agentic-suite/cli <command>` forwards straight to
 // the Python CLI (`python3 -m agentwatch.cli`), sharing the same exit code.
 
 const { spawnSync } = require("node:child_process");

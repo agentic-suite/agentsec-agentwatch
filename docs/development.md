@@ -10,7 +10,7 @@ The tree below was ported from `agent-exec-trace` at commit `008e1c7` (MIT; see
 
 ```
 packages/python-sdk/   agentwatch SDK (instrumentation, redaction, CLI, config)
-packages/cli/          @agentsec-ecosystem/cli npx launcher (Node)
+packages/cli/          @agentic-suite/cli npx launcher (Node)
 services/analytics/    analytics pipeline + detectors
 services/api/          FastAPI read API
 apps/web/              React operator UI (Vite)

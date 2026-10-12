@@ -20,7 +20,7 @@ Status: **released** — tagged `v0.1.0`. See "Release actions" below for the re
 ## Install
 
 ```sh
-npx @agentsec-ecosystem/cli init      # or: pip install agentsec-agentwatch && agentwatch init
+npx @agentic-suite/cli init      # or: pip install agentsec-agentwatch && agentwatch init
 ```
 
 ## Compatibility

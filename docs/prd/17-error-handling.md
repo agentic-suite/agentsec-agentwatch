@@ -4,7 +4,7 @@
 Every failure mode has a detection, a default behavior (fail-closed), and a recovery path. Nothing fails
 silently.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## Principle
 

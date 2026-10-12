@@ -5,7 +5,7 @@ Each criterion is listed met or gap; the release gate re-checks it.
 
 | Criterion | Status | Evidence |
 |---|---|---|
-| Public source repository | ✅ met | `agentsec-ecosystem/agentwatch` |
+| Public source repository | ✅ met | `agentic-suite/agentwatch` |
 | OSI-approved license | ✅ met | `LICENSE` |
 | Basic project website / docs | ✅ met | `README.md`, `docs/` |
 | Contribution process | ✅ met | `CONTRIBUTING.md`, DCO |

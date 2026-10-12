@@ -2,7 +2,7 @@
 
 **BLUF:** Make guarantees visible and installs consensual: `verify-privacy`, consent-first `init`, and harness preflight.
 
-**Status:** proposed (2026-10-02) · **Parent:** agentsec-ecosystem #209
+**Status:** proposed (2026-10-02) · **Parent:** agentic-suite #209
 
 > Cross-cutting rules (PRD 19–29): fail closed and never silent (PRD 17); redaction before storage (DD-06); the trust boundary stays deterministic — no LLM in redaction, validation, or chain verification (PRD 14/18); monitor-only, every hook exits 0 (R2); local-first, no egress without explicit opt-in (R6); no new runtime dependency without a recorded decision (NFR-5); conformance and quality gates apply (NFR-11).
 

@@ -6,7 +6,7 @@ enforced performance budget, published conformance vectors, a forward-compatibil
 error contract, a claims ledger, executable docs, an accessibility conformance level, time correctness, and a
 release pipeline that signs what it ships.
 
-**Status:** proposed (2026-10-03) · **Parent:** agentsec-ecosystem #209
+**Status:** proposed (2026-10-03) · **Parent:** agentic-suite #209
 
 > Cross-cutting rules (PRD 19–30): fail closed and never silent (PRD 17); redaction before storage (DD-06);
 > the trust boundary stays deterministic — no LLM in redaction, validation, or chain verification; monitor-only,

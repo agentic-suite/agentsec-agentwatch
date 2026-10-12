@@ -10,7 +10,7 @@ PRDs 40–48). The **v0.2.0-expanded additions** (PRD 49–59) add **authorizati
 deployability, harness-native telemetry, capability supply chain, code provenance, a zero-Docker local console,
 agent-facing interfaces, policy-from-history, governance/retention integrity, and investigation depth** (CUJ-21–34).
 
-**Status:** v0.1.0 + v0.2.0 additions (2026-10-05); **v0.2.0-expanded** (2026-10-05, PRD 49–59) · **Parent:** agentsec-ecosystem #209 · **v0.2.0:** PRD 40
+**Status:** v0.1.0 + v0.2.0 additions (2026-10-05); **v0.2.0-expanded** (2026-10-05, PRD 49–59) · **Parent:** agentic-suite #209 · **v0.2.0:** PRD 40
 
 ## Users
 
@@ -41,7 +41,7 @@ agent-facing interfaces, policy-from-history, governance/retention integrity, an
 ## Critical user journeys (v0.1.0)
 
 ### CUJ-1 — Install and record (the core journey)
-1. Fresh machine with Claude Code. Run `npx @agentsec-ecosystem/cli init`.
+1. Fresh machine with Claude Code. Run `npx @agentic-suite/cli init`.
 2. The CLI installs the Claude Code hooks + local daemon, monitor-only by default.
 3. Use Claude Code normally.
 4. **Success:** the first tool call is recorded in ≤15 minutes, with **zero changes to the agent or its

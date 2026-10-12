@@ -132,7 +132,7 @@ CATALOG: tuple[ErrorSpec, ...] = (
 
 _BY_CODE: dict[str, ErrorSpec] = {spec.code: spec for spec in CATALOG}
 
-DOC_BASE = "https://github.com/agentsec-ecosystem/agentwatch/blob/main/docs/reference/errors.md"
+DOC_BASE = "https://github.com/agentic-suite/agentwatch/blob/main/docs/reference/errors.md"
 
 
 def doc_url(code: str) -> str:

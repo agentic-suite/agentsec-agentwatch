@@ -69,7 +69,7 @@ local-first, redact-before-store, no LLM in the trust path.
 | 30.R | Code review & risk sign-off for this milestone | review | M30 feature tickets + 30.T + 30.D | Review recorded; no unresolved findings | #487 |
 
 > **Issues filed:** #458–#487, under the **M30** GitHub milestone
-> ([milestones](https://github.com/agentsec-ecosystem/agentwatch/milestones)).
+> ([milestones](https://github.com/agentic-suite/agentwatch/milestones)).
 
 **Tests required:** capability-drift + load-attribution fixtures; memory out-of-band edit; provenance resolution + mixed
 ranges + Agent Trace differential vs git-ai notes; range/hash content-free property test; console security + UI/CLI

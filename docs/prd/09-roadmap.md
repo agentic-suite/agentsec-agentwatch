@@ -6,7 +6,7 @@ the shipped record layer into the best-in-class one** (PRD 40–48): standards-n
 real harness fidelity, streaming, honest detector effectiveness, agent identity, and compliance reporting. Later
 versions add depth and integrations — no deferred parity.
 
-**Status:** v0.1.0 shipped · v0.2.0 proposed (2026-10-05) · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 shipped · v0.2.0 proposed (2026-10-05) · **Parent:** agentic-suite #209
 
 ## Versions
 
@@ -39,7 +39,7 @@ versions add depth and integrations — no deferred parity.
 
 v0.1.0 is the **dependency root** for the Wave 0 meta-MVP: agentpolicy consumes its events, agentdrill
 replays its records, agenthalt needs its inventory, and agentcomply turns history into evidence. See the
-ecosystem [ROADMAP](https://github.com/agentsec-ecosystem/.github/blob/main/ROADMAP.md).
+ecosystem [ROADMAP](https://github.com/agentic-suite/.github/blob/main/ROADMAP.md).
 
 ## Release cadence
 

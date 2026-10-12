@@ -1,5 +1,5 @@
 {
-  "name": "@agentsec-ecosystem/cli",
+  "name": "@agentic-suite/cli",
   "version": "0.2.1",
   "description": "Thin npx launcher for the agentwatch Python CLI",
   "license": "Apache-2.0",

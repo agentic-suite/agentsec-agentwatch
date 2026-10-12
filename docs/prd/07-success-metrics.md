@@ -3,7 +3,7 @@
 **BLUF:** Success is **durable recording and fast forensics** — not installs. The metric that matters is
 whether teams keep recording on and can answer "what did that agent do?" quickly, from a backend they own.
 
-**Status:** v0.1.0 · **Parent:** agentsec-ecosystem #209
+**Status:** v0.1.0 · **Parent:** agentic-suite #209
 
 ## Outcome metrics
 

@@ -11,7 +11,7 @@ disambiguation required by [ADR-0026](../adr/0026-naming-decision.md).
 | Distribution | `agentsec-agentwatch` |
 | Import | `agentwatch` |
 | CLI | `agentwatch` |
-| Repo | `agentsec-ecosystem/agentwatch` |
+| Repo | `agentic-suite/agentwatch` |
 | Fully-qualified install | `pip install agentsec-agentwatch` |
 
 ## I ran `pip install agentwatch` — what did I get?
