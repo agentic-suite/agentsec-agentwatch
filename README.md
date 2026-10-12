@@ -3,7 +3,7 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-green.svg)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![PyPI](https://img.shields.io/badge/pypi-agentsec--agentwatch-blue.svg)](https://pypi.org/project/agentsec-agentwatch/)
-[![Status: v0.3.0](https://img.shields.io/badge/status-v0.3.0-green.svg)](CHANGELOG.md)
+[![Status: v0.3.0](https://img.shields.io/badge/status-v0.3.0-green.svg)](https://github.com/agentic-suite/agentsec-agentwatch/releases/tag/v0.3.0)
 [![Ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Type checked: mypy strict](https://img.shields.io/badge/mypy-strict-blue.svg)](https://github.com/python/mypy)
 [![Coverage](https://img.shields.io/badge/coverage-95%25%20gate-green.svg)](https://github.com/agentic-suite/agentsec-agentwatch/actions)
@@ -15,17 +15,18 @@
 > *why* an agent looped, overused a tool, or burned budget — plus the open security-event schema the
 > [agentic-suite](https://github.com/agentic-suite) is built on.
 
-**Status: v0.3.0** — identity & structure release: the org, repos, package import, and CLI are renamed
-(renames only, no code change). The v0.2.0 field test remains the latest field validation — **92 PASS · 0 FAIL**
-across 94 cases; **no v0.3.0 field-test report was produced**. See the [CHANGELOG](CHANGELOG.md) and the
-[v0.3.0 migration guide](docs/release/v0.3.0/migration-guide.md).
+**Status: v0.3.0 released** ([GitHub release](https://github.com/agentic-suite/agentsec-agentwatch/releases/tag/v0.3.0) ·
+[PyPI](https://pypi.org/project/agentsec-agentwatch/0.3.0/)) — identity & structure release: the org, repos,
+package import, and CLI are renamed (renames only, no code change). The v0.2.0 field test remains the latest
+field validation — **92 PASS · 0 FAIL** across 94 cases; **no v0.3.0 field-test report was produced**. See the
+[CHANGELOG](CHANGELOG.md) and the [v0.3.0 migration guide](docs/release/v0.3.0/migration-guide.md).
 
 ---
 
 ## Install & Quick Start
 
 ```sh
-pip install agentsec-agentwatch        # Python SDK + CLI (import: agentsec_agentwatch; CLI: agentsec-agentwatch)
+pip install agentsec-agentwatch==0.3.0  # Python SDK + CLI (import: agentsec_agentwatch; CLI: agentsec-agentwatch)
 agentsec-agentwatch --help             # list commands
 
 # install hooks + local daemon (monitor-only, zero agent-side code changes)

@@ -1,4 +1,4 @@
-# Reference — CLI Reference (v0.1.0)
+# Reference — CLI Reference (v0.3.0)
 
 **BLUF:** The `agentsec-agentwatch` command: install, global flags, subcommands, and how configuration resolves.
 M1 wires the framework and every documented subcommand; `status` is implemented and the daemon/store
@@ -7,11 +7,11 @@ subcommands are filled in by M3–M5 (they fail closed, with a non-zero exit, un
 ## Install
 
 ```sh
-pip install agentsec-agentwatch        # Python CLI on PyPI (import + CLI: agentwatch)
+pip install agentsec-agentwatch        # Python CLI on PyPI (import: agentsec_agentwatch; CLI: agentsec-agentwatch)
 agentsec-agentwatch <command>  # thin launcher that invokes the Python CLI
 ```
 
-The launcher is equivalent to `agentsec-agentwatch <command>`. It invokes `python3 -m agentwatch.cli`; set
+The launcher is equivalent to `agentsec-agentwatch <command>`. It invokes `python3 -m agentsec_agentwatch.cli`; set
 `AGENTWATCH_PYTHON` to choose another interpreter.
 
 ## Global flags
