@@ -63,10 +63,10 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 
 - ✅ **NAME-1** (#509) — target name recorded in ADR-0026: distribution `agentsec-agentwatch` (unchanged),
   import `agentsec_agentwatch`, CLI `agentsec-agentwatch`. Availability checked.
-- 🚧 **NAME-2** (#510) — **import module renamed** `agentwatch` → `agentsec_agentwatch` across code, services,
-  tests, packaging (453 files); targeted tests green. **Remaining:** console-script names + the hook-contract
-  wiring (`agentwatch-hook`/`-daemon`/`-mcp-proxy`/`-a2a-proxy`), and the shim (NAME-3).
-- NAME-3/4/5/6/7 — pending.
+- ✅ **NAME-2** (#510) — renamed import module `agentwatch` → `agentsec_agentwatch` and console scripts to
+  `agentsec-agentwatch[-hook|-daemon|-mcp-proxy|-a2a-proxy]` (code, services, packaging, tests, hook contract).
+- ⛔ **NAME-6** (#514) — **descoped**: npm is not used (PyPI install path); no npx launcher deliverable.
+- NAME-3/4/5/7 — pending.
 
 ---
 
