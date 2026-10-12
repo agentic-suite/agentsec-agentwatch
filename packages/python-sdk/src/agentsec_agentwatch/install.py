@@ -75,15 +75,15 @@ class HookCommand:
 def resolve_hook_command(executable: str | None = None) -> HookCommand:
     """Resolve how Claude Code should invoke the hook client.
 
-    Prefers the ``agentwatch-hook`` entry point next to the running interpreter
+    Prefers the ``agentsec-agentwatch-hook`` entry point next to the running interpreter
     (so npx/pipx installs work even though they are not on the session PATH),
-    then any ``agentwatch-hook`` on PATH, then ``python -m agentwatch.hook``.
+    then any ``agentsec-agentwatch-hook`` on PATH, then ``python -m agentwatch.hook``.
     """
     interpreter = executable or sys.executable
-    sibling = Path(interpreter).with_name("agentwatch-hook")
+    sibling = Path(interpreter).with_name("agentsec-agentwatch-hook")
     if sibling.exists():
         return HookCommand(command=str(sibling), args_prefix=())
-    found = shutil.which("agentwatch-hook")
+    found = shutil.which("agentsec-agentwatch-hook")
     if found:
         return HookCommand(command=found, args_prefix=())
     return HookCommand(command=interpreter, args_prefix=("-m", "agentsec_agentwatch.hook"))
@@ -95,7 +95,7 @@ def _is_agentwatch_handler(handler: Any) -> bool:
         return False
     tokens = [handler.get("command"), *(handler.get("args") or [])]
     joined = " ".join(token for token in tokens if isinstance(token, str))
-    return "agentwatch-hook" in joined or "agentsec_agentwatch.hook" in joined
+    return "agentsec-agentwatch-hook" in joined or "agentsec_agentwatch.hook" in joined
 
 
 # ---------------------------------------------------------------------------

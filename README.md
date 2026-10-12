@@ -37,8 +37,8 @@ agentwatch replay <session-id>         # replay the action timeline
 agentwatch verify-store                # verify the hash chain
 ```
 
-The recording path: `agentwatch-hook` (called by Claude Code's `PreToolUse`/`PostToolUse` hooks) forwards
-events to `agentwatch-daemon`, which normalizes them to validated, redacted records. See the
+The recording path: `agentsec-agentwatch-hook` (called by Claude Code's `PreToolUse`/`PostToolUse` hooks) forwards
+events to `agentsec-agentwatch-daemon`, which normalizes them to validated, redacted records. See the
 [hook contract](docs/design/claude-code-hook-contract.md). Configuration is layered and fail-closed — see
 the [CLI reference](docs/reference/cli-reference.md) and [PRD 16](docs/prd/16-configuration.md).
 

@@ -196,7 +196,7 @@ def _check_hook_entrypoint(executable: str | None) -> CheckResult:
         "hook-entrypoint",
         FAIL,
         f"not executable: {command.command}",
-        "reinstall agentwatch so the `agentwatch-hook` entry point resolves",
+        "reinstall agentwatch so the `agentsec-agentwatch-hook` entry point resolves",
     )
 
 

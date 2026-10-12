@@ -61,14 +61,14 @@ class McpProxyCommand:
 def resolve_mcp_proxy_command(executable: str | None = None) -> McpProxyCommand:
     """Resolve how a harness should invoke the stdio MCP proxy.
 
-    Prefers the ``agentwatch-mcp-proxy`` entry point next to the running
+    Prefers the ``agentsec-agentwatch-mcp-proxy`` entry point next to the running
     interpreter, then any on PATH, then ``python -m agentwatch.mcp_proxy``.
     """
     interpreter = executable or sys.executable
-    sibling = Path(interpreter).with_name("agentwatch-mcp-proxy")
+    sibling = Path(interpreter).with_name("agentsec-agentwatch-mcp-proxy")
     if sibling.exists():
         return McpProxyCommand(command=str(sibling))
-    found = shutil.which("agentwatch-mcp-proxy")
+    found = shutil.which("agentsec-agentwatch-mcp-proxy")
     if found:
         return McpProxyCommand(command=found)
     return McpProxyCommand(command=interpreter, args_prefix=("-m", "agentsec_agentwatch.mcp_proxy"))

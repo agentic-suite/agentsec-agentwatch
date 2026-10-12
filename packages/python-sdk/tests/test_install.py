@@ -41,7 +41,7 @@ from agentsec_agentwatch.store import RecordStore
 
 # A fixed, hand-written command so expected JSON is derived independently of
 # the resolver under test.
-HOOK = HookCommand(command="/opt/aw/bin/agentwatch-hook", args_prefix=())
+HOOK = HookCommand(command="/opt/aw/bin/agentsec-agentwatch-hook", args_prefix=())
 
 
 def _read(path: Path) -> dict[str, Any]:
@@ -131,7 +131,7 @@ def test_install_hooks_replaces_a_stale_agentwatch_handler(tmp_path: Path) -> No
     settings = tmp_path / "settings.local.json"
     stale = {
         "matcher": "*",
-        "hooks": [{"type": "command", "command": "/old/bin/agentwatch-hook", "args": ["pre"]}],
+        "hooks": [{"type": "command", "command": "/old/bin/agentsec-agentwatch-hook", "args": ["pre"]}],
     }
     settings.write_text(json.dumps({"hooks": {"PreToolUse": [stale]}}), encoding="utf-8")
 

@@ -4,7 +4,7 @@
 developer actually feels is the **process-spawn cost of a fresh hook interpreter**,
 and agentwatch installs two hook processors per tool call
 (``design/claude-code-hook-contract.md``). This module measures the real
-end-to-end wall-clock of ``agentwatch-hook pre`` against a draining socket,
+end-to-end wall-clock of ``agentsec-agentwatch-hook pre`` against a draining socket,
 per OS, and publishes it with a user-visible budget.
 
 Windows is **blocked**: agentwatch's hook transport is a Unix domain socket and
@@ -158,7 +158,7 @@ def measure_hook_wallclock(
 ) -> HookWallclock:
     """Measure the end-to-end wall-clock of one hook invocation per iteration.
 
-    ``command`` defaults to the resolved ``agentwatch-hook`` entry point (with a
+    ``command`` defaults to the resolved ``agentsec-agentwatch-hook`` entry point (with a
     draining socket so a delivery is measured, not a spool write). Windows is
     reported blocked without measuring.
     """

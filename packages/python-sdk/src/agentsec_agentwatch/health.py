@@ -369,7 +369,7 @@ def start_health_server(
         server.start()
     except OSError as exc:
         print(
-            f"agentwatch-daemon: health endpoint unavailable ({endpoint}): {exc}",
+            f"agentsec-agentwatch-daemon: health endpoint unavailable ({endpoint}): {exc}",
             file=sys.stderr,
         )
         return None

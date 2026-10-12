@@ -162,7 +162,7 @@ class Daemon:
         self.health.set_chain(self.chain_status)
         if not self.chain_status.ok:
             print(
-                f"agentwatch-daemon: hash chain broken at seq {self.chain_status.broken_at} (F4)",
+                f"agentsec-agentwatch-daemon: hash chain broken at seq {self.chain_status.broken_at} (F4)",
                 file=sys.stderr,
             )
         if self.retention_days is not None:
@@ -635,7 +635,7 @@ class Daemon:
         if skew > self.clock_skew_tolerance_seconds:
             self.health.note_clock_skew(skew)
             print(
-                f"agentwatch-daemon: clock skew {skew:.0f}s on "
+                f"agentsec-agentwatch-daemon: clock skew {skew:.0f}s on "
                 f"{record.harness or 'record'} event; flagged (F9)",
                 file=sys.stderr,
             )
@@ -650,7 +650,7 @@ class Daemon:
         except StoreFullError as exc:
             # F3: fail closed and surface; never overwrite or drop silently.
             self.health.set_stopped(str(exc))
-            print(f"agentwatch-daemon: {exc}", file=sys.stderr)
+            print(f"agentsec-agentwatch-daemon: {exc}", file=sys.stderr)
             return None
         self.health.record_appended(record, size_bytes=self.store.size_bytes())
         if record.tool.name == HOOK_ERROR_TOOL:

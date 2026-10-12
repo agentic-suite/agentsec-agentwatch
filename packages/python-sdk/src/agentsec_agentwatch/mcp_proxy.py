@@ -559,7 +559,7 @@ class _ProxyHandler(BaseHTTPRequestHandler):
     """Relay one MCP HTTP/SSE route while recording ``tools/call`` traffic."""
 
     protocol_version = "HTTP/1.1"
-    server_version = "agentwatch-mcp-proxy"
+    server_version = "agentsec-agentwatch-mcp-proxy"
 
     def log_message(self, format: str, *args: Any) -> None:  # noqa: A002 - stdlib signature
         """Silence per-request logging (records, not stdout, are the signal)."""
@@ -775,10 +775,10 @@ def parse_routes(routes: Sequence[str]) -> dict[str, str]:
 def main(argv: Sequence[str] | None = None) -> int:
     """Run the MCP proxy in stdio or HTTP mode.
 
-    stdio: ``agentwatch-mcp-proxy --server NAME -- CMD ...``
-    HTTP:  ``agentwatch-mcp-proxy --http --route NAME=URL ...``
+    stdio: ``agentsec-agentwatch-mcp-proxy --server NAME -- CMD ...``
+    HTTP:  ``agentsec-agentwatch-mcp-proxy --http --route NAME=URL ...``
     """
-    parser = argparse.ArgumentParser(prog="agentwatch-mcp-proxy")
+    parser = argparse.ArgumentParser(prog="agentsec-agentwatch-mcp-proxy")
     parser.add_argument("--server", default=None, help="stdio mode: MCP server name")
     parser.add_argument("--socket", default=None, help="daemon socket path override")
     parser.add_argument("--http", action="store_true", help="serve HTTP routes (Streamable HTTP)")
@@ -802,11 +802,11 @@ def main(argv: Sequence[str] | None = None) -> int:
             routes = parse_routes(args.route)
             transport = parse_transport(args.transport)
         except ValueError as exc:
-            print(f"agentwatch-mcp-proxy: {exc}", file=sys.stderr)
+            print(f"agentsec-agentwatch-mcp-proxy: {exc}", file=sys.stderr)
             return 2
         if not routes:
             print(
-                "agentwatch-mcp-proxy: --http requires at least one --route NAME=URL",
+                "agentsec-agentwatch-mcp-proxy: --http requires at least one --route NAME=URL",
                 file=sys.stderr,
             )
             return 2
@@ -819,7 +819,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         command = command[1:]
     if not command or args.server is None:
         print(
-            "agentwatch-mcp-proxy: requires --server NAME -- <server command> [args...]",
+            "agentsec-agentwatch-mcp-proxy: requires --server NAME -- <server command> [args...]",
             file=sys.stderr,
         )
         return 2

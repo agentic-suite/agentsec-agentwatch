@@ -2,7 +2,7 @@
 """End-to-end hook wall-clock gate (M29 DEP-3, #443; PRD 50).
 
 Publishes and gates the process-spawn cost a developer feels per tool call: the
-real wall-clock of ``agentwatch-hook pre`` (two hooks per tool call) on macOS and
+real wall-clock of ``agentsec-agentwatch-hook pre`` (two hooks per tool call) on macOS and
 Linux, with a user-visible budget, a 500-call session overhead quote, and a
 committed per-OS baseline. Windows is reported blocked on WIN-1 (named-pipe
 transport re-pointed to M31), never silently measured.

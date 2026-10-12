@@ -56,7 +56,7 @@ def _write_hooks(settings: Path) -> None:
                             "hooks": [
                                 {
                                     "type": "command",
-                                    "command": "/opt/aw/bin/agentwatch-hook",
+                                    "command": "/opt/aw/bin/agentsec-agentwatch-hook",
                                     "args": ["pre"],
                                 }
                             ],

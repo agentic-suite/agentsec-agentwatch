@@ -58,14 +58,14 @@ class A2aProxyCommand:
 def resolve_a2a_proxy_command(executable: str | None = None) -> A2aProxyCommand:
     """Resolve how a client should invoke the stdio A2A proxy.
 
-    Prefers the ``agentwatch-a2a-proxy`` entry point next to the running
+    Prefers the ``agentsec-agentwatch-a2a-proxy`` entry point next to the running
     interpreter, then any on PATH, then ``python -m agentwatch.a2a_proxy``.
     """
     interpreter = executable or sys.executable
-    sibling = Path(interpreter).with_name("agentwatch-a2a-proxy")
+    sibling = Path(interpreter).with_name("agentsec-agentwatch-a2a-proxy")
     if sibling.exists():
         return A2aProxyCommand(command=str(sibling))
-    found = shutil.which("agentwatch-a2a-proxy")
+    found = shutil.which("agentsec-agentwatch-a2a-proxy")
     if found:
         return A2aProxyCommand(command=found)
     return A2aProxyCommand(command=interpreter, args_prefix=("-m", "agentsec_agentwatch.a2a_proxy"))

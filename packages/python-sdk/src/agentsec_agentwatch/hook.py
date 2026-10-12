@@ -1,6 +1,6 @@
 """Claude Code hook client (M3 #25).
 
-`agentwatch-hook pre|post` reads a Claude Code event JSON from stdin, frames it as
+`agentsec-agentwatch-hook pre|post` reads a Claude Code event JSON from stdin, frames it as
 one newline-delimited JSON message, and sends it to the daemon over a Unix domain
 socket. It is **fire-and-forget**: it always exits 0 so a hook can never block or
 fail the agent (F2). A missed delivery is reported by the daemon path (M3 3.7).

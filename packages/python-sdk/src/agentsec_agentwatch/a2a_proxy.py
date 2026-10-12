@@ -359,7 +359,7 @@ class _ProxyHandler(BaseHTTPRequestHandler):
     """Relay one A2A HTTP route while recording task and card traffic."""
 
     protocol_version = "HTTP/1.1"
-    server_version = "agentwatch-a2a-proxy"
+    server_version = "agentsec-agentwatch-a2a-proxy"
 
     def log_message(self, format: str, *args: Any) -> None:  # noqa: A002 - stdlib signature
         """Silence per-request logging (records, not stdout, are the signal)."""
@@ -552,10 +552,10 @@ def parse_routes(routes: Sequence[str]) -> dict[str, str]:
 def main(argv: Sequence[str] | None = None) -> int:
     """Run the A2A proxy in stdio or HTTP mode.
 
-    stdio: ``agentwatch-a2a-proxy --agent NAME -- CMD ...``
-    HTTP:  ``agentwatch-a2a-proxy --http --route NAME=URL ...``
+    stdio: ``agentsec-agentwatch-a2a-proxy --agent NAME -- CMD ...``
+    HTTP:  ``agentsec-agentwatch-a2a-proxy --http --route NAME=URL ...``
     """
-    parser = argparse.ArgumentParser(prog="agentwatch-a2a-proxy")
+    parser = argparse.ArgumentParser(prog="agentsec-agentwatch-a2a-proxy")
     parser.add_argument("--agent", default=None, help="stdio mode: A2A agent name")
     parser.add_argument("--socket", default=None, help="daemon socket path override")
     parser.add_argument("--remote-org", default=None, help="remote organization (delegation)")
@@ -574,11 +574,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         try:
             routes = parse_routes(args.route)
         except ValueError as exc:
-            print(f"agentwatch-a2a-proxy: {exc}", file=sys.stderr)
+            print(f"agentsec-agentwatch-a2a-proxy: {exc}", file=sys.stderr)
             return 2
         if not routes:
             print(
-                "agentwatch-a2a-proxy: --http requires at least one --route NAME=URL",
+                "agentsec-agentwatch-a2a-proxy: --http requires at least one --route NAME=URL",
                 file=sys.stderr,
             )
             return 2
@@ -589,7 +589,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         command = command[1:]
     if not command or args.agent is None:
         print(
-            "agentwatch-a2a-proxy: requires --agent NAME -- <agent command> [args...]",
+            "agentsec-agentwatch-a2a-proxy: requires --agent NAME -- <agent command> [args...]",
             file=sys.stderr,
         )
         return 2

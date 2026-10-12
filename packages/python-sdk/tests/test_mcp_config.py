@@ -18,7 +18,7 @@ from agentsec_agentwatch.mcp_config import (
     uninstall_mcp_proxy,
 )
 
-PROXY = McpProxyCommand(command="agentwatch-mcp-proxy")
+PROXY = McpProxyCommand(command="agentsec-agentwatch-mcp-proxy")
 
 
 def _target(tmp_path: Path) -> McpConfigTarget:
@@ -59,7 +59,7 @@ def test_install_repoints_stdio_and_preserves_keys(tmp_path: Path) -> None:
     assert report.repointed == ("github", "unrelated")
     data = json.loads(path.read_text())
     github = data["mcpServers"]["github"]
-    assert github["command"] == "agentwatch-mcp-proxy"
+    assert github["command"] == "agentsec-agentwatch-mcp-proxy"
     assert github["args"] == ["--server", "github", "--", "node", "server.js", "--flag"]
     assert github["env"] == {"TOKEN": "x"}  # preserved
     assert github["type"] == "stdio"  # preserved
