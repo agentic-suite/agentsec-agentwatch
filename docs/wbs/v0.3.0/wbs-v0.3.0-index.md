@@ -94,6 +94,22 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 > **M35 complete (2026-10-12).** Field run: 92 pass · 1 declared (`FT-XHT-2`, OpenCode binary absent — P/F|D by
 > design) · 0 fail.
 
+### M36 progress
+
+- ✅ **REL-1** (#519) — security scan clean (gitleaks/trufflehog/pip-audit/egress); evidence committed.
+- ✅ **REL-2** (#520) — CHANGELOG/README/compatibility/known-limitations to v0.3.0.
+- ✅ **REL-3** (#521) — **released v0.3.0**: PyPI `agentsec-agentwatch 0.3.0`, tag `v0.3.0`, GitHub release
+  (wheel+sdist+SBOM+checksums).
+- ⏳ **REL-4** (#522) — launch article ("The Security-Event Schema Agents Need") — **external** (dev.to), not
+  produced here.
+- ✅ **REL-5** (#537) — full live-doc sweep to v0.3.0.
+- ⏳ **REL-6** (#538) — update published dev.to article links — **external** (dev.to account).
+- ✅ **ORG-9** (#508) — redirects + clean-machine install verified against the published package.
+- ✅ **36.T** (#532) / **36.D** (#533) / **36.R** (#534) — tests / docs / review.
+
+> **M36 (Release Readiness).** v0.3.0 released from `agentic-suite`. Remaining: REL-4/REL-6 (external dev.to
+> content/link updates — not automatable here).
+
 ---
 
 ## M33 — Org Rename & New Structure · milestone [#37]
