@@ -59,6 +59,15 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 > **M33 complete (2026-10-12).** ORG-1/2/4/5/6/7/8 done · ORG-3 **descoped** (no npm) · ORG-9 **→ M36**.
 > Exit gate green; `security.yml` CI fixed (it never parsed) and green on the pushed HEAD.
 
+### M34 progress
+
+- ✅ **NAME-1** (#509) — target name recorded in ADR-0026: distribution `agentsec-agentwatch` (unchanged),
+  import `agentsec_agentwatch`, CLI `agentsec-agentwatch`. Availability checked.
+- 🚧 **NAME-2** (#510) — **import module renamed** `agentwatch` → `agentsec_agentwatch` across code, services,
+  tests, packaging (453 files); targeted tests green. **Remaining:** console-script names + the hook-contract
+  wiring (`agentwatch-hook`/`-daemon`/`-mcp-proxy`/`-a2a-proxy`), and the shim (NAME-3).
+- NAME-3/4/5/6/7 — pending.
+
 ---
 
 ## M33 — Org Rename & New Structure · milestone [#37]
