@@ -71,6 +71,12 @@ agentsec-agentwatch-hook = "agentsec_agentwatch.hook:main"
 agentsec-agentwatch-daemon = "agentsec_agentwatch.daemon:main"
 agentsec-agentwatch-mcp-proxy = "agentsec_agentwatch.mcp_proxy:main"
 agentsec-agentwatch-a2a-proxy = "agentsec_agentwatch.a2a_proxy:main"
+# v0.3.x compatibility aliases (ADR-0026 shim) — old CLI names keep working.
+agentwatch = "agentsec_agentwatch.cli:main"
+agentwatch-hook = "agentsec_agentwatch.hook:main"
+agentwatch-daemon = "agentsec_agentwatch.daemon:main"
+agentwatch-mcp-proxy = "agentsec_agentwatch.mcp_proxy:main"
+agentwatch-a2a-proxy = "agentsec_agentwatch.a2a_proxy:main"
 
 [project.urls]
 Homepage = "https://github.com/agentic-suite/agentsec-agentwatch"
