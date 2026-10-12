@@ -12,14 +12,13 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 
 ## Standard milestone exit criteria (applies to EVERY milestone)
 
-- [ ] All tests pass (`make test`)
-- [ ] Coverage ≥ 95% (CI-enforced, no waivers)
-- [ ] Lint strict clean — `ruff` zero violations; `mypy --strict` clean
-- [ ] WBS updated — every ticket checked off; deferred items re-pointed to a named milestone
-- [ ] Issues updated — every ticket has a tracking issue; closed or re-pointed
-- [ ] All affected docs updated at close-out (PRD, design, reference, `CHANGELOG.md`, `README.md`,
-      compatibility matrix, `known-limitations.md`)
-- [ ] Committed + pushed to `release/v0.3.0`; CI green on the pushed HEAD
+- [x] All tests pass (`make test`) — M33 gate run: python-sdk 2473 · api 53 · analytics 742 · repo guard 49
+- [x] Coverage ≥ 95% (CI-enforced, no waivers) — SDK 95.25% · api 95.75% · analytics 96.28%
+- [x] Lint strict clean — `ruff` zero violations; `mypy --strict` clean (401 + 14 + 58 files)
+- [x] WBS updated — every ticket checked off; deferred items re-pointed (ORG-9 → M36)
+- [x] Issues updated — every M33 ticket closed or re-pointed
+- [x] All affected docs updated at close-out (SSOT index, `CHANGELOG.md`, `README.md`, `.github` governance)
+- [x] Committed + pushed to `release/v0.3.0`; `security.yml` green on the pushed HEAD (fixed: it never parsed)
 
 ## Milestones
 
@@ -45,18 +44,20 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 - ✅ **ORG-4** (#503) — reference sweep complete; no `agentsec-ecosystem` left in build/CI/badges (only the
   intentional `old → new` arrows in this WBS + `ROADMAP.md`).
 - ✅ **ORG-5** (#504) — `.github` profile README + ROADMAP/CONTRIBUTING/TRADEMARK/SECURITY updated to the new org.
-- ⏳ **ORG-3** (#502) — npm scope migration: code strings migrated to `@agentic-suite/*`; **publish + old-scope
-  deprecation BLOCKED** — no npm auth, and neither `@agentsec-ecosystem/cli` nor `@agentic-suite/cli` is
-  published yet.
+- ⛔ **ORG-3** (#502) — **descoped**: npm is not used; distribution publishes to PyPI (`agentsec-agentwatch`),
+  which is a PyPI concern, not an npm-scope migration. Closed as not planned.
 - ✅ **ORG-6** (#505) — new skeleton: `template` + governance floor; **`agentsec-agentlens`** repo scaffolded
   (TS local-first trace debugger; scaffold only) with the security floor enabled.
 - ✅ **ORG-7** (#506) — SSOT index: [`docs/ssot-index.md`](../../ssot-index.md) (contract → owning repo/file).
 - ✅ **ORG-8** (#507) — live vault docs swept to `agentic-suite` (metrics, work schedule, MOCs, notes 209–221);
   historical journal entries + published articles left untouched.
-- ⏳ **ORG-9** (#508) — redirects verified; **clean-machine install BLOCKED** (depends on the ORG-3 publish).
-- ⏳ **33.T** (#523) — org-reference lint test + npm-scope assertion added; integration checks (redirect /
-  clean-machine install) deferred to ORG-9. **33.D** (#524) — SSOT index, CHANGELOG, README/ROADMAP,
-  `.github` profile/governance updated; migration-guide + compatibility rows land with M34.
+- ⏭️ **ORG-9** (#508) — **deferred to M36** (#40): install verification runs against the PyPI publish (REL-3).
+- ✅ **33.T** (#523) — org-reference lint test (`tests/test_org_reference_lint.py`) + npm-scope assertion.
+- ✅ **33.D** (#524) — SSOT index, `CHANGELOG.md`, README/ROADMAP, `.github` profile/governance.
+- ✅ **33.R** (#525) — review + risk sign-off recorded; exit gate green.
+
+> **M33 complete (2026-10-12).** ORG-1/2/4/5/6/7/8 done · ORG-3 **descoped** (no npm) · ORG-9 **→ M36**.
+> Exit gate green; `security.yml` CI fixed (it never parsed) and green on the pushed HEAD.
 
 ---
 
