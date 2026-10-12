@@ -33,6 +33,22 @@ scope). Four milestones (**M33–M36**), every ticket with a deliverable, an acc
 > **M35 (Field Tests) and M36 (Release Readiness) are always last.** Do not tag `v0.3.0` before M36.
 > Every milestone also carries its `N.T` / `N.D` / `N.R` support tickets (listed per milestone below).
 
+## Progress
+
+> **Updated 2026-10-12.** Org handle landed as **`agentic-suite`** (the decided `agentic-ecosystems` was already
+> taken on GitHub). Statuses below reflect that handle.
+
+- ✅ **ORG-1** (#500) — org renamed `agentsec-ecosystem` → `agentic-suite`; repo URLs 301-redirect, branch rulesets,
+  org 2FA, secret scanning/push protection verified.
+- ✅ **ORG-2** (#501) — all 12 active repos prefixed `agentsec-*` (per `strategy/02` + runbook 228); `template`/
+  `.github` unchanged; remotes, badges, CI updated.
+- ✅ **ORG-4** (#503) — reference sweep complete; no `agentsec-ecosystem` left in build/CI/badges (only the
+  intentional `old → new` arrows in this WBS + `ROADMAP.md`).
+- ✅ **ORG-5** (#504) — `.github` profile README + ROADMAP/CONTRIBUTING/TRADEMARK/SECURITY updated to the new org.
+- ⏳ **ORG-3** (#502) — npm scope migration: code strings migrated to `@agentic-suite/*`; publish + old-scope
+  deprecation pending (needs npm publish rights).
+- ⏳ **ORG-6** (#505) · **ORG-7** (#506) · **ORG-8** (#507) · **ORG-9** (#508) — pending.
+
 ---
 
 ## M33 — Org Rename & New Structure · milestone [#37]
